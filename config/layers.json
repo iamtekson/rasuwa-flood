@@ -16,7 +16,8 @@
       "health": "map_icons/health.svg",
       "video_play": "map_icons/video-play.svg",
       "hazard_pin": "map_icons/hazard-pin.svg",
-      "glacier_pin": "map_icons/glacier-pin.svg"
+      "glacier_pin": "map_icons/glacier-pin.svg",
+      "hydropower": { "url": "map_icons/hydropower.svg", "sdf": true }
     },
     "basemap": {
       "id": "esri_imagery",
@@ -102,7 +103,9 @@
           "paint": { "fillColor": "#ffffff", "fillOpacity": 0.03, "lineColor": "#ffffff", "lineWidth": 0.2 },
           "labelField": "GaPa_NaPa",
           "popupFields": ["GaPa_NaPa", "Type_GN", "DISTRICT", "Province"],
+          "popupLabels": { "GaPa_NaPa": "Municipality", "Type_GN": "Type", "DISTRICT": "District", "Province": "Province" },
           "popupTrigger": "click",
+          "statsField": "Type_GN",
           "spotlight": { "color": "#000000", "opacity": 0.55 },
           "active": true
         }
@@ -129,6 +132,7 @@
           "iconSize": 0.45,
           "data": "data/bridges.geojson",
           "popupFields": ["name", "bridge_structure", "highway"],
+          "statsField": "highway",
           "active": false
         },
         {
@@ -139,6 +143,7 @@
           "iconSize": 0.45,
           "data": "data/education_facilities.geojson",
           "labelField": "name",
+          "statsField": "category",
           "active": false
         },
         {
@@ -149,6 +154,7 @@
           "iconSize": 0.45,
           "data": "data/health_facilities.geojson",
           "labelField": "name",
+          "statsField": "category",
           "active": false
         }
       ]
@@ -184,6 +190,24 @@
           "data": "data/destroyed_buildings.geojson",
           "paint": { "fillColor": "#d62728", "fillOpacity": 0.6, "lineColor": "#7a1414", "lineWidth": 0.5 },
           "active": false
+        },
+        {
+          "id": "exposed_hydropowers",
+          "label": "Exposed Hydropowers (Niti Foundation)",
+          "type": "icon",
+          "icon": "hydropower",
+          "iconSize": 0.5,
+          "iconColor": {
+            "field": "Status",
+            "values": { "Operation": "#d62728", "Under Construction": "#ff9f1c", "Survey": "#4a90d9" },
+            "default": "#888888"
+          },
+          "data": "data/exposed_hydropowers.geojson",
+          "labelField": "Project",
+          "popupFields": ["Project", "Status", "Capacity (MW)", "River", "Promoter", "Address"],
+          "popupLabels": { "Capacity (MW)": "Capacity (MW)" },
+          "note": "Colored by status: red = operating, orange = under construction, blue = surveyed (not yet built).",
+          "active": false
         }
       ]
     },
@@ -210,6 +234,7 @@
           "data": "data/cities.geojson",
           "paint": { "circleColor": "#ffffff", "circleRadius": 5, "circleStrokeColor": "#333333", "circleStrokeWidth": 1.5 },
           "labelField": "name",
+          "statsField": "region",
           "autoPopupOnHighlight": true,
           "active": true
         }

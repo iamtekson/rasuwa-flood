@@ -115,16 +115,25 @@ function buildBaseStyle(cfg) {
 
 // ---------- Icons (SVG files rasterized client-side, then registered with MapLibre) ----------
 
+// an icon entry is either a plain URL string (rendered as-is, full color), or
+// {url, sdf: true} for a solid-silhouette icon whose color is set per-feature
+// at render time via the layer's "iconColor" paint option.
 function loadIcons(iconMap) {
-  const ids = Object.keys(iconMap);
-  return Promise.all(ids.map((id) => loadOneIcon(id, iconMap[id])));
+  return Promise.all(
+    Object.keys(iconMap).map((id) => {
+      const spec = iconMap[id];
+      const url = typeof spec === "string" ? spec : spec.url;
+      const sdf = typeof spec === "object" && !!spec.sdf;
+      return loadOneIcon(id, url, sdf);
+    })
+  );
 }
 
-function loadOneIcon(id, url) {
+function loadOneIcon(id, url, sdf) {
   return new Promise((resolve) => {
     const img = new Image();
     img.onload = () => {
-      if (!map.hasImage(id)) map.addImage(id, img);
+      if (!map.hasImage(id)) map.addImage(id, img, sdf ? { sdf: true } : {});
       resolve();
     };
     img.onerror = () => resolve(); // don't block the whole app on one bad icon
@@ -244,6 +253,9 @@ function addLayer(layer) {
           "text-color": "#ffffff",
           "text-halo-color": "#111111",
           "text-halo-width": 1.4,
+          // only takes effect on an SDF icon (config.map.icons[...].sdf: true);
+          // ignored harmlessly by full-color icons.
+          "icon-color": layer.iconColor ? resolveColorExpr(layer.iconColor) : "#000000",
         },
       });
       break;
@@ -384,14 +396,39 @@ function flatColor(spec) {
   return spec.default || "#888888";
 }
 
-function popupText(layer, props) {
-  if (layer.popupFields) {
-    return layer.popupFields
-      .filter((f) => props[f])
-      .map((f) => props[f])
-      .join(" — ");
+// "GaPa_NaPa" -> "Ga Pa Na Pa", "bridge_structure" -> "Bridge Structure", "DISTRICT" -> "District".
+// Good enough as a default; override odd cases per-field via layer.popupLabels.
+function prettifyFieldName(key) {
+  const spaced = key.replace(/_/g, " ").replace(/([a-z0-9])([A-Z])/g, "$1 $2");
+  return spaced.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function fieldLabel(layer, field) {
+  return (layer.popupLabels && layer.popupLabels[field]) || prettifyFieldName(field);
+}
+
+// renders a small key/value table instead of one long joined string.
+function buildPopupContent(layer, props) {
+  const fields = layer.popupFields || (layer.labelField ? [layer.labelField] : []);
+  const table = document.createElement("table");
+  table.className = "popup-kv";
+  fields.forEach((f) => {
+    const val = props[f];
+    if (val === undefined || val === null || val === "") return;
+    const row = table.insertRow();
+    const k = row.insertCell();
+    k.className = "popup-kv-key";
+    k.textContent = fieldLabel(layer, f);
+    const v = row.insertCell();
+    v.className = "popup-kv-val";
+    v.textContent = val;
+  });
+  if (!table.rows.length) {
+    const div = document.createElement("div");
+    div.textContent = "(no data)";
+    return div;
   }
-  return props[layer.labelField] || "(unnamed)";
+  return table;
 }
 
 // default trigger is "hover" (transient tooltip that follows mouseenter/mouseleave);
@@ -407,17 +444,15 @@ function attachPopup(layer) {
 
   if (layer.popupTrigger === "click") {
     map.on("click", layer.id, (e) => {
-      const text = popupText(layer, e.features[0].properties);
       new maplibregl.Popup({ closeButton: true, closeOnClick: true })
         .setLngLat(e.lngLat)
-        .setText(text || "(no data)")
+        .setDOMContent(buildPopupContent(layer, e.features[0].properties))
         .addTo(map);
     });
   } else {
     const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false });
     map.on("mouseenter", layer.id, (e) => {
-      const text = popupText(layer, e.features[0].properties);
-      popup.setLngLat(e.lngLat).setText(text || "(no data)").addTo(map);
+      popup.setLngLat(e.lngLat).setDOMContent(buildPopupContent(layer, e.features[0].properties)).addTo(map);
     });
     map.on("mouseleave", layer.id, () => popup.remove());
   }
@@ -536,6 +571,19 @@ function buildSidebar() {
       row.appendChild(checkbox);
       row.appendChild(swatch);
       row.appendChild(label);
+
+      if (layer.data) {
+        const statsBtn = document.createElement("button");
+        statsBtn.className = "stats-btn";
+        statsBtn.textContent = "\u{1F4CA}"; // 📊
+        statsBtn.title = "View layer statistics";
+        statsBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          showLayerStats(layer);
+        });
+        row.appendChild(statsBtn);
+      }
+
       catEl.appendChild(row);
 
       if (layer.note) {
@@ -554,7 +602,7 @@ function buildSidebar() {
 
 function swatchColor(layer) {
   if (layer.type === "raster") return "#555";
-  if (layer.type === "icon") return "#555"; // icon swatches would need per-icon rendering; keep neutral
+  if (layer.type === "icon") return layer.iconColor ? flatColor(layer.iconColor) : "#555";
   if (layer.paint && layer.paint.fillColor) return layer.paint.fillColor;
   if (layer.paint && layer.paint.circleColor) return flatColor(layer.paint.circleColor);
   if (layer.paint && layer.paint.lineColor) return layer.paint.lineColor;
@@ -578,6 +626,123 @@ function buildLegend() {
       el.appendChild(row);
     });
   });
+}
+
+// ---------- Layer statistics (feature count + bar chart grouped by a field) ----------
+
+// which property to group counts by, in priority order:
+// explicit layer.statsField > the field a data-driven color is keyed on > labelField.
+function statsGroupField(layer) {
+  if (layer.statsField) return layer.statsField;
+  const colorSpec = (layer.paint && layer.paint.circleColor) || layer.iconColor;
+  if (colorSpec && typeof colorSpec === "object" && colorSpec.field) return colorSpec.field;
+  return layer.labelField || null;
+}
+
+const MAX_STATS_BARS = 20;
+
+async function showLayerStats(layer) {
+  const modalBody = openStatsModal(layer.label);
+  modalBody.textContent = "Loading…";
+
+  let geojson;
+  try {
+    geojson = normalizeGeoJSON(await fetch(noCache(layer.data)).then((r) => r.json()));
+  } catch (err) {
+    modalBody.textContent = "Could not load this layer's data.";
+    return;
+  }
+
+  const total = geojson.features.length;
+  const groupField = statsGroupField(layer);
+
+  modalBody.innerHTML = "";
+  const totalEl = document.createElement("div");
+  totalEl.className = "stats-total";
+  totalEl.textContent = `${total} feature${total === 1 ? "" : "s"} total` + (groupField ? `, grouped by "${fieldLabel(layer, groupField)}"` : "");
+  modalBody.appendChild(totalEl);
+
+  if (!groupField) return;
+
+  const counts = new Map();
+  geojson.features.forEach((f) => {
+    const raw = f.properties ? f.properties[groupField] : undefined;
+    const key = raw === undefined || raw === null || raw === "" ? "(no value)" : String(raw);
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
+
+  const entries = Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
+  const shown = entries.slice(0, MAX_STATS_BARS);
+  const maxCount = shown.length ? shown[0][1] : 1;
+  const barColor = swatchColor(layer) || "#1f9dd6";
+
+  shown.forEach(([key, count]) => {
+    const row = document.createElement("div");
+    row.className = "stats-bar-row";
+
+    const labelRow = document.createElement("div");
+    labelRow.className = "stats-bar-label";
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = key;
+    const countSpan = document.createElement("span");
+    countSpan.textContent = count;
+    labelRow.appendChild(nameSpan);
+    labelRow.appendChild(countSpan);
+
+    const track = document.createElement("div");
+    track.className = "stats-bar-track";
+    const fill = document.createElement("div");
+    fill.className = "stats-bar-fill";
+    fill.style.width = Math.max(4, (count / maxCount) * 100) + "%";
+    fill.style.background = barColor;
+    track.appendChild(fill);
+
+    row.appendChild(labelRow);
+    row.appendChild(track);
+    modalBody.appendChild(row);
+  });
+
+  if (entries.length > MAX_STATS_BARS) {
+    const more = document.createElement("div");
+    more.className = "stats-more-note";
+    more.textContent = `+${entries.length - MAX_STATS_BARS} more distinct value(s) not shown`;
+    modalBody.appendChild(more);
+  }
+}
+
+function openStatsModal(title) {
+  closeStatsModal();
+  const overlay = document.createElement("div");
+  overlay.id = "stats-modal-overlay";
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeStatsModal();
+  });
+
+  const modal = document.createElement("div");
+  modal.className = "stats-modal";
+
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "stats-close";
+  closeBtn.textContent = "×";
+  closeBtn.addEventListener("click", closeStatsModal);
+
+  const h2 = document.createElement("h2");
+  h2.textContent = title;
+
+  const body = document.createElement("div");
+  body.className = "stats-body";
+
+  modal.appendChild(closeBtn);
+  modal.appendChild(h2);
+  modal.appendChild(body);
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+  return body;
+}
+
+function closeStatsModal() {
+  const existing = document.getElementById("stats-modal-overlay");
+  if (existing) existing.remove();
 }
 
 // ---------- Topbar buttons ----------
