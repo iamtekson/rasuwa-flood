@@ -596,8 +596,6 @@ function buildSidebar() {
 
     root.appendChild(catEl);
   });
-
-  buildLegend();
 }
 
 function swatchColor(layer) {
@@ -609,23 +607,10 @@ function swatchColor(layer) {
   return CATEGORY_COLORS_FALLBACK;
 }
 
-function buildLegend() {
-  const el = document.getElementById("legend-items");
-  el.innerHTML = "";
-  CONFIG.categories.forEach((cat) => {
-    cat.layers.forEach((layer) => {
-      const row = document.createElement("div");
-      row.className = "layer-row";
-      const swatch = document.createElement("span");
-      swatch.className = "swatch";
-      swatch.style.background = swatchColor(layer);
-      const label = document.createElement("label");
-      label.textContent = layer.label;
-      row.appendChild(swatch);
-      row.appendChild(label);
-      el.appendChild(row);
-    });
-  });
+// the color-by-value spec a layer uses for its dots/icons, if any (same object
+// shape as resolveColorExpr's input) — reused by both the map paint and the legend.
+function layerColorSpec(layer) {
+  return (layer.paint && layer.paint.circleColor) || layer.iconColor || null;
 }
 
 // ---------- Layer statistics (feature count + bar chart grouped by a field) ----------
@@ -634,12 +619,53 @@ function buildLegend() {
 // explicit layer.statsField > the field a data-driven color is keyed on > labelField.
 function statsGroupField(layer) {
   if (layer.statsField) return layer.statsField;
-  const colorSpec = (layer.paint && layer.paint.circleColor) || layer.iconColor;
+  const colorSpec = layerColorSpec(layer);
   if (colorSpec && typeof colorSpec === "object" && colorSpec.field) return colorSpec.field;
   return layer.labelField || null;
 }
 
 const MAX_STATS_BARS = 20;
+
+function renderLayerLegend(container, layer) {
+  const legend = document.createElement("div");
+  legend.className = "stats-legend";
+  const colorSpec = layerColorSpec(layer);
+
+  if (colorSpec && typeof colorSpec === "object" && colorSpec.values) {
+    Object.keys(colorSpec.values).forEach((val) => {
+      legend.appendChild(legendRow(colorSpec.values[val], val));
+    });
+    if (colorSpec.default) legend.appendChild(legendRow(colorSpec.default, "other"));
+  } else if (layer.type === "icon" && layer.icon && CONFIG.map.icons[layer.icon]) {
+    const spec = CONFIG.map.icons[layer.icon];
+    const img = document.createElement("img");
+    img.src = typeof spec === "string" ? spec : spec.url;
+    img.className = "stats-legend-icon";
+    const row = document.createElement("div");
+    row.className = "stats-legend-row";
+    const lbl = document.createElement("span");
+    lbl.textContent = layer.label;
+    row.appendChild(img);
+    row.appendChild(lbl);
+    legend.appendChild(row);
+  } else {
+    legend.appendChild(legendRow(swatchColor(layer), layer.label));
+  }
+  container.appendChild(legend);
+}
+
+function legendRow(color, text) {
+  const row = document.createElement("div");
+  row.className = "stats-legend-row";
+  const sw = document.createElement("span");
+  sw.className = "swatch";
+  sw.style.background = color;
+  const lbl = document.createElement("span");
+  lbl.textContent = text;
+  row.appendChild(sw);
+  row.appendChild(lbl);
+  return row;
+}
 
 async function showLayerStats(layer) {
   const modalBody = openStatsModal(layer.label);
@@ -655,8 +681,12 @@ async function showLayerStats(layer) {
 
   const total = geojson.features.length;
   const groupField = statsGroupField(layer);
+  const colorSpec = layerColorSpec(layer);
+  const colorSpecAppliesToGroup = colorSpec && typeof colorSpec === "object" && colorSpec.field === groupField;
 
   modalBody.innerHTML = "";
+  renderLayerLegend(modalBody, layer);
+
   const totalEl = document.createElement("div");
   totalEl.className = "stats-total";
   totalEl.textContent = `${total} feature${total === 1 ? "" : "s"} total` + (groupField ? `, grouped by "${fieldLabel(layer, groupField)}"` : "");
@@ -674,7 +704,7 @@ async function showLayerStats(layer) {
   const entries = Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
   const shown = entries.slice(0, MAX_STATS_BARS);
   const maxCount = shown.length ? shown[0][1] : 1;
-  const barColor = swatchColor(layer) || "#1f9dd6";
+  const fallbackColor = swatchColor(layer) || "#1f9dd6";
 
   shown.forEach(([key, count]) => {
     const row = document.createElement("div");
@@ -694,7 +724,7 @@ async function showLayerStats(layer) {
     const fill = document.createElement("div");
     fill.className = "stats-bar-fill";
     fill.style.width = Math.max(4, (count / maxCount) * 100) + "%";
-    fill.style.background = barColor;
+    fill.style.background = colorSpecAppliesToGroup ? colorSpec.values[key] || colorSpec.default || fallbackColor : fallbackColor;
     track.appendChild(fill);
 
     row.appendChild(labelRow);
