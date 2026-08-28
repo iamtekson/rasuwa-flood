@@ -4,7 +4,7 @@ There was a very massive flash flood in Bhotekoshi River (which merged to Trisul
 
 `index.html` is a static HTML/CSS/vanilla-JS page built with MapLibre GL JS. It needs to be served over HTTP (not opened as a `file://` path) because it `fetch()`s `config/layers.json`, the icon SVGs, and the local GeoJSON files, which browsers block under `file://`.
 
-*Portal URL: 
+**Portal URL**: https://iamtekson.github.io/rasuwa-flood/
 
 **Layout:**
 - `config/layers.json` — the single source of truth for map categories/layers (colors, icons, which layers are active by default). Edit this to add/remove/restyle layers — no code changes needed.
