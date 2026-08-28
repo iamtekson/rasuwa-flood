@@ -20,6 +20,35 @@ function noCache(url) {
   return url + (url.includes("?") ? "&" : "?") + "_ts=" + Date.now();
 }
 
+// Some GIS export tools (QGIS "save selected features", certain merges, etc.) can
+// write a bare GeometryCollection ({type, geometries: [...]}) instead of a proper
+// FeatureCollection. MapLibre's tiler doesn't unpack nested GeometryCollections and
+// silently renders nothing — no error — so normalize any such file into Features.
+function normalizeGeoJSON(gj) {
+  if (!gj || !gj.type || gj.type === "FeatureCollection") return gj;
+  if (gj.type === "GeometryCollection") {
+    return {
+      type: "FeatureCollection",
+      features: gj.geometries.map((g) => ({ type: "Feature", properties: {}, geometry: g })),
+    };
+  }
+  if (gj.type === "Feature") return { type: "FeatureCollection", features: [gj] };
+  return { type: "FeatureCollection", features: [{ type: "Feature", properties: {}, geometry: gj }] };
+}
+
+// creates the source immediately (empty) so addLayer() can reference it synchronously,
+// then fetches + normalizes + fills in the real data once it arrives.
+function addGeoJsonSourceAsync(id, url) {
+  map.addSource(id, { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+  fetch(noCache(url))
+    .then((r) => r.json())
+    .then((gj) => {
+      const src = map.getSource(id);
+      if (src) src.setData(normalizeGeoJSON(gj));
+    })
+    .catch((err) => console.error("Failed to load geojson:", url, err));
+}
+
 init();
 
 async function init() {
@@ -139,7 +168,7 @@ function addLayer(layer) {
       break;
 
     case "fill":
-      map.addSource(layer.id, { type: "geojson", data: noCache(layer.data) });
+      addGeoJsonSourceAsync(layer.id, layer.data);
       map.addLayer({
         id: layer.id,
         type: "fill",
@@ -163,22 +192,22 @@ function addLayer(layer) {
       if (layer.spotlight) addSpotlightMask(layer);
       break;
 
-    case "line":
-      map.addSource(layer.id, { type: "geojson", data: noCache(layer.data) });
-      map.addLayer({
-        id: layer.id,
-        type: "line",
-        source: layer.id,
-        paint: {
-          "line-color": layer.paint.lineColor,
-          "line-width": layer.paint.lineWidth || 2,
-          "line-dasharray": layer.paint.lineDasharray || undefined,
-        },
-      });
+    case "line": {
+      addGeoJsonSourceAsync(layer.id, layer.data);
+      const linePaint = {
+        "line-color": layer.paint.lineColor,
+        "line-width": layer.paint.lineWidth || 2,
+      };
+      // MapLibre's style validator rejects a paint key that's present but set to
+      // undefined (throws instead of treating it as absent) — so only add this key
+      // when a real value exists, rather than "value || undefined".
+      if (layer.paint.lineDasharray) linePaint["line-dasharray"] = layer.paint.lineDasharray;
+      map.addLayer({ id: layer.id, type: "line", source: layer.id, paint: linePaint });
       break;
+    }
 
     case "circle":
-      map.addSource(layer.id, { type: "geojson", data: noCache(layer.data) });
+      addGeoJsonSourceAsync(layer.id, layer.data);
       map.addLayer({
         id: layer.id,
         type: "circle",
@@ -194,7 +223,7 @@ function addLayer(layer) {
       break;
 
     case "icon":
-      map.addSource(layer.id, { type: "geojson", data: noCache(layer.data) });
+      addGeoJsonSourceAsync(layer.id, layer.data);
       map.addLayer({
         id: layer.id,
         type: "symbol",
@@ -279,7 +308,7 @@ async function addSpotlightMask(layer) {
   ];
   const outerSign = ringSignedArea(outerRing);
 
-  const geojson = await fetch(noCache(layer.data)).then((r) => r.json());
+  const geojson = normalizeGeoJSON(await fetch(noCache(layer.data)).then((r) => r.json()));
   const holes = [];
   geojson.features.forEach((f) => {
     const g = f.geometry;
@@ -438,7 +467,7 @@ function attachVideoPopup(layer) {
 // "auto open popup" reference behaviour for things like the flood-origin point.
 async function showHighlightPopups(layer) {
   autoPopups[layer.id] = [];
-  const geojson = await fetch(noCache(layer.data)).then((r) => r.json());
+  const geojson = normalizeGeoJSON(await fetch(noCache(layer.data)).then((r) => r.json()));
   geojson.features
     .filter((f) => f.properties && f.properties.highlight)
     .forEach((f) => {
