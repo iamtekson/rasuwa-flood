@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bhotekoshi Flood Map - August 2026</title>
+
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+<link rel="stylesheet" href="https://unpkg.com/mapbox-gl-compare@0.6.0/dist/mapbox-gl-compare.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="topbar">
+  <h1>Bhotekoshi River Flood <span>&mdash; 26&ndash;28 Aug 2026</span></h1>
+  <div id="topbar-buttons">
+    <button id="btn-terrain3d" class="toolbtn">3D Terrain</button>
+    <button id="btn-compare" class="toolbtn">Compare Before / After</button>
+    <button id="btn-sidebar-toggle" class="toolbtn" aria-label="Toggle layers panel">Layers</button>
+  </div>
+</header>
+
+<div id="app">
+  <aside id="sidebar">
+    <div id="sidebar-inner">
+      <p class="sidebar-hint">Toggle layers on/off. Layers are grouped by category.</p>
+      <div id="layer-categories"></div>
+      <div id="legend">
+        <h3>Legend</h3>
+        <div id="legend-items"></div>
+      </div>
+      <p class="sidebar-credit">
+        Data: HOTOSM / HDX hot_flood_npl, Overture Maps, OpenStreetMap, NAXA, Vantor, EOX Sentinel-2 cloudless, AWS Terrain Tiles, Esri World Imagery.
+      </p>
+    </div>
+  </aside>
+
+  <main id="map-area">
+    <div id="map"></div>
+
+    <div id="compare-container" class="hidden">
+      <div id="before-map" class="compare-map"></div>
+      <div id="after-map" class="compare-map"></div>
+      <div class="compare-label compare-label-left">Pre-Disaster (Sentinel-2 cloud-free)</div>
+      <div class="compare-label compare-label-right">Post-Disaster (Vantor, 28 Aug 2026)</div>
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/mapbox-gl-compare@0.6.0/dist/mapbox-gl-compare.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

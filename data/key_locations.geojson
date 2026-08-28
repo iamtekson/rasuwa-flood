@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [85.50837, 28.29437] },
+      "properties": {
+        "name": "Potential flood origin (landslide-dammed lake)",
+        "kind": "hazard",
+        "icon": "hazard_pin",
+        "observed_date": "2026-08-27",
+        "source": "Sentinel-2 / Copernicus Browser (dataspace.copernicus.eu)",
+        "note": "New waterbody detected upstream on 27 Aug imagery, consistent with a landslide-dammed lake that may have breached and driven the downstream flash flood.",
+        "highlight": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [85.618, 28.213] },
+      "properties": {
+        "name": "Langtang Glacier / Valley",
+        "kind": "glacier",
+        "icon": "glacier_pin",
+        "source": "Approximate — Langtang valley glacier region (OpenStreetMap / Wikipedia, Langtang National Park)",
+        "note": "Upper-catchment glacier zone above the Bhotekoshi headwaters; contextual reference, not a precise glacier-outline dataset.",
+        "highlight": true
+      }
+    }
+  ]
+}
