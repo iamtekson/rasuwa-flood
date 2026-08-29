@@ -10,7 +10,18 @@ There was a very massive flash flood in Bhotekoshi River (which merged to Trisul
 - `config/layers.json` — the single source of truth for map categories/layers (colors, icons, which layers are active by default). Edit this to add/remove/restyle layers — no code changes needed.
 - `map_icons/` — SVG icons used by point layers (bridge, education, health, video, hazard/glacier pins).
 - `data/` — all GeoJSON data files.
-- `js/main.js`, `css/style.css` — the app itself.
+- `css/style.css` — all styling.
+- `js/` — the app, split into small ES modules (native browser `import`/`export`, no build step):
+  - `main.js` — entry point, just wires everything together.
+  - `state.js` — shared app state (the map instance, config, etc.).
+  - `utils.js` — pure helpers: caching, GeoJSON normalization, color/label resolution, geometry math.
+  - `icons.js` — loads the SVG icons into MapLibre.
+  - `layers.js` — the generic add/remove logic for every layer type.
+  - `popups.js` — hover/click popups and the always-open "highlight" callouts.
+  - `sidebar.js` — builds the layer-toggle sidebar.
+  - `stats.js` — the 📊 legend + feature-count panel.
+  - `compare.js` — the before/after imagery swipe.
+  - `map-core.js` — map creation, base style, 3D-terrain toggle, topbar wiring.
 
 **Features:** pan/zoom with a 3D-terrain default view (pitched + rotated to align with the river valley; toggle back to flat top-down with the "3D Terrain" button), a before/after imagery compare slider, category-grouped layer toggles, icon-coded point layers (bridge/education/health/video/hazard symbols), auto-open callout popups for a few highlighted features (potential flood origin, Langtang glacier area, a few flood-adjacent settlements), auto-zoom to the flood extent, a click-to-play popup on the eyewitness-video points, and a 📊 button on each layer that shows its legend plus a feature-count breakdown.
 
