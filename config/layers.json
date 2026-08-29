@@ -221,10 +221,11 @@
           "type": "icon",
           "iconField": "icon",
           "iconSize": 0.6,
-          "data": "data/key_locations.geojson",
+          "data": "data/key_locations_v2.geojson",
           "labelField": "name",
           "alwaysLabel": true,
           "autoPopupOnHighlight": true,
+          "polygonPaint": { "fillColor": "#ff5a36", "fillOpacity": 0.55, "lineColor": "#a8331d", "lineWidth": 2 },
           "active": true
         },
         {
