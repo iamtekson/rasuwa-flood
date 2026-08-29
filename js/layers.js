@@ -145,14 +145,20 @@ export function addLayer(layer) {
       // digitized landslide/flood-source area alongside point markers) — render
       // those as an actual filled area instead of trying to force a point icon on them.
       if (layer.polygonPaint) {
+        const pp = layer.polygonPaint;
+        // fillColor/lineColor can be a flat hex string, or a {field, values, default}
+        // match-spec (same shape as circleColor/iconColor) to color polygons by a
+        // property — e.g. a landslide scar vs. a lake should read as different hazards.
+        const fillColorExpr = resolveColorExpr(pp.fillColor);
+        const lineColorExpr = pp.lineColor ? resolveColorExpr(pp.lineColor) : fillColorExpr;
         map.addLayer({
           id: layer.id + "-polygon",
           type: "fill",
           source: layer.id,
           filter: ["==", ["geometry-type"], "Polygon"],
           paint: {
-            "fill-color": layer.polygonPaint.fillColor,
-            "fill-opacity": layer.polygonPaint.fillOpacity != null ? layer.polygonPaint.fillOpacity : 0.35,
+            "fill-color": fillColorExpr,
+            "fill-opacity": pp.fillOpacity != null ? pp.fillOpacity : 0.35,
           },
         });
         map.addLayer({
@@ -161,8 +167,8 @@ export function addLayer(layer) {
           source: layer.id,
           filter: ["==", ["geometry-type"], "Polygon"],
           paint: {
-            "line-color": layer.polygonPaint.lineColor || layer.polygonPaint.fillColor,
-            "line-width": layer.polygonPaint.lineWidth || 1.5,
+            "line-color": lineColorExpr,
+            "line-width": pp.lineWidth || 1.5,
           },
         });
       }

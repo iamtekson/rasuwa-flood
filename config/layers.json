@@ -225,7 +225,20 @@
           "labelField": "name",
           "alwaysLabel": true,
           "autoPopupOnHighlight": true,
-          "polygonPaint": { "fillColor": "#ff5a36", "fillOpacity": 0.55, "lineColor": "#a8331d", "lineWidth": 2 },
+          "polygonPaint": {
+            "fillColor": {
+              "field": "kind",
+              "values": { "hazard": "#ffd400", "lake": "#1e88e5" },
+              "default": "#ff5a36"
+            },
+            "fillOpacity": 0.6,
+            "lineColor": {
+              "field": "kind",
+              "values": { "hazard": "#a87b00", "lake": "#0d47a1" },
+              "default": "#a8331d"
+            },
+            "lineWidth": 2.5
+          },
           "active": true
         },
         {
