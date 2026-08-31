@@ -69,7 +69,7 @@
           "id": "flood_extent",
           "label": "Flood Extent (observed 27 Aug 2026)",
           "type": "fill",
-          "data": "data/hot_flood_npl_flood_extent.geojson",
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/combined/hot_flood_npl_aoi.geojson",
           "paint": { "fillColor": "#1f9dd6", "fillOpacity": 0.35, "lineColor": "#0b5b7a", "lineWidth": 1.5 },
           "active": true
         },
@@ -167,7 +167,7 @@
           "id": "bridge_damage",
           "label": "Bridge Damage Assessment",
           "type": "circle",
-          "data": "data/bridge_damage.geojson",
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/combined/hot_flood_npl_bridge_damage.geojson",
           "paint": {
             "circleColor": {
               "field": "status",
