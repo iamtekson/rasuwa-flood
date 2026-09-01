@@ -31,7 +31,6 @@
       "encoding": "terrarium",
       "tileSize": 256,
       "maxzoom": 15,
-      "exaggeration": 1.3,
       "attribution": "AWS Terrain Tiles"
     }
   },
@@ -69,7 +68,7 @@
           "id": "flood_extent",
           "label": "Flood Extent (observed 27 Aug 2026)",
           "type": "fill",
-          "data": "data/flood_extent_v2.json",
+          "data": "data/flood_extent_v2.geojson",
           "paint": { "fillColor": "#1f9dd6", "fillOpacity": 0.35, "lineColor": "#0b5b7a", "lineWidth": 1.5 },
           "active": true
         },
