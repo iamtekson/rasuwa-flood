@@ -67,7 +67,12 @@
         "name": "बेत्रावती",
         "population": null,
         "region": "NP-P3",
-        "source": "OpenStreetMap"
+        "source": "OpenStreetMap",
+        "name_en": "Betrawati",
+        "flood_profile": true,
+        "flood_order": 7,
+        "flood_time": "09:24:00",
+        "flood_reached": true
       }
     },
     {
@@ -221,7 +226,12 @@
         "population": null,
         "region": "NP-P3",
         "source": "OpenStreetMap",
-        "highlight": true
+        "highlight": true,
+        "name_en": "Malekhu",
+        "flood_profile": true,
+        "flood_order": 10,
+        "flood_time": null,
+        "flood_reached": true
       }
     },
     {
@@ -343,10 +353,14 @@
         "population": null,
         "region": "NP-P3",
         "source": "OpenStreetMap",
-        "highlight": true
+        "highlight": true,
+        "name_en": "Rasuwagadhi (Rashuwa)",
+        "flood_profile": true,
+        "flood_order": 3,
+        "flood_time": "08:44:00",
+        "flood_reached": true
       }
     },
-   
     {
       "type": "Feature",
       "geometry": {
@@ -363,6 +377,229 @@
         "region": "NP",
         "source": "manual mapping",
         "highlight": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.4291274,
+          28.3385054
+        ]
+      },
+      "properties": {
+        "id": "b7ae12cb-181a-40b7-9e5f-e0d22c13fd0c",
+        "name": "Seqiong Village",
+        "name_en": "Seqiong Village",
+        "population": null,
+        "region": "CN",
+        "source": "OpenStreetMap (Overpass, 色琼村/Sêrqung)",
+        "flood_profile": true,
+        "flood_order": 1,
+        "flood_time": "08:41:00",
+        "note": "Village in Gyirong County, Tibet (China side of border), upper Bhote Koshi headwaters",
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.4025572,
+          28.320307
+        ]
+      },
+      "properties": {
+        "id": "7e4d18f1-eda9-44cd-9671-2a09055b7177",
+        "name": "Labi Village",
+        "name_en": "Labi Village",
+        "population": null,
+        "region": "CN",
+        "source": "OpenStreetMap (Overpass, 拉比村/Labi)",
+        "flood_profile": true,
+        "flood_order": 2,
+        "flood_time": "08:42:00",
+        "note": "Village in Gyirong County, Tibet (China side of border), upper Bhote Koshi headwaters",
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3666715,
+          28.2528483
+        ]
+      },
+      "properties": {
+        "id": "5d401a12-e14a-4073-9c87-0c9753e37210",
+        "name": "Timure",
+        "name_en": "Timure",
+        "population": null,
+        "region": "NP-P3",
+        "source": "OpenStreetMap (Overpass, टिमुरे/Timure); cross-checked with bridge_damage.geojson Timure Bridge points",
+        "flood_profile": true,
+        "flood_order": 4,
+        "flood_time": "08:46:00",
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.3399278,
+          28.1643861
+        ]
+      },
+      "properties": {
+        "id": "3822b24f-873f-4f9c-8c9b-0accd32d697a",
+        "name": "SyapruBesi",
+        "name_en": "Syabrubesi",
+        "population": null,
+        "region": "NP-P3",
+        "source": "bridge_damage.geojson (Hydropower Bailey Bridge at Bhotekoshi, Syaphrubeshi)",
+        "flood_profile": true,
+        "flood_order": 5,
+        "flood_time": "08:50:00",
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.2,
+          28.05
+        ]
+      },
+      "properties": {
+        "id": "3b0e0210-d1c0-487c-bd50-f1b07df77a80",
+        "name": "Ghale Gaun",
+        "name_en": "Ghale Gaun",
+        "population": null,
+        "region": "NP-P3",
+        "source": "manual estimate - unverified in OSM, placed between Syabrubesi and Betrawati near flood-hit Khalte/Gogane area",
+        "flood_profile": true,
+        "flood_order": 6,
+        "flood_time": null,
+        "note": "Coordinates approximate; please verify/correct",
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.1479929,
+          27.9231601
+        ]
+      },
+      "properties": {
+        "id": "b95d9637-7b71-4a19-9b0d-f93cfef40c79",
+        "name": "Trishuli Bridge",
+        "name_en": "Trishuli Bazaar",
+        "population": null,
+        "region": "NP-P3",
+        "source": "OpenStreetMap (Overpass, town node \"Trishuli\"); see also bridge_damage.geojson Trisuli Bazzar bridges",
+        "flood_profile": true,
+        "flood_order": 8,
+        "flood_time": null,
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.146446,
+          27.89526
+        ]
+      },
+      "properties": {
+        "id": "9620c5b4-e17a-4a7e-a48d-562990efaa7c",
+        "name": "Bidur",
+        "name_en": "Bidur",
+        "population": null,
+        "region": "NP-P3",
+        "source": "OpenStreetMap (Overpass, बिदुर/Bidur town)",
+        "flood_profile": true,
+        "flood_order": 9,
+        "flood_time": "09:38:00",
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.4236085,
+          27.7503594
+        ]
+      },
+      "properties": {
+        "id": "93ee752f-9d8f-4be3-94a2-19f46c0b7f6e",
+        "name": "Devpur",
+        "name_en": "Devpur",
+        "population": null,
+        "region": "NP-P4",
+        "source": "OpenStreetMap Nominatim (Devpur, Devghat, Tanahun)",
+        "flood_profile": true,
+        "flood_order": 11,
+        "flood_time": null,
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.4301652,
+          27.6811896
+        ]
+      },
+      "properties": {
+        "id": "fb41330f-2e64-418d-a1e8-78063b6f5f6b",
+        "name": "Bharatpur",
+        "name_en": "Bharatpur",
+        "population": null,
+        "region": "NP-P3",
+        "source": "OpenStreetMap Nominatim (भरतपुर, Bharatpur Metropolitan City, Chitwan)",
+        "flood_profile": true,
+        "flood_order": 12,
+        "flood_time": null,
+        "flood_reached": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.2976484,
+          27.6179943
+        ]
+      },
+      "properties": {
+        "id": "26d3ee4d-f8e0-4baa-a74f-658a8c949fbd",
+        "name": "Chanauli",
+        "name_en": "Chanauli",
+        "population": null,
+        "region": "NP-P3",
+        "source": "OpenStreetMap Nominatim (Chanauli, Bharatpur-18, Chitwan)",
+        "flood_profile": true,
+        "flood_order": 13,
+        "flood_time": null,
+        "flood_reached": false
       }
     }
   ]
