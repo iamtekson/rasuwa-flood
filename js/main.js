@@ -5,6 +5,7 @@
 import { state } from "./state.js";
 import { noCache } from "./utils.js";
 import { createMainMap, wireTopbarButtons } from "./map-core.js";
+import { initElevationProfile } from "./elevationProfile.js";
 
 init();
 
@@ -12,5 +13,6 @@ async function init() {
   state.CONFIG = await fetch(noCache("config/layers.json")).then((r) => r.json());
   createMainMap();
   wireTopbarButtons();
+  initElevationProfile();
   window.__debug = state; // console/devtools inspection only, not used by app logic
 }

@@ -16,6 +16,7 @@
   <div id="topbar-buttons">
     <button id="btn-terrain3d" class="toolbtn">3D Terrain</button>
     <button id="btn-compare" class="toolbtn">Compare Before / After</button>
+    <button id="btn-elevation-profile" class="toolbtn">📈 Elevation Profile</button>
     <button id="btn-sidebar-toggle" class="toolbtn" aria-label="Toggle layers panel">Layers</button>
   </div>
 </header>
@@ -40,6 +41,25 @@
       <div class="compare-label compare-label-left">Pre-Disaster (Sentinel-2 cloud-free)</div>
       <div class="compare-label compare-label-right">Post-Disaster (Vantor, 28 Aug 2026)</div>
     </div>
+
+    <section id="elevation-panel" class="elevation-panel hidden">
+      <div id="ep-resize-handle" class="ep-resize-handle" title="Drag to resize"><span></span></div>
+      <div class="ep-header">
+        <div class="ep-titles">
+          <h2>Flood Elevation Profile</h2>
+          <p class="ep-subtitle">Bhotekoshi &ndash; Trishuli river corridor, 26 Aug 2026</p>
+        </div>
+        <div id="ep-stats" class="ep-stats"></div>
+        <div class="ep-controls">
+          <button id="ep-play" class="ep-btn" type="button">&#9658; Play</button>
+          <button id="ep-close" class="ep-btn ep-close" type="button" aria-label="Close elevation profile">&times;</button>
+        </div>
+      </div>
+      <div id="ep-chart-wrap" class="ep-chart-wrap">
+        <svg id="ep-svg" class="ep-svg"></svg>
+        <div id="ep-tooltip" class="ep-tooltip hidden"></div>
+      </div>
+    </section>
   </main>
 </div>
 

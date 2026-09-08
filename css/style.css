@@ -168,6 +168,120 @@ html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, Se
 .stats-bar-fill { height: 100%; border-radius: 4px; }
 .stats-more-note { font-size: 11px; color: #999; margin-top: 6px; }
 
+/* ---------- Elevation profile panel (bottom-docked, synced with the map) ---------- */
+
+#elevation-panel.hidden { display: none; }
+
+.elevation-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 400px;
+  background: #fcfcfb;
+  border-top: 1px solid #dfe3e7;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.18);
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.ep-resize-handle {
+  height: 10px;
+  flex-shrink: 0;
+  cursor: ns-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+.ep-resize-handle span {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: #d6d4cb;
+  transition: background 0.15s;
+}
+.ep-resize-handle:hover span,
+.ep-resize-handle.ep-resizing span { background: #b3b0a3; }
+
+.ep-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 10px 16px 6px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e1e0d9;
+}
+.ep-titles h2 { margin: 0; font-size: 15px; font-weight: 700; color: #0b0b0b; }
+.ep-subtitle { margin: 2px 0 0; font-size: 11.5px; color: #52514e; }
+
+.ep-stats { display: flex; gap: 18px; margin-left: auto; }
+.ep-stat { text-align: left; }
+.ep-stat-value { font-size: 15px; font-weight: 700; color: #0b0b0b; line-height: 1.2; }
+.ep-stat-value.ep-live { color: #d03b3b; }
+.ep-stat-label { font-size: 9.5px; color: #898781; text-transform: uppercase; letter-spacing: 0.03em; }
+
+.ep-controls { display: flex; align-items: center; gap: 6px; }
+.ep-btn {
+  background: #24384a;
+  color: #fff;
+  border: 1px solid #395067;
+  padding: 5px 11px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+.ep-btn:hover { background: #2f4b63; }
+.ep-btn.ep-playing { background: #d03b3b; border-color: #d03b3b; }
+.ep-close {
+  background: transparent;
+  color: #898781;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  padding: 2px 6px;
+}
+.ep-close:hover { color: #0b0b0b; background: #eceae4; border-radius: 6px; }
+
+.ep-chart-wrap { position: relative; flex: 1; min-height: 0; }
+.ep-svg { width: 100%; height: 100%; display: block; cursor: crosshair; }
+
+.ep-city-dot { cursor: pointer; }
+.ep-city-label { font-size: 10.5px; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; pointer-events: none; }
+
+.ep-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #0b0b0b;
+  color: #fff;
+  font-size: 11.5px;
+  padding: 6px 9px;
+  border-radius: 6px;
+  transform: translate(-50%, -115%);
+  white-space: nowrap;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.ep-tooltip.hidden { display: none; }
+.ep-tooltip b { color: #ffb4a8; }
+
+.ep-map-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #d03b3b;
+  border: 2.5px solid #fff;
+  box-shadow: 0 0 0 4px rgba(208, 59, 59, 0.28), 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 720px) {
+  .elevation-panel { height: 300px; }
+  .ep-stats { gap: 10px; margin-left: 0; order: 3; width: 100%; }
+  .ep-header { gap: 8px; }
+}
+
 @media (max-width: 720px) {
   #sidebar { position: absolute; z-index: 15; height: 100%; box-shadow: 2px 0 8px rgba(0,0,0,0.2); }
   #sidebar:not(.collapsed) { margin-left: 0; }

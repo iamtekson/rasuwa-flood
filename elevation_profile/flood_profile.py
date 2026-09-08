@@ -228,3 +228,57 @@ class Stopwatch:
     def sec_to_hms(sec: float) -> str:
         sec = int(round(sec))
         return f"{sec // 3600:02d}:{(sec % 3600) // 60:02d}:{sec % 60:02d}"
+
+
+# ---------------------------------------------------------------------------
+# 5. Compact export for the web map's interactive profile panel
+# ---------------------------------------------------------------------------
+
+def export_web_json(
+    profile: pd.DataFrame,
+    cities: pd.DataFrame,
+    out_path: Path,
+    n_points: int = 900,
+) -> None:
+    """Downsample the profile to `n_points` evenly-spaced-by-distance rows and
+    write a single compact JSON consumed by js/elevationProfile.js -- parallel
+    arrays rather than an array of objects, to keep the file small.
+    """
+    marker_km = float(cities.loc[cities.flood_reached, "distance_km"].max())
+    x_max = float(cities["distance_km"].max())
+    d = np.linspace(0, min(x_max + 15, profile["distance_km"].max()), n_points)
+    lon = np.interp(d, profile["distance_km"], profile["lon"])
+    lat = np.interp(d, profile["distance_km"], profile["lat"])
+    elev = np.interp(d, profile["distance_km"], profile["elevation_m"])
+
+    watch = Stopwatch.from_annotations(cities, start_km=0.0, start_time=cities.flood_time.dropna().iloc[0])
+
+    payload = {
+        "distance_km": [round(float(v), 3) for v in d],
+        "elevation_m": [round(float(v), 1) for v in elev],
+        "lon": [round(float(v), 5) for v in lon],
+        "lat": [round(float(v), 5) for v in lat],
+        "cities": [
+            {
+                "name": row["name"],
+                "name_local": row["name_local"],
+                "distance_km": round(float(row["distance_km"]), 3),
+                "elevation_m": round(float(row["elevation_m"]), 1),
+                "lon": round(float(row["snap_lon"]), 5),
+                "lat": round(float(row["snap_lat"]), 5),
+                "flood_order": int(row["flood_order"]),
+                "flood_time": row["flood_time"] if isinstance(row["flood_time"], str) else None,
+                "flood_reached": bool(row["flood_reached"]),
+            }
+            for _, row in cities.iterrows()
+        ],
+        "meta": {
+            "marker_km": round(marker_km, 3),
+            "start_time_sec": int(watch.control_sec[0]),
+            "start_time": Stopwatch.sec_to_hms(watch.control_sec[0]),
+            "frozen_time": Stopwatch.sec_to_hms(watch.time_at(marker_km)),
+            "control_km": [round(float(v), 3) for v in watch.control_km],
+            "control_sec": [int(v) for v in watch.control_sec],
+        },
+    }
+    out_path.write_text(json.dumps(payload), encoding="utf-8")
