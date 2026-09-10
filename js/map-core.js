@@ -47,6 +47,11 @@ export function createMainMap() {
     addAllConfiguredLayers();
     buildSidebar();
 
+    // on a narrow screen the sidebar is a full-height overlay (see the mobile
+    // media query in style.css) — start collapsed so the map is what greets
+    // the user, rather than the layer list covering most of the viewport.
+    setSidebarCollapsed(window.matchMedia("(max-width: 720px)").matches);
+
     // ?nointro=1 — dev/testing hook so a specific camera config can be
     // inspected as a static screenshot without the tour immediately playing.
     const skipTourParam = new URLSearchParams(location.search).has("nointro");
@@ -85,6 +90,12 @@ function playTour(tour, { markSeen }) {
   skipBtn.classList.remove("hidden");
   if (playBtn) playBtn.disabled = true;
 
+  // the tour is a cinematic flyover of the map itself — don't let the layers
+  // panel sit on top of it. Remember whatever state it was already in so
+  // cleanup() can put it back rather than force it open afterwards.
+  const sidebarWasCollapsed = document.getElementById("sidebar").classList.contains("collapsed");
+  setSidebarCollapsed(true);
+
   let done = false;
   let cancelHold = () => {};
 
@@ -95,6 +106,7 @@ function playTour(tour, { markSeen }) {
     map.off("wheel", onSkip);
     map.off("touchstart", onSkip);
     if (playBtn) playBtn.disabled = false;
+    if (!sidebarWasCollapsed) setSidebarCollapsed(false);
   };
   const finish = () => {
     if (done) return;
@@ -199,8 +211,48 @@ export function wireTopbarButtons() {
   document.getElementById("btn-compare").addEventListener("click", toggleCompare);
   document.getElementById("btn-play-tour").addEventListener("click", replayTour);
   document.getElementById("btn-sidebar-toggle").addEventListener("click", () => {
-    document.getElementById("sidebar").classList.toggle("collapsed");
+    const sidebar = document.getElementById("sidebar");
+    setSidebarCollapsed(!sidebar.classList.contains("collapsed"));
   });
+  wireMoreMenu();
+}
+
+// mobile-only "⋯ More" dropdown (see the mobile media query in style.css) that
+// holds the secondary toolbar buttons (3D Terrain, Play Tour, Compare,
+// Elevation Profile) — on wider screens it's just displayed inline and this
+// is all a no-op since #btn-more-toggle stays hidden.
+function wireMoreMenu() {
+  const moreBtn = document.getElementById("btn-more-toggle");
+  const moreMenu = document.getElementById("topbar-more-menu");
+  if (!moreBtn || !moreMenu) return;
+
+  const setOpen = (open) => {
+    moreMenu.classList.toggle("open", open);
+    moreBtn.setAttribute("aria-expanded", String(open));
+  };
+
+  moreBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setOpen(!moreMenu.classList.contains("open"));
+  });
+  // picking any action in the menu should close it, same as a native select
+  moreMenu.addEventListener("click", (e) => {
+    if (e.target.closest(".toolbtn")) setOpen(false);
+  });
+  document.addEventListener("click", (e) => {
+    if (moreMenu.classList.contains("open") && !moreMenu.contains(e.target) && e.target !== moreBtn) {
+      setOpen(false);
+    }
+  });
+}
+
+// keeps the sidebar's visibility and the "Layers" toggle button's active/pressed
+// look in sync everywhere the sidebar is shown/hidden (initial mobile state, the
+// manual toggle button, and the tour's auto-hide/restore).
+function setSidebarCollapsed(collapsed) {
+  document.getElementById("sidebar").classList.toggle("collapsed", collapsed);
+  const btn = document.getElementById("btn-sidebar-toggle");
+  if (btn) btn.classList.toggle("active", !collapsed);
 }
 
 function toggle3D() {
