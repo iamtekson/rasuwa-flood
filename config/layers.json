@@ -1,15 +1,121 @@
 {
   "map": {
     "title": "Bhotekoshi River Flood - August 2026",
-    "center": [85.05, 28.05],
-    "zoom": 10,
-    "bounds": [[84.3, 27.72], [85.72, 28.36]],
-    "pitch": 60,
-    "bearing": 57,
+    "center": [
+      85.5194,
+      28.2968
+    ],
+    "zoom": 13.64,
+    "bounds": [
+      [
+        84.3,
+        27.72
+      ],
+      [
+        85.72,
+        28.36
+      ]
+    ],
+    "fitBoundsOnLoad": false,
+    "pitch": 53.5,
+    "bearing": 122.6,
     "terrain3d": {
-      "pitch": 60,
-      "bearing": 57
+      "pitch": 53.5,
+      "bearing": 122.6
     },
+    "tour": [
+      {
+        "label": "Landslide source",
+        "center": [
+          85.5194,
+          28.2968
+        ],
+        "zoom": 13.64,
+        "pitch": 53.5,
+        "bearing": 122.6,
+        "holdMs": 2200
+      },
+      {
+        "label": "Landslide origin and flood path",
+        "zoom": 12.698137295634785,
+        "pitch": 68.50000000000003,
+        "bearing": 108.5999999999997,
+        "center": [
+          85.47213795521424,
+          28.321494780042713
+        ]
+      },
+      {
+        "label": "RasuwaGadi",
+        "zoom": 17,
+        "pitch": 2.999999999999986,
+        "bearing": 32.59999999999969,
+        "center": [
+          85.37937117777915,
+          28.27828970080631
+        ]
+      },
+      {
+        "label": "Downstream from rasuwagadi (zoomed out)",
+        "zoom": 11.483834567896821,
+        "pitch": 58.00000000000001,
+        "bearing": 23,
+        "center": [
+          85.21648406982422,
+          28.099543691790032
+        ],
+        "holdMs": 100
+      },
+      {
+        "label": "Devighat",
+        "zoom": 16.13666222663325,
+        "pitch": 44.500000000000014,
+        "bearing": 33.39999999999998,
+        "center": [
+          85.10878801344052,
+          27.86049113002332
+        ],
+        "holdMs": 100
+      },
+      {
+        "label": "zoomed out view of flood extent",
+        "zoom": 9.279625539186888,
+        "pitch": 43.484969954968584,
+        "bearing": 46.91342694061984,
+        "center": [
+          84.69154357910156,
+          27.806283691459726
+        ]
+      },
+      {
+        "label": "Full corridor, source to plains",
+        "center": [
+          85.35,
+          27.93
+        ],
+        "zoom": 7.3,
+        "pitch": 60,
+        "bearing": 9,
+        "flyMs": 6000,
+        "holdMs": 1800,
+        "showLayers": [
+          "bridge_damage",
+          "destroyed_buildings"
+        ]
+      },
+      {
+        "label": "Rasuwagadhi valley overview",
+        "center": [
+          85.2,
+          27.998
+        ],
+        "zoom": 10.05,
+        "pitch": 58,
+        "bearing": 23,
+        "flyMs": 5500,
+        "holdMs": 0
+      }
+    ],
     "icons": {
       "bridge": "map_icons/bridge.svg",
       "education": "map_icons/education.svg",
@@ -17,17 +123,24 @@
       "video_play": "map_icons/video-play.svg",
       "hazard_pin": "map_icons/hazard-pin.svg",
       "glacier_pin": "map_icons/glacier-pin.svg",
-      "hydropower": { "url": "map_icons/hydropower.svg", "sdf": true }
+      "hydropower": {
+        "url": "map_icons/hydropower.svg",
+        "sdf": true
+      }
     },
     "basemap": {
       "id": "esri_imagery",
       "label": "Esri World Imagery",
-      "tiles": ["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"],
+      "tiles": [
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+      ],
       "tileSize": 256,
       "attribution": "Esri, Maxar, Earthstar Geographics"
     },
     "terrain": {
-      "tiles": ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"],
+      "tiles": [
+        "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"
+      ],
       "encoding": "terrarium",
       "tileSize": 256,
       "maxzoom": 15,
@@ -43,16 +156,20 @@
           "id": "post_imagery",
           "label": "Post-Disaster Imagery (Vantor, 28 Aug 2026)",
           "type": "raster",
-          "tiles": ["https://titiler.hotosm.org/cog/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Fproduction-raw-data-api.s3.amazonaws.com%2FISO3%2FNPL%2Fdisasters%2Fnepal-flood%2F2026-08-28%2Fvantor_composite_v3.tif"],
+          "tiles": [
+            "https://titiler.hotosm.org/cog/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Fproduction-raw-data-api.s3.amazonaws.com%2FISO3%2FNPL%2Fdisasters%2Fnepal-flood%2F2026-08-28%2Fvantor_composite_v3.tif"
+          ],
           "tileSize": 256,
           "attribution": "Vantor / HOTOSM raw-data-api",
-          "active": true
+          "active": false
         },
         {
           "id": "pre_imagery",
           "label": "Pre-Disaster Reference (Sentinel-2 cloud-free mosaic)",
           "type": "raster",
-          "tiles": ["https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg"],
+          "tiles": [
+            "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg"
+          ],
           "tileSize": 256,
           "attribution": "Sentinel-2 cloudless by EOX IT Services GmbH",
           "note": "General cloud-free baseline mosaic, not a same-date pre-event snapshot.",
@@ -69,7 +186,12 @@
           "label": "Flood Extent (observed 27 Aug 2026)",
           "type": "fill",
           "data": "data/flood_extent_v2.geojson",
-          "paint": { "fillColor": "#1f9dd6", "fillOpacity": 0.35, "lineColor": "#0b5b7a", "lineWidth": 1.5 },
+          "paint": {
+            "fillColor": "#1f9dd6",
+            "fillOpacity": 0.35,
+            "lineColor": "#0b5b7a",
+            "lineWidth": 1.5
+          },
           "active": true
         },
         {
@@ -77,7 +199,14 @@
           "label": "Bhotekoshi River 2km Buffer",
           "type": "line",
           "data": "data/bhotekoshi_river_2km_buffer.geojson",
-          "paint": { "lineColor": "#e8871e", "lineWidth": 1.5, "lineDasharray": [3, 2] },
+          "paint": {
+            "lineColor": "#e8871e",
+            "lineWidth": 1.5,
+            "lineDasharray": [
+              3,
+              2
+            ]
+          },
           "active": true
         },
         {
@@ -85,7 +214,10 @@
           "label": "Bhotekoshi River",
           "type": "line",
           "data": "data/bhotekoshi_river.geojson",
-          "paint": { "lineColor": "#0f5fa6", "lineWidth": 2 },
+          "paint": {
+            "lineColor": "#0f5fa6",
+            "lineWidth": 2
+          },
           "active": true
         }
       ]
@@ -99,13 +231,31 @@
           "label": "Affected Municipalities (Gaunpalika / Nagarpalika)",
           "type": "fill",
           "data": "data/gn_affected.json",
-          "paint": { "fillColor": "#ffffff", "fillOpacity": 0.03, "lineColor": "#ffffff", "lineWidth": 0.2 },
+          "paint": {
+            "fillColor": "#ffffff",
+            "fillOpacity": 0.03,
+            "lineColor": "#ffffff",
+            "lineWidth": 0.2
+          },
           "labelField": "GaPa_NaPa",
-          "popupFields": ["GaPa_NaPa", "Type_GN", "DISTRICT", "Province"],
-          "popupLabels": { "GaPa_NaPa": "Municipality", "Type_GN": "Type", "DISTRICT": "District", "Province": "Province" },
+          "popupFields": [
+            "GaPa_NaPa",
+            "Type_GN",
+            "DISTRICT",
+            "Province"
+          ],
+          "popupLabels": {
+            "GaPa_NaPa": "Municipality",
+            "Type_GN": "Type",
+            "DISTRICT": "District",
+            "Province": "Province"
+          },
           "popupTrigger": "click",
           "statsField": "Type_GN",
-          "spotlight": { "color": "#000000", "opacity": 0.55 },
+          "spotlight": {
+            "color": "#000000",
+            "opacity": 0.55
+          },
           "active": true
         }
       ]
@@ -119,8 +269,13 @@
           "label": "Buildings near flood zone (Overture)",
           "type": "fill",
           "data": "data/buildings_essential.geojson",
-          "paint": { "fillColor": "#c9b458", "fillOpacity": 0.55, "lineColor": "#7a6a2a", "lineWidth": 0.5 },
-          "active": false,
+          "paint": {
+            "fillColor": "#212529",
+            "fillOpacity": 0.55,
+            "lineColor": "#1C1A1A",
+            "lineWidth": 0.5
+          },
+          "active": true,
           "minzoom": 13
         },
         {
@@ -130,7 +285,11 @@
           "icon": "bridge",
           "iconSize": 0.45,
           "data": "data/bridges.geojson",
-          "popupFields": ["name", "bridge_structure", "highway"],
+          "popupFields": [
+            "name",
+            "bridge_structure",
+            "highway"
+          ],
           "statsField": "highway",
           "active": false
         },
@@ -170,7 +329,11 @@
           "paint": {
             "circleColor": {
               "field": "status",
-              "values": { "Washed out": "#d62728", "Damaged": "#ff9f1c", "Intact": "#2ca02c" },
+              "values": {
+                "Washed out": "#d62728",
+                "Damaged": "#ff9f1c",
+                "Intact": "#2ca02c"
+              },
               "default": "#888888"
             },
             "circleRadius": 7,
@@ -178,7 +341,11 @@
             "circleStrokeWidth": 1.5
           },
           "labelField": "name",
-          "popupFields": ["name", "status", "location"],
+          "popupFields": [
+            "name",
+            "status",
+            "location"
+          ],
           "note": "Colored by status: red = washed out, orange = damaged, green = intact.",
           "active": false
         },
@@ -187,7 +354,12 @@
           "label": "Destroyed Buildings (OSM)",
           "type": "fill",
           "data": "data/destroyed_buildings.geojson",
-          "paint": { "fillColor": "#d62728", "fillOpacity": 0.6, "lineColor": "#7a1414", "lineWidth": 0.5 },
+          "paint": {
+            "fillColor": "#d62728",
+            "fillOpacity": 0.6,
+            "lineColor": "#7a1414",
+            "lineWidth": 0.5
+          },
           "active": false
         },
         {
@@ -198,13 +370,26 @@
           "iconSize": 0.5,
           "iconColor": {
             "field": "Status",
-            "values": { "Operation": "#d62728", "Under Construction": "#ff9f1c", "Survey": "#4a90d9" },
+            "values": {
+              "Operation": "#d62728",
+              "Under Construction": "#ff9f1c",
+              "Survey": "#4a90d9"
+            },
             "default": "#888888"
           },
           "data": "data/exposed_hydropowers.geojson",
           "labelField": "Project",
-          "popupFields": ["Project", "Status", "Capacity (MW)", "River", "Promoter", "Address"],
-          "popupLabels": { "Capacity (MW)": "Capacity (MW)" },
+          "popupFields": [
+            "Project",
+            "Status",
+            "Capacity (MW)",
+            "River",
+            "Promoter",
+            "Address"
+          ],
+          "popupLabels": {
+            "Capacity (MW)": "Capacity (MW)"
+          },
           "note": "Colored by status: red = operating, orange = under construction, blue = surveyed (not yet built).",
           "active": false
         }
@@ -227,13 +412,19 @@
           "polygonPaint": {
             "fillColor": {
               "field": "kind",
-              "values": { "hazard": "#ffd400", "lake": "#1e88e5" },
+              "values": {
+                "hazard": "#ffd400",
+                "lake": "#1e88e5"
+              },
               "default": "#ff5a36"
             },
             "fillOpacity": 0.6,
             "lineColor": {
               "field": "kind",
-              "values": { "hazard": "#a87b00", "lake": "#0d47a1" },
+              "values": {
+                "hazard": "#a87b00",
+                "lake": "#0d47a1"
+              },
               "default": "#a8331d"
             },
             "lineWidth": 2.5
@@ -245,13 +436,35 @@
           "label": "Major Settlements",
           "type": "circle",
           "data": "data/cities.geojson",
-          "paint": { "circleColor": "#ffffff", "circleRadius": 5, "circleStrokeColor": "#333333", "circleStrokeWidth": 1.5 },
+          "paint": {
+            "circleColor": "#ffffff",
+            "circleRadius": 5,
+            "circleStrokeColor": "#333333",
+            "circleStrokeWidth": 1.5
+          },
           "labelField": "name",
           "statsField": "region",
           "autoPopupOnHighlight": true,
           "active": true
+        },
+        {
+          "id": "landslide_hazard",
+          "label": "Landslides (BGS)",
+          "type": "fill",
+          "data": "data/landslides.geojson",
+          "popupFields": [
+            "timing",
+            "source",
+            "year"
+          ],
+          "paint": {
+            "fillColor": "#ffd400",
+            "fillOpacity": 0.6,
+            "lineColor": "#a87b00",
+            "lineWidth": 1.5
+          },
+          "active": true
         }
-       
       ]
     }
   ]
