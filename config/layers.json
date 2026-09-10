@@ -126,6 +126,22 @@
       "hydropower": {
         "url": "map_icons/hydropower.svg",
         "sdf": true
+      },
+      "bank": {
+        "url": "map_icons/bank.svg",
+        "sdf": true
+      },
+      "police": {
+        "url": "map_icons/police.svg",
+        "sdf": true
+      },
+      "helipad": {
+        "url": "map_icons/helipad.svg",
+        "sdf": true
+      },
+      "waterway": {
+        "url": "map_icons/waterway.svg",
+        "sdf": true
       }
     },
     "basemap": {
@@ -219,6 +235,56 @@
             "lineWidth": 2
           },
           "active": true
+        },
+        {
+          "id": "waterways",
+          "label": "Waterways (OSM)",
+          "type": "icon",
+          "icon": "waterway",
+          "iconSize": 0.45,
+          "iconColor": {
+            "field": "status",
+            "values": {
+              "Standing": "#1f9dd6",
+              "Destroyed": "#d62728"
+            },
+            "default": "#888888"
+          },
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/waterways/hot_flood_npl_waterways_osm.geojson",
+          "labelField": "name",
+          "popupFields": [
+            "name",
+            "waterway",
+            "status",
+            "width",
+            "depth"
+          ],
+          "polygonPaint": {
+            "fillColor": {
+              "field": "status",
+              "values": {
+                "Standing": "#1f9dd6",
+                "Destroyed": "#d62728"
+              },
+              "default": "#888888"
+            },
+            "fillOpacity": 0.4,
+            "lineWidth": 1
+          },
+          "linePaint": {
+            "lineColor": {
+              "field": "status",
+              "values": {
+                "Standing": "#1f9dd6",
+                "Destroyed": "#d62728"
+              },
+              "default": "#888888"
+            },
+            "lineWidth": 2
+          },
+          "statsField": "waterway",
+          "note": "Colored by status: blue = standing/intact, red = destroyed/washed out.",
+          "active": false
         }
       ]
     },
@@ -299,7 +365,7 @@
           "type": "icon",
           "icon": "education",
           "iconSize": 0.45,
-          "data": "data/education_facilities.geojson",
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/education_facilities/hot_flood_npl_education_facilities_overture.geojson",
           "labelField": "name",
           "statsField": "category",
           "active": false
@@ -310,9 +376,135 @@
           "type": "icon",
           "icon": "health",
           "iconSize": 0.45,
-          "data": "data/health_facilities.geojson",
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/health_facilities/hot_flood_npl_health_facilities_overture.geojson",
           "labelField": "name",
           "statsField": "category",
+          "active": false
+        },
+        {
+          "id": "financial_services",
+          "label": "Financial Services (OSM)",
+          "type": "icon",
+          "icon": "bank",
+          "iconSize": 0.45,
+          "iconColor": {
+            "field": "status",
+            "values": {
+              "Standing": "#2ca02c",
+              "Destroyed": "#d62728"
+            },
+            "default": "#888888"
+          },
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/financial_services/hot_flood_npl_financial_services_osm.geojson",
+          "labelField": "name",
+          "popupFields": [
+            "name",
+            "amenity",
+            "status",
+            "operator",
+            "addr_full"
+          ],
+          "popupLabels": {
+            "amenity": "Type",
+            "addr_full": "Address"
+          },
+          "statsField": "amenity",
+          "note": "Colored by status: green = standing, red = destroyed.",
+          "active": false
+        },
+        {
+          "id": "police_stations",
+          "label": "Police Stations (OSM)",
+          "type": "icon",
+          "icon": "police",
+          "iconSize": 0.45,
+          "iconColor": {
+            "field": "status",
+            "values": {
+              "Standing": "#2ca02c",
+              "Destroyed": "#d62728"
+            },
+            "default": "#888888"
+          },
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/police_stations/hot_flood_npl_police_stations_osm.geojson",
+          "labelField": "name",
+          "popupFields": [
+            "name",
+            "status",
+            "operator",
+            "phone",
+            "addr_full"
+          ],
+          "popupLabels": {
+            "addr_full": "Address"
+          },
+          "polygonPaint": {
+            "fillColor": {
+              "field": "status",
+              "values": {
+                "Standing": "#2ca02c",
+                "Destroyed": "#d62728"
+              },
+              "default": "#888888"
+            },
+            "fillOpacity": 0.45,
+            "lineWidth": 1.5
+          },
+          "statsField": "status",
+          "note": "Colored by status: green = standing, red = destroyed.",
+          "active": false
+        },
+        {
+          "id": "helipads",
+          "label": "Helipads (OSM)",
+          "type": "icon",
+          "icon": "helipad",
+          "iconSize": 0.45,
+          "iconColor": {
+            "field": "status",
+            "values": {
+              "Standing": "#2ca02c",
+              "Damaged": "#ff9f1c",
+              "Destroyed": "#d62728"
+            },
+            "default": "#888888"
+          },
+          "data": "https://production-raw-data-api.s3.amazonaws.com/ISO3/NPL/helipads/hot_flood_npl_helipads_osm.geojson",
+          "labelField": "name",
+          "popupFields": [
+            "name",
+            "status",
+            "aeroway",
+            "operator",
+            "surface"
+          ],
+          "polygonPaint": {
+            "fillColor": {
+              "field": "status",
+              "values": {
+                "Standing": "#2ca02c",
+                "Damaged": "#ff9f1c",
+                "Destroyed": "#d62728"
+              },
+              "default": "#888888"
+            },
+            "fillOpacity": 0.45,
+            "lineWidth": 1.5
+          },
+          "linePaint": {
+            "lineColor": {
+              "field": "status",
+              "values": {
+                "Standing": "#2ca02c",
+                "Damaged": "#ff9f1c",
+                "Destroyed": "#d62728"
+              },
+              "default": "#888888"
+            },
+            "lineWidth": 3
+          },
+          "statsField": "status",
+          "note": "Colored by status: green = standing, orange = damaged, red = destroyed.",
           "active": false
         }
       ]
