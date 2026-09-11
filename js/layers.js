@@ -63,7 +63,10 @@ export function addLayer(layer) {
         source: layer.id,
         minzoom: layer.minzoom || 0,
         paint: {
-          "fill-color": layer.paint.fillColor,
+          // fillColor/lineColor can be a flat hex string, or a {field, values, default}
+          // match-spec (same shape as circle/icon color) to classify polygons by a
+          // property, e.g. a mapping-task boundary colored by its status.
+          "fill-color": resolveColorExpr(layer.paint.fillColor),
           "fill-opacity": layer.paint.fillOpacity,
         },
       });
@@ -73,7 +76,7 @@ export function addLayer(layer) {
         source: layer.id,
         minzoom: layer.minzoom || 0,
         paint: {
-          "line-color": layer.paint.lineColor,
+          "line-color": resolveColorExpr(layer.paint.lineColor),
           "line-width": layer.paint.lineWidth || 1,
         },
       });
@@ -172,6 +175,24 @@ export function addLayer(layer) {
           },
         });
       }
+      // similarly, an "icon" layer can carry LineString features on the same source
+      // (e.g. an OSM way that was mapped as a line rather than a closed area/point —
+      // common for helipads, waterways and open-space boundaries in HDX exports) —
+      // render those as an actual line instead of silently dropping them.
+      if (layer.linePaint) {
+        const lp = layer.linePaint;
+        const lineColorExpr = resolveColorExpr(lp.lineColor);
+        map.addLayer({
+          id: layer.id + "-line",
+          type: "line",
+          source: layer.id,
+          filter: ["==", ["geometry-type"], "LineString"],
+          paint: {
+            "line-color": lineColorExpr,
+            "line-width": lp.lineWidth || 2,
+          },
+        });
+      }
       break;
   }
 
@@ -182,7 +203,14 @@ export function addLayer(layer) {
 
 export function removeLayer(layer) {
   const map = state.map;
-  const idsToRemove = [layer.id, layer.id + "-outline", layer.id + "-label", layer.id + "-polygon", layer.id + "-polygon-outline"];
+  const idsToRemove = [
+    layer.id,
+    layer.id + "-outline",
+    layer.id + "-label",
+    layer.id + "-polygon",
+    layer.id + "-polygon-outline",
+    layer.id + "-line",
+  ];
   idsToRemove.forEach((id) => {
     if (map.getLayer(id)) map.removeLayer(id);
   });

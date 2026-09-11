@@ -35,23 +35,33 @@ export function attachPopup(layer) {
   if (state.listenersAttached.has(layer.id)) return; // avoid duplicate handlers on toggle off/on
   state.listenersAttached.add(layer.id);
 
-  map.on("mouseenter", layer.id, () => (map.getCanvas().style.cursor = "pointer"));
-  map.on("mouseleave", layer.id, () => (map.getCanvas().style.cursor = ""));
+  // an icon-type layer can carry its Polygon/LineString features on companion
+  // layers (see layer.polygonPaint / layer.linePaint in layers.js) — wire the
+  // same popup behaviour to those so a feature that only renders as a shape
+  // (not a point icon) is still clickable/hoverable.
+  const targetIds = [layer.id];
+  if (layer.polygonPaint) targetIds.push(layer.id + "-polygon");
+  if (layer.linePaint) targetIds.push(layer.id + "-line");
 
-  if (layer.popupTrigger === "click") {
-    map.on("click", layer.id, (e) => {
-      new maplibregl.Popup({ closeButton: true, closeOnClick: true })
-        .setLngLat(e.lngLat)
-        .setDOMContent(buildPopupContent(layer, e.features[0].properties))
-        .addTo(map);
-    });
-  } else {
-    const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false });
-    map.on("mouseenter", layer.id, (e) => {
-      popup.setLngLat(e.lngLat).setDOMContent(buildPopupContent(layer, e.features[0].properties)).addTo(map);
-    });
-    map.on("mouseleave", layer.id, () => popup.remove());
-  }
+  targetIds.forEach((id) => {
+    map.on("mouseenter", id, () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", id, () => (map.getCanvas().style.cursor = ""));
+
+    if (layer.popupTrigger === "click") {
+      map.on("click", id, (e) => {
+        new maplibregl.Popup({ closeButton: true, closeOnClick: true })
+          .setLngLat(e.lngLat)
+          .setDOMContent(buildPopupContent(layer, e.features[0].properties))
+          .addTo(map);
+      });
+    } else {
+      const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false });
+      map.on("mouseenter", id, (e) => {
+        popup.setLngLat(e.lngLat).setDOMContent(buildPopupContent(layer, e.features[0].properties)).addTo(map);
+      });
+      map.on("mouseleave", id, () => popup.remove());
+    }
+  });
 }
 
 export function attachVideoPopup(layer) {

@@ -46,7 +46,13 @@ export function flatColor(spec) {
 // the color-by-value spec a layer uses for its dots/icons, if any (same object
 // shape as resolveColorExpr's input) — reused by the map paint, the legend, and stats.
 export function layerColorSpec(layer) {
-  return (layer.paint && layer.paint.circleColor) || layer.iconColor || (layer.polygonPaint && layer.polygonPaint.fillColor) || null;
+  return (
+    (layer.paint && layer.paint.circleColor) ||
+    layer.iconColor ||
+    (layer.polygonPaint && layer.polygonPaint.fillColor) ||
+    (layer.paint && layer.paint.fillColor) ||
+    null
+  );
 }
 
 export function swatchColor(layer) {
@@ -56,7 +62,7 @@ export function swatchColor(layer) {
     if (layer.polygonPaint) return flatColor(layer.polygonPaint.fillColor);
     return "#555";
   }
-  if (layer.paint && layer.paint.fillColor) return layer.paint.fillColor;
+  if (layer.paint && layer.paint.fillColor) return flatColor(layer.paint.fillColor);
   if (layer.paint && layer.paint.circleColor) return flatColor(layer.paint.circleColor);
   if (layer.paint && layer.paint.lineColor) return layer.paint.lineColor;
   return CATEGORY_COLORS_FALLBACK;
