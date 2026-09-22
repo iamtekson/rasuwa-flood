@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="intersection" id="intersection">
+	<SimpleField name="sb" type="int"></SimpleField>
+	<SimpleField name="x" type="float"></SimpleField>
+	<SimpleField name="y" type="float"></SimpleField>
+	<SimpleField name="OBJECTID" type="float"></SimpleField>
+	<SimpleField name="new_ward_n" type="float"></SimpleField>
+	<SimpleField name="GaPa_NaP_1" type="string"></SimpleField>
+	<SimpleField name="Type_GN" type="string"></SimpleField>
+	<SimpleField name="type_en" type="string"></SimpleField>
+	<SimpleField name="DISTRICT" type="string"></SimpleField>
+	<SimpleField name="hlcit_code" type="string"></SimpleField>
+	<SimpleField name="munid" type="float"></SimpleField>
+	<SimpleField name="districtid" type="float"></SimpleField>
+	<SimpleField name="state" type="float"></SimpleField>
+</Schema>
+<Folder><name>intersection</name>
+  <Placemark id="intersection.1">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">1</SimpleData>
+		<SimpleData name="x">85.1136939801</SimpleData>
+		<SimpleData name="y">27.8636708282</SimpleData>
+		<SimpleData name="OBJECTID">5952</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1136939801301,27.8636708282447</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.2">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">2</SimpleData>
+		<SimpleData name="x">85.1421659044</SimpleData>
+		<SimpleData name="y">27.9254824237</SimpleData>
+		<SimpleData name="OBJECTID">5955</SimpleData>
+		<SimpleData name="new_ward_n">9.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1421659044426,27.92548242367</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.3">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">3</SimpleData>
+		<SimpleData name="x">85.1438898472</SimpleData>
+		<SimpleData name="y">27.9055163720</SimpleData>
+		<SimpleData name="OBJECTID">5951</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1438898472214,27.9055163720174</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.4">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">4</SimpleData>
+		<SimpleData name="x">85.1444296889</SimpleData>
+		<SimpleData name="y">27.9252169961</SimpleData>
+		<SimpleData name="OBJECTID">5955</SimpleData>
+		<SimpleData name="new_ward_n">9.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1444296888512,27.9252169961453</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.5">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">5</SimpleData>
+		<SimpleData name="x">85.1456701072</SimpleData>
+		<SimpleData name="y">27.9064728953</SimpleData>
+		<SimpleData name="OBJECTID">5950</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1456701071832,27.9064728952623</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.6">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">6</SimpleData>
+		<SimpleData name="x">85.1486104733</SimpleData>
+		<SimpleData name="y">27.8964913622</SimpleData>
+		<SimpleData name="OBJECTID">5950</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1486104733336,27.8964913621788</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.7">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">7</SimpleData>
+		<SimpleData name="x">85.1609668626</SimpleData>
+		<SimpleData name="y">27.9367248148</SimpleData>
+		<SimpleData name="OBJECTID">5949</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1609668625944,27.9367248148401</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.8">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">8</SimpleData>
+		<SimpleData name="x">85.1648961396</SimpleData>
+		<SimpleData name="y">27.9577974970</SimpleData>
+		<SimpleData name="OBJECTID">6018</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1648961395909,27.9577974970469</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.9">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">9</SimpleData>
+		<SimpleData name="x">85.1694771108</SimpleData>
+		<SimpleData name="y">27.9644877528</SimpleData>
+		<SimpleData name="OBJECTID">6018</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1694771108356,27.964487752765</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.10">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">10</SimpleData>
+		<SimpleData name="x">85.1825286974</SimpleData>
+		<SimpleData name="y">28.0153065646</SimpleData>
+		<SimpleData name="OBJECTID">5942</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Kispang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 4 002</SimpleData>
+		<SimpleData name="munid">305.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1825286974048,28.0153065645878</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.11">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">11</SimpleData>
+		<SimpleData name="x">85.1838505259</SimpleData>
+		<SimpleData name="y">27.9804911900</SimpleData>
+		<SimpleData name="OBJECTID">2098</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1838505258993,27.9804911899962</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.12">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">12</SimpleData>
+		<SimpleData name="x">85.1844376310</SimpleData>
+		<SimpleData name="y">27.9787457606</SimpleData>
+		<SimpleData name="OBJECTID">2098</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1844376310291,27.9787457606289</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.13">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">13</SimpleData>
+		<SimpleData name="x">85.2061348280</SimpleData>
+		<SimpleData name="y">28.0747456354</SimpleData>
+		<SimpleData name="OBJECTID">2081</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.2061348279791,28.0747456354099</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.14">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">14</SimpleData>
+		<SimpleData name="x">85.2957058481</SimpleData>
+		<SimpleData name="y">28.1105527376</SimpleData>
+		<SimpleData name="OBJECTID">2101</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gosaikunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 002</SimpleData>
+		<SimpleData name="munid">315.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.295705848134,28.1105527375996</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.15">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">15</SimpleData>
+		<SimpleData name="x">85.3318832519</SimpleData>
+		<SimpleData name="y">28.1622530678</SimpleData>
+		<SimpleData name="OBJECTID">2103</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gosaikunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 002</SimpleData>
+		<SimpleData name="munid">315.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.3318832518896,28.1622530677809</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.16">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">16</SimpleData>
+		<SimpleData name="x">85.3411534858</SimpleData>
+		<SimpleData name="y">28.1813236309</SimpleData>
+		<SimpleData name="OBJECTID">2079</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Parbati Kunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 001</SimpleData>
+		<SimpleData name="munid">318.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.3411534857654,28.1813236308898</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.17">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="sb">17</SimpleData>
+		<SimpleData name="x">85.3417892973</SimpleData>
+		<SimpleData name="y">28.1670496995</SimpleData>
+		<SimpleData name="OBJECTID">2103</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gosaikunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 002</SimpleData>
+		<SimpleData name="munid">315.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.3417892973158,28.1670496994902</coordinates></Point></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

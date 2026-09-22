@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="temporary_shelters_and_relief_points_with_municipality_and_district" id="temporary_shelters_and_relief_points_with_municipality_and_district">
+	<SimpleField name="S. No." type="string"></SimpleField>
+	<SimpleField name="Probable Site (Field Verification Needed)" type="string"></SimpleField>
+	<SimpleField name="Mun_District" type="string"></SimpleField>
+	<SimpleField name="Location" type="string"></SimpleField>
+	<SimpleField name="Coordinate" type="string"></SimpleField>
+	<SimpleField name="Latitude" type="float"></SimpleField>
+	<SimpleField name="Longitude" type="float"></SimpleField>
+	<SimpleField name="Tentative Area
+(in sq.m)" type="int"></SimpleField>
+	<SimpleField name="Estimated population" type="int"></SimpleField>
+	<SimpleField name="Remarks" type="string"></SimpleField>
+	<SimpleField name="Status" type="string"></SimpleField>
+	<SimpleField name="Chance for No Landslide Susceptibility(As per Durban University)" type="string"></SimpleField>
+	<SimpleField name="field_13" type="string"></SimpleField>
+	<SimpleField name="field_14" type="string"></SimpleField>
+	<SimpleField name="field_15" type="string"></SimpleField>
+	<SimpleField name="field_16" type="string"></SimpleField>
+	<SimpleField name="field_17" type="string"></SimpleField>
+	<SimpleField name="field_18" type="string"></SimpleField>
+	<SimpleField name="field_19" type="string"></SimpleField>
+	<SimpleField name="field_20" type="string"></SimpleField>
+	<SimpleField name="field_21" type="string"></SimpleField>
+	<SimpleField name="field_22" type="string"></SimpleField>
+	<SimpleField name="field_23" type="string"></SimpleField>
+	<SimpleField name="field_24" type="string"></SimpleField>
+	<SimpleField name="field_25" type="string"></SimpleField>
+	<SimpleField name="field_26" type="string"></SimpleField>
+	<SimpleField name="field_27" type="string"></SimpleField>
+</Schema>
+<Folder><name>temporary_shelters_and_relief_points_with_municipality_and_district</name>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.1">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">22</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Adarsha Mavi</SimpleData>
+		<SimpleData name="Mun_District">Gajuri_DHADING</SimpleData>
+		<SimpleData name="Location">Gajuri</SimpleData>
+		<SimpleData name="Coordinate">27.80779795152496, 84.87984747817423</SimpleData>
+		<SimpleData name="Latitude">27.80779795</SimpleData>
+		<SimpleData name="Longitude">84.87984748</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">2119</SimpleData>
+		<SimpleData name="Estimated population">1413</SimpleData>
+		<SimpleData name="Remarks">Medium</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>84.87984748,27.80779795</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.2">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">19</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Bageshwori Adharbhut Mavi, Aduwabari</SimpleData>
+		<SimpleData name="Mun_District">Galchi_DHADING</SimpleData>
+		<SimpleData name="Location">Galchhi</SimpleData>
+		<SimpleData name="Coordinate">27.8011768,84.9873415</SimpleData>
+		<SimpleData name="Latitude">27.80118</SimpleData>
+		<SimpleData name="Longitude">84.98734</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">1314</SimpleData>
+		<SimpleData name="Estimated population">876</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>84.98734,27.80118</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.3">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">1</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Battar kabad hall</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Nuwakot-Bidur</SimpleData>
+		<SimpleData name="Coordinate">27.8992727,85.1492530</SimpleData>
+		<SimpleData name="Latitude">27.89927</SimpleData>
+		<SimpleData name="Longitude">85.14925</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">2571</SimpleData>
+		<SimpleData name="Estimated population">1714</SimpleData>
+		<SimpleData name="Remarks">Medium</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+		<SimpleData name="field_15">&lt;1000 population, small</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.14925,27.89927</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.4">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">6</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Children Park</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Nuwakot-Bidur</SimpleData>
+		<SimpleData name="Coordinate">27.9008977,85.1476440</SimpleData>
+		<SimpleData name="Latitude">27.9009</SimpleData>
+		<SimpleData name="Longitude">85.14764</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">2751</SimpleData>
+		<SimpleData name="Estimated population">1834</SimpleData>
+		<SimpleData name="Remarks">Medium</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.14764,27.9009</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.5">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">3</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Chuwadi Mavi Majhitar</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Nuwakot-Bidur</SimpleData>
+		<SimpleData name="Coordinate">27.8793991,85.1419929</SimpleData>
+		<SimpleData name="Latitude">27.8794</SimpleData>
+		<SimpleData name="Longitude">85.14199</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">1356</SimpleData>
+		<SimpleData name="Estimated population">904</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+		<SimpleData name="field_15">&gt;2000, Large</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.14199,27.8794</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.6">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">12</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Gosaikunda EBS</SimpleData>
+		<SimpleData name="Mun_District">Gosaikunda_RASUWA</SimpleData>
+		<SimpleData name="Location">Saprubeshi</SimpleData>
+		<SimpleData name="Coordinate">28.1637583,85.3321219</SimpleData>
+		<SimpleData name="Latitude">28.16376</SimpleData>
+		<SimpleData name="Longitude">85.33212</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">1128</SimpleData>
+		<SimpleData name="Estimated population">752</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">Avoid: immediately downslope of persistent landslide area</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.33212,28.16376</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.7">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">13</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Guest House area</SimpleData>
+		<SimpleData name="Mun_District">Gosaikunda_RASUWA</SimpleData>
+		<SimpleData name="Location">Saprubeshi</SimpleData>
+		<SimpleData name="Coordinate">28.1753337,85.3579742</SimpleData>
+		<SimpleData name="Latitude">28.17533</SimpleData>
+		<SimpleData name="Longitude">85.35797</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">1317</SimpleData>
+		<SimpleData name="Estimated population">878</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.35797,28.17533</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.8">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">14</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Helipad Surka area(nearby)</SimpleData>
+		<SimpleData name="Mun_District">Gosaikunda_RASUWA</SimpleData>
+		<SimpleData name="Location">Saprubeshi</SimpleData>
+		<SimpleData name="Coordinate">28.1724082,85.3609129</SimpleData>
+		<SimpleData name="Latitude">28.17241</SimpleData>
+		<SimpleData name="Longitude">85.36091</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">682</SimpleData>
+		<SimpleData name="Estimated population">455</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.36091,28.17241</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.9">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">7</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Karki Manakamana Mavi</SimpleData>
+		<SimpleData name="Mun_District">Kispang_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Betrawati Bajar</SimpleData>
+		<SimpleData name="Coordinate">27.98831009,85.17426992</SimpleData>
+		<SimpleData name="Latitude">27.98831</SimpleData>
+		<SimpleData name="Longitude">85.17427</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">418</SimpleData>
+		<SimpleData name="Estimated population">279</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">Site is OK although it lies 300 m upslope of a persistent landslide area - avoid if possible</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.17427,27.98831</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.10">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">20</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Mahadev Mavi</SimpleData>
+		<SimpleData name="Mun_District">Belkotgadhi_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Budasinghaghat</SimpleData>
+		<SimpleData name="Coordinate">27.8523273,85.0601432</SimpleData>
+		<SimpleData name="Latitude">27.85233</SimpleData>
+		<SimpleData name="Longitude">85.06014</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">2532</SimpleData>
+		<SimpleData name="Estimated population">1688</SimpleData>
+		<SimpleData name="Remarks">Medium</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.06014,27.85233</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.11">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">5</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Mahendra Mavi</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Nuwakot-Bidur</SimpleData>
+		<SimpleData name="Coordinate">27.9046927,85.1342963</SimpleData>
+		<SimpleData name="Latitude">27.90469</SimpleData>
+		<SimpleData name="Longitude">85.1343</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">2942</SimpleData>
+		<SimpleData name="Estimated population">1961</SimpleData>
+		<SimpleData name="Remarks">Medium</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.1343,27.90469</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.12">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">17</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Namuna Bageshwori Campus</SimpleData>
+		<SimpleData name="Mun_District">Galchi_DHADING</SimpleData>
+		<SimpleData name="Location">Galchhi</SimpleData>
+		<SimpleData name="Coordinate">27.79778048954818, 85.00196218414456</SimpleData>
+		<SimpleData name="Latitude">27.79778</SimpleData>
+		<SimpleData name="Longitude">85.00196</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">1046</SimpleData>
+		<SimpleData name="Estimated population">697</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.00196,27.79778</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.13">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">18</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Namuna Bageshwori Mavi</SimpleData>
+		<SimpleData name="Mun_District">Galchi_DHADING</SimpleData>
+		<SimpleData name="Location">Galchhi</SimpleData>
+		<SimpleData name="Coordinate">27.801504700045374, 84.98620511230027</SimpleData>
+		<SimpleData name="Latitude">27.8015</SimpleData>
+		<SimpleData name="Longitude">84.98621</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">371</SimpleData>
+		<SimpleData name="Estimated population">247</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>84.98621,27.8015</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.14">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">24</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Neelakantha Secondary School, Uttargaya</SimpleData>
+		<SimpleData name="Mun_District">Uttargaya_RASUWA</SimpleData>
+		<SimpleData name="Location">Uttargaya</SimpleData>
+		<SimpleData name="Coordinate">27.978776080282017, 85.18454998546648</SimpleData>
+		<SimpleData name="Latitude">27.97877</SimpleData>
+		<SimpleData name="Longitude">85.18454</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">582</SimpleData>
+		<SimpleData name="Estimated population">388</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Existing</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.18454,27.97877</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.15">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">2</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Nuwakot adarsha bahumukhi</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Nuwakot-Bidur</SimpleData>
+		<SimpleData name="Coordinate">27.89856871,85.14584275</SimpleData>
+		<SimpleData name="Latitude">27.89857</SimpleData>
+		<SimpleData name="Longitude">85.14584</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">9241</SimpleData>
+		<SimpleData name="Estimated population">6161</SimpleData>
+		<SimpleData name="Remarks">Large</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+		<SimpleData name="field_15">1000-2000, Medium</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.14584,27.89857</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.16">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">11</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Panchalinge NiMavi</SimpleData>
+		<SimpleData name="Mun_District">Uttargaya_RASUWA</SimpleData>
+		<SimpleData name="Location">Mailung</SimpleData>
+		<SimpleData name="Coordinate">28.0611682,85.1955972</SimpleData>
+		<SimpleData name="Latitude">28.06117</SimpleData>
+		<SimpleData name="Longitude">85.1956</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">312</SimpleData>
+		<SimpleData name="Estimated population">208</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.1956,28.06117</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.17">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">16</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Parbati Kunda Prathamik Bidhyalaya Nesingh</SimpleData>
+		<SimpleData name="Mun_District">Aamachodingmo_RASUWA</SimpleData>
+		<SimpleData name="Location">Hakubeshi</SimpleData>
+		<SimpleData name="Coordinate">28.1313492,85.2818362</SimpleData>
+		<SimpleData name="Latitude">28.13135</SimpleData>
+		<SimpleData name="Longitude">85.28184</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">158</SimpleData>
+		<SimpleData name="Estimated population">105</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">Site is OK although persistent landsliding located downslope - may affect access. Avoid if possible</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.28184,28.13135</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.18">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">25</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Rana Bageshwori Higher Secondary School</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Trishuli Bajar</SimpleData>
+		<SimpleData name="Coordinate">27.8625302�, 85.1078282�</SimpleData>
+		<SimpleData name="Latitude">27.8625302</SimpleData>
+		<SimpleData name="Longitude">85.1078282</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">769</SimpleData>
+		<SimpleData name="Estimated population">513</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Priority</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK for landsliding, but close to river level so may be subject to flooding</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.1078282,27.8625302</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.19">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">21</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Setidevi Adharbhut Bidhyalaya</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Kumaltar</SimpleData>
+		<SimpleData name="Coordinate">27.8623887,85.0872257</SimpleData>
+		<SimpleData name="Latitude">27.86239</SimpleData>
+		<SimpleData name="Longitude">85.08723</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">674</SimpleData>
+		<SimpleData name="Estimated population">449</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.08723,27.86239</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.20">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">15</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Shree Hakubensi Basic School</SimpleData>
+		<SimpleData name="Mun_District">Aamachodingmo_RASUWA</SimpleData>
+		<SimpleData name="Location">Hakubeshi</SimpleData>
+		<SimpleData name="Coordinate">28.1170118,85.2791699</SimpleData>
+		<SimpleData name="Latitude">28.11701</SimpleData>
+		<SimpleData name="Longitude">85.27917</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">630</SimpleData>
+		<SimpleData name="Estimated population">420</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">Avoid: immediately upslope of persistent landslide area</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.27917,28.11701</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.21">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">23</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Shree Komin Shyamey Wangphel Secondary School</SimpleData>
+		<SimpleData name="Mun_District">Gosaikunda_RASUWA</SimpleData>
+		<SimpleData name="Location">Parbatikunda</SimpleData>
+		<SimpleData name="Coordinate">28.161811880261908, 85.33217144331832</SimpleData>
+		<SimpleData name="Latitude">28.16181</SimpleData>
+		<SimpleData name="Longitude">85.33217</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">1821</SimpleData>
+		<SimpleData name="Estimated population">1214</SimpleData>
+		<SimpleData name="Remarks">Medium</SimpleData>
+		<SimpleData name="Status">Existing</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">Avoid: immediately downslope of persistent landslide area</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.33217,28.16181</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.22">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">10</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Shree Malika Mabi</SimpleData>
+		<SimpleData name="Mun_District">Uttargaya_RASUWA</SimpleData>
+		<SimpleData name="Location">Archale</SimpleData>
+		<SimpleData name="Coordinate">28.00923756,85.18898892</SimpleData>
+		<SimpleData name="Latitude">28.00924</SimpleData>
+		<SimpleData name="Longitude">85.18899</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">272</SimpleData>
+		<SimpleData name="Estimated population">181</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">Site is OK although it lies 200 m upslope of a landslide area - avoid if possible</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.18899,28.00924</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.23">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">26</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Surya Jyoti Academy</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Bidur</SimpleData>
+		<SimpleData name="Coordinate">27.926985132035643, 85.1445399277769</SimpleData>
+		<SimpleData name="Latitude">27.92698513</SimpleData>
+		<SimpleData name="Longitude">85.14453993</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">1435</SimpleData>
+		<SimpleData name="Estimated population">957</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Priority</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.14453993,27.92698513</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.24">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">9</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Tribhuvan Mabi</SimpleData>
+		<SimpleData name="Mun_District">Kispang_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Archale</SimpleData>
+		<SimpleData name="Coordinate">28.01798993,85.17848515</SimpleData>
+		<SimpleData name="Latitude">28.01799</SimpleData>
+		<SimpleData name="Longitude">85.17849</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">386</SimpleData>
+		<SimpleData name="Estimated population">257</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.17849,28.01799</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.25">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">4</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Trishuli Adharbhut Bidhyalaya</SimpleData>
+		<SimpleData name="Mun_District">Bidur_NUWAKOT</SimpleData>
+		<SimpleData name="Location">Nuwakot-Bidur</SimpleData>
+		<SimpleData name="Coordinate">27.9446345,85.1504437</SimpleData>
+		<SimpleData name="Latitude">27.94463</SimpleData>
+		<SimpleData name="Longitude">85.15044</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">917</SimpleData>
+		<SimpleData name="Estimated population">611</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.15044,27.94463</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.26">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">8</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Uttargaya ward 5 karyalaaya, Majhgaun</SimpleData>
+		<SimpleData name="Mun_District">Uttargaya_RASUWA</SimpleData>
+		<SimpleData name="Location">Betrawati Bajar</SimpleData>
+		<SimpleData name="Coordinate">27.98422871,85.19302071</SimpleData>
+		<SimpleData name="Latitude">27.98423</SimpleData>
+		<SimpleData name="Longitude">85.19302</SimpleData>
+		<SimpleData name="Tentative Area
+(in sq.m)">292</SimpleData>
+		<SimpleData name="Estimated population">195</SimpleData>
+		<SimpleData name="Remarks">Small</SimpleData>
+		<SimpleData name="Status">Proposed</SimpleData>
+		<SimpleData name="Chance for No Landslide Susceptibility(As per Durban University)">OK</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.19302,27.98423</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.27">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">A</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Sulakshana Secondary School</SimpleData>
+		<SimpleData name="Mun_District">85.15859</SimpleData>
+		<SimpleData name="Coordinate">27.94769,85.15859</SimpleData>
+		<SimpleData name="Latitude">27.94769</SimpleData>
+		<SimpleData name="Longitude">85.15859</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.15859,27.94769</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.28">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">B</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Tupche Pustakalaya</SimpleData>
+		<SimpleData name="Mun_District">85.16875</SimpleData>
+		<SimpleData name="Coordinate">27.96444,85.16875</SimpleData>
+		<SimpleData name="Latitude">27.96444</SimpleData>
+		<SimpleData name="Longitude">85.16875</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.16875,27.96444</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.29">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">C</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Sundari Keurini Secondary School</SimpleData>
+		<SimpleData name="Mun_District">85.16083</SimpleData>
+		<SimpleData name="Coordinate">27.93698,85.16083</SimpleData>
+		<SimpleData name="Latitude">27.93698</SimpleData>
+		<SimpleData name="Longitude">85.16083</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.16083,27.93698</coordinates></Point>
+  </Placemark>
+  <Placemark id="temporary_shelters_and_relief_points_with_municipality_and_district.30">
+	<ExtendedData><SchemaData schemaUrl="#temporary_shelters_and_relief_points_with_municipality_and_district">
+		<SimpleData name="S. No.">D</SimpleData>
+		<SimpleData name="Probable Site (Field Verification Needed)">Ayurbedic Health Facility</SimpleData>
+		<SimpleData name="Mun_District">85.11908</SimpleData>
+		<SimpleData name="Coordinate">27.86686,85.11908</SimpleData>
+		<SimpleData name="Latitude">27.86686</SimpleData>
+		<SimpleData name="Longitude">85.11908</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.11908,27.86686</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

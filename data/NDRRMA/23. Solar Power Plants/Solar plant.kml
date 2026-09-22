@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="intersection" id="intersection">
+	<SimpleField name="Id" type="float"></SimpleField>
+	<SimpleField name="OBJECTID" type="float"></SimpleField>
+	<SimpleField name="new_ward_n" type="float"></SimpleField>
+	<SimpleField name="GaPa_NaP_1" type="string"></SimpleField>
+	<SimpleField name="Type_GN" type="string"></SimpleField>
+	<SimpleField name="type_en" type="string"></SimpleField>
+	<SimpleField name="DISTRICT" type="string"></SimpleField>
+	<SimpleField name="hlcit_code" type="string"></SimpleField>
+	<SimpleField name="munid" type="float"></SimpleField>
+	<SimpleField name="districtid" type="float"></SimpleField>
+	<SimpleField name="state" type="float"></SimpleField>
+</Schema>
+<Folder><name>intersection</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="OBJECTID">5958</SimpleData>
+		<SimpleData name="new_ward_n">12.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1366697864525,27.9113993847744 85.1380664372941,27.9097345149501 85.1384697701965,27.9086512210586 85.1388735815701,27.9067070632785 85.1389810871308,27.9061894603046 85.1400283649597,27.9050135816968 85.1397454834627,27.9048147468644 85.1388057017037,27.9048451502217 85.138974553582,27.9041384803994 85.1382868470989,27.9035215162272 85.1374514123129,27.9040419367913 85.1373852389256,27.9043591222535 85.1377477221093,27.9050460694958 85.1374287331816,27.9070293503156 85.1367622848983,27.9076659886227 85.1363996753457,27.9092557970285 85.1358373998422,27.9109070486568 85.1359764068431,27.9111114869669 85.1366697864525,27.9113993847744</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="OBJECTID">5953</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1366161292075,27.8945737421165 85.1368724275379,27.8962483074398 85.1375367916509,27.8965611255514 85.1385931716429,27.8964488021564 85.138841901986,27.8952368162498 85.1394754362184,27.8948529164891 85.1396959178645,27.8927923362381 85.1387047866805,27.8924244762055 85.1380166627911,27.8921690721169 85.1371755370167,27.8918568735052 85.1370261918942,27.8922625343905 85.1366161292075,27.8945737421165</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="OBJECTID">5958</SimpleData>
+		<SimpleData name="new_ward_n">12.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1350333338499,27.8921469588209 85.1353358877373,27.8918103857795 85.135093884421,27.8913889133661 85.1344582193592,27.8902818224984 85.1344216682175,27.8895940508334 85.1341376327599,27.8895395660447 85.1334280575044,27.8906412400792 85.133766653739,27.8912309613833 85.1342492562059,27.8915389662676 85.1345509394168,27.8920264907535 85.1350333338499,27.8921469588209</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="OBJECTID">5958</SimpleData>
+		<SimpleData name="new_ward_n">12.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1332014491919,27.8884634607444 85.1334466547885,27.8882895442686 85.1326587241712,27.8874612726324 85.1330841921268,27.8869933305798 85.1306391266172,27.8855598730729 85.1302228329811,27.8860177122696 85.130799921241,27.8872550022578 85.1315425351329,27.8877880761936 85.1329562428207,27.8886373767415 85.1332014491919,27.8884634607444</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="OBJECTID">5953</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1256577505427,27.8831803267033 85.1256300659873,27.8827547423085 85.1252258533925,27.8825055280786 85.1253758623714,27.8820189563384 85.1252436564877,27.8807945675976 85.1249279490552,27.8804895163746 85.1245244883475,27.8805358819372 85.124469050832,27.880869548666 85.1250487203017,27.8825415172173 85.1252224124905,27.8829582252058 85.1253956482637,27.8831534278724 85.1255080703875,27.8832433448917 85.1256577505427,27.8831803267033</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>
