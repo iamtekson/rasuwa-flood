@@ -51,6 +51,7 @@ export function layerColorSpec(layer) {
     layer.iconColor ||
     (layer.polygonPaint && layer.polygonPaint.fillColor) ||
     (layer.paint && layer.paint.fillColor) ||
+    (layer.paint && layer.paint.lineColor) ||
     null
   );
 }
@@ -64,7 +65,7 @@ export function swatchColor(layer) {
   }
   if (layer.paint && layer.paint.fillColor) return flatColor(layer.paint.fillColor);
   if (layer.paint && layer.paint.circleColor) return flatColor(layer.paint.circleColor);
-  if (layer.paint && layer.paint.lineColor) return layer.paint.lineColor;
+  if (layer.paint && layer.paint.lineColor) return flatColor(layer.paint.lineColor);
   return CATEGORY_COLORS_FALLBACK;
 }
 
