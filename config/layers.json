@@ -198,6 +198,17 @@
           "active": false
         },
         {
+          "id": "post_imagery_s2",
+          "label": "Post-Disaster Imagery (Sentinel-2, 21 Sep 2026)",
+          "type": "raster",
+          "tiles": [
+            "https://sh.dataspace.copernicus.eu/ogc/wmts/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=image/jpeg&LAYER=1_TRUE_COLOR&TIME=2026-09-21/2026-09-21&MAXCC=100&SHOWLOGO=false"
+          ],
+          "tileSize": 256,
+          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
+          "active": false
+        },
+        {
           "id": "pre_imagery",
           "label": "Pre-Disaster Reference (Sentinel-2 cloud-free mosaic)",
           "type": "raster",
