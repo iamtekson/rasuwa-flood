@@ -99,8 +99,10 @@
         "flyMs": 6000,
         "holdMs": 1800,
         "showLayers": [
-          "bridge_damage",
-          "destroyed_buildings"
+          "exposed_settlements",
+          "road_damaged",
+          "waterways",
+          "road_damaged",
         ]
       },
       {
@@ -714,19 +716,6 @@
             "location"
           ],
           "note": "Colored by status: red = washed out, orange = damaged, green = intact.",
-          "active": false
-        },
-        {
-          "id": "destroyed_buildings",
-          "label": "Destroyed Buildings (OSM)",
-          "type": "fill",
-          "data": "data/destroyed_buildings.geojson",
-          "paint": {
-            "fillColor": "#d62728",
-            "fillOpacity": 0.6,
-            "lineColor": "#7a1414",
-            "lineWidth": 0.5
-          },
           "active": false
         },
         {
