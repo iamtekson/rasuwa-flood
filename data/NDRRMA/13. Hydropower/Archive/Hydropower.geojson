@@ -1,0 +1,281 @@
+{
+  "type": "FeatureCollection",
+  "name": "hydropower",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bhotekoshi Khola Hydropower Project",
+        "district": "RASUWA",
+        "municipality": "Gosaikunda",
+        "wardNo": 3,
+        "capacityMW": 33.5,
+        "river": "Bhote Koshi",
+        "licenseNo": "1009",
+        "licenseType": "Survey",
+        "promoter": "Pawan Kumar Golyan",
+        "operationalStatus": "unknown",
+        "damageStatus": "unknown",
+        "damageSource": null,
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.34583333,
+          28.17083333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Devighat",
+        "district": "NUWAKOT",
+        "municipality": "Bidur",
+        "wardNo": 12,
+        "capacityMW": 14.1,
+        "river": "Trishuli",
+        "licenseNo": "1_gtd",
+        "licenseType": "Operation",
+        "promoter": "Nepal Electricity Authority",
+        "operationalStatus": "unknown",
+        "damageStatus": "reported_damaged",
+        "damageSource": "Wikipedia – 2026 Nepal floods (news-sourced summary, 26 Aug 2026): Devighat Hydropower Station listed among damaged facilities",
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.13888889,
+          27.90222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mailung Khola",
+        "district": "RASUWA",
+        "municipality": "Uttargaya",
+        "wardNo": 1,
+        "capacityMW": 5,
+        "river": "Mailung Khola",
+        "licenseNo": "13",
+        "licenseType": "Operation",
+        "promoter": "Mailun Khola Hydropower Company Pvt. Ltd",
+        "operationalStatus": "unknown",
+        "damageStatus": "unknown",
+        "damageSource": null,
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.20458333,
+          28.07541667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trishuli",
+        "district": "NUWAKOT",
+        "municipality": "Bidur",
+        "wardNo": 10,
+        "capacityMW": 24,
+        "river": "Trishuli",
+        "licenseNo": "1_gtd",
+        "licenseType": "Operation",
+        "promoter": "Nepal Electricity Authority",
+        "operationalStatus": "unknown",
+        "damageStatus": "reported_damaged",
+        "damageSource": "Wikipedia – 2026 Nepal floods (news-sourced summary, 26 Aug 2026): Trishuli Hydropower Station listed among damaged facilities",
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.16611111,
+          27.94638889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trishuli Galchhi",
+        "district": "NUWAKOT",
+        "municipality": "Belkotgadhi",
+        "wardNo": 5,
+        "capacityMW": 75,
+        "river": "Trishuli",
+        "licenseNo": "174",
+        "licenseType": "Generation",
+        "promoter": "Siddhakali Power Pvt. Ltd",
+        "operationalStatus": "unknown",
+        "damageStatus": "unknown",
+        "damageSource": null,
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.02291667,
+          27.82777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Upper Trishuli 3A",
+        "district": "RASUWA",
+        "municipality": "Uttargaya",
+        "wardNo": 2,
+        "capacityMW": 60,
+        "river": "Trishuli",
+        "licenseNo": "43",
+        "licenseType": "Generation",
+        "promoter": "Nepal Electricity Authority",
+        "operationalStatus": "unknown",
+        "damageStatus": "reported_damaged",
+        "damageSource": "Wikipedia – 2026 Nepal floods (news-sourced summary, 26 Aug 2026): Trishuli 3A listed among damaged facilities; a 220kV substation at the Trishuli 3B hub was also reported damaged",
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.19916667,
+          28.04652778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Upper Trishuli 3B",
+        "district": "RASUWA",
+        "municipality": "Uttargaya",
+        "wardNo": 4,
+        "capacityMW": 37,
+        "river": "Trishuli",
+        "licenseNo": "104",
+        "licenseType": "Generation",
+        "promoter": "Nepal Electricity Authority",
+        "operationalStatus": "unknown",
+        "damageStatus": "reported_damaged",
+        "damageSource": "Wikipedia – 2026 Nepal floods (news-sourced summary, 26 Aug 2026): 220kV substation at the Trishuli 3B hub reported damaged",
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.185,
+          28.00458333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Upper Trishuli-1",
+        "district": "RASUWA",
+        "municipality": "Parbati Kunda",
+        "wardNo": 1,
+        "capacityMW": 216,
+        "river": "Trishuli",
+        "licenseNo": "209",
+        "licenseType": "Generation",
+        "promoter": "Nepal Water & Energy Development Co. P. Ltd",
+        "operationalStatus": "unknown",
+        "damageStatus": "unknown",
+        "damageSource": null,
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.25597222,
+          28.10125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Upper Trishuli-I Cascade HEP",
+        "district": "RASUWA",
+        "municipality": "Kalika",
+        "wardNo": 1,
+        "capacityMW": 24.6,
+        "river": "Trishuli Ganga",
+        "licenseNo": "1006",
+        "licenseType": "Survey",
+        "promoter": "Sahan Engineering Concern Pvt. Ltd",
+        "operationalStatus": "unknown",
+        "damageStatus": "unknown",
+        "damageSource": null,
+        "coordSource": "response team ward-hydropower registry (surveyed)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.20902778,
+          28.0725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rasuwagadhi Hydropower Project",
+        "district": "RASUWA",
+        "municipality": "Gosaikunda",
+        "wardNo": null,
+        "capacityMW": 111,
+        "river": "Bhote Koshi",
+        "licenseNo": null,
+        "licenseType": "Generation",
+        "promoter": "Rasuwagadhi Hydropower Company (NEA subsidiary)",
+        "operationalStatus": "unknown",
+        "damageStatus": "reported_damaged",
+        "damageSource": "Wikipedia – 2026 Nepal floods (news-sourced summary, 26 Aug 2026): Rasuwagadhi listed among damaged facilities",
+        "coordSource": "UNVERIFIED — approximate location from general knowledge, not present in the response team's surveyed registry; confirm before using operationally"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.365,
+          28.275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chilime Hydropower Station",
+        "district": "RASUWA",
+        "municipality": "Uttargaya",
+        "wardNo": null,
+        "capacityMW": 22.1,
+        "river": "Chilime Khola",
+        "licenseNo": null,
+        "licenseType": "Generation",
+        "promoter": "Chilime Hydropower Company Ltd (NEA subsidiary)",
+        "operationalStatus": "unknown",
+        "damageStatus": "reported_damaged",
+        "damageSource": "Kathmandu Post, 26 Aug 2026 (\"Major flood damages Syabrubesi hydropower projects in Rasuwa\") and Wikipedia – 2026 Nepal floods: Chilime Hydropower Project sustained flood damage",
+        "coordSource": "UNVERIFIED — approximate location from general knowledge, not present in the response team's surveyed registry; confirm before using operationally"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.348,
+          28.188
+        ]
+      }
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { state } from "./state.js";
 import { swatchColor } from "./utils.js";
 import { addLayer, removeLayer } from "./layers.js";
 import { showLayerStats } from "./stats.js";
+import { downloadLayerData } from "./download.js";
 
 export function buildSidebar() {
   const root = document.getElementById("layer-categories");
@@ -52,6 +53,16 @@ export function buildSidebar() {
           showLayerStats(layer);
         });
         row.appendChild(statsBtn);
+
+        const downloadBtn = document.createElement("button");
+        downloadBtn.className = "stats-btn";
+        downloadBtn.textContent = "⬇"; // ⬇
+        downloadBtn.title = "Download this layer's data";
+        downloadBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          downloadLayerData(layer);
+        });
+        row.appendChild(downloadBtn);
       }
 
       catEl.appendChild(row);

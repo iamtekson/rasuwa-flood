@@ -1,0 +1,32 @@
+{
+"type": "FeatureCollection",
+"name": "settlements_clip_unosat_landsat_uav",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32645" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 118, "SETTL_NAME": "Khatritar", "SETTL_NA_1": null, "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 277499.981100000441074, 3077227.64750000089407 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 158, "SETTL_NAME": "Malekhu", "SETTL_NA_1": "Maleku", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 286225.109699999913573, 3077919.070000000298023 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 151, "SETTL_NAME": "Richoktar", "SETTL_NA_1": "Richokṭār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 286032.578200000338256, 3078176.374099999666214 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 45, "SETTL_NAME": "Kurintar", "SETTL_NA_1": null, "SHEET_NO": "278403A" }, "geometry": { "type": "Point", "coordinates": [ 265130.797100000083447, 3085937.675799999386072 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 299, "SETTL_NAME": "Devighat", "SETTL_NA_1": "Devighāṭ", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 314082.430800000205636, 3083274.111700000241399 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 298, "SETTL_NAME": "Kumaltar", "SETTL_NA_1": "Kumalṭār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 311893.036199999973178, 3083358.216900000348687 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 289, "SETTL_NAME": "Buhanibesi", "SETTL_NA_1": "Buhānībesī", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 314842.176300000399351, 3084738.4276 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 277, "SETTL_NAME": "Devighat Koloni", "SETTL_NA_1": "Devighāṭ Kolonī", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 316617.496700000017881, 3087140.601700000464916 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 267, "SETTL_NAME": "Dhunge Bajar", "SETTL_NA_1": "Ḍhuṅge Bajār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 317631.409699999727309, 3089696.42369999922812 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 264, "SETTL_NAME": "Trishuli Bajar", "SETTL_NA_1": "Trishulī Bajār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 318070.852300000376999, 3090150.7653 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 252, "SETTL_NAME": "Distiltyank Bajar", "SETTL_NA_1": "Disṭiṭyāṅk Bajār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 319039.290599999949336, 3092622.134400000795722 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 245, "SETTL_NAME": "Bhainse", "SETTL_NA_1": "Bhainse", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 320336.368700000457466, 3094465.746600000187755 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 243, "SETTL_NAME": "Chhipitar", "SETTL_NA_1": "Chhipiṭār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 320622.621199999935925, 3094931.32909999974072 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 241, "SETTL_NAME": "Agitar", "SETTL_NA_1": "Āgīṭār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 321057.946899999864399, 3095042.164000000804663 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 240, "SETTL_NAME": "Satbise", "SETTL_NA_1": "Sātbise", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 321524.688799999654293, 3095302.011399999260902 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 237, "SETTL_NAME": "Betrawati", "SETTL_NA_1": "Betrāwatī", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 321623.440499999560416, 3095573.398900000378489 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 238, "SETTL_NAME": "Karmetar", "SETTL_NA_1": "Karmeṭār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 321062.111700000241399, 3095583.189799999818206 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 231, "SETTL_NAME": "Sole Bajar", "SETTL_NA_1": "Sole Bajār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 320880.699300000444055, 3096445.851500000804663 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 229, "SETTL_NAME": "Jagatedanda", "SETTL_NA_1": "Jagateḍānḍā", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 320926.114099999889731, 3096754.8092 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 379, "SETTL_NAME": "Syāphrubesīdhuṇgribajār", "SETTL_NA_1": "Syāphrubesīdhuṇgribajār", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 337153.789800000376999, 3116541.940700000151992 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 377, "SETTL_NAME": "Wangal", "SETTL_NA_1": "Wāṅgāl", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 337408.780299999751151, 3118043.178300000727177 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 347, "SETTL_NAME": "Timure(sedang)", "SETTL_NA_1": "Ṭimure(sedān)", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 339650.762500000186265, 3126484.833200000226498 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 352, "SETTL_NAME": "Ghattekholagaun", "SETTL_NA_1": "Ghaṭṭekholāgāũ", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 340399.125300000421703, 3127556.537100000306964 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 351, "SETTL_NAME": "Bedang", "SETTL_NA_1": "Bedāṅ", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 340719.435499999672174, 3128345.5976 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 350, "SETTL_NAME": "Rasuwagadhi", "SETTL_NA_1": "Rasuwāgaḍhī", "SHEET_NO": null }, "geometry": { "type": "Point", "coordinates": [ 340665.025500000454485, 3128880.7007 ] } }
+]
+}

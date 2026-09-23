@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="voting_booth" id="voting_booth">
+	<SimpleField name="booth_id" type="int"></SimpleField>
+	<SimpleField name="booth_name" type="string"></SimpleField>
+	<SimpleField name="state" type="string"></SimpleField>
+	<SimpleField name="district" type="string"></SimpleField>
+	<SimpleField name="municipality" type="string"></SimpleField>
+	<SimpleField name="ward_no" type="int"></SimpleField>
+	<SimpleField name="OBJECTID" type="float"></SimpleField>
+	<SimpleField name="new_ward_n" type="float"></SimpleField>
+	<SimpleField name="GaPa_NaP_1" type="string"></SimpleField>
+	<SimpleField name="Type_GN" type="string"></SimpleField>
+	<SimpleField name="type_en" type="string"></SimpleField>
+	<SimpleField name="DISTRICT_2" type="string"></SimpleField>
+	<SimpleField name="hlcit_code" type="string"></SimpleField>
+	<SimpleField name="munid" type="float"></SimpleField>
+	<SimpleField name="districtid" type="float"></SimpleField>
+	<SimpleField name="state_2" type="float"></SimpleField>
+</Schema>
+<Folder><name>voting_booth</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">8604</SimpleData>
+		<SimpleData name="booth_name">आदर्श उमावि,गजुरी</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">धादिङ</SimpleData>
+		<SimpleData name="municipality">गजुरी गाउँपालिका</SimpleData>
+		<SimpleData name="ward_no">1</SimpleData>
+		<SimpleData name="OBJECTID">1530</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.879323,27.807467</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">8597</SimpleData>
+		<SimpleData name="booth_name">वागेश्वरी मा.वि., रिचोकटार</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">धादिङ</SimpleData>
+		<SimpleData name="municipality">बेनीघाट रोराङ्ग गाउँपालिका</SimpleData>
+		<SimpleData name="ward_no">3</SimpleData>
+		<SimpleData name="OBJECTID">1515</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.829472,27.809835</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">8602</SimpleData>
+		<SimpleData name="booth_name">५ नं. वडा कार्यालय, वेनिघाट</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">धादिङ</SimpleData>
+		<SimpleData name="municipality">बेनीघाट रोराङ्ग गाउँपालिका</SimpleData>
+		<SimpleData name="ward_no">5</SimpleData>
+		<SimpleData name="OBJECTID">1517</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.781062,27.811853</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">8592</SimpleData>
+		<SimpleData name="booth_name">बुद्धिविकास प्रावि,चरौदी</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">धादिङ</SimpleData>
+		<SimpleData name="municipality">बेनीघाट रोराङ्ग गाउँपालिका</SimpleData>
+		<SimpleData name="ward_no">7</SimpleData>
+		<SimpleData name="OBJECTID">1526</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.74859,27.803294</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">8590</SimpleData>
+		<SimpleData name="booth_name">शं‌खादेवी मा.वि., मझिमटार</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">धादिङ</SimpleData>
+		<SimpleData name="municipality">बेनीघाट रोराङ्ग गाउँपालिका</SimpleData>
+		<SimpleData name="ward_no">9</SimpleData>
+		<SimpleData name="OBJECTID">1539</SimpleData>
+		<SimpleData name="new_ward_n">9.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.704902,27.805937</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">9264</SimpleData>
+		<SimpleData name="booth_name">त्रित्रि मावि त्रिशुली</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">नुवाकोट</SimpleData>
+		<SimpleData name="municipality">विदुर नगरपालिका</SimpleData>
+		<SimpleData name="ward_no">1</SimpleData>
+		<SimpleData name="OBJECTID">5949</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.14999,27.92355</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">10344</SimpleData>
+		<SimpleData name="booth_name">रणभुमेश्वरी मा.वि.</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">नुवाकोट</SimpleData>
+		<SimpleData name="municipality">विदुर नगरपालिका</SimpleData>
+		<SimpleData name="ward_no">3</SimpleData>
+		<SimpleData name="OBJECTID">5981</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.10724,27.86075</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">10347</SimpleData>
+		<SimpleData name="booth_name">मान्द्रेढुङ्गा आधारभूत विद्यालय मान्द्रेढुङ्गा</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">नुवाकोट</SimpleData>
+		<SimpleData name="municipality">विदुर नगरपालिका</SimpleData>
+		<SimpleData name="ward_no">6</SimpleData>
+		<SimpleData name="OBJECTID">5958</SimpleData>
+		<SimpleData name="new_ward_n">12.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.13016,27.88616</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">9203</SimpleData>
+		<SimpleData name="booth_name">चण्डेश्वरी मावि</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">नुवाकोट</SimpleData>
+		<SimpleData name="municipality">विदुर नगरपालिका</SimpleData>
+		<SimpleData name="ward_no">7</SimpleData>
+		<SimpleData name="OBJECTID">6018</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.16884,27.96439</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">8941</SimpleData>
+		<SimpleData name="booth_name">रामचन्द्र आधारभुत विद्यालय</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">नुवाकोट</SimpleData>
+		<SimpleData name="municipality">विदुर नगरपालिका</SimpleData>
+		<SimpleData name="ward_no">10</SimpleData>
+		<SimpleData name="OBJECTID">5971</SimpleData>
+		<SimpleData name="new_ward_n">10.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1846,27.97094</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">8119</SimpleData>
+		<SimpleData name="booth_name">श्री नेपाल राष्ट्रिय आ.वि., टिमुरे</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">रसुवा</SimpleData>
+		<SimpleData name="municipality">गोसाईकुण्ड गाउँपालिका</SimpleData>
+		<SimpleData name="ward_no">2</SimpleData>
+		<SimpleData name="OBJECTID">2104</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gosaikunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 002</SimpleData>
+		<SimpleData name="munid">315.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.36623,28.25322</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#voting_booth">
+		<SimpleData name="booth_id">9833</SimpleData>
+		<SimpleData name="booth_name">गोसाईकुण्ड गाउँपालिका 5 नं. वडा कार्यालय, स्याफ्रुबेसी</SimpleData>
+		<SimpleData name="state">बागमती प्रदेश</SimpleData>
+		<SimpleData name="district">रसुवा</SimpleData>
+		<SimpleData name="municipality">गोसाईकुण्ड गाउँपालिका</SimpleData>
+		<SimpleData name="ward_no">5</SimpleData>
+		<SimpleData name="OBJECTID">2103</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gosaikunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 002</SimpleData>
+		<SimpleData name="munid">315.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state_2">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.34087,28.16488</coordinates></Point></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

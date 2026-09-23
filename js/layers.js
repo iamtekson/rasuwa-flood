@@ -86,7 +86,10 @@ export function addLayer(layer) {
     case "line": {
       addGeoJsonSourceAsync(layer.id, layer.data);
       const linePaint = {
-        "line-color": layer.paint.lineColor,
+        // lineColor can be a flat hex string, or a {field, values, default} match-spec
+        // (same shape as fill/circle/icon color) to classify lines by a property,
+        // e.g. a road network colored by highway class.
+        "line-color": resolveColorExpr(layer.paint.lineColor),
         "line-width": layer.paint.lineWidth || 2,
       };
       // MapLibre's style validator rejects a paint key that's present but set to
@@ -115,14 +118,15 @@ export function addLayer(layer) {
 
     case "icon":
       addGeoJsonSourceAsync(layer.id, layer.data);
-      // symbol layers can only place markers on Point geometry — restrict explicitly
+      // symbol layers can only place markers on point geometry — restrict explicitly
       // so a mixed-geometry source (e.g. points + a digitized polygon) doesn't
-      // silently try and fail to place a symbol on the polygon.
+      // silently try and fail to place a symbol on the polygon. Some exports (e.g.
+      // shapefile-derived helipad points) use MultiPoint rather than Point, so accept both.
       map.addLayer({
         id: layer.id,
         type: "symbol",
         source: layer.id,
-        filter: ["==", ["geometry-type"], "Point"],
+        filter: ["any", ["==", ["geometry-type"], "Point"], ["==", ["geometry-type"], "MultiPoint"]],
         layout: {
           "icon-image": layer.iconField ? ["get", layer.iconField] : layer.icon,
           "icon-size": layer.iconSize || 0.5,

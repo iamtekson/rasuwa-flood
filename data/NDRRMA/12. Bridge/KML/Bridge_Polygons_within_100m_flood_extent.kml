@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Bridge_Polygons" id="Bridge_Polygons">
+	<SimpleField name="Id" type="int"></SimpleField>
+	<SimpleField name="Remarks" type="string"></SimpleField>
+	<SimpleField name="Width" type="float"></SimpleField>
+	<SimpleField name="Status" type="string"></SimpleField>
+</Schema>
+<Folder><name>Bridge_Polygons</name>
+  <Placemark id="Bridge_Polygons.1">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3614172320106,28.2262508008672 85.3614165382044,28.2262327630931 85.3606477387729,28.2262559582745 85.3606484324495,28.226273996047 85.3614172320106,28.2262508008672</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.2">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3550458341454,28.2088905780401 85.3537750384955,28.2087566020409 85.3537726306017,28.2087745237819 85.3550434264584,28.2089084998119 85.3550458341454,28.2088905780401</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.3">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3078408993822,28.1403597485177 85.3078246819588,28.1403488360787 85.3067625635526,28.1415890631535 85.3067787810413,28.1415999757197 85.3078408993822,28.1403597485177</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.4">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1947940159196,28.0386173171202 85.1947934631728,28.0385992763081 85.1930948414349,28.0386402364967 85.1930953938975,28.0386582773023 85.1947940159196,28.0386173171202</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.5">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1797953986676,27.9825167876932 85.1797577140095,27.9813642402461 85.1797373928917,27.9813647638766 85.1797750773331,27.9825173113191 85.1797953986676,27.9825167876932</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.6">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1820387226158,27.9793483295968 85.1807074558613,27.9787990092017 85.1806988871289,27.9788153752132 85.1820301540312,27.9793646956976 85.1820387226158,27.9793483295968</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.7">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1851173261836,27.9724559101659 85.1851153052807,27.972437952005 85.1838728731766,27.9725481514487 85.1838748938734,27.972566109618 85.1851173261836,27.9724559101659</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.8">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1738506907268,27.9636315523229 85.1738352151994,27.9636198514928 85.1732837104258,27.9641948839204 85.1732991859683,27.9642065848128 85.1738506907268,27.9636315523229</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.9">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1587223726887,27.9391500701486 85.1587112976219,27.939134938413 85.1577467569461,27.9396917262319 85.1577578319257,27.9397068580402 85.1587223726887,27.9391500701486</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.10">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.15034901389,27.927742703161 85.1494030844341,27.9272109388029 85.1493922174664,27.9272261883398 85.1503381469928,27.9277579527752 85.15034901389,27.927742703161</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.11">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1086087969617,27.8601693219717 85.1085951946773,27.8601559220211 85.1075551007186,27.860989858159 85.1075687029663,27.8610032582096 85.1086087969617,27.8601693219717</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.12">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0870374431478,27.8557774709017 85.087017429528,27.855774422761 85.0867666894202,27.8570748939843 85.0867867032675,27.8570779421724 85.0870374431478,27.8557774709017</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.13">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0820671312022,27.8556855525962 85.082048867493,27.8556776658518 85.0810186040558,27.8575622862501 85.0810368679892,27.857570173141 85.0820671312022,27.8556855525962</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.14">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.072450039578,27.8549857382177 85.0711301640689,27.8531063180767 85.0711129393518,27.8531158738724 85.0724328146585,27.8549952941667 85.072450039578,27.8549857382177</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.15">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0589029676787,27.8566540129821 85.0588863629306,27.8566436258774 85.0569628559186,27.8590724965353 85.0569794608239,27.8590828838778 85.0589029676787,27.8566540129821</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.16">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0429001445357,27.8571441700866 85.0428930371216,27.8559540746592 85.0428727324486,27.8559541704516 85.0428798396407,27.8571442658687 85.0429001445357,27.8571441700866</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.17">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0282066813378,27.8472310430063 85.0281913153643,27.8472192474462 85.0266384345423,27.8488174518995 85.0266538005505,27.848829247633 85.0282066813378,27.8472310430063</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.18">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0241328356707,27.8352375561508 85.0241261138367,27.8352205275299 85.0207891026127,27.8362614143691 85.0207958239682,27.8362784431266 85.0241328356707,27.8352375561508</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.19">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.022660987267,27.8309113874197 85.0226503214071,27.830896032488 85.0201331875791,27.8322778003811 85.0201438531941,27.8322931554932 85.022660987267,27.8309113874197</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.20">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0191769446635,27.8222100643076 85.0191754539517,27.8221920664608 85.0152104781532,27.8224515926655 85.0152119682084,27.8224695905208 85.0191769446635,27.8222100643076</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.21">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0137718975618,27.810309103685 85.0126840032181,27.8089681609018 85.0126675430504,27.808978718751 85.01375543728,27.810319661657 85.0137718975618,27.810309103685</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.22">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0013381954906,27.8026530255056 85.00117783296,27.8004631557175 85.001157581626,27.8004643283794 85.0013179437489,27.8026541981694 85.0013381954906,27.8026530255056</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.23">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9917418808268,27.8038638582114 84.9899982387058,27.8034587064424 84.989993107681,27.8034761665198 84.9917367500534,27.8038813183663 84.9917418808268,27.8038638582114</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.24">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9752813706399,27.8021233968784 84.9748666896658,27.8006868139948 84.9748470328831,27.8006913007112 84.9752617136076,27.8021278836401 84.9752813706399,27.8021233968784</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.25">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.970391324747,27.8073872321428 84.9687855802493,27.8072243663309 84.9687832800186,27.8072422962268 84.9703890247731,27.807405162079 84.970391324747,27.8073872321428</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.26">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9623709242205,27.8172106841808 84.9613585406839,27.8157652436879 84.9613413115408,27.8157747830259 84.9623536949206,27.817220223636 84.9623709242205,27.8172106841808</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.27">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9554601933187,27.8159787096714 84.9554429654239,27.8159691686042 84.9543896447858,27.8174726665819 84.9544068728082,27.8174822077864 84.9554601933187,27.8159787096714</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.28">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9454413344161,27.8112572766962 84.9454215793586,27.8112531392751 84.9446399084954,27.8142037463159 84.9446596640425,27.8142078838744 84.9454413344161,27.8112572766962</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.29">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.942128367361,27.8068473952044 84.9421241167495,27.8068297495046 84.9399666165617,27.8072406457042 84.9399708668313,27.8072582914515 84.942128367361,27.8068473952044</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.30">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9041408039897,27.808216073758 84.9040248253655,27.8061002635046 84.9040045551235,27.8061011420227 84.9041205333532,27.8082169522713 84.9041408039897,27.808216073758</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.31">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.8809368187455,27.8088276299419 84.8809178731063,27.8088211607855 84.8802172440225,27.8104433985935 84.8802361898884,27.810449867858 84.8809368187455,27.8088276299419</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.32">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.8720799825088,27.8023245968026 84.8720615970241,27.8023169581987 84.8712632399933,27.8038363713598 84.8712816256632,27.8038440100797 84.8720799825088,27.8023245968026</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.33">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.8542121887951,27.8089799610724 84.8539456570555,27.8073301812987 84.8539255692422,27.8073327471686 84.8541921006788,27.8089825269639 84.8542121887951,27.8089799610724</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.34">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.8359825632641,27.8102701669288 84.8347590960179,27.8102256657458 84.8347582664272,27.8102436956181 84.8359817338742,27.8102881968197 84.8359825632641,27.8102701669288</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.35">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.8232502342263,27.8112853075225 84.8212627773972,27.8110007828932 84.8212595512448,27.8110185982571 84.8232470083834,27.8113031229502 84.8232502342263,27.8112853075225</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.36">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.809930524214,27.8176723868452 84.808673197108,27.8164751889005 84.8086583632527,27.8164875040669 84.8099156903183,27.8176847021436 84.809930524214,27.8176723868452</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.37">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.79461411589,27.8126669760124 84.7945966150092,27.8126578398495 84.7938769849319,27.8137476260082 84.793894485914,27.8137567622676 84.79461411589,27.8126669760124</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.38">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.773924341116,27.8093769136867 84.7732652382946,27.8081890567613 84.7732470393904,27.8081970405084 84.773906142049,27.8093848975108 84.773924341116,27.8093769136867</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.39">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.7569828274407,27.8085071504837 84.7569734274091,27.80849115883 84.7551048916787,27.8093595237854 84.7551142914922,27.809375515553 84.7569828274407,27.8085071504837</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.40">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.7500115561296,27.8057760431618 84.7496955805465,27.8045303850734 84.749675785458,27.8045343552944 84.7499917608198,27.8057800134149 84.7500115561296,27.8057760431618</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.41">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.7383958934353,27.8027859234964 84.7383854268577,27.8027704649944 84.7369171503775,27.8035565303979 84.7369276168059,27.8035719890018 84.7383958934353,27.8027859234964</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.42">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.7296776273704,27.797627718215 84.7279068233534,27.7965353076388 84.7278952577255,27.7965501333942 84.7296660618451,27.7976425441241 84.7296776273704,27.797627718215</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.43">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.7157754713934,27.8009668271998 84.7157573947597,27.8009586300855 84.714944827879,27.802375547916 84.7149629046703,27.8023837451455 84.7157754713934,27.8009668271998</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.44">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.7000930844007,27.8089024693552 84.6996146483159,27.8072869325292 84.6995950249204,27.8072915272601 84.7000734607243,27.8089070641369 84.7000930844007,27.8089024693552</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.45">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6907362824796,27.8104430178878 84.6904639443157,27.8091853252763 84.6904440177073,27.8091887366748 84.690716355644,27.8104464293117 84.6907362824796,27.8104430178878</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.46">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6774903067441,27.8160143616916 84.6767957097415,27.8152052263549 84.676779578086,27.8152161736665 84.6774741750262,27.8160253090803 84.6774903067441,27.8160143616916</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.47">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6683471726125,27.8217986969788 84.6683472980699,27.8217806540139 84.6672369267016,27.8217745468177 84.6672368010606,27.8217925897705 84.6683471726125,27.8217986969788</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.48">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6520518021833,27.8530423391389 84.6518893708614,27.8519889858016 84.6518692587554,27.8519914358413 84.6520316898826,27.8530447891903 84.6520518021833,27.8530423391389</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.49">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6422202098374,27.8598639201207 84.6422000588001,27.8598617275808 84.6420817725311,27.8607204228589 84.6421019237223,27.8607226154256 84.6422202098374,27.8598639201207</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.50">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6398991463033,27.8591908049196 84.6398788861081,27.8591896568525 84.6397564464402,27.8608963380087 84.6397767069492,27.8608974861129 84.6398991463033,27.8591908049196</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.51">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6324951154055,27.8701981709576 84.6317020673422,27.8686782989659 84.6316836481593,27.8686858890177 84.632476696004,27.8702057611014 84.6324951154055,27.8701981709576</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.52">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6085153133612,27.8706243625849 84.6084951292675,27.8706224118864 84.6082694479072,27.8724664804474 84.608289632334,27.8724684311995 84.6085153133612,27.8706243625849</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.53">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.5935273815955,27.8790648848132 84.5923849973067,27.8779057715146 84.5923697225618,27.8779176583857 84.5935121067926,27.8790767718068 84.5935273815955,27.8790648848132</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.54">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.5613505264266,27.8575325658736 84.5613302439086,27.8575318149304 84.5612757080982,27.8586953126499 84.5612959908313,27.8586960636146 84.5613505264266,27.8575325658736</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.55">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3547609749139,28.2104767990882 85.3547558200459,28.2104593380667 85.3537399696228,28.2106946637925 85.3537451243327,28.2107121248453 85.3547609749139,28.2104767990882</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.56">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3430376437463,28.1656541264422 85.343027405038,28.1656385248475 85.3422086891491,28.1660604862809 85.3422189277722,28.1660760879326 85.3430376437463,28.1656541264422</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.57">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2896354140195,28.1193996303753 85.2896190909112,28.1193888464292 85.2883337395134,28.1209181208105 85.2883500627077,28.120928904912 85.2896354140195,28.1193996303753</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.58">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2814510627988,28.1127609774055 85.281436758039,28.1127481374985 85.2809317379471,28.1131904462563 85.2809460426996,28.1132032862152 85.2814510627988,28.1127609774055</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.59">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2942245565097,28.1234957518714 85.2942097128636,28.1234834006686 85.2933268170132,28.1243173677232 85.2933416606622,28.1243297190207 85.2942245565097,28.1234957518714</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.60">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2335853336692,28.0896291335415 85.2335662812211,28.089622791065 85.2332570553024,28.0903533487409 85.2332761078564,28.0903596912648 85.2335853336692,28.0896291335415</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.61">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2152025293748,28.076513985262 85.2151856608991,28.0765038923026 85.2145318516701,28.0773635018856 85.2145487202097,28.0773735949275 85.2152025293748,28.076513985262</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.62">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2132020627572,28.075594071053 85.2131852299527,28.0755839315649 85.2126899871042,28.0762307169065 85.2127068199559,28.0762408564569 85.2132020627572,28.075594071053</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.63">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2076608493453,28.0720097042692 85.2072568241502,28.071690873857 85.2072432996616,28.0717043574056 85.2076473248626,28.0720231878576 85.2076608493453,28.0720097042692</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.64">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Suspension Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1840955809643,28.0089855787587 85.1840947141358,28.0089675476958 85.1831242908998,28.0090042912113 85.183125157566,28.0090223222727 85.1840955809643,28.0089855787587</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.65">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Water Diversion Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1638443344604,27.9487017118715 85.1622220633276,27.9484537074793 85.1622186151796,27.9484714932717 85.1638408865656,27.9487194977163 85.1638443344604,27.9487017118715</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.66">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.35877659702,28.239851922306 85.3587745321454,28.239761699908 85.35798299522,28.239775904843 85.3579850594272,28.2398661272248 85.35877659702,28.239851922306</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.67">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3533617197966,28.2027349719016 85.3533281700164,28.2026497656552 85.3527783751629,28.2028196600247 85.3528119245453,28.2029048663877 85.3533617197966,28.2027349719016</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.68">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3439519339854,28.1821733394681 85.3439135827292,28.1820897410108 85.3430459090547,28.1824022518009 85.343084259721,28.1824858504738 85.3439519339854,28.1821733394681</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.69">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3326226022645,28.1570438176686 85.3325224967644,28.1570273250682 85.3323981079794,28.1576203659123 85.3324982140026,28.1576368586251 85.3326226022645,28.1570438176686</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.70">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2065803312413,28.0653450743299 85.2061020943332,28.0650184095702 85.2060400283028,28.0650899058237 85.2065182653145,28.0654165708025 85.2065803312413,28.0653450743299</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.71">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1852785410603,27.9952011024304 85.1852167730087,27.9951294308321 85.1845277711313,27.9955972677372 85.1845895389567,27.9956689396317 85.1852785410603,27.9952011024304</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.72">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1731138173542,27.9631011111558 85.1730166265135,27.9630747302617 85.1726706503994,27.9640795744455 85.1727678420275,27.964105955619 85.1731138173542,27.9631011111558</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.73">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1496230834571,27.9214784045932 85.1495252585034,27.9214540630605 85.149340778616,27.9220389980436 85.1494386040393,27.9220633397288 85.1496230834571,27.9214784045932</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.74">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1481512994029,27.9208430106614 85.1480523186086,27.9208226897891 85.1478750108189,27.9215040829691 85.1479739921855,27.9215244039953 85.1481512994029,27.9208430106614</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.75">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1391567606398,27.9098638343077 85.1381325204885,27.9091586337249 85.138070293038,27.909229956093 85.1390945334011,27.9099351571449 85.1391567606398,27.9098638343077</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.76">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1370092791633,27.8923769372072 85.1358443775883,27.89214306183 85.1358219915565,27.8922310794279 85.1369868940031,27.8924649550349 85.1370092791633,27.8923769372072</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.77">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1170040040376,27.8696689851479 85.1169264410792,27.869610748036 85.1156302659765,27.8709740458818 85.1157078291223,27.871032283726 85.1170040040376,27.8696689851479</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.78">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0992254811672,27.8602217682104 85.0983814546131,27.8585423198324 85.0982887515213,27.8585791197218 85.0991327768595,27.8602585686023 85.0992254811672,27.8602217682104</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.79">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0627353501317,27.8602455366116 85.0613302349691,27.8588074513243 85.0612535756576,27.8588666146135 85.0626586904712,27.860304700658 85.0627353501317,27.8602455366116</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.80">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0418905735431,27.855372544847 85.0418119556949,27.855315451782 85.0407153301538,27.8565083009051 85.0407939482074,27.8565653946008 85.0418905735431,27.855372544847</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.81">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0230221279564,27.8323272626755 85.0229831460585,27.8322439495485 85.0210194225414,27.8329700573986 85.0210584031254,27.8330533710083 85.0230221279564,27.8323272626755</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.82">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.0034950267637,27.8018642855577 85.0034107675415,27.8018140062338 85.0024818476045,27.8030449227116 85.0025661072742,27.8030952026215 85.0034950267637,27.8018642855577</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.83">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9911168500549,27.8046643245588 84.9897583795466,27.8037249982771 84.9896960887363,27.8037962285014 84.9910545595136,27.8047355554056 84.9911168500549,27.8046643245588</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.84">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9659785401378,27.8122027433121 84.9645738456978,27.8115219003022 84.964525274494,27.8116011243225 84.9659299695845,27.8122819678577 84.9659785401378,27.8122027433121</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.85">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9246365617296,27.7971608183624 84.9245407506752,27.7971311210914 84.9240764220519,27.7983157581307 84.9241722339756,27.7983454557689 84.9246365617296,27.7971608183624</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.86">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.9026372011689,27.8057505729401 84.9025489531877,27.8057060359018 84.9014496440315,27.8074282690846 84.9015378928595,27.8074728068674 84.9026372011689,27.8057505729401</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.87">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.8445409179265,27.8018889895299 84.8444531497935,27.8018437190337 84.8437567426045,27.8029113174342 84.8438445112442,27.802956588399 84.8445409179265,27.8018889895299</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.88">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.7781578082999,27.8100932222143 84.7781069559924,27.8100151482647 84.7765437470338,27.8108201109517 84.7765945985129,27.8108981854259 84.7781578082999,27.8100932222143</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.89">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.662730456874,27.8448118763935 84.6612970416128,27.8442554611393 84.6612564226671,27.8443381371153 84.6626898387437,27.8448945528395 84.662730456874,27.8448118763935</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.90">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.6411379270444,27.8594209665872 84.6410384913209,27.8594028351914 84.6407747663863,27.8605452381071 84.6408742030801,27.860563369752 84.6411379270444,27.8594209665872</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.91">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.5583203317379,27.8544647895544 84.558289810155,27.854378754484 84.5565760501338,27.8548590111575 84.5566065704355,27.8549450465245 84.5583203317379,27.8544647895544</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.92">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>84.5580275255809,27.8539399357428 84.5580082550463,27.8538513661449 84.5564578356703,27.8541178376363 84.5564771049554,27.8542064073705 84.5580275255809,27.8539399357428</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.93">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3782971606613,28.2782214196748 85.3782007864532,28.2781920157769 85.377852531673,28.279086537166 85.3779489065653,28.2791159413353 85.3782971606613,28.2782214196748</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.94">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3402174526527,28.1639295114891 85.3401228426667,28.1638961427866 85.3398652029381,28.1644698486807 85.3399598133297,28.1645032175767 85.3402174526527,28.1639295114891</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.95">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1756743150499,27.9825367782153 85.175572957974,27.9825299407913 85.1755126939379,27.9832339483524 85.1756140516634,27.9832407858511 85.1756743150499,27.9825367782153</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.96">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1641297041748,27.9551521280265 85.1640362546805,27.9551166713519 85.1634773798372,27.9562780512664 85.1635708301038,27.956313508354 85.1641297041748,27.9551521280265</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.97">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">Water Diversion Bridge</SimpleData>
+		<SimpleData name="Width">2</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1638512302461,27.9486661401815 85.1622289596197,27.9484181358939 85.1622117188797,27.948507064856 85.1638339907722,27.9487550694053 85.1638512302461,27.9486661401815</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.98">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.3424425438702,28.1817668598079 85.3420739847206,28.181257456954 85.3419882467157,28.1813061599841 85.3423568056009,28.1818155630553 85.3424425438702,28.1817668598079</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.99">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.2754108563864,28.1080035931402 85.2753208020259,28.1079615555057 85.2750106893321,28.1084838593749 85.2751007439852,28.1085258972241 85.2754108563864,28.1080035931402</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+  <Placemark id="Bridge_Polygons.100">
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Bridge_Polygons">
+		<SimpleData name="Id">0</SimpleData>
+		<SimpleData name="Remarks">RCC Bridge</SimpleData>
+		<SimpleData name="Width">10</SimpleData>
+		<SimpleData name="Status">Fully damaged</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>85.1860573428273,27.9738608054647 85.1859610387224,27.9738319479298 85.1856350351554,27.9746894554089 85.1857313399084,27.9747183132004 85.1860573428273,27.9738608054647</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

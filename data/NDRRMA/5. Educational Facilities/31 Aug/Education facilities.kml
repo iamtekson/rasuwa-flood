@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="intersection" id="intersection">
+	<SimpleField name="osm_id" type="float"></SimpleField>
+	<SimpleField name="osm_type" type="string"></SimpleField>
+	<SimpleField name="isced_leve" type="string"></SimpleField>
+	<SimpleField name="amenity" type="string"></SimpleField>
+	<SimpleField name="capacity" type="string"></SimpleField>
+	<SimpleField name="x" type="float"></SimpleField>
+	<SimpleField name="y" type="float"></SimpleField>
+	<SimpleField name="OBJECTID" type="float"></SimpleField>
+	<SimpleField name="new_ward_n" type="float"></SimpleField>
+	<SimpleField name="GaPa_NaP_1" type="string"></SimpleField>
+	<SimpleField name="Type_GN" type="string"></SimpleField>
+	<SimpleField name="type_en" type="string"></SimpleField>
+	<SimpleField name="DISTRICT" type="string"></SimpleField>
+	<SimpleField name="hlcit_code" type="string"></SimpleField>
+	<SimpleField name="munid" type="float"></SimpleField>
+	<SimpleField name="districtid" type="float"></SimpleField>
+	<SimpleField name="state" type="float"></SimpleField>
+</Schema>
+<Folder><name>intersection</name>
+  <Placemark id="intersection.1">
+	<name>Shri Janasewa Lower Secondary School</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5055255859</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.0897009000</SimpleData>
+		<SimpleData name="y">27.8536836000</SimpleData>
+		<SimpleData name="OBJECTID">5976</SimpleData>
+		<SimpleData name="new_ward_n">8.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Belkotgadhi</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 002</SimpleData>
+		<SimpleData name="munid">301.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.0897009,27.8536836</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.2">
+	<name>Shri Sila Devi Ma. Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5046072853</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.0423178000</SimpleData>
+		<SimpleData name="y">27.8514602000</SimpleData>
+		<SimpleData name="OBJECTID">5999</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Belkotgadhi</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 002</SimpleData>
+		<SimpleData name="munid">301.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.0423178,27.8514602</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.3">
+	<name>Shree Sundaradevi Pra Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5063441826</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1769728000</SimpleData>
+		<SimpleData name="y">27.9762731000</SimpleData>
+		<SimpleData name="OBJECTID">6018</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1769728,27.9762731</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.4">
+	<name>Shree Chipleti Pra Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4969579345</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.2081762000</SimpleData>
+		<SimpleData name="y">28.0563867000</SimpleData>
+		<SimpleData name="OBJECTID">2081</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.2081762,28.0563867</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.5">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">7940743986</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1693966000</SimpleData>
+		<SimpleData name="y">27.9647490000</SimpleData>
+		<SimpleData name="OBJECTID">6018</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1693966,27.964749</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.6">
+	<name>Shri Ganeshman Singh Memorial Primary School</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5055276919</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.0276701000</SimpleData>
+		<SimpleData name="y">27.8491356000</SimpleData>
+		<SimpleData name="OBJECTID">5956</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Tarkeshwar</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 4 003</SimpleData>
+		<SimpleData name="munid">312.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.0276701,27.8491356</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.7">
+	<name>Shri Panchayat Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4939790691</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.7183971000</SimpleData>
+		<SimpleData name="y">27.7979233000</SimpleData>
+		<SimpleData name="OBJECTID">1539</SimpleData>
+		<SimpleData name="new_ward_n">9.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.7183971,27.7979233</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.8">
+	<name>Shree Simle Pra Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4969595164</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1907891000</SimpleData>
+		<SimpleData name="y">28.0297555000</SimpleData>
+		<SimpleData name="OBJECTID">2080</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1907891,28.0297555</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.9">
+	<name>त्रिवेणी बराहा माध्यामिक विद्यालय मुग्लिन</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4929738122</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.5612144000</SimpleData>
+		<SimpleData name="y">27.8543594000</SimpleData>
+		<SimpleData name="OBJECTID">1637</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.5612144,27.8543594</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.10">
+	<name>Shree Rastriya Aardharbhut School, Fishling</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">9794119187</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.6614838000</SimpleData>
+		<SimpleData name="y">27.8424892000</SimpleData>
+		<SimpleData name="OBJECTID">1639</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.6614838,27.8424892</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.11">
+	<name>Green Field Secondary English School, Muglin</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">9794119213</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.5615298000</SimpleData>
+		<SimpleData name="y">27.8576882000</SimpleData>
+		<SimpleData name="OBJECTID">1637</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.5615298,27.8576882</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.12">
+	<name>Sarbhashanti Secondary School, Kurintar</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">9794127028</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.6230438000</SimpleData>
+		<SimpleData name="y">27.8709017000</SimpleData>
+		<SimpleData name="OBJECTID">1640</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.6230438,27.8709017</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.13">
+	<name>Shri Satyawati Uchha Ma V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4934948633</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.9377771000</SimpleData>
+		<SimpleData name="y">27.8107380000</SimpleData>
+		<SimpleData name="OBJECTID">1554</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Siddhalek</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 007</SimpleData>
+		<SimpleData name="munid">330.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.9377771,27.810738</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.14">
+	<name>Mugling</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">1624368761</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="x">84.5618807000</SimpleData>
+		<SimpleData name="y">27.8567682000</SimpleData>
+		<SimpleData name="OBJECTID">1637</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.5618807,27.8567682</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.15">
+	<name>Shri Janajagriti Primary School</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4878209122</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.6409513000</SimpleData>
+		<SimpleData name="y">27.8622423000</SimpleData>
+		<SimpleData name="OBJECTID">2673</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gandaki</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">GORKHA</SimpleData>
+		<SimpleData name="hlcit_code">524 4 36 4 009</SimpleData>
+		<SimpleData name="munid">408.000000</SimpleData>
+		<SimpleData name="districtid">36.000000</SimpleData>
+		<SimpleData name="state">4.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.6409513,27.8622423</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.16">
+	<name>Shree komin Pra.V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4967982080</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.3321695000</SimpleData>
+		<SimpleData name="y">28.1616696000</SimpleData>
+		<SimpleData name="OBJECTID">2103</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gosaikunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 002</SimpleData>
+		<SimpleData name="munid">315.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.3321695,28.1616696</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.17">
+	<name>Shr Prithibi Ma Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5010981070</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1415720000</SimpleData>
+		<SimpleData name="y">27.9139771000</SimpleData>
+		<SimpleData name="OBJECTID">5951</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.141572,27.9139771</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.18">
+	<name>Shree Tribhuwan Ma Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5019534984</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1782975000</SimpleData>
+		<SimpleData name="y">28.0181595000</SimpleData>
+		<SimpleData name="OBJECTID">5942</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Kispang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 4 002</SimpleData>
+		<SimpleData name="munid">305.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1782975,28.0181595</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.19">
+	<name>Munal Academy</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5634837379</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.8771444000</SimpleData>
+		<SimpleData name="y">27.8052718000</SimpleData>
+		<SimpleData name="OBJECTID">1530</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8771444,27.8052718</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.20">
+	<name>Shri Aadarsha Bahumukhi Campus</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4941869402</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.8773408000</SimpleData>
+		<SimpleData name="y">27.8070838000</SimpleData>
+		<SimpleData name="OBJECTID">1530</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8773408,27.8070838</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.21">
+	<name>Shri Adarsha Uchha Ma V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4941743504</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.8793261000</SimpleData>
+		<SimpleData name="y">27.8075850000</SimpleData>
+		<SimpleData name="OBJECTID">1530</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8793261,27.807585</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.22">
+	<name>Shri Golma Rani Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4934940717</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.8379473000</SimpleData>
+		<SimpleData name="y">27.8124431000</SimpleData>
+		<SimpleData name="OBJECTID">1552</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Siddhalek</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 007</SimpleData>
+		<SimpleData name="munid">330.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8379473,27.8124431</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.23">
+	<name>Shri Orbang Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4941787232</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.7987338000</SimpleData>
+		<SimpleData name="y">27.8097729000</SimpleData>
+		<SimpleData name="OBJECTID">1515</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.7987338,27.8097729</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.24">
+	<name>Shri Chandrodaya Ma Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4939797039</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.7816236000</SimpleData>
+		<SimpleData name="y">27.8121655000</SimpleData>
+		<SimpleData name="OBJECTID">1517</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.7816236,27.8121655</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.25">
+	<name>Shree Nepal Rastriya Pra Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4968032717</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.3449613000</SimpleData>
+		<SimpleData name="y">28.1969461000</SimpleData>
+		<SimpleData name="OBJECTID">2079</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Parbati Kunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 001</SimpleData>
+		<SimpleData name="munid">318.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.3449613,28.1969461</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.26">
+	<name>Shree Haku Besi Ni.Ma.V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4967821159</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.2794174000</SimpleData>
+		<SimpleData name="y">28.1146281000</SimpleData>
+		<SimpleData name="OBJECTID">2085</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Parbati Kunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 001</SimpleData>
+		<SimpleData name="munid">318.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.2794174,28.1146281</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.27">
+	<name>Nepali, English</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">3494632842</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.7396508000</SimpleData>
+		<SimpleData name="y">27.8013069000</SimpleData>
+		<SimpleData name="OBJECTID">1526</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.7396508,27.8013069</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.28">
+	<name>Shree Shankha Higher Secondary School</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4858981422</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.7048938000</SimpleData>
+		<SimpleData name="y">27.8055250000</SimpleData>
+		<SimpleData name="OBJECTID">1539</SimpleData>
+		<SimpleData name="new_ward_n">9.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.7048938,27.805525</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.29">
+	<name>Greenline Transport</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">6100115486</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="x">84.6166453000</SimpleData>
+		<SimpleData name="y">27.8741127000</SimpleData>
+		<SimpleData name="OBJECTID">1640</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.6166453,27.8741127</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.30">
+	<name>Kurin Boarding School</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">9794127022</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.6251566000</SimpleData>
+		<SimpleData name="y">27.8706443000</SimpleData>
+		<SimpleData name="OBJECTID">1640</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.6251566,27.8706443</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.31">
+	<name>Shri Rainas Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4915942407</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.6330946000</SimpleData>
+		<SimpleData name="y">27.8716283000</SimpleData>
+		<SimpleData name="OBJECTID">2725</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Sahid Lakhan</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">GORKHA</SimpleData>
+		<SimpleData name="hlcit_code">524 4 36 4 008</SimpleData>
+		<SimpleData name="munid">411.000000</SimpleData>
+		<SimpleData name="districtid">36.000000</SimpleData>
+		<SimpleData name="state">4.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.6330946,27.8716283</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.32">
+	<name>Shree Mandredhunga Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5055871471</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1298955000</SimpleData>
+		<SimpleData name="y">27.8864849000</SimpleData>
+		<SimpleData name="OBJECTID">5958</SimpleData>
+		<SimpleData name="new_ward_n">12.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1298955,27.8864849</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.33">
+	<name>Shree Barahi Pra.V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4967980711</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1883746000</SimpleData>
+		<SimpleData name="y">27.9880137000</SimpleData>
+		<SimpleData name="OBJECTID">2098</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1883746,27.9880137</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.34">
+	<name>Shree Neelkanta Higher Sec School</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4706138525</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1840744000</SimpleData>
+		<SimpleData name="y">27.9785677000</SimpleData>
+		<SimpleData name="OBJECTID">2098</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1840744,27.9785677</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.35">
+	<name>Shri Indrayani Ni Ma Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4940185637</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.9439006000</SimpleData>
+		<SimpleData name="y">27.8050001000</SimpleData>
+		<SimpleData name="OBJECTID">1591</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.9439006,27.8050001</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.36">
+	<name>Nari Chetana Bal Bikash Kendra</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5010622731</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1424913000</SimpleData>
+		<SimpleData name="y">27.9142129000</SimpleData>
+		<SimpleData name="OBJECTID">5951</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1424913,27.9142129</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.37">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4563086889</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1451878000</SimpleData>
+		<SimpleData name="y">27.9178928000</SimpleData>
+		<SimpleData name="OBJECTID">5950</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1451878,27.9178928</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.38">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4367679495</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1406005000</SimpleData>
+		<SimpleData name="y">27.9222514000</SimpleData>
+		<SimpleData name="OBJECTID">5955</SimpleData>
+		<SimpleData name="new_ward_n">9.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1406005,27.9222514</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.39">
+	<name>Shri Buddhi Bikash Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4941662039</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.7486773000</SimpleData>
+		<SimpleData name="y">27.8035007000</SimpleData>
+		<SimpleData name="OBJECTID">1526</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Benighat Rorang</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 008</SimpleData>
+		<SimpleData name="munid">320.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.7486773,27.8035007</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.40">
+	<name>Shri Shilingtar Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4912228426</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.5911485000</SimpleData>
+		<SimpleData name="y">27.8816026000</SimpleData>
+		<SimpleData name="OBJECTID">2724</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Sahid Lakhan</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">GORKHA</SimpleData>
+		<SimpleData name="hlcit_code">524 4 36 4 008</SimpleData>
+		<SimpleData name="munid">411.000000</SimpleData>
+		<SimpleData name="districtid">36.000000</SimpleData>
+		<SimpleData name="state">4.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.5911485,27.8816026</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.41">
+	<name>Shri Chandi Ni.Ma.Vi.</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5055300883</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.0806347000</SimpleData>
+		<SimpleData name="y">27.8576473000</SimpleData>
+		<SimpleData name="OBJECTID">5981</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.0806347,27.8576473</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.42">
+	<name>Shree Sulakshyana Ma Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5047244078</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1584666000</SimpleData>
+		<SimpleData name="y">27.9475845000</SimpleData>
+		<SimpleData name="OBJECTID">5955</SimpleData>
+		<SimpleData name="new_ward_n">9.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1584666,27.9475845</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.43">
+	<name>Mahadev Multiple Campus</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5055601519</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.0603241000</SimpleData>
+		<SimpleData name="y">27.8522932000</SimpleData>
+		<SimpleData name="OBJECTID">5999</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Belkotgadhi</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 002</SimpleData>
+		<SimpleData name="munid">301.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.0603241,27.8522932</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.44">
+	<name>Shri Seti Devi Pra Bi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5055224610</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.0873968000</SimpleData>
+		<SimpleData name="y">27.8625042000</SimpleData>
+		<SimpleData name="OBJECTID">5981</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.0873968,27.8625042</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.45">
+	<name>Shri Belinitar Pra Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4936634947</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.9442606000</SimpleData>
+		<SimpleData name="y">27.8147716000</SimpleData>
+		<SimpleData name="OBJECTID">1541</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Galchi</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 010</SimpleData>
+		<SimpleData name="munid">323.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.9442606,27.8147716</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.46">
+	<name>Shri Karantar Namuna Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4912218252</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.5535466000</SimpleData>
+		<SimpleData name="y">27.8620247000</SimpleData>
+		<SimpleData name="OBJECTID">2724</SimpleData>
+		<SimpleData name="new_ward_n">3.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Sahid Lakhan</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">GORKHA</SimpleData>
+		<SimpleData name="hlcit_code">524 4 36 4 008</SimpleData>
+		<SimpleData name="munid">411.000000</SimpleData>
+		<SimpleData name="districtid">36.000000</SimpleData>
+		<SimpleData name="state">4.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.5535466,27.8620247</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.47">
+	<name>Shr Mahendra Ma Vi</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">5053261618</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">85.1329416000</SimpleData>
+		<SimpleData name="y">27.9054717000</SimpleData>
+		<SimpleData name="OBJECTID">5958</SimpleData>
+		<SimpleData name="new_ward_n">12.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.1329416,27.9054717</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.48">
+	<name>Shri Praja Jyoti Pra V</name>
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="osm_id">4894847801</SimpleData>
+		<SimpleData name="osm_type">nodes</SimpleData>
+		<SimpleData name="amenity">school</SimpleData>
+		<SimpleData name="x">84.7000622000</SimpleData>
+		<SimpleData name="y">27.8116525000</SimpleData>
+		<SimpleData name="OBJECTID">2671</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gandaki</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT">GORKHA</SimpleData>
+		<SimpleData name="hlcit_code">524 4 36 4 009</SimpleData>
+		<SimpleData name="munid">408.000000</SimpleData>
+		<SimpleData name="districtid">36.000000</SimpleData>
+		<SimpleData name="state">4.000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.7000622,27.8116525</coordinates></Point></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

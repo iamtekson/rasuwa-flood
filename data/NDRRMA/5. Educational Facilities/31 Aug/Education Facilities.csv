@@ -1,0 +1,49 @@
+osm_id,osm_type,isced_leve,name,amenity,capacity,x,y,OBJECTID,new_ward_n,GaPa_NaP_1,Type_GN,type_en,DISTRICT,hlcit_code,munid,districtid,state
+5055255859,nodes,,Shri Janasewa Lower Secondary School,school,,85.0897009000,27.8536836000,5976,8.000000,Belkotgadhi,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 002,301.000000,28.000000,3.000000
+5046072853,nodes,,Shri Sila Devi Ma. Vi,school,,85.0423178000,27.8514602000,5999,7.000000,Belkotgadhi,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 002,301.000000,28.000000,3.000000
+5063441826,nodes,,Shree Sundaradevi Pra Vi,school,,85.1769728000,27.9762731000,6018,7.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+4969579345,nodes,,Shree Chipleti Pra Vi,school,,85.2081762000,28.0563867000,2081,1.000000,Uttargaya,Gaunpalika,Rural Municipality,RASUWA,524 3 29 4 003,319.000000,29.000000,3.000000
+7940743986,nodes,,,school,,85.1693966000,27.9647490000,6018,7.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+5055276919,nodes,,Shri Ganeshman Singh Memorial Primary School,school,,85.0276701000,27.8491356000,5956,4.000000,Tarkeshwar,Gaunpalika,Rural Municipality,NUWAKOT,524 3 28 4 003,312.000000,28.000000,3.000000
+4939790691,nodes,,Shri Panchayat Pra V,school,,84.7183971000,27.7979233000,1539,9.000000,Benighat Rorang,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 008,320.000000,30.000000,3.000000
+4969595164,nodes,,Shree Simle Pra Vi,school,,85.1907891000,28.0297555000,2080,2.000000,Uttargaya,Gaunpalika,Rural Municipality,RASUWA,524 3 29 4 003,319.000000,29.000000,3.000000
+4929738122,nodes,,त्रिवेणी बराहा माध्यामिक विद्यालय मुग्लिन,school,,84.5612144000,27.8543594000,1637,5.000000,Ichchhyakamana,Gaunpalika,Rural Municipality,CHITAWAN,524 3 35 4 001,396.000000,35.000000,3.000000
+9794119187,nodes,,"Shree Rastriya Aardharbhut School, Fishling",school,,84.6614838000,27.8424892000,1639,3.000000,Ichchhyakamana,Gaunpalika,Rural Municipality,CHITAWAN,524 3 35 4 001,396.000000,35.000000,3.000000
+9794119213,nodes,,"Green Field Secondary English School, Muglin",school,,84.5615298000,27.8576882000,1637,5.000000,Ichchhyakamana,Gaunpalika,Rural Municipality,CHITAWAN,524 3 35 4 001,396.000000,35.000000,3.000000
+9794127028,nodes,,"Sarbhashanti Secondary School, Kurintar",school,,84.6230438000,27.8709017000,1640,4.000000,Ichchhyakamana,Gaunpalika,Rural Municipality,CHITAWAN,524 3 35 4 001,396.000000,35.000000,3.000000
+4934948633,nodes,,Shri Satyawati Uchha Ma V,school,,84.9377771000,27.8107380000,1554,7.000000,Siddhalek,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 007,330.000000,30.000000,3.000000
+1624368761,nodes,,Mugling,,,84.5618807000,27.8567682000,1637,5.000000,Ichchhyakamana,Gaunpalika,Rural Municipality,CHITAWAN,524 3 35 4 001,396.000000,35.000000,3.000000
+4878209122,nodes,,Shri Janajagriti Primary School,school,,84.6409513000,27.8622423000,2673,1.000000,Gandaki,Gaunpalika,Rural Municipality,GORKHA,524 4 36 4 009,408.000000,36.000000,4.000000
+4967982080,nodes,,Shree komin Pra.V,school,,85.3321695000,28.1616696000,2103,5.000000,Gosaikunda,Gaunpalika,Rural Municipality,RASUWA,524 3 29 4 002,315.000000,29.000000,3.000000
+5010981070,nodes,,Shr Prithibi Ma Vi,school,,85.1415720000,27.9139771000,5951,4.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+5019534984,nodes,,Shree Tribhuwan Ma Vi,school,,85.1782975000,28.0181595000,5942,5.000000,Kispang,Gaunpalika,Rural Municipality,NUWAKOT,524 3 28 4 002,305.000000,28.000000,3.000000
+5634837379,nodes,,Munal Academy,school,,84.8771444000,27.8052718000,1530,1.000000,Gajuri,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 009,322.000000,30.000000,3.000000
+4941869402,nodes,,Shri Aadarsha Bahumukhi Campus,school,,84.8773408000,27.8070838000,1530,1.000000,Gajuri,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 009,322.000000,30.000000,3.000000
+4941743504,nodes,,Shri Adarsha Uchha Ma V,school,,84.8793261000,27.8075850000,1530,1.000000,Gajuri,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 009,322.000000,30.000000,3.000000
+4934940717,nodes,,Shri Golma Rani Pra V,school,,84.8379473000,27.8124431000,1552,6.000000,Siddhalek,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 007,330.000000,30.000000,3.000000
+4941787232,nodes,,Shri Orbang Pra V,school,,84.7987338000,27.8097729000,1515,3.000000,Benighat Rorang,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 008,320.000000,30.000000,3.000000
+4939797039,nodes,,Shri Chandrodaya Ma Vi,school,,84.7816236000,27.8121655000,1517,5.000000,Benighat Rorang,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 008,320.000000,30.000000,3.000000
+4968032717,nodes,,Shree Nepal Rastriya Pra Vi,school,,85.3449613000,28.1969461000,2079,5.000000,Parbati Kunda,Gaunpalika,Rural Municipality,RASUWA,524 3 29 4 001,318.000000,29.000000,3.000000
+4967821159,nodes,,Shree Haku Besi Ni.Ma.V,school,,85.2794174000,28.1146281000,2085,1.000000,Parbati Kunda,Gaunpalika,Rural Municipality,RASUWA,524 3 29 4 001,318.000000,29.000000,3.000000
+3494632842,nodes,,"Nepali, English",school,,84.7396508000,27.8013069000,1526,7.000000,Benighat Rorang,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 008,320.000000,30.000000,3.000000
+4858981422,nodes,,Shree Shankha Higher Secondary School,school,,84.7048938000,27.8055250000,1539,9.000000,Benighat Rorang,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 008,320.000000,30.000000,3.000000
+6100115486,nodes,,Greenline Transport,,,84.6166453000,27.8741127000,1640,4.000000,Ichchhyakamana,Gaunpalika,Rural Municipality,CHITAWAN,524 3 35 4 001,396.000000,35.000000,3.000000
+9794127022,nodes,,Kurin Boarding School,school,,84.6251566000,27.8706443000,1640,4.000000,Ichchhyakamana,Gaunpalika,Rural Municipality,CHITAWAN,524 3 35 4 001,396.000000,35.000000,3.000000
+4915942407,nodes,,Shri Rainas Pra V,school,,84.6330946000,27.8716283000,2725,4.000000,Sahid Lakhan,Gaunpalika,Rural Municipality,GORKHA,524 4 36 4 008,411.000000,36.000000,4.000000
+5055871471,nodes,,Shree Mandredhunga Pra V,school,,85.1298955000,27.8864849000,5958,12.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+4967980711,nodes,,Shree Barahi Pra.V,school,,85.1883746000,27.9880137000,2098,5.000000,Uttargaya,Gaunpalika,Rural Municipality,RASUWA,524 3 29 4 003,319.000000,29.000000,3.000000
+4706138525,nodes,,Shree Neelkanta Higher Sec School,school,,85.1840744000,27.9785677000,2098,5.000000,Uttargaya,Gaunpalika,Rural Municipality,RASUWA,524 3 29 4 003,319.000000,29.000000,3.000000
+4940185637,nodes,,Shri Indrayani Ni Ma Vi,school,,84.9439006000,27.8050001000,1591,6.000000,Gajuri,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 009,322.000000,30.000000,3.000000
+5010622731,nodes,,Nari Chetana Bal Bikash Kendra,school,,85.1424913000,27.9142129000,5951,4.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+4563086889,nodes,,,school,,85.1451878000,27.9178928000,5950,2.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+4367679495,nodes,,,school,,85.1406005000,27.9222514000,5955,9.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+4941662039,nodes,,Shri Buddhi Bikash Pra V,school,,84.7486773000,27.8035007000,1526,7.000000,Benighat Rorang,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 008,320.000000,30.000000,3.000000
+4912228426,nodes,,Shri Shilingtar Pra V,school,,84.5911485000,27.8816026000,2724,3.000000,Sahid Lakhan,Gaunpalika,Rural Municipality,GORKHA,524 4 36 4 008,411.000000,36.000000,4.000000
+5055300883,nodes,,Shri Chandi Ni.Ma.Vi.,school,,85.0806347000,27.8576473000,5981,3.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+5047244078,nodes,,Shree Sulakshyana Ma Vi,school,,85.1584666000,27.9475845000,5955,9.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+5055601519,nodes,,Mahadev Multiple Campus,school,,85.0603241000,27.8522932000,5999,7.000000,Belkotgadhi,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 002,301.000000,28.000000,3.000000
+5055224610,nodes,,Shri Seti Devi Pra Bi,school,,85.0873968000,27.8625042000,5981,3.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+4936634947,nodes,,Shri Belinitar Pra Vi,school,,84.9442606000,27.8147716000,1541,2.000000,Galchi,Gaunpalika,Rural Municipality,DHADING,524 3 30 4 010,323.000000,30.000000,3.000000
+4912218252,nodes,,Shri Karantar Namuna Pra V,school,,84.5535466000,27.8620247000,2724,3.000000,Sahid Lakhan,Gaunpalika,Rural Municipality,GORKHA,524 4 36 4 008,411.000000,36.000000,4.000000
+5053261618,nodes,,Shr Mahendra Ma Vi,school,,85.1329416000,27.9054717000,5958,12.000000,Bidur,Nagarpalika,Urban Municipality,NUWAKOT,524 3 28 3 001,302.000000,28.000000,3.000000
+4894847801,nodes,,Shri Praja Jyoti Pra V,school,,84.7000622000,27.8116525000,2671,7.000000,Gandaki,Gaunpalika,Rural Municipality,GORKHA,524 4 36 4 009,408.000000,36.000000,4.000000
