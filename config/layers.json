@@ -251,7 +251,7 @@
               2
             ]
           },
-          "active": true
+          "active": false
         },
         {
           "id": "river",
@@ -312,7 +312,7 @@
           },
           "statsField": "waterway",
           "note": "Colored by status: blue = standing/intact, red = destroyed/washed out.",
-          "active": false
+          "active": true
         }
       ]
     },
@@ -783,7 +783,7 @@
             "adm3_name": "Municipality"
           },
           "statsField": "highway",
-          "active": false
+          "active": true
         },
         {
           "id": "road_endangered",
@@ -923,7 +923,7 @@
             "GaPa_NaPa": "Municipality"
           },
           "statsField": "GaPa_NaPa",
-          "active": false
+          "active": true
         },
         {
           "id": "solar_power_plants",
