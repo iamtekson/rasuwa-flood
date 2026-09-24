@@ -26,14 +26,23 @@ export function buildPopupContent(layer, props) {
   return table;
 }
 
+// map -> set of layer ids that already have hover/click handlers bound on that map
+// (handlers are keyed by layer id, so they survive a layer being toggled off and on)
+const listenersAttached = new WeakMap();
+function alreadyAttached(map, id) {
+  if (!listenersAttached.has(map)) listenersAttached.set(map, new Set());
+  const ids = listenersAttached.get(map);
+  if (ids.has(id)) return true;
+  ids.add(id);
+  return false;
+}
+
 // default trigger is "hover" (transient tooltip that follows mouseenter/mouseleave);
 // set layer.popupTrigger = "click" in config for a dismissible popup that only
 // appears when the user actually clicks the feature.
-export function attachPopup(layer) {
-  const map = state.map;
+export function attachPopup(layer, map = state.map) {
   if (!layer.labelField && !layer.popupFields) return;
-  if (state.listenersAttached.has(layer.id)) return; // avoid duplicate handlers on toggle off/on
-  state.listenersAttached.add(layer.id);
+  if (alreadyAttached(map, layer.id)) return; // avoid duplicate handlers on toggle off/on
 
   // an icon-type layer can carry its Polygon/LineString features on companion
   // layers (see layer.polygonPaint / layer.linePaint in layers.js) — wire the
@@ -64,10 +73,8 @@ export function attachPopup(layer) {
   });
 }
 
-export function attachVideoPopup(layer) {
-  const map = state.map;
-  if (state.listenersAttached.has(layer.id)) return;
-  state.listenersAttached.add(layer.id);
+export function attachVideoPopup(layer, map = state.map) {
+  if (alreadyAttached(map, layer.id)) return;
   map.on("mouseenter", layer.id, () => (map.getCanvas().style.cursor = "pointer"));
   map.on("mouseleave", layer.id, () => (map.getCanvas().style.cursor = ""));
 

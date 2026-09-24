@@ -78,6 +78,9 @@ html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, Se
 }
 .layer-row input { flex-shrink: 0; cursor: pointer; }
 .layer-row label { cursor: pointer; flex: 1; }
+.layer-row-disabled { opacity: 0.45; }
+.layer-row-disabled input,
+.layer-row-disabled label { cursor: default; }
 .layer-row .swatch {
   width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.25);
 }
@@ -103,6 +106,17 @@ html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, Se
 }
 .compare-label-left { left: 10px; }
 .compare-label-right { right: 10px; }
+.compare-label select {
+  pointer-events: auto; /* the label itself lets clicks through to the map; the dropdown must not */
+  max-width: min(320px, 42vw);
+  background: transparent;
+  color: #fff;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.compare-label select option,
+.compare-label select optgroup { background: #222; color: #fff; }
 
 #btn-skip-intro {
   position: absolute;

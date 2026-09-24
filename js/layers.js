@@ -1,42 +1,60 @@
 // Generic add/remove logic for every layer type declared in config/layers.json,
 // plus the spotlight-mask effect that can be attached to any "fill" layer.
+// addLayer/removeLayer target the main map by default; the compare maps pass their own.
 import { state } from "./state.js";
 import { noCache, normalizeGeoJSON, resolveColorExpr, ringSignedArea, windOppositeToOuter } from "./utils.js";
 import { attachPopup, attachVideoPopup, showHighlightPopups } from "./popups.js";
+
+// url -> promise of normalized geojson, so the main map and both compare maps share
+// one download per dataset (noCache still busts the browser cache on each page load).
+const geojsonCache = new Map();
+function loadGeoJson(url) {
+  if (!geojsonCache.has(url)) {
+    const promise = fetch(noCache(url))
+      .then((r) => r.json())
+      .then(normalizeGeoJSON);
+    promise.catch(() => geojsonCache.delete(url)); // let a later toggle retry a failed fetch
+    geojsonCache.set(url, promise);
+  }
+  return geojsonCache.get(url);
+}
 
 // creates the source immediately (empty) so addLayer() can reference it synchronously,
 // then fetches + normalizes + fills in the real data once it arrives.
 // tolerance: 0 disables geojson-vt's default simplification — our datasets are all
 // small, and without this a thin/small polygon (e.g. a narrow landslide runout) can
 // get simplified down to a near-zero-area sliver and effectively vanish at low zoom.
-function addGeoJsonSourceAsync(id, url) {
-  state.map.addSource(id, { type: "geojson", tolerance: 0, data: { type: "FeatureCollection", features: [] } });
-  fetch(noCache(url))
-    .then((r) => r.json())
+function addGeoJsonSourceAsync(map, id, url) {
+  map.addSource(id, { type: "geojson", tolerance: 0, data: { type: "FeatureCollection", features: [] } });
+  loadGeoJson(url)
     .then((gj) => {
-      const src = state.map.getSource(id);
-      if (src) src.setData(normalizeGeoJSON(gj));
+      const src = map.getSource(id);
+      if (src) src.setData(gj);
     })
     .catch((err) => console.error("Failed to load geojson:", url, err));
 }
 
+// Fixed z-order anchors (invisible), created before any layer so the stacking never
+// depends on category order in config/layers.json:
+//   basemap < raster/imagery < RASTER_ANCHOR < spotlight mask < VECTOR_ANCHOR < vectors
+// Vector layers are simply appended on top; rasters and the mask insert via beforeId.
+const RASTER_ANCHOR = "raster-overlay-anchor";
+const VECTOR_ANCHOR = "vector-overlay-anchor";
+
 export function addAllConfiguredLayers() {
   const map = state.map;
+  [RASTER_ANCHOR, VECTOR_ANCHOR].forEach((id) => {
+    if (!map.getLayer(id)) map.addLayer({ id, type: "background", paint: { "background-opacity": 0 } });
+  });
   state.CONFIG.categories.forEach((cat) => {
     cat.layers.forEach((layer) => {
       if (layer.active) addLayer(layer);
     });
-    // fixed z-order anchor: everything vector (flood extent, boundaries, points, ...)
-    // gets added after this point and so stacks above it; raster/imagery layers and
-    // the spotlight mask are explicitly inserted below it via beforeId.
-    if (cat.id === "imagery" && !map.getLayer("vector-overlay-anchor")) {
-      map.addLayer({ id: "vector-overlay-anchor", type: "background", paint: { "background-opacity": 0 } });
-    }
   });
 }
 
-export function addLayer(layer) {
-  const map = state.map;
+export function addLayer(layer, map = state.map) {
+  const isMain = map === state.map;
   if (map.getLayer(layer.id)) return; // already added
 
   switch (layer.type) {
@@ -45,18 +63,20 @@ export function addLayer(layer) {
         type: "raster",
         tiles: layer.tiles,
         tileSize: layer.tileSize || 256,
+        // e.g. Sentinel-2 (10 m) has no detail past z14 — overzoom instead of requesting more tiles
+        maxzoom: layer.maxzoom || 22,
         attribution: layer.attribution || "",
       });
-      // always insert below the anchor, even if this raster is toggled on after
+      // always insert below the raster anchor, even if this raster is toggled on after
       // vector layers already exist, so imagery never ends up on top of them.
       map.addLayer(
         { id: layer.id, type: "raster", source: layer.id },
-        map.getLayer("vector-overlay-anchor") ? "vector-overlay-anchor" : undefined
+        map.getLayer(RASTER_ANCHOR) ? RASTER_ANCHOR : undefined
       );
       break;
 
     case "fill":
-      addGeoJsonSourceAsync(layer.id, layer.data);
+      addGeoJsonSourceAsync(map, layer.id, layer.data);
       map.addLayer({
         id: layer.id,
         type: "fill",
@@ -80,11 +100,12 @@ export function addLayer(layer) {
           "line-width": layer.paint.lineWidth || 1,
         },
       });
-      if (layer.spotlight) addSpotlightMask(layer);
+      // main map only — on a compare map it would darken the imagery being compared
+      if (layer.spotlight && isMain) addSpotlightMask(layer);
       break;
 
     case "line": {
-      addGeoJsonSourceAsync(layer.id, layer.data);
+      addGeoJsonSourceAsync(map, layer.id, layer.data);
       const linePaint = {
         // lineColor can be a flat hex string, or a {field, values, default} match-spec
         // (same shape as fill/circle/icon color) to classify lines by a property,
@@ -101,7 +122,7 @@ export function addLayer(layer) {
     }
 
     case "circle":
-      addGeoJsonSourceAsync(layer.id, layer.data);
+      addGeoJsonSourceAsync(map, layer.id, layer.data);
       map.addLayer({
         id: layer.id,
         type: "circle",
@@ -113,11 +134,11 @@ export function addLayer(layer) {
           "circle-stroke-width": layer.paint.circleStrokeWidth || 1,
         },
       });
-      if (layer.alwaysLabel && layer.labelField) addAlwaysOnLabelLayer(layer);
+      if (layer.alwaysLabel && layer.labelField) addAlwaysOnLabelLayer(map, layer);
       break;
 
     case "icon":
-      addGeoJsonSourceAsync(layer.id, layer.data);
+      addGeoJsonSourceAsync(map, layer.id, layer.data);
       // symbol layers can only place markers on point geometry — restrict explicitly
       // so a mixed-geometry source (e.g. points + a digitized polygon) doesn't
       // silently try and fail to place a symbol on the polygon. Some exports (e.g.
@@ -200,13 +221,13 @@ export function addLayer(layer) {
       break;
   }
 
-  if (layer.type !== "raster" && !layer.alwaysLabel) attachPopup(layer);
-  if (layer.type === "icon" && layer.icon === "video_play") attachVideoPopup(layer);
-  if (layer.autoPopupOnHighlight) showHighlightPopups(layer);
+  if (layer.type !== "raster" && !layer.alwaysLabel) attachPopup(layer, map);
+  if (layer.type === "icon" && layer.icon === "video_play") attachVideoPopup(layer, map);
+  if (layer.autoPopupOnHighlight && isMain) showHighlightPopups(layer);
 }
 
-export function removeLayer(layer) {
-  const map = state.map;
+export function removeLayer(layer, map = state.map) {
+  const isMain = map === state.map;
   const idsToRemove = [
     layer.id,
     layer.id + "-outline",
@@ -219,6 +240,7 @@ export function removeLayer(layer) {
     if (map.getLayer(id)) map.removeLayer(id);
   });
   if (map.getSource(layer.id)) map.removeSource(layer.id);
+  if (!isMain) return; // highlight callouts and the spotlight mask only ever exist on the main map
 
   if (state.autoPopups[layer.id]) {
     state.autoPopups[layer.id].forEach((p) => p.remove());
@@ -229,8 +251,8 @@ export function removeLayer(layer) {
 }
 
 // a text-only symbol layer riding on the same source, for circle-type layers that want permanent labels
-function addAlwaysOnLabelLayer(layer) {
-  state.map.addLayer({
+function addAlwaysOnLabelLayer(map, layer) {
+  map.addLayer({
     id: layer.id + "-label",
     type: "symbol",
     source: layer.id,
@@ -299,7 +321,7 @@ async function addSpotlightMask(layer) {
       source: "spotlight-mask",
       paint: { "fill-color": color, "fill-opacity": opacity },
     },
-    map.getLayer("vector-overlay-anchor") ? "vector-overlay-anchor" : undefined
+    map.getLayer(VECTOR_ANCHOR) ? VECTOR_ANCHOR : undefined
   );
 }
 

@@ -179,49 +179,17 @@
       "tileSize": 256,
       "maxzoom": 15,
       "attribution": "AWS Terrain Tiles"
+    },
+    "compare": {
+      "before": "pre_s2_true_color",
+      "after": "post_imagery_s2",
+      "layers": [
+        "river"
+      ]
     }
   },
   "categories": [
-    {
-      "id": "imagery",
-      "label": "Imagery (Pre / Post)",
-      "layers": [
-        {
-          "id": "post_imagery",
-          "label": "Post-Disaster Imagery (Vantor, 28 Aug 2026)",
-          "type": "raster",
-          "tiles": [
-            "https://titiler.hotosm.org/cog/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Fproduction-raw-data-api.s3.amazonaws.com%2FISO3%2FNPL%2Fdisasters%2Fnepal-flood%2F2026-08-28%2Fvantor_composite_v3.tif"
-          ],
-          "tileSize": 256,
-          "attribution": "Vantor / HOTOSM raw-data-api",
-          "active": false
-        },
-        {
-          "id": "post_imagery_s2",
-          "label": "Post-Disaster Imagery (Sentinel-2, 21 Sep 2026)",
-          "type": "raster",
-          "tiles": [
-            "https://sh.dataspace.copernicus.eu/ogc/wmts/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&TILEMATRIXSET=PopularWebMercator256&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=image/jpeg&LAYER=1_TRUE_COLOR&TIME=2026-09-21/2026-09-21&MAXCC=100&SHOWLOGO=false"
-          ],
-          "tileSize": 256,
-          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
-          "active": false
-        },
-        {
-          "id": "pre_imagery",
-          "label": "Pre-Disaster Reference (Sentinel-2 cloud-free mosaic)",
-          "type": "raster",
-          "tiles": [
-            "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg"
-          ],
-          "tileSize": 256,
-          "attribution": "Sentinel-2 cloudless by EOX IT Services GmbH",
-          "note": "General cloud-free baseline mosaic, not a same-date pre-event snapshot.",
-          "active": false
-        }
-      ]
-    },
+    
     {
       "id": "flood",
       "label": "Flood Extent & River",
@@ -793,7 +761,10 @@
           "paint": {
             "lineColor": "#ff9f1c",
             "lineWidth": 2,
-            "lineDasharray": [3, 2]
+            "lineDasharray": [
+              3,
+              2
+            ]
           },
           "labelField": "name",
           "popupFields": [
@@ -1021,6 +992,115 @@
           "data": "data/NDRRMA/8. Open space/Open Spaces.geojson",
           "note": "Open space / evacuation ground locations digitized from imagery (NDRRMA). No attributes are available for these points.",
           "active": false
+        }
+      ]
+    },
+     {
+      "id": "imagery",
+      "label": "Imagery (Pre / Post)",
+      "layers": [
+        {
+          "id": "post_imagery",
+          "label": "Post-Disaster Imagery (Vantor, 28 Aug 2026)",
+          "type": "raster",
+          "tiles": [
+            "https://titiler.hotosm.org/cog/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?url=https%3A%2F%2Fproduction-raw-data-api.s3.amazonaws.com%2FISO3%2FNPL%2Fdisasters%2Fnepal-flood%2F2026-08-28%2Fvantor_composite_v3.tif"
+          ],
+          "tileSize": 256,
+          "attribution": "Vantor / HOTOSM raw-data-api",
+          "active": false,
+          "period": "post"
+        },
+        {
+          "id": "post_imagery_s2",
+          "label": "Post-Disaster Sentinel-2 True Color (21 Sep 2026)",
+          "type": "raster",
+          "period": "post",
+          "tiles": [
+            "https://sh.dataspace.copernicus.eu/ogc/wms/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=1_TRUE_COLOR&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=512&HEIGHT=512&FORMAT=image/jpeg&TIME=2026-09-21/2026-09-21&MAXCC=100&SHOWLOGO=false"
+          ],
+          "tileSize": 512,
+          "maxzoom": 14,
+          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
+          "active": false
+        },
+        {
+          "id": "post_s2_false_color",
+          "label": "Post-Disaster Sentinel-2 False Color (21 Sep 2026)",
+          "type": "raster",
+          "period": "post",
+          "tiles": [
+            "https://sh.dataspace.copernicus.eu/ogc/wms/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=2_FALSE_COLOR&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=512&HEIGHT=512&FORMAT=image/jpeg&TIME=2026-09-21/2026-09-21&MAXCC=100&SHOWLOGO=false"
+          ],
+          "tileSize": 512,
+          "maxzoom": 14,
+          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
+          "active": false
+        },
+        {
+          "id": "post_s2_ndvi",
+          "label": "Post-Disaster Sentinel-2 NDVI (21 Sep 2026)",
+          "type": "raster",
+          "period": "post",
+          "tiles": [
+            "https://sh.dataspace.copernicus.eu/ogc/wms/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=3_NDVI&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=512&HEIGHT=512&FORMAT=image/jpeg&TIME=2026-09-21/2026-09-21&MAXCC=100&SHOWLOGO=false"
+          ],
+          "tileSize": 512,
+          "maxzoom": 14,
+          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
+          "active": false
+        },
+        {
+          "id": "pre_s2_true_color",
+          "label": "Pre-Disaster Sentinel-2 True Color (12 Aug 2026)",
+          "type": "raster",
+          "period": "pre",
+          "tiles": [
+            "https://sh.dataspace.copernicus.eu/ogc/wms/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=1_TRUE_COLOR&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=512&HEIGHT=512&FORMAT=image/jpeg&TIME=2026-08-12/2026-08-12&MAXCC=100&SHOWLOGO=false"
+          ],
+          "tileSize": 512,
+          "maxzoom": 14,
+          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
+          "active": false
+        },
+        {
+          "id": "pre_s2_false_color",
+          "label": "Pre-Disaster Sentinel-2 False Color (12 Aug 2026)",
+          "type": "raster",
+          "period": "pre",
+          "tiles": [
+            "https://sh.dataspace.copernicus.eu/ogc/wms/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=2_FALSE_COLOR&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=512&HEIGHT=512&FORMAT=image/jpeg&TIME=2026-08-12/2026-08-12&MAXCC=100&SHOWLOGO=false"
+          ],
+          "tileSize": 512,
+          "maxzoom": 14,
+          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
+          "active": false
+        },
+        {
+          "id": "pre_s2_ndvi",
+          "label": "Pre-Disaster Sentinel-2 NDVI (12 Aug 2026)",
+          "type": "raster",
+          "period": "pre",
+          "tiles": [
+            "https://sh.dataspace.copernicus.eu/ogc/wms/28c396b5-9a64-47df-b08a-ec0178ca4a5c?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=3_NDVI&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=512&HEIGHT=512&FORMAT=image/jpeg&TIME=2026-08-12/2026-08-12&MAXCC=100&SHOWLOGO=false"
+          ],
+          "tileSize": 512,
+          "maxzoom": 14,
+          "attribution": "Contains modified Copernicus Sentinel data 2026 / Copernicus Data Space Ecosystem",
+          "active": false
+        },
+        {
+          "id": "pre_imagery",
+          "label": "Pre-Disaster Reference (Sentinel-2 cloud-free mosaic)",
+          "type": "raster",
+          "tiles": [
+            "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg"
+          ],
+          "tileSize": 256,
+          "attribution": "Sentinel-2 cloudless by EOX IT Services GmbH",
+          "note": "General cloud-free baseline mosaic, not a same-date pre-event snapshot.",
+          "active": false,
+          "period": "pre"
         }
       ]
     }
