@@ -1,0 +1,295 @@
+id,title,type,DISTRICT_max,GAPA_NAPA_min,Long,Lat
+13988,Baidi SHP,Health Post,TANAHU,Devghat,84.319702,27.85393
+14006,Chhipchhipe HP,Health Post,TANAHU,Devghat,84.356712,27.81942
+14009,Sinchyang HP,Health Post,TANAHU,Devghat,84.433342,27.82411
+14022,Kota SHP,Health Post,TANAHU,Devghat,84.338364,27.758381
+57174,Baidi Hp_Tanahu,Health Post,TANAHU,Devghat,84.317175,27.855843
+57175,Chhipchhipe Hp_Tanahu,Health Post,TANAHU,Devghat,84.355751,27.818469
+57176,Kota Hp_Tanahu,Health Post,TANAHU,Devghat,84.338163,27.758348
+57177,Sinchyang Hp_Tanahu,Health Post,TANAHU,Devghat,84.433501,27.824324
+64497,Devghat Hp_ Tanahu,Health Post,TANAHU,Devghat,84.441799,27.756975
+64498,Devghat Dharmartha Hospital_ Tanahu,Basic Hospital (5 to 15 beds),TANAHU,Devghat,84.426648,27.746653
+13779,Gajuri PHC,Primary Health Care Center,DHADING,Gajuri,84.879997,27.80632
+13780,Gajuri Hospital,Hospital,DHADING,Gajuri,84.879333,27.80547
+13781,Marie Stopes Service,Other,DHADING,Gajuri,84.875732,27.80489
+13795,Kumpur SHP,Health Post,DHADING,Siddhalek,84.884651,27.844191
+13802,Nalang SHP,Health Post,DHADING,Siddhalek,84.826599,27.8703
+13803,Shiddha Samaj Sewa Nepal,Other,DHADING,Siddhalek,84.813164,27.86375
+13812,Salang HP,Health Post,DHADING,Siddhalek,84.79599,27.854271
+16101,Gajuri Hospital,Hospital,DHADING,Gajuri,84.879362,27.805245
+17498,"Primary Health Center, Gajuri",Hospital,DHADING,Gajuri,84.879984,27.806481
+52255,Bhadrakali Kandel Eye Care Center,Clinic (Eye/Medical),DHADING,Benighat Rorang,84.781102,27.810638
+52256,Aryana Pharma,Pharmacy,DHADING,Benighat Rorang,84.781246,27.81124
+52257,Benighat Health Post,Health Post,DHADING,Benighat Rorang,84.779742,27.809727
+52258,Pashupati Medical Hall,Pharmacy,DHADING,Benighat Rorang,84.833173,27.810975
+52259,Highway Community Hospital,General Hospital,DHADING,Benighat Rorang,84.833794,27.811125
+52260,Highway Daigonosis Center,Pharmacy,DHADING,Benighat Rorang,84.828017,27.81382
+52261,Basic Health Care Center,Basic Health Care Center,DHADING,Benighat Rorang,84.807549,27.815524
+62017,Dumrichaur Basic Health Service Center,Basic Health Service Centre,DHADING,Gajuri,84.879936,27.806305
+62018,Aamdanda Basic Health Service Center,Basic Health Service Centre,DHADING,Galchi,84.93392,27.83837
+64442,Kumpur Hp,Basic Health Service Centre,DHADING,Siddhalek,84.884598,27.844109
+64445,Gajuri Phc,Basic Health Service Centre,DHADING,Gajuri,84.880035,27.806313
+64446,Gajuri Hospital,Basic Hospital (5 to 15 beds),DHADING,Gajuri,84.879387,27.805191
+66199,Bal Devi Bhsc,Basic Health Service Centre,DHADING,Siddhalek,84.850548,27.872971
+66203,Salang Ghat Bhsc,Basic Health Service Centre,DHADING,Siddhalek,84.813667,27.81579
+66204,Aadamtar Bhsc,Basic Health Service Centre,DHADING,Siddhalek,84.935829,27.809383
+66205,Bag Bachhalaa Bhsc,Basic Health Service Centre,DHADING,Siddhalek,84.885643,27.855705
+66206,Jalpaa Bhsc,Basic Health Service Centre,DHADING,Siddhalek,84.906425,27.820841
+66209,Malekhu Teaching Hospital,Basic Hospital (5 to 15 beds),DHADING,Gajuri,84.835159,27.805803
+66215,Kalika Bhsc,Basic Health Service Centre,DHADING,Siddhalek,84.824371,27.834328
+13986,Anbukhaireni SHP,Health Post,TANAHU,Anbukhaireni,84.530853,27.909389
+14005,Chhimkeshwori SHP,Health Post,TANAHU,Anbukhaireni,84.49324,27.853729
+14008,Deurali SHP,Health Post,TANAHU,Anbukhaireni,84.461082,27.88759
+16932,Health Post,Health Post,TANAHU,Anbukhaireni,84.530858,27.909569
+17726,Koirala Medical Hall,Pharmacy,TANAHU,Anbukhaireni,84.537951,27.901912
+17733,Shree Chhimkeswori Pharmacy,Pharmacy,TANAHU,Anbukhaireni,84.537162,27.901422
+17738,Shree Chhimkeswori General Hospital,Hospital,TANAHU,Anbukhaireni,84.537139,27.901411
+57182,Nagrik Arogaya Sewakendra,Basic Ayurveda Service Centre,TANAHU,Anbukhaireni,84.5309,27.9094
+57183,Chhimkeshwori Hp_Tanahu,Health Post,TANAHU,Anbukhaireni,84.4932,27.8537
+57184,Deurali Hp Tanahu_Tanahu,Health Post,TANAHU,Anbukhaireni,84.4611,27.8876
+57185,"Chhimkeshwori (P) Hospital, Tanahu",General Hospital,TANAHU,Anbukhaireni,84.53589,27.902333
+64502,Om Biraj Dental Clinic,Clinic (Dental/Eye/Medical????.),TANAHU,Anbukhaireni,84.538644,27.902177
+64768,Satrasaya Bhsc,,TANAHU,Anbukhaireni,84.469794,27.937913
+64776,Tilbari Bhsc,,TANAHU,Anbukhaireni,84.497187,27.92168
+65965,Aanbookhaireni_Hospital,General Hospital,TANAHU,Anbukhaireni,84.530813,27.909677
+11047,Bridhim HP,Health Post,RASUWA,Gosaikunda,85.367264,28.19857
+11048,Thambuchet HP,Health Post,RASUWA,Parbati Kunda,85.302711,28.18247
+11050,"District Hospital , Rasuwa",Hospital,RASUWA,Gosaikunda,85.296593,28.110069
+11051,Rasuwa HP,Health Post,RASUWA,Gosaikunda,85.299088,28.111441
+11052,Gatlang SHP,Health Post,RASUWA,Parbati Kunda,85.276482,28.1577
+11053,Goljung HP,Health Post,RASUWA,Parbati Kunda,85.316109,28.170839
+11054,Haku SHP,Health Post,RASUWA,Parbati Kunda,85.263153,28.116011
+11057,Langtang HP,Health Post,RASUWA,Gosaikunda,85.506622,28.2169
+11060,Syafrubesi HP,Health Post,RASUWA,Gosaikunda,85.341232,28.165251
+11062,Thuman SHP,Health Post,RASUWA,Gosaikunda,85.338226,28.21102
+11063,Timure HP,Health Post,RASUWA,Gosaikunda,85.358902,28.242241
+12132,Destrict Community Eye Center,Other,RASUWA,Gosaikunda,85.296593,28.112221
+12133,"2,900,540,101",Hospital,RASUWA,Gosaikunda,85.296638,28.11224
+12134,FK Health Clinic,Other,RASUWA,Parbati Kunda,85.305229,28.168831
+12137,Mountain Fund Clinic,Other,RASUWA,Gosaikunda,85.35955,28.1409
+12138,Panta Medical Hall,Clinic,RASUWA,Gosaikunda,85.3367,28.162001
+17469,Dhunche Pharmacy,Pharmacy,RASUWA,Gosaikunda,85.297803,28.111536
+17471,Rasuwa District Hospital,Hospital,RASUWA,Gosaikunda,85.296484,28.110444
+18056,Langtang Valley Clinic,Clinic,RASUWA,Gosaikunda,85.519196,28.215505
+55230,Handicap International,Clinic (Dental/Eye/Medical????.),RASUWA,Gosaikunda,85.2991,28.1114
+55231,District Aayurved Health Center,Ayurveda Health Center (General Ayurveda Hospital),RASUWA,Gosaikunda,85.2966,28.1101
+55232,District Hospital Rasuwa,General Hospital,RASUWA,Gosaikunda,85.296311,28.110589
+55233,Bridhim Health Post,Basic Health Service Centre,RASUWA,Gosaikunda,85.3673,28.1986
+55234,Langtang Health Post Rasuwa,Basic Health Service Centre,RASUWA,Gosaikunda,85.5066,28.2169
+55235,Rasuwa Health Post Rasuwa,Basic Health Service Centre,RASUWA,Gosaikunda,85.2991,28.1114
+55236,Syafrubesi Health Post Rasuwa,Basic Health Service Centre,RASUWA,Gosaikunda,85.340912,28.165067
+55237,Thuman Health Post Rasuwa,Basic Health Service Centre,RASUWA,Gosaikunda,85.3382,28.211
+55238,Timure Health Post Rasuwa,Basic Health Service Centre,RASUWA,Gosaikunda,85.37,28.241
+55239,District Jail,Basic Health Service Centre,RASUWA,Gosaikunda,85.2991,28.1114
+55240,Rasuwa Community Eye Center,Eye Treatment Centre,RASUWA,Gosaikunda,85.2991,28.1114
+55241,Gatlang Health Post,Basic Health Service Centre,RASUWA,Parbati Kunda,85.2765,28.1577
+55242,Goljung Hp,Basic Health Service Centre,RASUWA,Parbati Kunda,85.3161,28.1708
+55243,Haku Health Post,Basic Health Service Centre,RASUWA,Parbati Kunda,85.2632,28.116
+55244,Thambuchet Health Post,Basic Health Service Centre,RASUWA,Parbati Kunda,85.3027,28.1825
+55245,Bogatitar Community Health Unit,आधारभूत स्वास्थ्य सेवा केन्द्र,RASUWA,Gosaikunda,85.2991,28.1114
+58720,Mailung Chu,आधारभूत स्वास्थ्य सेवा केन्द्र,RASUWA,Gosaikunda,85.2991,28.1114
+58741,"Gray Basic Health Service Centre , Rasuwa",Basic Health Service Centre,RASUWA,Gosaikunda,85.2991,28.1114
+58769,"Saramthali Besic Health Service Center Samthali, Rasuwa",Basic Health Service Centre,RASUWA,Gosaikunda,85.2991,28.1114
+58809,"Sarsyu Besic Health Service Center, Sarsyu, Rasuwa",Basic Health Service Centre,RASUWA,Gosaikunda,85.2991,28.1114
+66566,Dahalfedi Community Health Unit Rasuwa,Basic Health Service Centre,RASUWA,Gosaikunda,85.352242,28.229209
+67031,Khamjing Community Health Unit Rasuwa,Basic Health Service Centre,RASUWA,Gosaikunda,85.359975,28.176305
+67229,"Thulosyafru Community Health Unit, Rasuwa",Basic Health Service Centre,RASUWA,Gosaikunda,85.359686,28.141136
+67230,Dobo Temba Phurpa Basic Hospital,Basic Ayurveda Service Centre,RASUWA,Parbati Kunda,85.315566,28.167178
+11055,Jibjibe PHC,Primary Health Care Center,RASUWA,Kalika,85.224136,27.992161
+11056,Laharepouwa HP,Health Post,RASUWA,Uttargaya,85.198036,28.01445
+11058,Ramche HP,Health Post,RASUWA,Kalika,85.217827,28.033369
+12135,Kalika Community Hospital,Hospital,RASUWA,Kalika,85.20343,27.994101
+12136,Kalika Pharmacy,Medical/Pharmecy,RASUWA,Kalika,85.212051,28.00205
+16353,Kalika Community Hospital,Hospital,RASUWA,Kalika,85.203463,27.993887
+55247,Laharepouwa Hp,Health Post,RASUWA,Uttargaya,85.198,28.0145
+55250,"Beteni Basic Health Service Center,Rasuwa",Basic Health Service Centre,RASUWA,Kalika,85.204648,27.983984
+55251,Kalika Basic Health Service Center,Basic Health Service Centre,RASUWA,Kalika,85.203411,27.995763
+55252,Ramche Health Post,Basic Health Service Centre,RASUWA,Kalika,85.219135,28.031807
+55253,Jibjibe Gramin Hospital,Basic Hospital (5 to 15 beds),RASUWA,Kalika,85.224102,27.992244
+58768,"Dhuseni Basic Health Service Center,Kalika",Basic Health Service Centre,RASUWA,Kalika,85.22915,27.981456
+14418,Kaule HP,Health Post,NUWAKOT,Kispang,85.1343,28.00349
+14426,Fikuri HP,Health Post,NUWAKOT,Kispang,85.165123,28.002831
+14427,Manakamana SHP,Health Post,NUWAKOT,Kispang,85.169113,28.01478
+14428,Thap Manakamana SHP,Health Post,NUWAKOT,Kispang,85.174309,27.987789
+55307,Kaule Hp Nuwakot,Basic Health Service Centre,NUWAKOT,Kispang,85.1343,28.0035
+11049,Dandagoun HP,Health Post,RASUWA,Uttargaya,85.185417,28.036381
+11061,Thulogoun SHP,Health Post,RASUWA,Uttargaya,85.171219,28.02598
+55246,Dandagoun Hp,Health Post,RASUWA,Uttargaya,85.1854,28.0364
+55248,Thulogoun Hp,Health Post,RASUWA,Uttargaya,85.1712,28.026
+61832,Tiru Community Health Unit,Community Health Unit,RASUWA,Uttargaya,85.21125,28.090052
+14947,Kaule SHP,Health Post,CHITAWAN,Ichchhyakamana,84.648804,27.77293
+16276,Kaule Dispensary,Hospital,CHITAWAN,Ichchhyakamana,84.621638,27.792134
+64461,Kaule Hp Chitawan_Chitawan,Health Post,CHITAWAN,Ichchhyakamana,84.64872,27.772985
+65269,"Basic Health Service Center , Majhkaule Chitwan",Basic Health Service Centre,CHITAWAN,Ichchhyakamana,84.620758,27.789457
+65270,"Community Health Unit Bharang ,Chitwan",Basic Health Service Centre,CHITAWAN,Ichchhyakamana,84.642662,27.748472
+13809,Pida SHP,Health Post,DHADING,Gajuri,84.891327,27.758051
+52251,Parshant Pharmacy,Pharmacy,DHADING,Benighat Rorang,84.699939,27.80664
+52252,Jogimara Health Post,Community Health Unit,DHADING,Benighat Rorang,84.699385,27.806343
+52253,Bihani Clinic and Pharmacy Private Limited,Clinic (Eye/Medical),DHADING,Benighat Rorang,84.704041,27.80573
+52254,Basic Health Care Center,Basic Health Care Center,DHADING,Benighat Rorang,84.749075,27.803388
+52262,Jaipuri Community Health Unit,Community Health Unit,DHADING,Benighat Rorang,84.666807,27.798835
+52263,Dhusa Health Post,Health Post,DHADING,Benighat Rorang,84.729025,27.766204
+52264,Syadul Community Health Unit,Community Health Unit,DHADING,Benighat Rorang,84.771621,27.763536
+52265,Irang Community Health Unit,Community Health Unit,DHADING,Benighat Rorang,84.802589,27.773898
+52266,Mahadevsthan Health Post,Health Post,DHADING,Benighat Rorang,84.812164,27.730138
+52267,Adharbhut Health Service  Center,Community Health Unit,DHADING,Benighat Rorang,84.868777,27.695884
+64444,Pida Hp,Basic Health Service Centre,DHADING,Gajuri,84.891281,27.757906
+66207,Basic Health Service Centre -2,Basic Health Service Centre,DHADING,Gajuri,84.82843,27.77495
+66208,Basic Health Service Centre -3,Basic Health Service Centre,DHADING,Gajuri,84.858917,27.762005
+13872,Ghyalchok SHP,Health Post,GORKHA,Gandaki,84.73645,27.815359
+67092,Ghyalchok Basic Health Centre,Basic Health Service Centre,GORKHA,Gandaki,84.726744,27.807356
+13766,Baireni HP,Health Post,DHADING,Galchi,84.988289,27.801081
+13794,Kiranchok SHP,Health Post,DHADING,Gajuri,84.937798,27.74888
+55263,Baireni Aayurved Dispensery,Basic Ayurveda Service Centre,DHADING,Galchi,84.9883,27.8011
+55264,Baireni Hospital,Basic Hospital (5 to 15 beds),DHADING,Galchi,84.9883,27.8011
+62019,Karkidanda Basic Health Service Center,Basic Health Service Centre,DHADING,Galchi,84.93942,27.77045
+64443,Kiranchok Hp,Basic Health Service Centre,DHADING,Gajuri,84.937325,27.747448
+66210,Basic Health Service Centre -4,Basic Health Service Centre,DHADING,Gajuri,84.909714,27.728205
+66211,Basic Health Service Centre -7,Basic Health Service Centre,DHADING,Gajuri,84.927734,27.76
+66212,Basic Health Service Centre -6,Basic Health Service Centre,DHADING,Gajuri,84.916115,27.789682
+13782,Goganpani SHP,Health Post,DHADING,Galchi,85.059647,27.78306
+13789,Kalleri SHP,Health Post,DHADING,Galchi,84.951431,27.838181
+62015,Goganpani Basic Health Service Center (Health Post),Basic Health Service Centre,DHADING,Galchi,85.05972,27.78335
+62016,Kalleri Basic Health Service Center (Health Post),Basic Health Service Centre,DHADING,Galchi,84.9541,27.83863
+62023,Birtadada  Basic Health Service Center,Basic Health Service Centre,DHADING,Galchi,84.99494,27.76066
+62024,Bhotepalang Basic Health Service Center,Basic Health Service Centre,DHADING,Galchi,85.00407,27.78783
+14406,Duipipal HP,Health Post,NUWAKOT,Belkotgadhi,85.059509,27.83633
+14407,Thap Duipipal SHP,Health Post,NUWAKOT,Belkotgadhi,85.014259,27.81337
+14434,Ratmate SHP,Health Post,NUWAKOT,Belkotgadhi,85.067009,27.85087
+66535,"Basic Health Service Center, Dadakharka",Basic Health Service Centre,NUWAKOT,Belkotgadhi,85.0884,27.80907
+67013,"Basic Health Unit,Darshantaar",Basic Health Service Centre,NUWAKOT,Belkotgadhi,85.05,27.85
+14390,Belkot HP,Health Post,NUWAKOT,Belkotgadhi,85.16671,27.837469
+14397,Budhasing HP,Health Post,NUWAKOT,Tarkeshwar,85.054588,27.870489
+14398,Thap Budhasing SHP,Health Post,NUWAKOT,Tarkeshwar,85.022423,27.876051
+14413,Jiling SHP,Health Post,NUWAKOT,Belkotgadhi,85.106247,27.849319
+14419,Khadag Bhanjyang HP,Health Post,NUWAKOT,Bidur,85.095268,27.88681
+14421,Kumari SHP,Health Post,NUWAKOT,Belkotgadhi,85.141632,27.77634
+14424,Madanpur SHP,Health Post,NUWAKOT,Belkotgadhi,85.180511,27.86241
+55291,Khadag Bhanjyang Hp,Basic Health Service Centre,NUWAKOT,Bidur,85.0953,27.8868
+55328,Kumari Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Belkotgadhi,85.1416,27.7763
+55332,Sukuman Memorial Poly Clinic Kumari_ Nuwakot,Poly Clinic,NUWAKOT,Belkotgadhi,85.1416,27.7763
+62174,Jarung Basic Health Service Center,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.097842,27.881564
+11041,Panchakanya Community Hospital,Hospital,NUWAKOT,Bidur,85.145943,27.90155
+11042,Nuwakot Hospital Pvt Ltd,Hospital,NUWAKOT,Bidur,85.148232,27.921761
+14394,Lions Dental Clinic,Dental Clinic,NUWAKOT,Bidur,85.140388,27.9219
+14395,Marie Stopes Centre,Other,NUWAKOT,Bidur,85.140823,27.89896
+14396,Nuwakot HP,Health Post,NUWAKOT,Bidur,85.166054,27.91721
+14400,Charghare SHP,Health Post,NUWAKOT,Bidur,85.11042,27.91349
+14410,Gerkhu SHP,Health Post,NUWAKOT,Bidur,85.180748,27.950649
+14412,Gorsyang HP,Health Post,NUWAKOT,Tarkeshwar,85.068642,27.89612
+14417,Kalyanpur SHP,Health Post,NUWAKOT,Bidur,85.107101,27.93708
+14451,Tupche SHP,Health Post,NUWAKOT,Bidur,85.1548,27.97191
+55277,Urleni Hp,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55279,Bageswori Hp,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55280,Ganeshthan Hp,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55281,Haldekalika Hp,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55282,Lachyang Hp,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55283,Panchakanya Community Hospital,General Hospital,NUWAKOT,Bidur,85.1661,27.9172
+55284,Marie Stopes Centre Bidur Municipality_Nuwakot,,NUWAKOT,Bidur,85.1661,27.9172
+55285,Psi Nepal Bidur Municipality_Nuwakot,,NUWAKOT,Bidur,85.1661,27.9172
+55286,Community Health Unit Tupche,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55287,Community Health Unit 12,Basic Health Service Centre,NUWAKOT,Bidur,85.135065,27.906108
+55288,Charghare Hp,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55289,Gerkhu Hp,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55290,Kalyanpur Hp,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55292,Nuwakot Hp,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55293,Tupche Hp,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55294,Mch Clinic Bidur,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55295,Urban Health Center 6,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55296,Urban Health Center 9,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55297,Community Health Unit 3,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55298,Urban Health Center_ Bidur-5_ Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55299,Trishuli Dental Care Pvt.Ltd._ Nuwakot,Medical Centre,NUWAKOT,Bidur,85.1661,27.9172
+55300,"Nuwakot City Hosptial Bidur-3, Nuwakot",General Hospital,NUWAKOT,Bidur,85.1661,27.9172
+55301,Nuwakot Hospital Pvt.Ltd.L_Nuwakot,General Hospital,NUWAKOT,Bidur,85.1661,27.9172
+55302,Nuwakot Sanjivani Hospital Nuwakot,General Hospital,NUWAKOT,Bidur,85.1661,27.9172
+55303,"Aamthang Primary Thc, Kalyanpur-2, Nuwakot",,NUWAKOT,Bidur,85.1661,27.9172
+55304,Battar Sanjibani Poly Clinic_ Bidur_ Nuwakot,Poly Clinic,NUWAKOT,Bidur,85.1661,27.9172
+55305,Bhalche Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55306,Fikuri Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55308,Manakamana Hp Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55309,Salme Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55310,Thap Manakamana Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55311,Barsunchet Hp_Nuwakot,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55318,Budhasing Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55319,Dangsing Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55320,Gorsyang Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55321,Taruka Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55322,Thap Budhasing Hp_Nuwakot,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55324,"Community Health Unit, Belkot-9, Nuwakot",Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55325,Belkot Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55326,Duipipal Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55327,Jiling Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55329,Madanpur Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55330,Ratmate Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55331,Thap Duipipal Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55338,Kabilas Hp Nuwakot,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55341,Kiran Polyclinic Pvt. Ltd._Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55342,"Community Health Unit, Talakhu-6, Nuwakot",Community Health Unit,NUWAKOT,Bidur,85.1661,27.9172
+55343,Community Health Unit_Samundradevi_Nuwakot,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.1661,27.9172
+55345,Mahakali Hp_Nuwakot,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.1661,27.9172
+55347,Samundradevi Hp_Nuwakot,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.1661,27.9172
+55348,Sikre Hp_Nuwakot,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.1661,27.9172
+55349,Sunkhani Hp_Nuwakot,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.1661,27.9172
+55350,Talakhu Hp_Nuwakot,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.1661,27.9172
+55351,Thanapati Hp_Nuwakot,आधारभूत स्वास्थ्य सेवा केन्द्र,NUWAKOT,Bidur,85.1661,27.9172
+55353,Chauthe Hp_Nuwakot,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55354,Okharpauwa Hp_Nuwakot,Basic Health Service Centre,NUWAKOT,Bidur,85.1661,27.9172
+55356,Thansing Hp_Nuwakot,Health Post,NUWAKOT,Bidur,85.1661,27.9172
+55357,Kakani Phc _Nuwakot,Primary Health Center,NUWAKOT,Bidur,85.1661,27.9172
+58721,"Baniyatar Health Post, Panchakanya 01, Nuwakot",Basic Health Service Center,NUWAKOT,Bidur,85.1661,27.9172
+66722,Urban Health Centre Bidur-1,Basic Health Service Centre,NUWAKOT,Bidur,85.155278,27.923747
+66731,Urban Health Center 1,Basic Health Service Centre,NUWAKOT,Bidur,85.155278,27.923747
+66732,Urban Health Center-4,Basic Health Service Centre,NUWAKOT,Bidur,85.141591,27.898507
+66733,Urban Health Center-8,Basic Health Service Centre,NUWAKOT,Bidur,85.14182,27.943444
+66734,Urban Health Center-10,Basic Health Service Centre,NUWAKOT,Bidur,85.15796,27.934017
+67019,"Basic Health Unit,Phirkepkot",Basic Health Service Centre,NUWAKOT,Tarkeshwar,85.09,27.91
+14393,Bhalche SHP,Health Post,NUWAKOT,Kispang,85.11161,28.025961
+14436,Salme SHP,Health Post,NUWAKOT,Kispang,85.086868,28.0292
+14405,Dangsing SHP,Health Post,NUWAKOT,Tarkeshwar,85.033409,27.905939
+14447,Taruka HP,Health Post,NUWAKOT,Tarkeshwar,85.00634,27.880699
+55317,Taruka Aayurved Dispensary,Basic Health Service Centre,NUWAKOT,Tarkeshwar,85.0063,27.8807
+62021,"Community Health Unit, Tarakeshwor 2",Basic Health Service Centre,NUWAKOT,Tarkeshwar,85.011071,27.866875
+62022,"Basic Health Care Service Center, Majuwa 6",Basic Health Service Centre,NUWAKOT,Tarkeshwar,85.0063,27.8807
+67017,"Basic Health Unit,Nigleni",Basic Health Service Centre,NUWAKOT,Tarkeshwar,85.05,27.91
+67018,"Basic Health Unit,Dadakhark",Basic Health Service Centre,NUWAKOT,Tarkeshwar,85.06,27.91
+67020,"Basic Health Unit,Seldada",Basic Health Service Centre,NUWAKOT,Tarkeshwar,85.02,27.92
+14932,Chandibhanjyang HP,Health Post,CHITAWAN,Ichchhyakamana,84.561996,27.80884
+14933,Pamdanda SHP,Health Post,CHITAWAN,Ichchhyakamana,84.577103,27.837879
+14934,Dahakhani HP,Health Post,CHITAWAN,Ichchhyakamana,84.529953,27.78618
+14935,Mankamana Community Polyclinic Pvt.ltd.,Clinic,CHITAWAN,Ichchhyakamana,84.631531,27.86854
+14936,Darechok SHP,Health Post,CHITAWAN,Ichchhyakamana,84.62664,27.87076
+62374,Shahid Ganesh Gitanagar Health Post,Basic Health Service Centre,CHITAWAN,Ichchhyakamana,84.562163,27.808811
+62387,Krishnapur Basic Health Center,Basic Health Service Centre,CHITAWAN,Ichchhyakamana,84.544868,27.743926
+64458,Chandibhanjyang Hp Chitawan,Health Post,CHITAWAN,Ichchhyakamana,84.561981,27.808804
+64459,Dahakhani Hp_Chitawan,Basic Health Service Centre,CHITAWAN,Ichchhyakamana,84.531975,27.786242
+64460,Ichchhakamana Basic Hospital,Basic Hospital (5 to 15 beds),CHITAWAN,Ichchhyakamana,84.626999,27.870356
+64462,Pamdanda Hp_Chitawan,Health Post,CHITAWAN,Ichchhyakamana,84.561707,27.854677
+65271,Majhgawn  Basis Health Service Centre,Basic Health Service Centre,CHITAWAN,Ichchhyakamana,84.638985,27.834414
+65272,"Syandi Basis Health Service,Chitwan",Basic Health Service Centre,CHITAWAN,Ichchhyakamana,84.544998,27.744452
+67042,Ichchhakamana Polyclinic Pvt Ltd,Homeopathy Hospital,CHITAWAN,Ichchhyakamana,84.623482,27.872022
+67093,Koldanda Chu,Basic Health Service Centre,GORKHA,Gandaki,84.64441,27.87525
+13854,Bhumlichok SHP,Health Post,GORKHA,Gandaki,84.696419,27.84774
+13862,Darbhung SHP,Health Post,GORKHA,Gandaki,84.74881,27.871941
+13867,Fujel SHP,Health Post,GORKHA,Gandaki,84.706497,27.91046
+13870,Ghairung SHP,Health Post,GORKHA,Sahid Lakhan,84.666389,27.92658
+13912,Makaising PHC,Primary Health Care Center,GORKHA,Gandaki,84.669617,27.886841
+13913,Tanglichok SHP,Health Post,GORKHA,Gandaki,84.688507,27.884809
+56956,Tanglichok Health Post,Basic Health Service Centre,GORKHA,Gandaki,84.6885,27.8848
+59035,Bhumlichok Hp,Health Post,GORKHA,Gandaki,84.6697,27.887
+67089,Ghairung Health Post,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.666333,27.925925
+67107,Taklung Basic Health Centre,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.636661,27.925365
+13852,Bakrang SHP,Health Post,GORKHA,Sahid Lakhan,84.590912,27.9363
+13857,Bunkot HP,Health Post,GORKHA,Sahid Lakhan,84.675217,27.972601
+13887,Manakamana SHP,Health Post,GORKHA,Sahid Lakhan,84.571419,27.889681
+13891,Namjung SHP,Health Post,GORKHA,Sahid Lakhan,84.703773,27.936819
+13908,Taklung SHP,Health Post,GORKHA,Sahid Lakhan,84.625999,27.90407
+16272,pharmacy bungkot,Pharmacy,GORKHA,Sahid Lakhan,84.674602,27.959831
+16273,Bungkot Hospital,Hospital,GORKHA,Sahid Lakhan,84.674803,27.971878
+56955,Taklung Heath Post Gorkha,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.625876,27.904054
+67086,Manakamana Basic Health Service Center,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.590194,27.905463
+67087,Bakrang Health Post,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.592989,27.934139
+67088,Bunkot Health Post,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.674777,27.971942
+67090,Manakamana Health Post,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.571576,27.889701
+67091,Namjung Health Post,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.70346,27.93692
+67108,Bungkot Basic Health Centre,Basic Health Service Centre,GORKHA,Sahid Lakhan,84.699492,27.96857

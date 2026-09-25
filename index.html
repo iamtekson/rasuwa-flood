@@ -43,8 +43,12 @@
     <div id="compare-container" class="hidden">
       <div id="before-map" class="compare-map"></div>
       <div id="after-map" class="compare-map"></div>
-      <div class="compare-label compare-label-left">Pre-Disaster (Sentinel-2 cloud-free)</div>
-      <div class="compare-label compare-label-right">Post-Disaster (Vantor, 28 Aug 2026)</div>
+      <div class="compare-label compare-label-left">
+        <select id="compare-select-before" aria-label="Left panel imagery"></select>
+      </div>
+      <div class="compare-label compare-label-right">
+        <select id="compare-select-after" aria-label="Right panel imagery"></select>
+      </div>
     </div>
 
     <section id="elevation-panel" class="elevation-panel hidden">

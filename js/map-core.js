@@ -3,7 +3,7 @@ import { state } from "./state.js";
 import { loadIcons } from "./icons.js";
 import { addAllConfiguredLayers } from "./layers.js";
 import { buildSidebar } from "./sidebar.js";
-import { toggleCompare } from "./compare.js";
+import { toggleCompare, updateCompareTerrain } from "./compare.js";
 
 // First launch only (per browser tab): play the camera tour defined in
 // config.map.tour — a scripted flyover of waypoints (landslide source, full
@@ -268,4 +268,6 @@ function toggle3D() {
     state.map.setTerrain(null);
     state.map.easeTo({ pitch: 0, bearing: 0, duration: 800 });
   }
+  const t = state.CONFIG.map.terrain3d;
+  updateCompareTerrain(state.is3D ? t.pitch : 0, state.is3D ? t.bearing : 0);
 }

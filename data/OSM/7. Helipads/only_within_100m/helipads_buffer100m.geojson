@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "helipads_buffer100m",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Kurintar Heliport, Ichchhyakamana-4, Cablecar", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 84.589753874741561, 27.878581650023211, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Bidur-12, Mandredhunga", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 85.133201020210961, 27.887009892992221, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Uttargaya-1, Mailung Dobhan", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 85.206598400296002, 28.07336470042064, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Gosaikunda-5, Shyaphrubesi", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 85.341815195814704, 28.16703223375066, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Bidur-7, Akkare Bajar", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 85.169383517835101, 27.964440482442349, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Bidur-1, Rimalghat", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 85.157237674479191, 27.933973425533239, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Siddhalek-7, Sindurtar", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 84.911131390501353, 27.80625550188995, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Gajuri-5, Galaudu Khola", "tessellate": -1, "extrude": 0, "visibility": -1 }, "geometry": { "type": "Point", "coordinates": [ 84.893561755670532, 27.80712960514721, 0.0 ] } }
+]
+}

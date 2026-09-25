@@ -9,6 +9,7 @@ export const state = {
   beforeMap: null,
   afterMap: null,
   compareControl: null,
-  listenersAttached: new Set(), // layer ids that already have hover/click handlers bound
+  compareOpen: false,
+  compareLayers: new Set(), // layer ids shown on the compare maps (separate from the main map's layer.active)
   autoPopups: {}, // layer.id -> [maplibregl.Popup, ...] currently shown for highlighted features
 };

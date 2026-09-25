@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="intersection" id="intersection">
+	<SimpleField name="id" type="int"></SimpleField>
+	<SimpleField name="hf_code" type="float"></SimpleField>
+	<SimpleField name="hf_name" type="string"></SimpleField>
+	<SimpleField name="facility_type" type="string"></SimpleField>
+	<SimpleField name="level" type="string"></SimpleField>
+	<SimpleField name="ownership" type="string"></SimpleField>
+	<SimpleField name="province" type="string"></SimpleField>
+	<SimpleField name="district" type="string"></SimpleField>
+	<SimpleField name="municipality" type="string"></SimpleField>
+	<SimpleField name="ward" type="int"></SimpleField>
+	<SimpleField name="operational_status" type="string"></SimpleField>
+	<SimpleField name="contact_person" type="string"></SimpleField>
+	<SimpleField name="contact_mobile" type="string"></SimpleField>
+	<SimpleField name="telephone" type="string"></SimpleField>
+	<SimpleField name="email" type="string"></SimpleField>
+	<SimpleField name="website" type="string"></SimpleField>
+	<SimpleField name="ambulance" type="string"></SimpleField>
+	<SimpleField name="oxygen" type="string"></SimpleField>
+	<SimpleField name="pharmacy" type="string"></SimpleField>
+	<SimpleField name="insurance" type="string"></SimpleField>
+	<SimpleField name="established_date" type="string"></SimpleField>
+	<SimpleField name="hmis_code" type="string"></SimpleField>
+	<SimpleField name="OBJECTID" type="float"></SimpleField>
+	<SimpleField name="new_ward_n" type="float"></SimpleField>
+	<SimpleField name="GaPa_NaP_1" type="string"></SimpleField>
+	<SimpleField name="Type_GN" type="string"></SimpleField>
+	<SimpleField name="type_en" type="string"></SimpleField>
+	<SimpleField name="DISTRICT_2" type="string"></SimpleField>
+	<SimpleField name="hlcit_code" type="string"></SimpleField>
+	<SimpleField name="munid" type="float"></SimpleField>
+	<SimpleField name="districtid" type="float"></SimpleField>
+	<SimpleField name="state" type="float"></SimpleField>
+	<SimpleField name="Long" type="float"></SimpleField>
+	<SimpleField name="Lat" type="float"></SimpleField>
+</Schema>
+<Folder><name>intersection</name>
+  <Placemark id="intersection.1">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">2395</SimpleData>
+		<SimpleData name="hf_code">3030100081</SimpleData>
+		<SimpleData name="hf_name">SYAFRUBESI HEALTH POST RASUWA</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Rasuwa</SimpleData>
+		<SimpleData name="municipality">Gosaikunda Rural Municipality</SimpleData>
+		<SimpleData name="ward">5</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">khambu bohara</SimpleData>
+		<SimpleData name="contact_mobile">9861227760</SimpleData>
+		<SimpleData name="telephone">010541060</SimpleData>
+		<SimpleData name="email">syafruhp123@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance"></SimpleData>
+		<SimpleData name="oxygen"></SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date">03/12/2036</SimpleData>
+		<SimpleData name="hmis_code">ceSf4Es3SpC</SimpleData>
+		<SimpleData name="OBJECTID">2103</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gosaikunda</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 002</SimpleData>
+		<SimpleData name="munid">315.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.341</SimpleData>
+		<SimpleData name="Lat">28.165</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.340912,28.165067</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.2">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">2405</SimpleData>
+		<SimpleData name="hf_code">3030300021</SimpleData>
+		<SimpleData name="hf_name">BOGATITAR COMMUNITY HEALTH UNIT</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Rasuwa</SimpleData>
+		<SimpleData name="municipality">Uttargaya Rural Municipality</SimpleData>
+		<SimpleData name="ward">5</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Melnurani Ghale</SimpleData>
+		<SimpleData name="contact_mobile">9866417150</SimpleData>
+		<SimpleData name="telephone">9863194747</SimpleData>
+		<SimpleData name="email">bogatitarchu1@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance"></SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date">01/08/2073</SimpleData>
+		<SimpleData name="hmis_code">mbGREK0dI2E</SimpleData>
+		<SimpleData name="OBJECTID">2098</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.186</SimpleData>
+		<SimpleData name="Lat">27.978</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.186064,27.978459</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.3">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">2489</SimpleData>
+		<SimpleData name="hf_code">3041000051</SimpleData>
+		<SimpleData name="hf_name">GAJURI PHC</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Gajuri Rural Municipality</SimpleData>
+		<SimpleData name="ward">1</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Sudip Pandey</SimpleData>
+		<SimpleData name="contact_mobile">9843703751</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email">phcgajuri@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">yes</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">no</SimpleData>
+		<SimpleData name="insurance">yes</SimpleData>
+		<SimpleData name="established_date">01/04/2050</SimpleData>
+		<SimpleData name="hmis_code">jfvfjM78dPp</SimpleData>
+		<SimpleData name="OBJECTID">1530</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.880</SimpleData>
+		<SimpleData name="Lat">27.806</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8800354,27.80631256</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.4">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">2490</SimpleData>
+		<SimpleData name="hf_code">3041000062</SimpleData>
+		<SimpleData name="hf_name">GAJURI HOSPITAL</SimpleData>
+		<SimpleData name="facility_type">Non-Government</SimpleData>
+		<SimpleData name="level">Basic Hospital (5 to 15 beds)</SimpleData>
+		<SimpleData name="ownership">Private Enterprise</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Gajuri Rural Municipality</SimpleData>
+		<SimpleData name="ward">1</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">HARI BAHADUR KARKI</SimpleData>
+		<SimpleData name="contact_mobile">9845089394</SimpleData>
+		<SimpleData name="telephone">010402329</SimpleData>
+		<SimpleData name="email">gajuriaspatal20640810@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">yes</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">yes</SimpleData>
+		<SimpleData name="insurance">no</SimpleData>
+		<SimpleData name="established_date">09/05/2066</SimpleData>
+		<SimpleData name="hmis_code">uaj7JNQy05o</SimpleData>
+		<SimpleData name="OBJECTID">1530</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.879</SimpleData>
+		<SimpleData name="Lat">27.805</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8793869,27.80519104</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.5">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">2491</SimpleData>
+		<SimpleData name="hf_code">3041100011</SimpleData>
+		<SimpleData name="hf_name">BAIRENI AAYURVED DISPENSERY</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Ayurveda Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Galchhi Rural Municipality</SimpleData>
+		<SimpleData name="ward">5</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Narayan Prasad Poudel</SimpleData>
+		<SimpleData name="contact_mobile">9851069502</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email">ayurveda.galchhimun@gmail.con</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">yes</SimpleData>
+		<SimpleData name="insurance">no</SimpleData>
+		<SimpleData name="established_date">28/03/2057</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">1514</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Galchi</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 010</SimpleData>
+		<SimpleData name="munid">323.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.988</SimpleData>
+		<SimpleData name="Lat">27.801</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.9883,27.8011</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.6">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">2492</SimpleData>
+		<SimpleData name="hf_code">3041100021</SimpleData>
+		<SimpleData name="hf_name">BAIRENI HOSPITAL</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Hospital (5 to 15 beds)</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Galchhi Rural Municipality</SimpleData>
+		<SimpleData name="ward">6</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Indra Bahadur Sijapati</SimpleData>
+		<SimpleData name="contact_mobile">984409377</SimpleData>
+		<SimpleData name="telephone">010-590500</SimpleData>
+		<SimpleData name="email">bairenihospital@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">yes</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">yes</SimpleData>
+		<SimpleData name="insurance">yes</SimpleData>
+		<SimpleData name="established_date">01/04/2036</SimpleData>
+		<SimpleData name="hmis_code">yWzPdU5rr0i</SimpleData>
+		<SimpleData name="OBJECTID">1514</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Galchi</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 010</SimpleData>
+		<SimpleData name="munid">323.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.988</SimpleData>
+		<SimpleData name="Lat">27.801</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.9883,27.8011</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.7">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">2532</SimpleData>
+		<SimpleData name="hf_code">3050400071</SimpleData>
+		<SimpleData name="hf_name">COMMUNITY HEALTH UNIT 12</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Nuwakot</SimpleData>
+		<SimpleData name="municipality">Bidur Municipality</SimpleData>
+		<SimpleData name="ward">12</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">PRATIKSHA DEVKOTA</SimpleData>
+		<SimpleData name="contact_mobile">9860319374</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email">pratikshadevkota8@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">no</SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date"></SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">5958</SimpleData>
+		<SimpleData name="new_ward_n">12.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.135</SimpleData>
+		<SimpleData name="Lat">27.906</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.135065,27.906108</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.8">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">4365</SimpleData>
+		<SimpleData name="hf_code">3130300031</SimpleData>
+		<SimpleData name="hf_name">ICHCHHAKAMANA BASIC HOSPITAL</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Hospital (5 to 15 beds)</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Chitawan</SimpleData>
+		<SimpleData name="municipality">Ichchha Kamana Rural Municipality</SimpleData>
+		<SimpleData name="ward">4</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">DR.renu silwal </SimpleData>
+		<SimpleData name="contact_mobile">9840243773</SimpleData>
+		<SimpleData name="telephone">9840243773</SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">yes</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date"></SimpleData>
+		<SimpleData name="hmis_code">duZvuzt9rU2</SimpleData>
+		<SimpleData name="OBJECTID">1640</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.627</SimpleData>
+		<SimpleData name="Lat">27.870</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.6269989,27.87035561</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.9">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">4367</SimpleData>
+		<SimpleData name="hf_code">3130300051</SimpleData>
+		<SimpleData name="hf_name">PAMDANDA HP_CHITAWAN</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Health Post</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Chitawan</SimpleData>
+		<SimpleData name="municipality">Ichchha Kamana Rural Municipality</SimpleData>
+		<SimpleData name="ward">5</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="established_date"></SimpleData>
+		<SimpleData name="hmis_code">Va9Xr655DaG</SimpleData>
+		<SimpleData name="OBJECTID">1637</SimpleData>
+		<SimpleData name="new_ward_n">5.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Ichchhyakamana</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 4 001</SimpleData>
+		<SimpleData name="munid">396.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.562</SimpleData>
+		<SimpleData name="Lat">27.855</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.56170654,27.8546772</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.10">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">4386</SimpleData>
+		<SimpleData name="hf_code">3130400191</SimpleData>
+		<SimpleData name="hf_name">DALETAR AAYURVED DISPENSARY</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Ayurveda Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Chitawan</SimpleData>
+		<SimpleData name="municipality">Bharatpur Metropolitan City</SimpleData>
+		<SimpleData name="ward">29</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Uma Aacharya </SimpleData>
+		<SimpleData name="contact_mobile"></SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance"></SimpleData>
+		<SimpleData name="oxygen"></SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date">02/03/2072</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">1655</SimpleData>
+		<SimpleData name="new_ward_n">29.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bharatpur</SimpleData>
+		<SimpleData name="Type_GN">Mahanagarpalika</SimpleData>
+		<SimpleData name="type_en">Metropolitan</SimpleData>
+		<SimpleData name="DISTRICT_2">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 1 001</SimpleData>
+		<SimpleData name="munid">395.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.470</SimpleData>
+		<SimpleData name="Lat">27.769</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.469761,27.768678</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.11">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">4396</SimpleData>
+		<SimpleData name="hf_code">3130400291</SimpleData>
+		<SimpleData name="hf_name">KABILAS HEALTH POST</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Chitawan</SimpleData>
+		<SimpleData name="municipality">Bharatpur Metropolitan City</SimpleData>
+		<SimpleData name="ward">29</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Indra Bilash Dhakal</SimpleData>
+		<SimpleData name="contact_mobile">9855075176</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">no</SimpleData>
+		<SimpleData name="pharmacy">no</SimpleData>
+		<SimpleData name="insurance">no</SimpleData>
+		<SimpleData name="established_date"></SimpleData>
+		<SimpleData name="hmis_code">xZQiCm3P1C9</SimpleData>
+		<SimpleData name="OBJECTID">1655</SimpleData>
+		<SimpleData name="new_ward_n">29.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bharatpur</SimpleData>
+		<SimpleData name="Type_GN">Mahanagarpalika</SimpleData>
+		<SimpleData name="type_en">Metropolitan</SimpleData>
+		<SimpleData name="DISTRICT_2">CHITAWAN</SimpleData>
+		<SimpleData name="hlcit_code">524 3 35 1 001</SimpleData>
+		<SimpleData name="munid">395.000000</SimpleData>
+		<SimpleData name="districtid">35.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.471</SimpleData>
+		<SimpleData name="Lat">27.768</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.47053528,27.76779747</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.12">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">9922</SimpleData>
+		<SimpleData name="hf_code">3030300061</SimpleData>
+		<SimpleData name="hf_name">MAILUNG COMMUNITY HEALTH UNIT</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Rasuwa</SimpleData>
+		<SimpleData name="municipality">Uttargaya Rural Municipality</SimpleData>
+		<SimpleData name="ward">1</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Sharada Acharya</SimpleData>
+		<SimpleData name="contact_mobile">9860122883</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance"></SimpleData>
+		<SimpleData name="oxygen"></SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date"></SimpleData>
+		<SimpleData name="hmis_code">GELrJeaWUuF</SimpleData>
+		<SimpleData name="OBJECTID">2080</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Uttargaya</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">RASUWA</SimpleData>
+		<SimpleData name="hlcit_code">524 3 29 4 003</SimpleData>
+		<SimpleData name="munid">319.000000</SimpleData>
+		<SimpleData name="districtid">29.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.207</SimpleData>
+		<SimpleData name="Lat">28.054</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.2069,28.053699</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.13">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">11279</SimpleData>
+		<SimpleData name="hf_code">3050400271</SimpleData>
+		<SimpleData name="hf_name">URBAN HEALTH CENTER 1</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Nuwakot</SimpleData>
+		<SimpleData name="municipality">Bidur Municipality</SimpleData>
+		<SimpleData name="ward">1</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Arpana lama</SimpleData>
+		<SimpleData name="contact_mobile">9745345604</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email">arpanalama2012@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">no</SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date">02/01/2078</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">5949</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.155</SimpleData>
+		<SimpleData name="Lat">27.924</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.155278,27.923747</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.14">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">11283</SimpleData>
+		<SimpleData name="hf_code">3050400291</SimpleData>
+		<SimpleData name="hf_name">URBAN HEALTH CENTER-4</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Nuwakot</SimpleData>
+		<SimpleData name="municipality">Bidur Municipality</SimpleData>
+		<SimpleData name="ward">4</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Sangita Bhandari </SimpleData>
+		<SimpleData name="contact_mobile">9841671925</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email">sbhandarirawal@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">no</SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date">01/04/2078</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">5953</SimpleData>
+		<SimpleData name="new_ward_n">6.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.142</SimpleData>
+		<SimpleData name="Lat">27.899</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.141591,27.898507</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.15">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">11286</SimpleData>
+		<SimpleData name="hf_code">3050400311</SimpleData>
+		<SimpleData name="hf_name">URBAN HEALTH CENTER-10</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Nuwakot</SimpleData>
+		<SimpleData name="municipality">Bidur Municipality</SimpleData>
+		<SimpleData name="ward">10</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Prabin Pyakurel</SimpleData>
+		<SimpleData name="contact_mobile">9841671877</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email">urbanhealthbidur10@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">no</SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date"></SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">5949</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Bidur</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 001</SimpleData>
+		<SimpleData name="munid">302.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.158</SimpleData>
+		<SimpleData name="Lat">27.934</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.15796,27.934017</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.16">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">11452</SimpleData>
+		<SimpleData name="hf_code">3041100071</SimpleData>
+		<SimpleData name="hf_name">DUMRICHAUR BASIC HEALTH SERVICE CENTER</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Galchhi Rural Municipality</SimpleData>
+		<SimpleData name="ward">1</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Anita Dahal</SimpleData>
+		<SimpleData name="contact_mobile">9843902471</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email">bhsc1.galchhimun@gmail.com</SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">no</SimpleData>
+		<SimpleData name="insurance">no</SimpleData>
+		<SimpleData name="established_date">01/04/2077</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">1530</SimpleData>
+		<SimpleData name="new_ward_n">1.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.880</SimpleData>
+		<SimpleData name="Lat">27.806</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.87993622,27.80630493</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.17">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">14339</SimpleData>
+		<SimpleData name="hf_code">3040800061</SimpleData>
+		<SimpleData name="hf_name">SALANG GHAT BHSC</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Siddhalek Rural Municipality</SimpleData>
+		<SimpleData name="ward">4</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">आषा श्रेष्ठ</SimpleData>
+		<SimpleData name="contact_mobile">9840652797</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">no</SimpleData>
+		<SimpleData name="insurance">no</SimpleData>
+		<SimpleData name="established_date">02/01/2076</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">1571</SimpleData>
+		<SimpleData name="new_ward_n">4.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Siddhalek</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 007</SimpleData>
+		<SimpleData name="munid">330.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.814</SimpleData>
+		<SimpleData name="Lat">27.816</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8136673,27.81579018</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.18">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">14343</SimpleData>
+		<SimpleData name="hf_code">3040800071</SimpleData>
+		<SimpleData name="hf_name">AADAMTAR BHSC</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Siddhalek Rural Municipality</SimpleData>
+		<SimpleData name="ward">7</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">अस्मिता तिवारी</SimpleData>
+		<SimpleData name="contact_mobile">9864177715</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">no</SimpleData>
+		<SimpleData name="insurance">no</SimpleData>
+		<SimpleData name="established_date">02/01/2076</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">1554</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Siddhalek</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 007</SimpleData>
+		<SimpleData name="munid">330.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.936</SimpleData>
+		<SimpleData name="Lat">27.809</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.93582916,27.80938339</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.19">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">14364</SimpleData>
+		<SimpleData name="hf_code">3041000092</SimpleData>
+		<SimpleData name="hf_name">MALEKHU TEACHING HOSPITAL</SimpleData>
+		<SimpleData name="facility_type">Non-Government</SimpleData>
+		<SimpleData name="level">Basic Hospital (5 to 15 beds)</SimpleData>
+		<SimpleData name="ownership">Private Enterprise</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Dhading</SimpleData>
+		<SimpleData name="municipality">Gajuri Rural Municipality</SimpleData>
+		<SimpleData name="ward">2</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Nirajan Kadel</SimpleData>
+		<SimpleData name="contact_mobile">9851076868</SimpleData>
+		<SimpleData name="telephone">010400171</SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">yes</SimpleData>
+		<SimpleData name="pharmacy">yes</SimpleData>
+		<SimpleData name="insurance">no</SimpleData>
+		<SimpleData name="established_date">14/10/2077</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">1531</SimpleData>
+		<SimpleData name="new_ward_n">2.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Gajuri</SimpleData>
+		<SimpleData name="Type_GN">Gaunpalika</SimpleData>
+		<SimpleData name="type_en">Rural Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">DHADING</SimpleData>
+		<SimpleData name="hlcit_code">524 3 30 4 009</SimpleData>
+		<SimpleData name="munid">322.000000</SimpleData>
+		<SimpleData name="districtid">30.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">84.835</SimpleData>
+		<SimpleData name="Lat">27.806</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>84.8351593,27.8058033</coordinates></Point></MultiGeometry>
+  </Placemark>
+  <Placemark id="intersection.20">
+	<ExtendedData><SchemaData schemaUrl="#intersection">
+		<SimpleData name="id">16739</SimpleData>
+		<SimpleData name="hf_code">3050700101</SimpleData>
+		<SimpleData name="hf_name">BASIC HEALTH UNIT,DARSHANTAAR</SimpleData>
+		<SimpleData name="facility_type">Government</SimpleData>
+		<SimpleData name="level">Basic Health Service Centre</SimpleData>
+		<SimpleData name="ownership">Local Government</SimpleData>
+		<SimpleData name="province">Bagmati Pradesh</SimpleData>
+		<SimpleData name="district">Nuwakot</SimpleData>
+		<SimpleData name="municipality">Tarakeshwor Rural Municipality</SimpleData>
+		<SimpleData name="ward">4</SimpleData>
+		<SimpleData name="operational_status">Functional</SimpleData>
+		<SimpleData name="contact_person">Durga Devi Adhikari</SimpleData>
+		<SimpleData name="contact_mobile">9849266517</SimpleData>
+		<SimpleData name="telephone"></SimpleData>
+		<SimpleData name="email"></SimpleData>
+		<SimpleData name="website"></SimpleData>
+		<SimpleData name="ambulance">no</SimpleData>
+		<SimpleData name="oxygen">no</SimpleData>
+		<SimpleData name="pharmacy"></SimpleData>
+		<SimpleData name="insurance"></SimpleData>
+		<SimpleData name="established_date">32/04/2080</SimpleData>
+		<SimpleData name="hmis_code"></SimpleData>
+		<SimpleData name="OBJECTID">5999</SimpleData>
+		<SimpleData name="new_ward_n">7.000000</SimpleData>
+		<SimpleData name="GaPa_NaP_1">Belkotgadhi</SimpleData>
+		<SimpleData name="Type_GN">Nagarpalika</SimpleData>
+		<SimpleData name="type_en">Urban Municipality</SimpleData>
+		<SimpleData name="DISTRICT_2">NUWAKOT</SimpleData>
+		<SimpleData name="hlcit_code">524 3 28 3 002</SimpleData>
+		<SimpleData name="munid">301.000000</SimpleData>
+		<SimpleData name="districtid">28.000000</SimpleData>
+		<SimpleData name="state">3.000000</SimpleData>
+		<SimpleData name="Long">85.050</SimpleData>
+		<SimpleData name="Lat">27.850</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Point><coordinates>85.05,27.85</coordinates></Point></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

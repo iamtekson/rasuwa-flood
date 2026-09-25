@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="ntc_towers_in_flood_extent_buffer100m" id="ntc_towers_in_flood_extent_buffer100m">
+	<SimpleField name="Site ID" type="string"></SimpleField>
+	<SimpleField name="Site Name" type="string"></SimpleField>
+	<SimpleField name="District" type="string"></SimpleField>
+	<SimpleField name="Latitude" type="float"></SimpleField>
+	<SimpleField name="Longitude" type="float"></SimpleField>
+</Schema>
+<Folder><name>ntc_towers_in_flood_extent_buffer100m</name>
+  <Placemark id="ntc_towers_in_flood_extent_buffer100m.1">
+	<ExtendedData><SchemaData schemaUrl="#ntc_towers_in_flood_extent_buffer100m">
+		<SimpleData name="Site ID">CDR1057</SimpleData>
+		<SimpleData name="Site Name">CDR1057_MalekhuBazarMicro</SimpleData>
+		<SimpleData name="District">DHADING</SimpleData>
+		<SimpleData name="Latitude">27.807692</SimpleData>
+		<SimpleData name="Longitude">84.851069</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>84.851069,27.807692</coordinates></Point>
+  </Placemark>
+  <Placemark id="ntc_towers_in_flood_extent_buffer100m.2">
+	<ExtendedData><SchemaData schemaUrl="#ntc_towers_in_flood_extent_buffer100m">
+		<SimpleData name="Site ID">CDR1065</SimpleData>
+		<SimpleData name="Site Name">CDR1065_CHILIME KHOLA_3G</SimpleData>
+		<SimpleData name="District">RASUWA</SimpleData>
+		<SimpleData name="Latitude">28.18094</SimpleData>
+		<SimpleData name="Longitude">85.3418</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.3418,28.18094</coordinates></Point>
+  </Placemark>
+  <Placemark id="ntc_towers_in_flood_extent_buffer100m.3">
+	<ExtendedData><SchemaData schemaUrl="#ntc_towers_in_flood_extent_buffer100m">
+		<SimpleData name="Site ID">CDR390</SimpleData>
+		<SimpleData name="Site Name">TRISULI BAZAR</SimpleData>
+		<SimpleData name="District">NUWAKOT</SimpleData>
+		<SimpleData name="Latitude">27.92111</SimpleData>
+		<SimpleData name="Longitude">85.15031</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.15031,27.92111</coordinates></Point>
+  </Placemark>
+  <Placemark id="ntc_towers_in_flood_extent_buffer100m.4">
+	<ExtendedData><SchemaData schemaUrl="#ntc_towers_in_flood_extent_buffer100m">
+		<SimpleData name="Site ID">CDR957</SimpleData>
+		<SimpleData name="Site Name">CDR957_Trishuli 3B</SimpleData>
+		<SimpleData name="District">NUWAKOT</SimpleData>
+		<SimpleData name="Latitude">27.995951</SimpleData>
+		<SimpleData name="Longitude">85.183459</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>85.183459,27.995951</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>
