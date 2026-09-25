@@ -209,7 +209,7 @@
         },
         {
           "id": "flood_extent_500m_buffer_outline",
-          "label": "Flood Extent 500m Buffer Outline (NDRRMA)",
+          "label": "Flood Extent 500m Buffer Outline",
           "type": "line",
           "data": "data/NDRRMA/1. Area_of_interest_flooded_area/500m_buffer_flood_extent_extended_31th_August.geojson",
           "paint": {
@@ -355,7 +355,7 @@
         },
         {
           "id": "road_network",
-          "label": "Road Network (NDRRMA)",
+          "label": "Road Network (OSM)",
           "type": "line",
           "data": "data/NDRRMA/4. Road Network/Complete Road.geojson",
           "paint": {
@@ -397,7 +397,7 @@
         },
         {
           "id": "bridges",
-          "label": "Bridges (NDRRMA)",
+          "label": "Bridges (OSM)",
           "type": "fill",
           "data": "data/NDRRMA/12. Bridge/Bridge_Polygon.geojson",
           "paint": {
@@ -427,7 +427,7 @@
         },
         {
           "id": "education",
-          "label": "Educational Institutes, 500m Buffer (NDRRMA)",
+          "label": "Educational Institutes, 500m Buffer (OSM)",
           "type": "icon",
           "icon": "education",
           "iconSize": 0.45,
@@ -447,7 +447,7 @@
         },
         {
           "id": "health",
-          "label": "Health Facilities, 500m Buffer (NDRRMA)",
+          "label": "Health Facilities, 500m Buffer (OSM)",
           "type": "icon",
           "icon": "health",
           "iconSize": 0.45,
@@ -549,7 +549,7 @@
         },
         {
           "id": "helipads",
-          "label": "Helipads (NDRRMA)",
+          "label": "Helipads (OSM)",
           "type": "icon",
           "icon": "helipad",
           "iconSize": 0.45,
@@ -572,7 +572,7 @@
         },
         {
           "id": "ntc_towers",
-          "label": "NTC Telecom Towers (NDRRMA)",
+          "label": "NTC Telecom Towers (OSM)",
           "type": "icon",
           "icon": "telecom_tower",
           "iconSize": 0.45,
@@ -589,7 +589,7 @@
         },
         {
           "id": "temp_settlements",
-          "label": "Temporary Settlement Sites (NDRRMA)",
+          "label": "Temporary Settlement Sites (OSM)",
           "type": "icon",
           "icon": "temp_settlement",
           "iconSize": 0.45,
@@ -604,7 +604,7 @@
         },
         {
           "id": "voting_booths",
-          "label": "Voting Booths, 100m Buffer (NDRRMA)",
+          "label": "Voting Booths, 100m Buffer (OSM)",
           "type": "icon",
           "icon": "voting_booth",
           "iconSize": 0.45,
@@ -627,7 +627,7 @@
         },
         {
           "id": "flood_lulc",
-          "label": "Flood-Affected Land Use / Land Cover (NDRRMA)",
+          "label": "Flood-Affected Land Use / Land Cover (OSM)",
           "type": "fill",
           "data": "data/NDRRMA/22. Flood_LULC_Area in Ha/Flood_LULC_Dissolve.geojson",
           "paint": {
@@ -699,7 +699,7 @@
         },
         {
           "id": "exposed_hydropowers",
-          "label": "Hydropower Damage Assessment (NDRRMA)",
+          "label": "Hydropower Damage Assessment (OSM)",
           "type": "fill",
           "data": "data/NDRRMA/13. Hydropower/Hydropower_ar_29Aug.geojson",
           "paint": {
@@ -730,7 +730,7 @@
         },
         {
           "id": "road_damaged",
-          "label": "Damaged Road Network (NDRRMA)",
+          "label": "Damaged Road Network (OSM)",
           "type": "line",
           "data": "data/NDRRMA/4. Road Network/Road_damaged.geojson",
           "paint": {
@@ -755,7 +755,7 @@
         },
         {
           "id": "road_endangered",
-          "label": "Endangered Road Network (NDRRMA)",
+          "label": "Endangered Road Network (OSM)",
           "type": "line",
           "data": "data/NDRRMA/4. Road Network/Road_endangered.geojson",
           "paint": {
@@ -785,7 +785,7 @@
         },
         {
           "id": "education_damage",
-          "label": "Education Facilities within Flood Extent (NDRRMA)",
+          "label": "Education Facilities within Flood Extent (OSM)",
           "type": "icon",
           "icon": "education",
           "iconSize": 0.45,
@@ -806,7 +806,7 @@
         },
         {
           "id": "health_damage",
-          "label": "Health Facilities within Flood Extent (NDRRMA)",
+          "label": "Health Facilities within Flood Extent (OSM)",
           "type": "icon",
           "icon": "health",
           "iconSize": 0.45,
@@ -836,7 +836,7 @@
         },
         {
           "id": "ntc_towers_damage",
-          "label": "NTC Telecom Towers within Flood Extent (NDRRMA)",
+          "label": "NTC Telecom Towers within Flood Extent (OSM)",
           "type": "icon",
           "icon": "telecom_tower",
           "iconSize": 0.5,
@@ -853,7 +853,7 @@
         },
         {
           "id": "impacted_banks",
-          "label": "Impacted Banking Facilities (NDRRMA)",
+          "label": "Impacted Banking Facilities (OSM)",
           "type": "icon",
           "icon": "bank",
           "iconSize": 0.45,
@@ -873,7 +873,7 @@
         },
         {
           "id": "exposed_settlements",
-          "label": "Exposed Settlements (NDRRMA)",
+          "label": "Exposed Settlements (OSM)",
           "type": "fill",
           "data": "data/NDRRMA/19. Settlements/final_settelement_with_updated_v2.geojson",
           "paint": {
@@ -898,7 +898,7 @@
         },
         {
           "id": "solar_power_plants",
-          "label": "Solar Power Plants within Flood Corridor (NDRRMA)",
+          "label": "Solar Power Plants within Flood Corridor (OSM)",
           "type": "fill",
           "data": "data/NDRRMA/23. Solar Power Plants/Solar_Power_Plants.geojson",
           "paint": {
@@ -907,7 +907,7 @@
             "lineColor": "#8a5a00",
             "lineWidth": 1
           },
-          "note": "Solar power plant footprints exposed to the flood-affected river corridor (NDRRMA).",
+          "note": "Solar power plant footprints exposed to the flood-affected river corridor (OSM).",
           "active": false
         }
       ]
@@ -984,13 +984,13 @@
         },
         {
           "id": "open_space",
-          "label": "Open Space / Evacuation Ground (NDRRMA)",
+          "label": "Open Space / Evacuation Ground (OSM)",
           "type": "icon",
           "icon": "open_space",
           "iconSize": 0.45,
           "iconColor": "#2ca02c",
           "data": "data/NDRRMA/8. Open space/Open Spaces.geojson",
-          "note": "Open space / evacuation ground locations digitized from imagery (NDRRMA). No attributes are available for these points.",
+          "note": "",
           "active": false
         }
       ]
