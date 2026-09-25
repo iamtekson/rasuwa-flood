@@ -211,7 +211,7 @@
           "id": "flood_extent_500m_buffer_outline",
           "label": "Flood Extent 500m Buffer Outline",
           "type": "line",
-          "data": "data/NDRRMA/1. Area_of_interest_flooded_area/500m_buffer_flood_extent_extended_31th_August.geojson",
+          "data": "data/OSM/1. Area_of_interest_flooded_area/500m_buffer_flood_extent_extended_31th_August.geojson",
           "paint": {
             "lineColor": "#e8871e",
             "lineWidth": 2,
@@ -357,7 +357,7 @@
           "id": "road_network",
           "label": "Road Network (OSM)",
           "type": "line",
-          "data": "data/NDRRMA/4. Road Network/Complete Road.geojson",
+          "data": "data/OSM/4. Road Network/Complete Road.geojson",
           "paint": {
             "lineColor": {
               "field": "highway",
@@ -399,7 +399,7 @@
           "id": "bridges",
           "label": "Bridges (OSM)",
           "type": "fill",
-          "data": "data/NDRRMA/12. Bridge/Bridge_Polygon.geojson",
+          "data": "data/OSM/12. Bridge/Bridge_Polygon.geojson",
           "paint": {
             "fillColor": {
               "field": "Remarks",
@@ -431,7 +431,7 @@
           "type": "icon",
           "icon": "education",
           "iconSize": 0.45,
-          "data": "data/NDRRMA/5. Educational Facilities/Education_AOI_500m_Sep_1.geojson",
+          "data": "data/OSM/5. Educational Facilities/Education_AOI_500m_Sep_1.geojson",
           "labelField": "Final_Name",
           "popupFields": [
             "Final_Name",
@@ -451,7 +451,7 @@
           "type": "icon",
           "icon": "health",
           "iconSize": 0.45,
-          "data": "data/NDRRMA/6. Health Facilities/Health_500m_Sep_1.geojson",
+          "data": "data/OSM/6. Health Facilities/Health_500m_Sep_1.geojson",
           "labelField": "title",
           "popupFields": [
             "title",
@@ -554,7 +554,7 @@
           "icon": "helipad",
           "iconSize": 0.45,
           "iconColor": "#2ca02c",
-          "data": "data/NDRRMA/7. Helipads/Helipad.geojson",
+          "data": "data/OSM/7. Helipads/Helipad.geojson",
           "labelField": "Name",
           "popupFields": [
             "Name",
@@ -577,7 +577,7 @@
           "icon": "telecom_tower",
           "iconSize": 0.45,
           "iconColor": "#4a90d9",
-          "data": "data/NDRRMA/11. Telecom tower/NTC_Towers.geojson",
+          "data": "data/OSM/11. Telecom tower/NTC_Towers.geojson",
           "labelField": "Site Name",
           "popupFields": [
             "Site Name",
@@ -594,7 +594,7 @@
           "icon": "temp_settlement",
           "iconSize": 0.45,
           "iconColor": "#e8871e",
-          "data": "data/NDRRMA/20. Temporary Settlements_/probable_sites.geojson",
+          "data": "data/OSM/20. Temporary Settlements_/probable_sites.geojson",
           "labelField": "Site",
           "popupFields": [
             "Site",
@@ -609,7 +609,7 @@
           "icon": "voting_booth",
           "iconSize": 0.45,
           "iconColor": "#6b4fbb",
-          "data": "data/NDRRMA/21. Voting booth/voting_booths_buffer100m.geojson",
+          "data": "data/OSM/21. Voting booth/voting_booths_buffer100m.geojson",
           "labelField": "booth_name",
           "popupFields": [
             "booth_name",
@@ -629,7 +629,7 @@
           "id": "flood_lulc",
           "label": "Flood-Affected Land Use / Land Cover (OSM)",
           "type": "fill",
-          "data": "data/NDRRMA/22. Flood_LULC_Area in Ha/Flood_LULC_Dissolve.geojson",
+          "data": "data/OSM/22. Flood_LULC_Area in Ha/Flood_LULC_Dissolve.geojson",
           "paint": {
             "fillColor": {
               "field": "LEVEL1",
@@ -701,7 +701,7 @@
           "id": "exposed_hydropowers",
           "label": "Hydropower Damage Assessment (OSM)",
           "type": "fill",
-          "data": "data/NDRRMA/13. Hydropower/Hydropower_ar_29Aug.geojson",
+          "data": "data/OSM/13. Hydropower/Hydropower_ar_29Aug.geojson",
           "paint": {
             "fillColor": {
               "field": "Damage_Sta",
@@ -732,7 +732,7 @@
           "id": "road_damaged",
           "label": "Damaged Road Network (OSM)",
           "type": "line",
-          "data": "data/NDRRMA/4. Road Network/Road_damaged.geojson",
+          "data": "data/OSM/4. Road Network/Road_damaged.geojson",
           "paint": {
             "lineColor": "#d62728",
             "lineWidth": 2
@@ -757,7 +757,7 @@
           "id": "road_endangered",
           "label": "Endangered Road Network (OSM)",
           "type": "line",
-          "data": "data/NDRRMA/4. Road Network/Road_endangered.geojson",
+          "data": "data/OSM/4. Road Network/Road_endangered.geojson",
           "paint": {
             "lineColor": "#ff9f1c",
             "lineWidth": 2,
@@ -790,7 +790,7 @@
           "icon": "education",
           "iconSize": 0.45,
           "iconColor": "#d62728",
-          "data": "data/NDRRMA/5. Educational Facilities/Education_AOI_within_Flood_Extent.geojson",
+          "data": "data/OSM/5. Educational Facilities/Education_AOI_within_Flood_Extent.geojson",
           "labelField": "Final_Name",
           "popupFields": [
             "Final_Name",
@@ -811,7 +811,7 @@
           "icon": "health",
           "iconSize": 0.45,
           "iconColor": "#d62728",
-          "data": "data/NDRRMA/6. Health Facilities/Helath_within_FloodExtent_1Sept.geojson",
+          "data": "data/OSM/6. Health Facilities/Helath_within_FloodExtent_1Sept.geojson",
           "labelField": "title",
           "popupFields": [
             "title",
@@ -841,7 +841,7 @@
           "icon": "telecom_tower",
           "iconSize": 0.5,
           "iconColor": "#d62728",
-          "data": "data/NDRRMA/11. Telecom tower/ntc_towers_in_flood_extent.geojson",
+          "data": "data/OSM/11. Telecom tower/ntc_towers_in_flood_extent.geojson",
           "labelField": "Site Name",
           "popupFields": [
             "Site Name",
@@ -858,7 +858,7 @@
           "icon": "bank",
           "iconSize": 0.45,
           "iconColor": "#d62728",
-          "data": "data/NDRRMA/18. Banking Facilities/Impacted Bank.geojson",
+          "data": "data/OSM/18. Banking Facilities/Impacted Bank.geojson",
           "labelField": "Name",
           "popupFields": [
             "Name",
@@ -875,7 +875,7 @@
           "id": "exposed_settlements",
           "label": "Exposed Settlements (OSM)",
           "type": "fill",
-          "data": "data/NDRRMA/19. Settlements/final_settelement_with_updated_v2.geojson",
+          "data": "data/OSM/19. Settlements/final_settelement_with_updated_v2.geojson",
           "paint": {
             "fillColor": "#d62728",
             "fillOpacity": 0.45,
@@ -900,7 +900,7 @@
           "id": "solar_power_plants",
           "label": "Solar Power Plants within Flood Corridor (OSM)",
           "type": "fill",
-          "data": "data/NDRRMA/23. Solar Power Plants/Solar_Power_Plants.geojson",
+          "data": "data/OSM/23. Solar Power Plants/Solar_Power_Plants.geojson",
           "paint": {
             "fillColor": "#f4a300",
             "fillOpacity": 0.55,
@@ -989,7 +989,7 @@
           "icon": "open_space",
           "iconSize": 0.45,
           "iconColor": "#2ca02c",
-          "data": "data/NDRRMA/8. Open space/Open Spaces.geojson",
+          "data": "data/OSM/8. Open space/Open Spaces.geojson",
           "note": "",
           "active": false
         }
