@@ -1,0 +1,25 @@
+{
+"type": "FeatureCollection",
+"name": "flowpath_km_ticks",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "km": 0 }, "geometry": { "type": "Point", "coordinates": [ 85.51222, 28.29306 ] } },
+{ "type": "Feature", "properties": { "km": 10 }, "geometry": { "type": "Point", "coordinates": [ 85.44785863664508, 28.335211706075697 ] } },
+{ "type": "Feature", "properties": { "km": 20 }, "geometry": { "type": "Point", "coordinates": [ 85.389690072642736, 28.287461364797451 ] } },
+{ "type": "Feature", "properties": { "km": 30 }, "geometry": { "type": "Point", "coordinates": [ 85.358841358244007, 28.220995570486487 ] } },
+{ "type": "Feature", "properties": { "km": 40 }, "geometry": { "type": "Point", "coordinates": [ 85.32280196382375, 28.150104246701503 ] } },
+{ "type": "Feature", "properties": { "km": 50 }, "geometry": { "type": "Point", "coordinates": [ 85.251883645021678, 28.092902781055493 ] } },
+{ "type": "Feature", "properties": { "km": 60 }, "geometry": { "type": "Point", "coordinates": [ 85.193920191753534, 28.035274562941321 ] } },
+{ "type": "Feature", "properties": { "km": 70 }, "geometry": { "type": "Point", "coordinates": [ 85.170186356849072, 27.962093032571154 ] } },
+{ "type": "Feature", "properties": { "km": 80 }, "geometry": { "type": "Point", "coordinates": [ 85.136798748809085, 27.898868977364017 ] } },
+{ "type": "Feature", "properties": { "km": 90 }, "geometry": { "type": "Point", "coordinates": [ 85.070372504074513, 27.853874852030856 ] } },
+{ "type": "Feature", "properties": { "km": 100 }, "geometry": { "type": "Point", "coordinates": [ 85.013143558130125, 27.813684242903989 ] } },
+{ "type": "Feature", "properties": { "km": 110 }, "geometry": { "type": "Point", "coordinates": [ 84.943544544813477, 27.810836818254764 ] } },
+{ "type": "Feature", "properties": { "km": 120 }, "geometry": { "type": "Point", "coordinates": [ 84.865060416633753, 27.801598334351532 ] } },
+{ "type": "Feature", "properties": { "km": 130 }, "geometry": { "type": "Point", "coordinates": [ 84.801262271264989, 27.814601820817526 ] } },
+{ "type": "Feature", "properties": { "km": 140 }, "geometry": { "type": "Point", "coordinates": [ 84.728473525956161, 27.798314205222074 ] } },
+{ "type": "Feature", "properties": { "km": 150 }, "geometry": { "type": "Point", "coordinates": [ 84.66371151633065, 27.841060909236869 ] } },
+{ "type": "Feature", "properties": { "km": 160 }, "geometry": { "type": "Point", "coordinates": [ 84.605342401189603, 27.872634794512734 ] } },
+{ "type": "Feature", "properties": { "km": 170 }, "geometry": { "type": "Point", "coordinates": [ 84.545160000640166, 27.831989702148384 ] } }
+]
+}

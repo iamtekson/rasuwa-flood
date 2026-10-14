@@ -1,0 +1,7 @@
+geopandas>=1.0
+pyogrio
+shapely>=2.0
+pyproj
+matplotlib>=3.8
+numpy
+pandas

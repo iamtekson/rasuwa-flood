@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "bridges_hot_only",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Sano bharkhu", "status": "Intact", "location": "63+200", "km": 40.618278369326418 }, "geometry": { "type": "Point", "coordinates": [ 85.3187139, 28.1455639 ] } },
+{ "type": "Feature", "properties": { "name": "Haku khola", "status": "Destroyed", "location": "57+000", "km": 46.552449920122875 }, "geometry": { "type": "Point", "coordinates": [ 85.2789639, 28.1101556 ] } },
+{ "type": "Feature", "properties": { "name": "Bimali Khola", "status": "Destroyed", "location": "56+800", "km": 46.836807802527346 }, "geometry": { "type": "Point", "coordinates": [ 85.2771472, 28.1085417 ] } },
+{ "type": "Feature", "properties": { "name": "Thade Khola", "status": "Intact", "location": "52+320", "km": 50.049087749077145 }, "geometry": { "type": "Point", "coordinates": [ 85.2519361, 28.0915556 ] } },
+{ "type": "Feature", "properties": { "name": "Thado Khola (Crossing 0+750", "status": "Intact", "location": "50+300", "km": 53.01366616541803 }, "geometry": { "type": "Point", "coordinates": [ 85.2255556, 28.0827778 ] } },
+{ "type": "Feature", "properties": { "name": "Crossing 0+700", "status": "Destroyed", "location": "50+260", "km": 53.309701013669375 }, "geometry": { "type": "Point", "coordinates": [ 85.2225944, 28.0818972 ] } },
+{ "type": "Feature", "properties": { "name": "Dhobi Khola", "status": "Intact", "location": "27+220", "km": 76.174275956047069 }, "geometry": { "type": "Point", "coordinates": [ 85.1486111, 27.9202778 ] } },
+{ "type": "Feature", "properties": { "name": "Gundre Khola", "status": "Intact", "location": "27+980", "km": 75.699 }, "geometry": { "type": "Point", "coordinates": [ 85.1536111, 27.9233333 ] } },
+{ "type": "Feature", "properties": { "name": "Bire Khola", "status": "Intact", "location": "27+840", "km": 75.654134334054248 }, "geometry": { "type": "Point", "coordinates": [ 85.1538889, 27.9244444 ] } },
+{ "type": "Feature", "properties": { "name": "Gerkhu khola", "status": "Intact", "location": "29+050", "km": 74.003656252502779 }, "geometry": { "type": "Point", "coordinates": [ 85.1547222, 27.9305556 ] } },
+{ "type": "Feature", "properties": { "name": "Jhangar Khola", "status": "Intact", "location": "5+760", "km": 97.398447727849373 }, "geometry": { "type": "Point", "coordinates": [ 85.0244333, 27.8346389 ] } }
+]
+}

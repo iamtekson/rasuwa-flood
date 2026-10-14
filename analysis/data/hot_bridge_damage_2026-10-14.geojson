@@ -1,0 +1,1455 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Miteri Bridge, Rasuwagadhi",
+    "status": "Washed out",
+    "status_original": "Washed out",
+    "location": "Rasuwagadhi",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3780972,
+     28.2789444
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Timure Bridge 1",
+    "status": "Washed out",
+    "status_original": "Washed out",
+    "location": "Timure",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3776972,
+     28.271275
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Timure Bridge 2",
+    "status": "Washed out",
+    "status_original": "Washed out",
+    "location": "Timure",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3582778,
+     28.2399778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Ghatte Khola",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3618028,
+     28.2267111
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bhotekoshi Bridge at Chilime",
+    "status": "Washed out",
+    "status_original": "Washed out",
+    "location": "Chilime",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3432806,
+     28.1828028
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Chilime Bridge, Chilime Khola",
+    "status": "Washed out",
+    "status_original": "Washed out",
+    "location": "Chilime",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-01",
+    "adm3_name": "Aamachhodingmo"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3422194,
+     28.1816528
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Hydropower Bailey Bridge at Bhotekoshi, Syaphrubeshi",
+    "status": "Washed out",
+    "status_original": "Washed out",
+    "location": "Syafrubesi",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3399278,
+     28.1643861
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Syafrubesi Bridge",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Syafrubesi",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3324917,
+     28.1574778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Sano bharkhu",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "63+200",
+    "length_m": 20.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.3187139,
+     28.1455639
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli Khola Bridge",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "60+020",
+    "length_m": 20.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2994722,
+     28.1272639
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli 216 Audit 1 Bailey Bridge",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Audit 1, Trisuli 216",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-01",
+    "adm3_name": "Aamachhodingmo"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2884222,
+     28.1202833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Haku1 Bailey Bridge at Hydropower, Trishuli",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2810306,
+     28.1129528
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Haku khola",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "57+000",
+    "length_m": 35.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2789639,
+     28.1101556
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bimali Khola",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "56+800",
+    "length_m": 40.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2771472,
+     28.1085417
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Haku2 Bailey Bridge at Hydropower, Trishuli",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-01",
+    "adm3_name": "Aamachhodingmo"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2751389,
+     28.1083667
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Thade Khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "52+320",
+    "length_m": 35.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-02",
+    "adm3_name": "Gosaikunda"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2519361,
+     28.0915556
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Thado Khola (Crossing 0+750",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "50+300",
+    "length_m": 10.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-04",
+    "adm3_name": "Kalika"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2255556,
+     28.0827778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Crossing 0+700",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "50+260",
+    "length_m": 10.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-04",
+    "adm3_name": "Kalika"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2225944,
+     28.0818972
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Upper Trishuli Hydrower Bailey Bridge",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2128444,
+     28.0759778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mailung Bailey Bridge at Mailung Bazaar",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2075333,
+     28.0718944
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli Bridge Mailung Chipleti",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "47+200",
+    "length_m": 60.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2058333,
+     28.0652778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli 3A Dam-3",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "47+040",
+    "length_m": 15.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.206325,
+     28.0625778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli 3A Dam-2",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "46+990",
+    "length_m": 30.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.2066861,
+     28.0620528
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bahubali Jharana Pul",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "43+850",
+    "length_m": 25.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1927778,
+     28.0380556
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Sukaure Khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "40+210",
+    "length_m": 20.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-04",
+    "adm3_name": "Kispang"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1797778,
+     28.0143389
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Naya Pul Trishuli, Khalte CH 37+810",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Khalte CH 37+810",
+    "length_m": 50.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1848889,
+     27.9953417
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Betrawati Old Bridge",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Betrawati",
+    "length_m": 70.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1858111,
+     27.9743389
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Betrawati New Bridge",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Betrawati (35+180)",
+    "length_m": 70.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-10",
+    "adm2_name": "Rasuwa",
+    "adm3_pcode": "NPL-20240321-3-10-03",
+    "adm3_name": "Uttargaya"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1858111,
+     27.9743389
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge Tupche",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Tupche",
+    "length_m": 100.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1728111,
+     27.9637778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Dhobi Khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "27+220",
+    "length_m": 15.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1486111,
+     27.9202778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Gundre Khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "27+980",
+    "length_m": 15.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1536111,
+     27.9233333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bire Khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "27+840",
+    "length_m": 20.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1538889,
+     27.9244444
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Gerkhu khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "29+050",
+    "length_m": 10.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1547222,
+     27.9305556
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge ,Trisuli Bazzar(Old)",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Trisuli Bazzar",
+    "length_m": 60.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.14945,
+     27.9218278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge ,Trisuli Bazzar(New)",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Trisuli Bazzar",
+    "length_m": 60.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1479639,
+     27.9212361
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge ,Simchaur",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Simchaur",
+    "length_m": 100.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1385028,
+     27.9094861
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Suspension Bridge at Devighat near Jalshrot tatha Sinchai Division",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Devighat",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.1365,
+     27.8923417
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge, Near Devighat, Midhill Highway",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Near DeviGhat",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.116225,
+     27.8703389
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tandi Khola Bridge, Devighat (Old)",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Devighat",
+    "length_m": 55.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.109075,
+     27.858575
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Tandi Khola Bridge, Devighat (New)",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Devighat(CH 16+570)",
+    "length_m": 55.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.109075,
+     27.858575
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge,Khadgabhanjyang Srikhali Sadak",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Srikhali",
+    "length_m": 180.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-01",
+    "adm3_name": "Bidur"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0987083,
+     27.8593167
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Thulo khola",
+    "status": "Damaged",
+    "status_original": "क्षतिग्रस्त",
+    "location": "13+260",
+    "length_m": 20.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-02",
+    "adm3_name": "Belkotgadhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0810639,
+     27.8545667
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli River Bridge, Buddhasinghghat",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Buddhasinghghat",
+    "length_m": 140.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-02",
+    "adm3_name": "Belkotgadhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0619361,
+     27.8594806
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli River Bridge, Ratmate",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Ratmate",
+    "length_m": 150.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-05",
+    "adm3_name": "Tarakeshwor"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0411889,
+     27.8560972
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Jhangar Khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "5+760",
+    "length_m": 15.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-02",
+    "adm3_name": "Belkotgadhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0244333,
+     27.8346389
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli River Bridge, Keurini, Fosretar",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Keurini, Fosretar",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-12",
+    "adm3_name": "Galchhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0223333,
+     27.832525
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Kolpu Khola Bridge (Old)",
+    "status": "Damaged",
+    "status_original": "क्षतिग्रस्त",
+    "location": "",
+    "length_m": 40.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-02",
+    "adm3_name": "Belkotgadhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0162111,
+     27.8101111
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Kolpu Khola Bridge (New)",
+    "status": "Damaged",
+    "status_original": "क्षतिग्रस्त",
+    "location": "2+520",
+    "length_m": 40.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-09",
+    "adm2_name": "Nuwakot",
+    "adm3_pcode": "NPL-20240321-3-09-02",
+    "adm3_name": "Belkotgadhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0162111,
+     27.8101111
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli River Bridge, BhimDhunga Lami Danda Sadak",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "Near Galchhi",
+    "length_m": 140.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-12",
+    "adm3_name": "Galchhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0027722,
+     27.8026889
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mahesh khola",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "0+520",
+    "length_m": 41.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-12",
+    "adm3_name": "Galchhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     85.0008333,
+     27.8002778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli River Bridge, Baireni Syaltar Sadak",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Below Galchhi",
+    "length_m": 150.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-12",
+    "adm3_name": "Galchhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.9904889,
+     27.8042833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge, Mastar Dhading",
+    "status": "Damaged",
+    "status_original": "क्षतिग्रस्त",
+    "location": "Near Hamlet Resort",
+    "length_m": 140.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-12",
+    "adm3_name": "Galchhi"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.9652639,
+     27.8118583
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge, JareBagaicha",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "JareBagaicha",
+    "length_m": 120.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-09",
+    "adm3_name": "Siddhalek"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.9242806,
+     27.7979278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge, Ghatbesi",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Ghatbesi",
+    "length_m": 200.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-09",
+    "adm3_name": "Siddhalek"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.9018806,
+     27.8068861
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli River Bridge, Furke Khola",
+    "status": "Washed out",
+    "status_original": "Washed Out",
+    "location": "Malelkhu",
+    "length_m": 118.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-3",
+    "adm1_name": "Bagmati",
+    "adm2_pcode": "NPL-20240321-3-11",
+    "adm2_name": "Dhading",
+    "adm3_pcode": "NPL-20240321-3-11-09",
+    "adm3_name": "Siddhalek"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.844075,
+     27.8025444
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trishuli River Bridge, Benighat",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "Benighat",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-4",
+    "adm1_name": "Gandaki",
+    "adm2_pcode": "NPL-20240321-4-01",
+    "adm2_name": "Gorkha",
+    "adm3_pcode": "NPL-20240321-4-01-11",
+    "adm3_name": "Gandaki"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.7770806,
+     27.8105889
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Trisuli River Bridge, Fisling Gorkha",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "Fishling",
+    "length_m": 145.0,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-4",
+    "adm1_name": "Gandaki",
+    "adm2_pcode": "NPL-20240321-4-01",
+    "adm2_name": "Gorkha",
+    "adm3_pcode": "NPL-20240321-4-01-11",
+    "adm3_name": "Gandaki"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.6620639,
+     27.8446278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Hydropower Bailey Bridge Trishuli, Chumlingtar",
+    "status": "Intact",
+    "status_original": "जोगिएको",
+    "location": "Chumlingtar",
+    "length_m": null,
+    "adm0_pcode": "NPL-20250729",
+    "adm0_name": "Nepal",
+    "adm1_pcode": "NPL-20240321-4",
+    "adm1_name": "Gandaki",
+    "adm2_pcode": "NPL-20240321-4-01",
+    "adm2_name": "Gorkha",
+    "adm3_pcode": "NPL-20240321-4-01-11",
+    "adm3_name": "Gandaki"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     84.6409583,
+     27.860075
+    ]
+   }
+  }
+ ]
+}
