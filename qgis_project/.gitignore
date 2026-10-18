@@ -1,0 +1,4 @@
+# large rasters; re-created by the scripts in scripts/
+imagery/
+basemap/*.tif
+archive/

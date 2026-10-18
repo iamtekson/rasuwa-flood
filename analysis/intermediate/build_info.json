@@ -1,0 +1,39 @@
+{
+  "flow_path": "analysis/inputs/flow_path/flow_path_line.shp",
+  "flow_path_length_km": 194.712,
+  "inundation": "data/Impact-Assessment-Shashi-Ashim/Inundation/Inundation.shp",
+  "inundation_km2": 42.12,
+  "near_m": 100,
+  "dedupe_m": 0.0,
+  "buildings": 6012,
+  "road_km_in_inundation": 108.1,
+  "road_km_in_inundation_main": 30.6,
+  "road_km_near_inundation": 185.3,
+  "bridges": {
+    "Destroyed": 65,
+    "Intact": 28,
+    "Damaged": 13,
+    "No info": 12
+  },
+  "hydropower_structures": 13,
+  "inset_bands": [
+    {
+      "panel": "c",
+      "place": "Rasuwagadhi-Timure",
+      "km_from": 18.5,
+      "km_to": 26.33
+    },
+    {
+      "panel": "d",
+      "place": "Upper Trishuli hydropower",
+      "km_from": 50.95,
+      "km_to": 63.83
+    },
+    {
+      "panel": "e",
+      "place": "Trishuli-Bidur",
+      "km_from": 66.58,
+      "km_to": 79.5
+    }
+  ]
+}
