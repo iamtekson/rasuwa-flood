@@ -37,7 +37,11 @@ HP_LABEL_COLOR = "#ffc9c9"                   # hydropower names: italic, light r
 # Imagery per panel, drawn bottom to top. Panels not listed are automatic: the post-event Vantor clip
 # if there is one, over 10 m post-event Sentinel-2. To use Planet for d, for example:
 #   IMAGERY = {"d": [("qgis_project/imagery/planet/d_2026-09-10.tif", "PlanetScope, 10 Sep 2026")]}
-IMAGERY = {}
+IMAGERY = {"d": [("qgis_project/imagery/sentinel2/insets/d_S2_2026-09-21_2026-09-21.tif", "Sentinel-2, 21 Sep 2026")]}
+S2_GAMMA, S2_BRIGHTNESS = 1.25, 8           # lift for the dark top-of-atmosphere Sentinel-2 colour
+TEXT_PAD = 1.5                               # mm between the page edge / map edge and titles and legend
+LETTER_FMT = "({})"                          # panel letters (c)-(e)
+SHOW_LEGEND = False                          # the combined figure has one shared key (compose_figure.py) instead
 S2_INSET = "{panel}_S2_2026-08-27_2026-10-18.tif"
 S2_CREDIT = "Sentinel-2 (Copernicus), post-event, Aug-Oct 2026"
 SENSORS = {"WV03": "WorldView-3", "WV02": "WorldView-2", "GE01": "GeoEye-1", "LG06": "Legion-6"}
@@ -78,6 +82,8 @@ def raster(path, name, stretch=False):
         lyr.dataProvider().setNoDataValue(band, 0)
     if stretch:  # Sentinel-2 top-of-atmosphere colour is dark; stretch 2-98 %
         lyr.setContrastEnhancement(QgsContrastEnhancement.StretchToMinimumMaximum, Qgis.RasterRangeLimit.CumulativeCut)
+        lyr.brightnessFilter().setGamma(S2_GAMMA)
+        lyr.brightnessFilter().setBrightness(S2_BRIGHTNESS)
     return lyr
 
 
@@ -144,10 +150,10 @@ def build(project):
     bridges = ov.vector(INTER / "bridges.geojson", "Bridges", subset="\"status\" IN ('Destroyed', 'Damaged')")
     tri = lambda col: QgsMarkerSymbol.createSimple(
         {"name": "triangle", "angle": "180", "color": col, "outline_color": "white", "outline_width": "0.25", "size": "2.6"})
-    ov.rules(bridges, [("Bridge destroyed, washed away", "\"status\" = 'Destroyed'", tri(DESTROYED)),
-                       ("Bridge damaged, needs repair", "\"status\" = 'Damaged'", tri(DAMAGED))])
+    ov.rules(bridges, [("Bridge washed away", "\"status\" = 'Destroyed'", tri(DESTROYED)),
+                       ("Bridge damaged", "\"status\" = 'Damaged'", tri(DAMAGED))])
 
-    hydro = ov.vector(f"{INTER / 'hydropower.geojson'}|geometrytype=Polygon", "Hydropower structure, fully damaged")
+    hydro = ov.vector(f"{INTER / 'hydropower.geojson'}|geometrytype=Polygon", "Hydropower structure damaged")
     hydro.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), DESTROYED, 0.45, 0.3)))
     if HP_LABELS:
         ov.label_layer(hydro, '"label"', white_text(5.8, bold=True, color=HP_LABEL_COLOR, italic=True),
@@ -164,7 +170,7 @@ def build(project):
     towns = ov.vector(ROOT / "data" / "cities.geojson", "Towns",
                       subset="\"name_en\" IS NOT NULL AND \"name_en\" NOT LIKE '%Old%'")
     towns.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
-        {"name": "circle", "color": "white", "outline_color": INK, "outline_width": "0.25", "size": "1.2"})))
+        {"name": "circle", "color": INK, "outline_color": "white", "outline_width": "0.25", "size": "1.3"})))  # as panel a
     ov.label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')", white_text(6.3),
                    placement=Qgis.LabelPlacement.AroundPoint, dist=0.8, priority=8)
 
@@ -213,14 +219,14 @@ def build(project):
         layout.addLayoutItem(m)
         maps.append(m)
 
-        # title above the map: bold panel letter, then place and km range
+        # title above the map, inset from the edge: bold panel letter, then "Place (from-to km)"
         b = bands.get(p["panel"])
-        km = f", km {float(b['km_from']):.0f}-{float(b['km_to']):.0f}" if b else ""
+        km = f" ({float(b['km_from']):.0f}–{float(b['km_to']):.0f} km)" if b else ""
         base = TITLE_H - 0.8
-        letter = add_label(layout, p["panel"], ov.text_format(8.5, INK, bold=True), x, base,
+        letter = add_label(layout, LETTER_FMT.format(p["panel"]), ov.text_format(9, INK, bold=True), x + TEXT_PAD, base,
                            anchor=QgsLayoutItem.ReferencePoint.LowerLeft)
-        add_label(layout, p["place"].replace("-", "–") + km.replace("-", "–"), ov.text_format(6.5, INK2),
-                  x + letter.rect().width() + 1.2, base - 0.15, anchor=QgsLayoutItem.ReferencePoint.LowerLeft)
+        add_label(layout, p["place"].replace("-", "–") + km, ov.text_format(6.5, INK2),
+                  x + TEXT_PAD + letter.rect().width() + 1.2, base - 0.15, anchor=QgsLayoutItem.ReferencePoint.LowerLeft)
 
         # imagery credit inside the map, lower right
         credit = p["imagery"][-1][1] if p["imagery"] else ""
@@ -256,39 +262,43 @@ def build(project):
     arrow.attemptMove(QgsLayoutPoint(maps[0].rect().width() - 4.0, TITLE_H + 1.0, MM))
     layout.addLayoutItem(arrow)
 
-    legend = QgsLayoutItemLegend(layout)
-    legend.setLinkedMap(maps[0])
-    if hasattr(legend, "setSyncMode"):
-        legend.setSyncMode(Qgis.LegendSyncMode.Manual)
-    legend.setTitle("")
-    root = legend.model().rootGroup()
-    root.removeAllChildren()
-    for lyr in [flood, buildings, roads, hydro, bridges, ticks]:
-        node = root.addLayer(lyr)
-        if lyr is bridges:
-            QgsLegendRenderer.setNodeLegendStyle(node, QgsLegendStyle.Style.Hidden)
-    for style in (QgsLegendStyle.Style.SymbolLabel, QgsLegendStyle.Style.Subgroup):
-        legend.rstyle(style).setTextFormat(ov.text_format(6, INK2))
-    legend.setColumnCount(4)
-    legend.setSplitLayer(True)
-    legend.setSymbolWidth(4.0)
-    legend.setSymbolHeight(2.4)
-    legend.setColumnSpace(5.0)
-    legend.setBoxSpace(0)
-    legend.setBackgroundEnabled(False)
-    legend.setFrameEnabled(False)
-    legend.setResizeToContents(True)
-    layout.addLayoutItem(legend)
-    legend.attemptMove(QgsLayoutPoint(0, TITLE_H + h + 1.5, MM))
-    # QGIS only measures a legend when it draws it: render the page once at low resolution, then size the page
+    legend = None
+    if SHOW_LEGEND:
+        legend = QgsLayoutItemLegend(layout)
+        legend.setLinkedMap(maps[0])
+        if hasattr(legend, "setSyncMode"):
+            legend.setSyncMode(Qgis.LegendSyncMode.Manual)
+        legend.setTitle("")
+        root = legend.model().rootGroup()
+        root.removeAllChildren()
+        for lyr in [flood, buildings, roads, hydro, bridges, ticks]:
+            node = root.addLayer(lyr)
+            if lyr is bridges:
+                QgsLegendRenderer.setNodeLegendStyle(node, QgsLegendStyle.Style.Hidden)
+        for style in (QgsLegendStyle.Style.SymbolLabel, QgsLegendStyle.Style.Subgroup):
+            legend.rstyle(style).setTextFormat(ov.text_format(6, INK2))
+        legend.setColumnCount(4)
+        legend.setSplitLayer(True)
+        legend.setSymbolWidth(4.0)
+        legend.setSymbolHeight(2.4)
+        legend.setColumnSpace(5.0)
+        legend.setBoxSpace(0)
+        legend.setBackgroundEnabled(False)
+        legend.setFrameEnabled(False)
+        legend.setResizeToContents(True)
+        layout.addLayoutItem(legend)
+        legend.attemptMove(QgsLayoutPoint(TEXT_PAD, TITLE_H + h + 1.5, MM))
+    # QGIS only measures legends and scale bars when it draws them: render once at low resolution, then size
     layout.pageCollection().page(0).setPageSize(QgsLayoutSize(PAGE_W, TITLE_H + h + 40, MM))
     QgsLayoutExporter(layout).renderPageToImage(0, QSize(), 40)
-    legend.adjustBoxSize()
     for sb, right, bottom in scale_bars:  # drop the default size's empty space, then pin the lower-right corner
         sb.attemptResize(sb.minimumSize())
         sb.setReferencePoint(QgsLayoutItem.ReferencePoint.LowerRight)
         sb.attemptMove(QgsLayoutPoint(right, bottom, MM))
-    page_h = TITLE_H + h + 1.5 + legend.sizeWithUnits().height() + 0.5
+    page_h = TITLE_H + h + 0.3
+    if legend:
+        legend.adjustBoxSize()
+        page_h += 1.2 + legend.sizeWithUnits().height() + 0.5
     layout.pageCollection().page(0).setPageSize(QgsLayoutSize(PAGE_W, page_h, MM))
     return layout
 

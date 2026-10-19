@@ -6,6 +6,7 @@
 
     uv run qgis_project/scripts/download_sentinel2_insets.py
     uv run qgis_project/scripts/download_sentinel2_insets.py --start 2026-10-01 --end 2026-10-18 --maxcc 10
+    uv run qgis_project/scripts/download_sentinel2_insets.py --panels d --start 2026-09-21 --end 2026-09-21 --maxcc 100
 
 Frames come from analysis/inputs/inset_frames.geojson. Uses the same Sentinel Hub configuration as
 download_sentinel2_overview.py. Writes qgis_project/imagery/sentinel2/insets/<panel>_S2_<from>_<to>.tif.
@@ -34,16 +35,21 @@ def main():
     ap.add_argument("--start", default="2026-08-27")
     ap.add_argument("--end", default="2026-10-18")
     ap.add_argument("--maxcc", type=int, default=30, help="max scene cloud cover, percent")
+    ap.add_argument("--panels", default="", help="only these panels, e.g. 'd' or 'c,e' (default all)")
+    ap.add_argument("--layer", default="1_TRUE_COLOR", help="layer of the Sentinel Hub configuration")
     args = ap.parse_args()
+    only = {p.strip() for p in args.panels.split(",") if p.strip()}
     OUT.mkdir(parents=True, exist_ok=True)
     to_utm = Transformer.from_crs(4326, 32645, always_xy=True)
     base = wms_base_url()
     for feat in json.loads(FRAMES.read_text(encoding="utf-8"))["features"]:
+        if only and feat["properties"]["panel"] not in only:
+            continue
         ring = feat["geometry"]["coordinates"][0]
         xs, ys = zip(*(to_utm.transform(x, y) for x, y in ring))
         bbox = (round(min(xs)), round(min(ys)), round(max(xs)), round(max(ys)))
         w, h = round((bbox[2] - bbox[0]) / RES), round((bbox[3] - bbox[1]) / RES)
-        params = {"SERVICE": "WMS", "REQUEST": "GetMap", "VERSION": "1.3.0", "LAYERS": "1_TRUE_COLOR", "STYLES": "",
+        params = {"SERVICE": "WMS", "REQUEST": "GetMap", "VERSION": "1.3.0", "LAYERS": args.layer, "STYLES": "",
                   "FORMAT": "image/png", "TRANSPARENT": "false", "CRS": "EPSG:32645", "BBOX": ",".join(map(str, bbox)),
                   "WIDTH": w, "HEIGHT": h, "TIME": f"{args.start}/{args.end}", "MAXCC": args.maxcc,
                   "PRIORITY": "leastCC", "SHOWLOGO": "false"}
@@ -53,7 +59,8 @@ def main():
                 raise SystemExit(data[:500].decode("utf-8", "replace"))
         with rasterio.MemoryFile(io.BytesIO(data)) as mem, mem.open() as src:
             img = src.read()[:3]
-        dst = OUT / f"{feat['properties']['panel']}_S2_{args.start}_{args.end}.tif"
+        suffix = "" if args.layer == "1_TRUE_COLOR" else f"_{args.layer}"
+        dst = OUT / f"{feat['properties']['panel']}_S2_{args.start}_{args.end}{suffix}.tif"
         with rasterio.open(dst, "w", driver="GTiff", dtype="uint8", count=3, width=w, height=h, crs="EPSG:32645",
                            transform=from_bounds(*bbox, w, h), compress="deflate", photometric="RGB") as out:
             out.write(img)

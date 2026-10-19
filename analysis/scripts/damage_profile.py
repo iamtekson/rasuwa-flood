@@ -25,13 +25,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
+from matplotlib.patches import Patch, Rectangle
 
 import common as c
 
 # Towns marked on the elevation track (names as in intermediate/towns.csv).
-TOWNS = ["Rasuwagadhi", "Syabrubesi", "Betrawati", "Bidur", "Devighat", "Malekhu", "Mugling"]
+TOWNS = ["Rasuwagadhi", "Syabrubesi", "Betrawati", "Bidur", "Malekhu", "Mugling"]
 NPT_OFFSET = timedelta(hours=5, minutes=45)  # Nepal Time = UTC+05:45
 HP_LABEL_GAP_KM = 4.8  # minimum spacing between hydropower labels (with --hp-labels)
+FIG_W_IN = 180 / 25.4  # exactly 180 mm wide, like panels a and c-e, so the combined figure lines up
+MARGIN_IN = {"left": 1.00, "right": 0.92, "top": 0.46}  # room for y labels, totals and letters
+BOTTOM_IN = {"legend": 0.60, "no_legend": 0.40}            # room for the x axis (and the --legend row)
+LETTER_FMT = "({})"                                       # panel letters: (b), and (c)-(e) on the bands
+PANEL_LETTER = LETTER_FMT.format("b")
+BAND_LETTER_RAISE_PT = 19                                 # (c)-(e) above the top of the elevation track
+NEAR_EDGE, NEAR_EDGE_W = "#77756e", 0.5                   # border of the "within 100 m" bar segment (pt)
 
 INK, INK2, MUTED, GRID, AXIS = "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 BAND = "#e9e2cc"  # inset bands: warm tint so they read as "zoomed in", not as data
@@ -83,6 +91,9 @@ def main():
     ap.add_argument("--no-insets", action="store_true", help="leave out the shaded inset bands")
     ap.add_argument("--hp-labels", action="store_true", help="name each hydropower marker (default: markers only)")
     ap.add_argument("--full-hp-names", action="store_true", help="with --hp-labels, use the full names from the layer")
+    ap.add_argument("--legend", action="store_true",
+                    help="add the hydropower/bridge legend under the plot (off by default: the combined figure "
+                         "has one shared key)")
     ap.add_argument("--out", default=str(c.OUTPUTS / "damage_profile"), help="output path without extension")
     args = ap.parse_args()
 
@@ -106,8 +117,13 @@ def main():
                          "ytick.color": MUTED, "axes.linewidth": 0.6, "xtick.major.width": 0.6,
                          "ytick.major.width": 0.6, "hatch.linewidth": 0.5, "hatch.color": "#8c8a83"})
     hp_track = 1.35 if args.hp_labels else 0.45  # labels need room above the markers
-    fig, axs = plt.subplots(5, 1, figsize=(7.09, 4.5 + hp_track - 0.45), sharex=True,
-                            gridspec_kw={"height_ratios": [1.0, 0.85, 0.85, hp_track, 0.45], "hspace": 0.14})
+    bottom_in = BOTTOM_IN["legend" if args.legend else "no_legend"]
+    fig_h = 3.45 + bottom_in + hp_track - 0.45
+    fig, axs = plt.subplots(5, 1, figsize=(FIG_W_IN, fig_h), sharex=True,
+                            gridspec_kw={"height_ratios": [1.15, 0.85, 0.85, hp_track, 0.45], "hspace": 0.14})
+    fig.subplots_adjust(left=MARGIN_IN["left"] / FIG_W_IN, right=1 - MARGIN_IN["right"] / FIG_W_IN,
+                        top=1 - MARGIN_IN["top"] / fig_h, bottom=bottom_in / fig_h)
+    fig.text(0.006, 1 - 0.04 / fig_h, PANEL_LETTER, ha="left", va="top", fontsize=9, fontweight="bold", color=INK)
     for ax in axs:
         ax.set_xlim(0, args.xmax)
         for s in ("top", "right"):
@@ -119,7 +135,7 @@ def main():
         ax.tick_params(length=2.5)
 
     def total(ax, text):
-        ax.text(1.005, 0.5, text, transform=ax.transAxes, ha="left", va="center", fontsize=6.5, color=INK, fontweight="bold")
+        ax.text(1.01, 0.5, text, transform=ax.transAxes, ha="left", va="center", fontsize=6.3, color=INK, fontweight="bold")
 
     def bars(ax, y, bottom=0, **kw):
         ax.bar(edges[:-1], y, bottom=bottom, width=args.bin, align="edge", edgecolor="white", linewidth=0.8, **kw)
@@ -155,8 +171,10 @@ def main():
             transform=ax.transAxes, ha="right", va="top", fontsize=5.8, color=INK2)
     ax.annotate("source", xy=(0.3, e.elevation_m.iloc[0]), xytext=(3, 4600), fontsize=5.8, color=INK2, va="bottom",
                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.5))
-    for b in bands:  # letters at the band's right edge stay clear of the vertical town labels
-        ax.text(b.km_to - 0.4, 6150, b.panel, ha="right", va="bottom", fontsize=8, fontweight="bold", color=INK, clip_on=False)
+    for b in bands:  # centred over each band, lifted above the tallest vertical town label
+        ax.annotate(LETTER_FMT.format(b.panel), xy=((b.km_from + b.km_to) / 2, 1), xycoords=("data", "axes fraction"),
+                    xytext=(0, BAND_LETTER_RAISE_PT), textcoords="offset points", ha="center", va="bottom",
+                    fontsize=8, fontweight="bold", color=INK, annotation_clip=False)
 
     # buildings
     ax = axs[1]
@@ -171,17 +189,32 @@ def main():
     ax = axs[2]
     bars(ax, r_main, color=MAIN, label="Highways & main roads")
     bars(ax, r_local, bottom=r_main, color=LOCAL, label="Local roads & tracks")
-    road_text = f"{r_main.sum() + r_local.sum():.0f} km in\nflood inundation\n({r_main.sum():.0f} km main)"
+    road_text = f"{r_main.sum() + r_local.sum():.0f} km in flood\ninundation\n({r_main.sum():.0f} km main)"
     ylabel = f"Road in flood\ninundation\n(km per {args.bin:g} km)"
     if not args.no_near:
-        ax.bar(edges[:-1], r_near, bottom=r_main + r_local, width=args.bin, align="edge", color=NEAR,
-               edgecolor="#8c8a83", linewidth=0.5, hatch="//////", label=f"Within {near_m:g} m of flood inundation")
-        road_text = (f"{r_main.sum() + r_local.sum():.0f} km in flood\ninundation ({r_main.sum():.0f} km main)\n"
-                     f"+{r_near.sum():.0f} km within {near_m:g} m")
+        # same white edge as the solid bars, so all three segments have the same visible width
+        bars(ax, r_near, bottom=r_main + r_local, color=NEAR, hatch="//////", hatchcolor="#8c8a83")
+        road_text = (f"{r_main.sum() + r_local.sum():.0f} km in flood\ninundation\n({r_main.sum():.0f} km main)\n"
+                     f"+{r_near.sum():.0f} km within\n{near_m:g} m")
         ylabel = f"Road length\n(km per {args.bin:g} km)"
     ax.set_ylabel(ylabel)
     ax.set_ylim(0, (r_main + r_local + r_near).max() * 1.45)  # headroom for the legend
-    ax.legend(loc="upper right", frameon=False, fontsize=6, handlelength=1.0, handleheight=0.8)
+    road_handles = [Patch(facecolor=MAIN, label="Highways & main roads"),
+                    Patch(facecolor=LOCAL, label="Local roads & tracks")]
+    if not args.no_near:
+        # outline drawn just inside the white gap, so the segment keeps the same visible width as the solid bars
+        pos = ax.get_position()
+        pt_x = pos.width * FIG_W_IN * 72 / args.xmax
+        pt_y = pos.height * fig_h * 72 / ax.get_ylim()[1]
+        inset = 0.8 / 2 + NEAR_EDGE_W / 2  # half the white edge of bars() + half the outline
+        for x0, hgt, base in zip(edges[:-1], r_near, r_main + r_local):
+            w_, h_ = args.bin - 2 * inset / pt_x, hgt - 2 * inset / pt_y
+            if hgt > 0 and h_ > 0:
+                ax.add_patch(Rectangle((x0 + inset / pt_x, base + inset / pt_y), w_, h_, fill=False,
+                                       edgecolor=NEAR_EDGE, linewidth=NEAR_EDGE_W, zorder=3))
+        road_handles.append(Patch(facecolor=NEAR, edgecolor=NEAR_EDGE, linewidth=NEAR_EDGE_W, hatch="//////",
+                                  label=f"Within {near_m:g} m of flood inundation"))
+    ax.legend(handles=road_handles, loc="upper right", frameon=False, fontsize=6, handlelength=1.0, handleheight=0.8)
     total(ax, road_text)
 
     # hydropower: markers only by default; with --hp-labels, one label per mapped structure from the
@@ -211,28 +244,30 @@ def main():
                    s=7 if st == "No info" else 20, facecolor=STATUS[st] if filled else "white",
                    edgecolor="white" if filled else MUTED, linewidth=0.5, zorder=3 + order.index(st))
     counts = bridges.status.value_counts()
-    total(ax, f"{counts.get('Destroyed', 0) + counts.get('Damaged', 0)} bridges\ndestroyed or damaged")
+    total(ax, f"{counts.get('Destroyed', 0) + counts.get('Damaged', 0)} bridges\nwashed away\nor damaged")
     ax.set_xlabel("Distance from source along the flow path (km)", color=INK2)
     ticks = np.arange(0, args.xmax + 1, 10)
     ax.set_xticks(ticks)
     ax.set_xticklabels([f"{k:g}" if k % 20 == 0 else "" for k in ticks])
     handles = [
-        Line2D([], [], marker="s", ls="", mfc=STATUS["Destroyed"], mec="white", ms=5, label="Hydropower structure, fully damaged"),
+        Line2D([], [], marker="s", ls="", mfc=STATUS["Destroyed"], mec="white", ms=5, label="Hydropower structure damaged"),
         Line2D([], [], marker="v", ls="", mfc=STATUS["Destroyed"], mec="white", ms=5.5,
-               label=f"Bridge destroyed, washed away ({counts.get('Destroyed', 0)})"),
+               label=f"Bridge washed away ({counts.get('Destroyed', 0)})"),
         Line2D([], [], marker="v", ls="", mfc=STATUS["Damaged"], mec="white", ms=5.5,
-               label=f"Bridge damaged, needs repair ({counts.get('Damaged', 0)})"),
+               label=f"Bridge damaged ({counts.get('Damaged', 0)})"),
         Line2D([], [], marker="v", ls="", mfc="white", mec=MUTED, ms=5, label=f"Bridge intact ({counts.get('Intact', 0)})"),
         Line2D([], [], marker="o", ls="", mfc="white", mec=MUTED, ms=3, label=f"No information ({counts.get('No info', 0)})"),
     ]
-    ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, -1.15), ncol=3, frameon=False, fontsize=6,
-              handletextpad=0.25, columnspacing=1.2)
+    if args.legend:
+        plot_mid = (MARGIN_IN["left"] + (FIG_W_IN - MARGIN_IN["right"])) / 2 / FIG_W_IN
+        fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(plot_mid, 0.005), ncol=5, frameon=False,
+                   fontsize=6, handletextpad=0.25, columnspacing=1.1)
     fig.align_ylabels(axs)
 
     out = c.Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     for ext in ("png", "pdf", "svg"):
-        fig.savefig(out.with_suffix(f".{ext}"), dpi=400, bbox_inches="tight", facecolor="white")
+        fig.savefig(out.with_suffix(f".{ext}"), dpi=600, facecolor="white")  # fixed 180 mm page, no trimming
     print(f"buildings {n_bld.sum():,} | road in inundation {r_main.sum() + r_local.sum():.1f} km (main {r_main.sum():.1f}) | "
           f"within {near_m:g} m {r_near.sum():.1f} km | bridges {counts.to_dict()} | hydropower {len(hp)}")
     print(f"wrote {out}.png/.pdf/.svg")

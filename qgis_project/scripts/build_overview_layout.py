@@ -11,6 +11,7 @@ What it does:
   - exports qgis_project/exports/overview_map.png (600 dpi) and .pdf
 Colours match the damage profile (panel b). Re-running rebuilds the layout from scratch.
 """
+import json
 import shutil
 from datetime import date
 from pathlib import Path
@@ -34,11 +35,14 @@ LAYOUT_NAME = "Panel a - overview"
 # Page and item geometry (mm). The map extent keeps the map item's aspect ratio.
 PAGE = (180, 82)
 MAP = (5.5, 0.5, 115.5, 76.5)        # x, y, w, h
-COL_X, COL_W = 124, 56               # right-hand column: locator + legend
+COL_X, COL_W = 124, 56               # right-hand column: locator, then the figure's shared key
+LOCATOR_H = 24                       # mm
+LETTER_FMT = "({})"                  # panel letter (a) and inset references (c)-(e)
+SHOW_LEGEND = False                  # the combined figure has one shared key (compose_figure.py) instead
 MAP_CENTER = (306811, 3106281)       # EPSG:32645, centre of the flood corridor (source to Mugling)
 MAP_WIDTH_M = 106000
 COUNTRY_LABELS = [("CHINA", 85.33, 28.36), ("NEPAL", 85.47, 28.21)]  # checked against the district polygons
-LOCATOR_LABELS = [("CHINA", 85.0, 30.4), ("NEPAL", 82.3, 28.75), ("INDIA", 82.6, 26.6)]
+LOCATOR_LABELS = [("CHINA", 85.0, 30.3), ("NEPAL", 82.3, 28.75), ("INDIA", 82.6, 26.75)]
 LETTER_CORNER = {"c": "bottom-left"}  # where each inset letter sits; default top-left, outside the frame
 DISTRICT_LABELS = [("RASUWA", 85.48, 28.12), ("NUWAKOT", 85.34, 27.94), ("DHADING", 84.95, 27.97), ("GORKHA", 84.72, 28.15)]
 TOWNS = ["Rasuwagadhi", "Syabrubesi", "Betrawati", "Bidur", "Devighat", "Malekhu", "Mugling"]
@@ -177,15 +181,15 @@ def main():
     label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')", text_format(6.5, INK, buffer=0.7),
                 placement=Qgis.LabelPlacement.AroundPoint, dist=0.7, priority=8)
 
-    hydro = vector(INTER / "hydropower.geojson", "Hydropower structure, fully damaged")
+    hydro = vector(INTER / "hydropower.geojson", "Hydropower structure damaged")
     hydro.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
         {"name": "square", "color": DESTROYED, "outline_color": "white", "outline_width": "0.25", "size": "2.1"})))
 
     bridges = vector(INTER / "bridges.geojson", "Bridges", subset="\"status\" IN ('Destroyed', 'Damaged')")
     tri = lambda col: QgsMarkerSymbol.createSimple(
         {"name": "triangle", "angle": "180", "color": col, "outline_color": "white", "outline_width": "0.15", "size": "1.7"})
-    rules(bridges, [("Bridge destroyed, washed away", "\"status\" = 'Destroyed'", tri(DESTROYED)),
-                    ("Bridge damaged, needs repair", "\"status\" = 'Damaged'", tri(DAMAGED))])
+    rules(bridges, [("Bridge washed away", "\"status\" = 'Destroyed'", tri(DESTROYED)),
+                    ("Bridge damaged", "\"status\" = 'Damaged'", tri(DAMAGED))])
 
     flow = vector(INTER / "flow_path" / "flow_path.geojson", "Flow path")
     flow.setRenderer(QgsSingleSymbolRenderer(QgsLineSymbol.createSimple({"line_color": FLOOD, "line_width": "0.3"})))
@@ -309,17 +313,17 @@ def main():
         g.transform(to_utm)
         bb = g.boundingBox()
         if LETTER_CORNER.get(f["panel"]) == "bottom-left":
-            geo_label(f["panel"], bb.xMinimum() - 250, bb.yMinimum() - 250, letter_fmt,
+            geo_label(LETTER_FMT.format(f["panel"]), bb.xMinimum() - 250, bb.yMinimum() - 250, letter_fmt,
                       anchor=QgsLayoutItem.ReferencePoint.UpperRight, lonlat=False)
         else:
-            geo_label(f["panel"], bb.xMinimum() - 250, bb.yMaximum() + 250, letter_fmt,
+            geo_label(LETTER_FMT.format(f["panel"]), bb.xMinimum() - 250, bb.yMaximum() + 250, letter_fmt,
                       anchor=QgsLayoutItem.ReferencePoint.LowerRight, lonlat=False)
 
     letter = QgsLayoutItemLabel(layout)
-    letter.setText("a")
+    letter.setText(LETTER_FMT.format("a"))
     letter.setTextFormat(text_format(9, INK, bold=True, buffer=0.8))
     letter.attemptMove(QgsLayoutPoint(MAP[0] + 1.2, MAP[1] + 0.8, Qgis.LayoutUnit.Millimeters))
-    letter.attemptResize(QgsLayoutSize(5, 5, Qgis.LayoutUnit.Millimeters))
+    letter.attemptResize(QgsLayoutSize(8, 5, Qgis.LayoutUnit.Millimeters))
     layout.addLayoutItem(letter)
 
     arrow = QgsLayoutItemPicture(layout)
@@ -350,10 +354,10 @@ def main():
 
     loc = QgsLayoutItemMap(layout)
     loc.attemptMove(QgsLayoutPoint(COL_X, MAP[1], Qgis.LayoutUnit.Millimeters))
-    loc.attemptResize(QgsLayoutSize(COL_W, 33, Qgis.LayoutUnit.Millimeters))
+    loc.attemptResize(QgsLayoutSize(COL_W, LOCATOR_H, Qgis.LayoutUnit.Millimeters))
     loc.setCrs(QgsCoordinateReferenceSystem("EPSG:4326"))
-    cx, cy, w = 84.2, 28.4, 9.6
-    hh = w * 33 / COL_W
+    cx, cy, w = 84.2, 28.4, 11.0
+    hh = w * LOCATOR_H / COL_W
     loc.setExtent(QgsRectangle(cx - w / 2, cy - hh / 2, cx + w / 2, cy + hh / 2))
     loc.setLayers([countries])
     loc.setKeepLayerSet(True)
@@ -379,39 +383,46 @@ def main():
                                        MAP[1] + (loc_ext.yMaximum() - lat) / loc_scale, Qgis.LayoutUnit.Millimeters))
         layout.addLayoutItem(lbl)
 
-    legend = QgsLayoutItemLegend(layout)
-    legend.setLinkedMap(m)
-    if hasattr(legend, "setSyncMode"):
-        legend.setSyncMode(Qgis.LegendSyncMode.Manual)
-    else:
-        legend.setAutoUpdateModel(False)
-    legend.setTitle("")
-    root = legend.model().rootGroup()
-    root.removeAllChildren()
-    for lyr in [flood, ticks, towns, hydro, bridges, frames, districts]:
-        node = root.addLayer(lyr)
-        if lyr in (ticks, bridges):
-            QgsLegendRenderer.setNodeLegendStyle(node, QgsLegendStyle.Style.Hidden)
-    for style in (QgsLegendStyle.Style.SymbolLabel, QgsLegendStyle.Style.Subgroup):
-        legend.rstyle(style).setTextFormat(text_format(6, INK2))
-    legend.setSymbolWidth(4.0)
-    legend.setSymbolHeight(2.4)
-    legend.rstyle(QgsLegendStyle.Style.Symbol).setMargin(QgsLegendStyle.Side.Top, 0.9)
-    legend.setBoxSpace(0)
-    legend.setBackgroundEnabled(False)
-    legend.setFrameEnabled(False)
-    legend.attemptMove(QgsLayoutPoint(COL_X, MAP[1] + 35, Qgis.LayoutUnit.Millimeters))
-    legend.setResizeToContents(True)
-    layout.addLayoutItem(legend)
-    legend.adjustBoxSize()
+    key_top = MAP[1] + LOCATOR_H + 2.5
+    if SHOW_LEGEND:
+        legend = QgsLayoutItemLegend(layout)
+        legend.setLinkedMap(m)
+        if hasattr(legend, "setSyncMode"):
+            legend.setSyncMode(Qgis.LegendSyncMode.Manual)
+        else:
+            legend.setAutoUpdateModel(False)
+        legend.setTitle("")
+        root = legend.model().rootGroup()
+        root.removeAllChildren()
+        for lyr in [flood, ticks, towns, hydro, bridges, frames, districts]:
+            node = root.addLayer(lyr)
+            if lyr in (ticks, bridges):
+                QgsLegendRenderer.setNodeLegendStyle(node, QgsLegendStyle.Style.Hidden)
+        for style in (QgsLegendStyle.Style.SymbolLabel, QgsLegendStyle.Style.Subgroup):
+            legend.rstyle(style).setTextFormat(text_format(6, INK2))
+        legend.setSymbolWidth(4.0)
+        legend.setSymbolHeight(2.4)
+        legend.rstyle(QgsLegendStyle.Style.Symbol).setMargin(QgsLegendStyle.Side.Top, 0.9)
+        legend.setBoxSpace(0)
+        legend.setBackgroundEnabled(False)
+        legend.setFrameEnabled(False)
+        legend.attemptMove(QgsLayoutPoint(COL_X, key_top, Qgis.LayoutUnit.Millimeters))
+        legend.setResizeToContents(True)
+        layout.addLayoutItem(legend)
+        legend.adjustBoxSize()
 
+    credit_y = PAGE[1] - 3.2
     credit = QgsLayoutItemLabel(layout)
     credit.setText("Hillshade: Copernicus DEM GLO-30.")
     credit.setTextFormat(text_format(4.8, MUTED))
     credit.setMode(QgsLayoutItemLabel.Mode.ModeFont)
-    credit.attemptMove(QgsLayoutPoint(COL_X, PAGE[1] - 7.5, Qgis.LayoutUnit.Millimeters))
-    credit.attemptResize(QgsLayoutSize(COL_W, 7, Qgis.LayoutUnit.Millimeters))
+    credit.attemptMove(QgsLayoutPoint(COL_X, credit_y, Qgis.LayoutUnit.Millimeters))
+    credit.attemptResize(QgsLayoutSize(COL_W, 3, Qgis.LayoutUnit.Millimeters))
     layout.addLayoutItem(credit)
+    # the free area under the locator, where compose_figure.py draws the figure's shared key
+    (QP / "exports").mkdir(exist_ok=True)
+    (QP / "exports" / "overview_map_layout.json").write_text(json.dumps({
+        "page_mm": list(PAGE), "key_box_mm": [COL_X, key_top, COL_W, round(credit_y - 1.0 - key_top, 2)]}, indent=2))
 
     import inset_layout  # panels c-e live in the same project, so one run rebuilds both layouts
     insets = inset_layout.build(project)

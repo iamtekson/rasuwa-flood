@@ -89,6 +89,10 @@ def towns(path):
     t["offset_m"] = path.offset_m(t.geometry)
     t["arrival_npt"] = [v.strftime("%H:%M") if hasattr(v, "strftime") else (str(v)[:5] if isinstance(v, str) else None)
                         for v in t.flood_time]
+    extra = c.INPUTS / "arrival_times.csv"  # arrival times not in cities.geojson (Nepal Time); these win
+    if extra.exists():
+        times = pd.read_csv(extra, dtype=str).set_index("name").arrival_npt
+        t["arrival_npt"] = t.name.map(times).fillna(t.arrival_npt)
     ll = t.to_crs(4326)
     t["lon"], t["lat"] = ll.geometry.x.round(5), ll.geometry.y.round(5)
     t = t[t.offset_m <= TOWN_MAX_OFFSET_M]
