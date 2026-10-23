@@ -45,6 +45,8 @@ PATHS = {
     # repo data
     "dem": DATA / "tiff" / "dem_2km_buffer.tif",
     "cities": DATA / "cities.geojson",
+    "districts": f"zip://{OSM / '2. Administrative layer' / 'AOI_Affected_district_v1.zip'}"
+                 "!AOI_Affected_district_v1/affected_district.geojson",
     "inundation": IIT / "Inundation" / "Inundation.shp",  # final flood inundation (Shashi & Ashim)
     "iit_buildings": IIT / "Builidngs" / "Buildings.shp",
     "iit_roads": IIT / "Impacted_Road" / "Damage_Road.shp",

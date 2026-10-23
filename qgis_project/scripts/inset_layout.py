@@ -10,14 +10,14 @@ import csv
 import math
 from pathlib import Path
 
-from qgis.core import (Qgis, QgsContrastEnhancement, QgsCoordinateReferenceSystem, QgsCoordinateTransform,
+from qgis.core import (Qgis, QgsBilinearRasterResampler, QgsContrastEnhancement, QgsHueSaturationFilter, QgsCoordinateReferenceSystem, QgsCoordinateTransform,
                        QgsFillSymbol, QgsGeometry, QgsLayoutExporter, QgsLayoutItem, QgsLayoutItemLabel,
                        QgsLayoutItemLegend, QgsLayoutItemMap, QgsLayoutItemPicture, QgsLayoutItemScaleBar,
                        QgsLayoutPoint, QgsLayoutSize, QgsLegendRenderer, QgsLegendStyle, QgsLineSymbol,
                        QgsMarkerSymbol, QgsPrintLayout, QgsRasterLayer, QgsSimpleLineSymbolLayer,
                        QgsSingleSymbolRenderer)
 from qgis.PyQt.QtCore import QSize
-from qgis.PyQt.QtGui import QColor
+from qgis.PyQt.QtGui import QColor, QPainter
 
 import build_overview_layout as ov
 
@@ -30,7 +30,12 @@ MM = Qgis.LayoutUnit.Millimeters
 
 # ---- tunables ----
 PAGE_W, GAP = 180, 2.5                       # mm; panel height follows from the frames' shapes
-TITLE_H = 4.6                                # mm above each map for its letter and place name
+TITLE_H = 5.4                                # mm above each map for its letter and place name
+FONT_PT = {"letter": 10, "title": 7.5, "town": 7.5, "km": 7, "hp": 6.8, "credit": 6, "scalebar": 6.5}
+# Monochrome base, to match panel (a): imagery in greyscale, the hillshade multiplied over it at this
+# opacity (0 = off). Set IMAGERY_GREYSCALE = False to keep the imagery in colour.
+IMAGERY_GREYSCALE = True
+HILLSHADE_OVERLAY_OPACITY = 0.35
 SCALE_BAR_FRACTION = 1 / 8                   # scale-bar segment length as a share of the map width (rounded 1-2-5)
 SCALE_BAR_RAISE = {"d": 6.0}                 # mm to lift a panel's scale bar off labels near its lower-right corner
 HP_LABEL_COLOR = "#ffc9c9"                   # hydropower names: italic, light red, so they read apart from towns
@@ -50,6 +55,10 @@ KM_TICK_EVERY = 5                            # distance-from-source markers insi
 FLOOD_LINE = "#4fc3f7"                       # flood inundation outline
 BUILDING = "#ffd23f"                         # buildings in the flood inundation
 ROAD = "#ff4fa3"                             # road in the flood inundation
+# line widths (mm): (line, white casing underneath). Thin, so dense roads and footprints stay readable.
+FLOOD_LINE_W = (0.3, 0.0)
+ROAD_W = (0.22, 0.15)
+HYDRO_W = (0.3, 0.2)
 DESTROYED, DAMAGED, INK, INK2, MUTED = ov.DESTROYED, ov.DAMAGED, ov.INK, ov.INK2, ov.MUTED
 
 
@@ -80,6 +89,9 @@ def raster(path, name, stretch=False):
         raise SystemExit(f"could not load {path}")
     for band in range(1, lyr.bandCount() + 1):  # black collar outside a scene's footprint -> transparent
         lyr.dataProvider().setNoDataValue(band, 0)
+    if IMAGERY_GREYSCALE:
+        modes = getattr(QgsHueSaturationFilter, "GrayscaleMode", QgsHueSaturationFilter)
+        lyr.hueSaturationFilter().setGrayscaleMode(modes.GrayscaleLuminosity)
     if stretch:  # Sentinel-2 top-of-atmosphere colour is dark; stretch 2-98 %
         lyr.setContrastEnhancement(QgsContrastEnhancement.StretchToMinimumMaximum, Qgis.RasterRangeLimit.CumulativeCut)
         lyr.brightnessFilter().setGamma(S2_GAMMA)
@@ -137,7 +149,7 @@ def build(project):
 
     # ---- vector layers styled for imagery ----
     flood = ov.vector(ROOT / "data/Impact-Assessment-Shashi-Ashim/Inundation/Inundation.shp", "Flood inundation")
-    flood.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), FLOOD_LINE, 0.4, 0)))
+    flood.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), FLOOD_LINE, *FLOOD_LINE_W)))
 
     buildings = ov.vector(ROOT / "data/Impact-Assessment-Shashi-Ashim/Builidngs/Buildings.shp",
                           "Building in flood inundation")
@@ -145,7 +157,7 @@ def build(project):
         {"name": "circle", "color": BUILDING, "outline_color": "#3a2f00", "outline_width": "0.12", "size": "0.9"})))
 
     roads = ov.vector(INTER / "roads_in_inundation.geojson", "Road in flood inundation")
-    roads.setRenderer(QgsSingleSymbolRenderer(cased(QgsLineSymbol(), ROAD, 0.35, 0.3)))
+    roads.setRenderer(QgsSingleSymbolRenderer(cased(QgsLineSymbol(), ROAD, *ROAD_W)))
 
     bridges = ov.vector(INTER / "bridges.geojson", "Bridges", subset="\"status\" IN ('Destroyed', 'Damaged')")
     tri = lambda col: QgsMarkerSymbol.createSimple(
@@ -154,9 +166,9 @@ def build(project):
                        ("Bridge damaged", "\"status\" = 'Damaged'", tri(DAMAGED))])
 
     hydro = ov.vector(f"{INTER / 'hydropower.geojson'}|geometrytype=Polygon", "Hydropower structure damaged")
-    hydro.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), DESTROYED, 0.45, 0.3)))
+    hydro.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), DESTROYED, *HYDRO_W)))
     if HP_LABELS:
-        ov.label_layer(hydro, '"label"', white_text(5.8, bold=True, color=HP_LABEL_COLOR, italic=True),
+        ov.label_layer(hydro, '"label"', white_text(FONT_PT["hp"], bold=True, color=HP_LABEL_COLOR, italic=True),
                        placement=Qgis.LabelPlacement.AroundPoint,
                        dist=1.0, priority=9)
 
@@ -164,18 +176,24 @@ def build(project):
                       subset=f'"km" > 0 AND "km" % {KM_TICK_EVERY} = 0')
     ticks.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
         {"name": "circle", "color": "white", "outline_color": INK, "outline_width": "0.3", "size": "1.8"})))
-    ov.label_layer(ticks, "\"km\" || ' km'", white_text(6, bold=True), placement=Qgis.LabelPlacement.AroundPoint,
+    ov.label_layer(ticks, "\"km\" || ' km'", white_text(FONT_PT["km"], bold=True), placement=Qgis.LabelPlacement.AroundPoint,
                    dist=0.8, priority=7)
 
     towns = ov.vector(ROOT / "data" / "cities.geojson", "Towns",
                       subset="\"name_en\" IS NOT NULL AND \"name_en\" NOT LIKE '%Old%'")
     towns.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
         {"name": "circle", "color": INK, "outline_color": "white", "outline_width": "0.25", "size": "1.3"})))  # as panel a
-    ov.label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')", white_text(6.3),
+    ov.label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')", white_text(FONT_PT["town"]),
                    placement=Qgis.LabelPlacement.AroundPoint, dist=0.8, priority=8)
 
     vectors = [ticks, towns, hydro, bridges, roads, buildings, flood]  # top to bottom
     hill = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"), "Hillshade")
+    # the same hillshade again, multiplied over the imagery for relief and a consistent grey tone
+    overlay = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"), "Hillshade overlay (multiply)")
+    overlay.renderer().setOpacity(HILLSHADE_OVERLAY_OPACITY)
+    overlay.setBlendMode(QPainter.CompositionMode.CompositionMode_Multiply)
+    overlay.resampleFilter().setZoomedInResampler(QgsBilinearRasterResampler())  # 30 m cells, smooth at inset scale
+    overlay.resampleFilter().setZoomedOutResampler(QgsBilinearRasterResampler())
 
     frames = ov.vector(ROOT / "analysis/inputs/inset_frames.geojson", "frames")
     bands = {r["panel"]: r for r in csv.DictReader(open(INTER / "inset_bands.csv", encoding="utf-8"))}
@@ -211,7 +229,8 @@ def build(project):
         m.attemptResize(QgsLayoutSize(w, h, MM))
         m.setCrs(utm)
         m.setExtent(p["bbox"])
-        m.setLayers(vectors + [l for l, _ in reversed(p["imagery"])] + [hill])
+        m.setLayers(vectors + ([overlay] if HILLSHADE_OVERLAY_OPACITY > 0 else [])
+                    + [l for l, _ in reversed(p["imagery"])] + [hill])
         m.setKeepLayerSet(True)
         m.setFrameEnabled(True)
         m.setFrameStrokeWidth(ov.mm(0.25))
@@ -223,14 +242,14 @@ def build(project):
         b = bands.get(p["panel"])
         km = f" ({float(b['km_from']):.0f}–{float(b['km_to']):.0f} km)" if b else ""
         base = TITLE_H - 0.8
-        letter = add_label(layout, LETTER_FMT.format(p["panel"]), ov.text_format(9, INK, bold=True), x + TEXT_PAD, base,
+        letter = add_label(layout, LETTER_FMT.format(p["panel"]), ov.text_format(FONT_PT["letter"], INK, bold=True), x + TEXT_PAD, base,
                            anchor=QgsLayoutItem.ReferencePoint.LowerLeft)
-        add_label(layout, p["place"].replace("-", "–") + km, ov.text_format(6.5, INK2),
+        add_label(layout, p["place"].replace("-", "–") + km, ov.text_format(FONT_PT["title"], INK2),
                   x + TEXT_PAD + letter.rect().width() + 1.2, base - 0.15, anchor=QgsLayoutItem.ReferencePoint.LowerLeft)
 
         # imagery credit inside the map, lower right
         credit = p["imagery"][-1][1] if p["imagery"] else ""
-        add_label(layout, credit, white_text(5), x + w - 0.8, TITLE_H + h - 0.6,
+        add_label(layout, credit, white_text(FONT_PT["credit"]), x + w - 0.8, TITLE_H + h - 0.6,
                   anchor=QgsLayoutItem.ReferencePoint.LowerRight)
 
         # scale bar inside the map, lower right just above the credit (the river leaves the frames at lower left);
@@ -246,7 +265,7 @@ def build(project):
         sb.setNumberOfSegmentsLeft(0)
         sb.setHeight(0.8)
         sb.setLabelBarSpace(0.6)
-        sb.setTextFormat(white_text(5.2))
+        sb.setTextFormat(white_text(FONT_PT["scalebar"]))
         sb.setBoxContentSpace(0.3)
         sb.resizeToMinimumWidth()
         layout.addLayoutItem(sb)
@@ -276,7 +295,7 @@ def build(project):
             if lyr is bridges:
                 QgsLegendRenderer.setNodeLegendStyle(node, QgsLegendStyle.Style.Hidden)
         for style in (QgsLegendStyle.Style.SymbolLabel, QgsLegendStyle.Style.Subgroup):
-            legend.rstyle(style).setTextFormat(ov.text_format(6, INK2))
+            legend.rstyle(style).setTextFormat(ov.text_format(7, INK2))
         legend.setColumnCount(4)
         legend.setSplitLayer(True)
         legend.setSymbolWidth(4.0)

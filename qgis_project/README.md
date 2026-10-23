@@ -2,10 +2,10 @@
 
 `overviewmap.qgz` holds two print layouts:
 
-- **"Panel a - overview"** (180 × 82 mm): the flood corridor on a hillshade, distance from source every 20 km, towns, damaged hydropower and bridges, the c–e inset frames, districts, a Nepal locator and the legend.
-- **"Panels c-e"** (180 mm wide, one row): each map shows exactly one inset frame on post-event imagery, with only the damaged features: buildings and roads in the flood inundation, destroyed/damaged bridges, hydropower footprints, the inundation outline and 5-km distance markers. A shared legend runs underneath.
+- **"Panel a - overview"** (180 × 78 mm): the flood corridor, rotated 28° clockwise so the river runs left to right, with the hillshade clipped to 5 km either side of the flow path (km 0–165). It shows distance from source every 20 km, towns, damaged hydropower and bridges, the c–e inset frames, districts and the China–Nepal border. The free white space holds the shared key (top, in the dip of the river; drawn by `analysis/scripts/compose_figure.py`), the scale bar and a north arrow that turns with the map (bottom left), and the Nepal locator (bottom right).
+- **"Panels c-e"** (180 mm wide, one row): each map shows exactly one inset frame on post-event imagery, with only the damaged features: buildings and roads in the flood inundation, destroyed/damaged bridges, hydropower footprints, the inundation outline and 5-km distance markers. The imagery is shown in greyscale with the hillshade multiplied over it, so the whole figure shares one monochrome base and only the damage is in colour. For natural colour, set `IMAGERY_GREYSCALE = False` and `HILLSHADE_OVERLAY_OPACITY = 0` at the top of `scripts/inset_layout.py` (or keep about 0.2 for a little relief on the colour imagery).
 
-Colours match the damage profile (panel b).
+Colours match the damage profile (panel b), in neutral greys to match the manuscript's other distance figures. Text is 7–8 pt (panel letters 10 pt); the sizes are `FONT_PT` at the top of each script.
 
 ## Rebuild
 
@@ -19,7 +19,7 @@ Scripts run from the repo root. The QGIS ones use QGIS's own Python (`"C:\Progra
 | 4 | `uv run qgis_project/scripts/download_sentinel2_insets.py` | `imagery/sentinel2/insets/`: 10 m post-event Sentinel-2 per inset frame (uses your Sentinel Hub layer's configuration); `download_sentinel2_overview.py` does the same for the whole overview |
 | 5 | `scripts/build_overview_layout.py` (QGIS Python) | rebuilds the layers and both layouts in `overviewmap.qgz` (panels c–e come from `scripts/inset_layout.py`), exports `exports/overview_map.*` and `exports/panels_c_e.*` (600 dpi PNG and PDF) |
 
-Step 5 backs up the project to `archive/` the first time it runs each day, and rebuilds the layout from scratch. Hand edits made in QGIS are kept only until you re-run it, so either re-run less often or move a setting into the script. Map extent, page size, label positions and colours are constants at the top of `build_overview_layout.py` (panel a; `SHOW_LEGEND` and `LETTER_FMT` also live there — legends are off because the combined figure has one shared key, drawn by `analysis/scripts/compose_figure.py` in the area recorded in `exports/overview_map_layout.json`) and `inset_layout.py` (panels c–e: imagery per panel, colours, hydropower labels, km-marker spacing, scale-bar length and `SCALE_BAR_RAISE` to lift a scale bar off nearby labels).
+Step 5 backs up the project to `archive/` the first time it runs each day, and rebuilds the layout from scratch. Hand edits made in QGIS are kept only until you re-run it, so either re-run less often or move a setting into the script. Page size, rotation (`MAP_ROTATION`), the positions of the scale bar, north arrow, locator and key box, and colours are constants at the top of `build_overview_layout.py` (panel a; `SHOW_LEGEND` and `LETTER_FMT` also live there — legends are off because the combined figure has one shared key, drawn by `analysis/scripts/compose_figure.py` in the area recorded in `exports/overview_map_layout.json`) and `inset_layout.py` (panels c–e: imagery per panel, colours, line widths `ROAD_W` / `HYDRO_W` / `FLOOD_LINE_W`, hydropower labels, km-marker spacing, scale-bar length and `SCALE_BAR_RAISE` to lift a scale bar off nearby labels). The corridor, the clipped district boundaries and the district and country name positions come from `analysis/intermediate/map_a/` (see `build_intermediate.py`: `CORRIDOR_BUFFER_KM`, `LABEL_CLEAR_KM`, `DISTRICT_LABEL_MIN_KM2`, `DISTRICT_LABEL_FROM_KM`).
 
 ## Layer groups
 
@@ -29,7 +29,7 @@ Step 5 backs up the project to `archive/` the first time it runs each day, and r
 - **Imagery - Sentinel-2**, off: two local mosaics and your Sentinel Hub WMS layers.
 - **Locator**, off: used only by the locator map.
 
-The inset frames come from `analysis/inputs/inset_frames.geojson`, the same file that draws the c–e bands on panel (b) and sets the extent of each map in panels c–e. Edit the frames there, re-run step 1, step 3 (to re-cut the imagery) and step 5, and all three panels follow. Panels c–e share one height, so each map's width follows its frame's shape.
+The inset frames come from `analysis/inputs/inset_frames.geojson`, the same file that draws the c–e bands on panel (b) and sets the extent of each map in panels c–e. Edit the frames there, re-run step 1, step 3 (to re-cut the imagery) and step 5, and all three panels follow. The frames are square (`FRAME_ASPECT = 1.0` in `build_intermediate.py`), so panels c–e share one height and sit in one 64 mm row.
 
 ## Imagery and data
 

@@ -42,7 +42,11 @@ import common as c
 INSET_DEFAULTS = [("c", "Rasuwagadhi-Timure", 19.0, 26.0),
                   ("d", "Upper Trishuli hydropower", 51.5, 63.4),
                   ("e", "Trishuli-Bidur", 67.0, 79.0)]  # km 67-79 lies wholly inside the clear 8 Sep 2026 Vantor pass
-FRAME_ASPECT = 0.85  # width / height of the default frames, so panels c-e sit in one row of equal height
+FRAME_ASPECT = 1.0   # width / height of the default frames, so panels c-e sit in one row of equal height
+CORRIDOR_KM, CORRIDOR_BUFFER_KM = 165, 5  # panel (a) shows the flow path to km 165 (as panel b), +-5 km
+LABEL_CLEAR_KM = 2.2         # district and country names at least this far from the river
+DISTRICT_LABEL_MIN_KM2 = 100 # districts with less corridor area than this get no name
+DISTRICT_LABEL_FROM_KM = 30  # district names only downstream of here, clear of the CHINA / NEPAL names
 TOWN_MAX_OFFSET_M = 1500  # towns farther than this from the flow path are left out
 
 
@@ -99,6 +103,46 @@ def towns(path):
     return t[["name", "km", "offset_m", "arrival_npt", "lon", "lat"]].round({"km": 2, "offset_m": 0}).sort_values("km")
 
 
+def map_a_layers(path, out):
+    """Panel (a) is clipped to a corridor around the flow path. Writes the corridor, district boundaries
+    clipped to it, and label points for district and country names, placed inside the corridor but at
+    least LABEL_CLEAR_KM from the river so they sit on the hillshade, not on the damage symbols."""
+    out.mkdir(parents=True, exist_ok=True)
+    seg = substring(path.line, 0, CORRIDOR_KM * 1000)
+    corridor = seg.buffer(CORRIDOR_BUFFER_KM * 1000)
+    gpd.GeoDataFrame({"km_to": [CORRIDOR_KM], "buffer_km": [CORRIDOR_BUFFER_KM]}, geometry=[corridor],
+                     crs=c.UTM).to_crs(4326).to_file(out / "corridor.geojson")
+    districts = c.read("districts")
+    lines = shapely.union_all(districts.boundary.values).intersection(corridor)
+    gpd.GeoDataFrame(geometry=[lines], crs=c.UTM).to_crs(4326).to_file(out / "district_boundaries.geojson")
+
+    def label_point(region):
+        region = region.difference(seg.buffer(LABEL_CLEAR_KM * 1000))
+        parts = getattr(region, "geoms", [region])
+        biggest = max(parts, key=lambda g: g.area) if parts else None
+        if biggest is None or biggest.is_empty:
+            return None
+        return shapely.get_point(shapely.maximum_inscribed_circle(biggest), 0)  # the most open spot
+
+    nepal = shapely.union_all(districts.geometry.values)
+    rows = []
+    downstream = substring(path.line, DISTRICT_LABEL_FROM_KM * 1000, CORRIDOR_KM * 1000).buffer(CORRIDOR_BUFFER_KM * 1000)
+    frames = shapely.union_all(c.read("inset_frames").geometry.values).buffer(1500)  # names stay off the frames
+    for d in districts.itertuples():
+        part = d.geometry.intersection(downstream).difference(frames)  # clear of the border reach and frames
+        if part.area / 1e6 >= DISTRICT_LABEL_MIN_KM2:
+            pt = label_point(part)
+            if pt is not None:
+                rows.append({"text": d.DISTRICT.upper(), "kind": "district", "geometry": pt})
+    for text, (k0, k1), inside in [("CHINA", (3, 12), False), ("NEPAL", (21, 32), True)]:
+        reach = substring(path.line, k0 * 1000, k1 * 1000).buffer(CORRIDOR_BUFFER_KM * 1000)
+        pt = label_point(reach.intersection(nepal) if inside else reach.difference(nepal))
+        if pt is not None:
+            rows.append({"text": text, "kind": "country", "geometry": pt})
+    gpd.GeoDataFrame(rows, crs=c.UTM).to_crs(4326).to_file(out / "label_points.geojson")
+    return corridor
+
+
 def inset_bands(path):
     frames_path = c.PATHS["inset_frames"]
     if not frames_path.exists():
@@ -129,7 +173,8 @@ def main():
     write_flow_path(path, out / "flow_path")
     elevation_profile(path).to_csv(out / "elevation_profile.csv", index=False)
     towns(path).to_csv(out / "towns.csv", index=False)
-    bands = inset_bands(path)
+    bands = inset_bands(path)  # first: it writes the default inset frames if there are none yet
+    map_a_layers(path, out / "map_a")
     bands.to_csv(out / "inset_bands.csv", index=False)
 
     bld = c.iit_buildings(args.dedupe_m)

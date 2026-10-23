@@ -41,11 +41,11 @@ DPI = 600
 MM_PT = 72 / 25.4
 
 # ---- tunables ----
-GAP_MM = 5.0                                         # space between the rows a | b | c-e
+GAP_MM = 2.5                                         # space between the rows a | b | c-e
 SEPARATOR = dict(color="#a9a69d", linewidth=0.6, linestyle=(0, (1, 2.5)))  # dotted rule in each gap
-KEY_FONT_PT, KEY_HEADER_PT = 6.0, 6.5
-KEY_COLUMNS_MM = (3.0, 9.0, 15.5)                    # symbol-column centres for (a), (b), (c-e)
-KEY_LABEL_X_MM = 20.0                                # where the row labels start
+KEY_FONT_PT, KEY_HEADER_PT = 7.0, 7.5
+KEY_COLUMNS_MM = (3.0, 9.5, 16.5)                    # symbol-column centres for (a), (b), (c-e)
+KEY_LABEL_X_MM = 21.5                                # where the row labels start
 
 Image.MAX_IMAGE_PIXELS = None
 
@@ -112,7 +112,7 @@ def draw_key(ax, x0, y0, w, h, S, counts):
         ("Flood inundation",
          lambda x, y: rect(x, y, 3.6, 2.2, facecolor=A["FLOOD"], edgecolor=A["FLOOD"], linewidth=0.35 * MM_PT),
          None,
-         lambda x, y: outline(x, y, CE["FLOOD_LINE"], 0.4)),
+         lambda x, y: outline(x, y, CE["FLOOD_LINE"], *CE["FLOOD_LINE_W"])),
         ("Flood source", lambda x, y: mark(x, y, "*", 7.5, "#ffd23f", ink, 0.5), None, None),
         ("Distance from source (km)",
          lambda x, y: mark(x, y, "o", 4.2, "white", ink, 0.6),
@@ -131,11 +131,11 @@ def draw_key(ax, x0, y0, w, h, S, counts):
          None,
          lambda x, y: (rect(x, y + 0.6, 3.0, 1.1, facecolor=B["MAIN"], edgecolor="white", linewidth=0.4),
                        rect(x, y - 0.6, 3.0, 1.1, facecolor=B["LOCAL"], edgecolor="white", linewidth=0.4)),
-         lambda x, y: line(x, y, CE["ROAD"], 0.35, 0.3)),
+         lambda x, y: line(x, y, CE["ROAD"], *CE["ROAD_W"])),
         ("Hydropower structure damaged",
          lambda x, y: mark(x, y, "s", 5.2, red),
          lambda x, y: mark(x, y, "s", 5.2, red),
-         lambda x, y: outline(x, y, red, 0.45, 0.3)),
+         lambda x, y: outline(x, y, red, *CE["HYDRO_W"])),
         (f"Bridge washed away ({counts.get('Destroyed', 0)})",
          lambda x, y: mark(x, y, "v", 5.0, red), lambda x, y: mark(x, y, "v", 5.0, st["Destroyed"]),
          lambda x, y: mark(x, y, "v", 6.4, red, "white", 0.6)),

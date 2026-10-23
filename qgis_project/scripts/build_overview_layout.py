@@ -6,17 +6,19 @@ Run with QGIS's Python (after analysis/scripts/build_intermediate.py and build_b
 What it does:
   - backs up the current project to qgis_project/archive/
   - restyles / adds the layers and sorts them into groups (overview, imagery, inset layers, locator)
-  - creates the print layout "Panel a - overview" (180 x 82 mm): main map, graticule, scale bar,
-    north arrow, Nepal locator, legend
+  - creates the print layout "Panel a - overview" (180 x 83 mm): the flood corridor, rotated so the river
+    runs left-right and clipped to CORRIDOR_BUFFER_KM either side of the flow path; scale bar, north
+    arrow (rotates with the map), Nepal locator, and an empty box where compose_figure.py draws the key
   - exports qgis_project/exports/overview_map.png (600 dpi) and .pdf
 Colours match the damage profile (panel b). Re-running rebuilds the layout from scratch.
 """
 import json
+import math
 import shutil
 from datetime import date
 from pathlib import Path
 
-from qgis.core import (Qgis, QgsApplication, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsGeometry, QgsLayoutItem,
+from qgis.core import (Qgis, QgsApplication, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsFeature, QgsGeometry, QgsLayoutItem,
                        QgsPointXY, QgsFillSymbol, QgsLayerTreeGroup,
                        QgsLayerTreeLayer, QgsLayoutExporter, QgsLayoutItemLabel, QgsLayoutItemLegend, QgsLayoutItemMap,
                        QgsLayoutItemMapGrid, QgsLayoutItemMapOverview, QgsLayoutItemPicture, QgsLayoutItemScaleBar,
@@ -24,6 +26,7 @@ from qgis.core import (Qgis, QgsApplication, QgsCoordinateReferenceSystem, QgsCo
                        QgsMarkerSymbol, QgsPalLayerSettings, QgsPrintLayout, QgsSimpleLineSymbolLayer, QgsProject, QgsProperty, QgsRasterLayer,
                        QgsRectangle, QgsRuleBasedRenderer, QgsSingleSymbolRenderer, QgsTextBufferSettings,
                        QgsTextFormat, QgsVectorLayer, QgsVectorLayerSimpleLabeling, QgsLegendRenderer)
+from osgeo import gdal
 from qgis.PyQt.QtGui import QColor, QFont
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -32,30 +35,39 @@ PROJECT = QP / "overviewmap.qgz"
 INTER = ROOT / "analysis" / "intermediate"
 LAYOUT_NAME = "Panel a - overview"
 
-# Page and item geometry (mm). The map extent keeps the map item's aspect ratio.
-PAGE = (180, 82)
-MAP = (5.5, 0.5, 115.5, 76.5)        # x, y, w, h
-COL_X, COL_W = 124, 56               # right-hand column: locator, then the figure's shared key
-LOCATOR_H = 24                       # mm
+# Page and item positions (mm from the page's top-left). The map fills the page; the corridor is rotated
+# MAP_ROTATION degrees clockwise and scaled to the page width, and the free white space around it holds
+# the scale bar, the key (drawn later by compose_figure.py) and the locator.
+PAGE = (180, 78)
+MAP_ROTATION = 28                    # degrees clockwise; 28 lays the source-to-Mugling corridor flattest
+CORRIDOR_MARGIN = (1.0, 0.5)         # mm left/right of the corridor, and below it
+LETTER_POS = (1.0, 1.0)              # (a)
+SCALEBAR_POS = (1.5, 68.0)           # upper-left corner of the scale bar: bottom left, below the 160-140 km reach
+SCALEBAR_KM = 5                      # km per scale-bar segment (two segments)
+NORTH_POS = (25.0, 68.5)             # upper-left corner of the north arrow, right of the scale bar
+KEY_BOX = (44.0, 0.5, 56.0, 44.0)    # x, y, w, h: where compose_figure.py draws the shared key (top, in the dip)
+LOCATOR_BOX = (138.0, 51.0, 41.0, 19.5)  # bottom right, below the 40 km reach
+CREDIT_POS = (138.0, 71.2)           # under the locator
 LETTER_FMT = "({})"                  # panel letter (a) and inset references (c)-(e)
 SHOW_LEGEND = False                  # the combined figure has one shared key (compose_figure.py) instead
-MAP_CENTER = (306811, 3106281)       # EPSG:32645, centre of the flood corridor (source to Mugling)
-MAP_WIDTH_M = 106000
-COUNTRY_LABELS = [("CHINA", 85.33, 28.36), ("NEPAL", 85.47, 28.21)]  # checked against the district polygons
 LOCATOR_LABELS = [("CHINA", 85.0, 30.3), ("NEPAL", 82.3, 28.75), ("INDIA", 82.6, 26.75)]
-LETTER_CORNER = {"c": "bottom-left"}  # where each inset letter sits; default top-left, outside the frame
-DISTRICT_LABELS = [("RASUWA", 85.48, 28.12), ("NUWAKOT", 85.34, 27.94), ("DHADING", 84.95, 27.97), ("GORKHA", 84.72, 28.15)]
+# Which vertex of each (north-up) inset frame its letter sits by, and on which side of that vertex.
+LETTER_SPOT = {"c": ("top-left", "AboveLeft"), "d": ("top-left", "AboveLeft"), "e": ("top-left", "AboveLeft")}
 TOWNS = ["Rasuwagadhi", "Syabrubesi", "Betrawati", "Bidur", "Devighat", "Malekhu", "Mugling"]
+FONT_PT = {"letter": 10, "frame_letter": 9.5, "town": 7.5, "km": 7, "district": 7, "country": 7.5,
+           "scalebar": 7, "locator": 6.5, "credit": 6}
 
-INK, INK2, MUTED = "#0b0b0b", "#52514e", "#898781"
+# Neutral greys, to match the manuscript's other distance figures (Kristen Cook's profile figure).
+INK, INK2, MUTED = "#0b0b0b", "#4d4d4d", "#808080"
 FLOOD = "#2b7bb9"
 DESTROYED, DAMAGED = "#d03b3b", "#ec835a"
-BAND, BAND_EDGE = "#e9e2cc", "#6e6450"
-DISTRICT = "#4a4136"  # district names
+BAND, BAND_EDGE = "#e9e2cc", "#6e6450"  # zoom areas: warm, so they stand out on the grey hillshade
+HILLSHADE_OPACITY = 0.55
+DISTRICT = "#4d4d4d"  # district names
 # District boundary line: colour, width (mm) and dash pattern (dash;gap;dot;gap, mm); the white edging under it
 # keeps it readable on dark slopes (last value = opacity 0-255).
-BOUNDARY_COLOR, BOUNDARY_WIDTH, BOUNDARY_DASH = "#8a8174", 0.3, "2.4;0.9;0.5;0.9"
-BOUNDARY_EDGING = "255,255,255,120"
+BOUNDARY_COLOR, BOUNDARY_WIDTH, BOUNDARY_DASH = "#8c8c8c", 0.3, "2.4;0.9;0.5;0.9"
+BOUNDARY_EDGING = "255,255,255,60"
 FONT = "Arial"
 
 
@@ -139,13 +151,24 @@ def main():
     tree = project.layerTreeRoot()
 
     # ---------------- overview layers ----------------
-    hill = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"), "Hillshade (Copernicus DEM GLO-30)")
-    hill.renderer().setOpacity(0.5)  # a light hillshade so the corridor and damage symbols stand out
+    utm = QgsCoordinateReferenceSystem("EPSG:32645")
+    corridor_path = INTER / "map_a" / "corridor.geojson"
+    corridor_layer = vector(corridor_path, "Corridor")
+    corridor = next(corridor_layer.getFeatures()).geometry()
+    corridor.transform(QgsCoordinateTransform(corridor_layer.crs(), utm, project))
 
-    districts = vector(f"/vsizip/{ROOT / 'data/OSM/2. Administrative layer/AOI_Affected_district_v1.zip'}"
-                       "/AOI_Affected_district_v1/affected_district.geojson", "District boundaries")
+    # hillshade cut to the corridor; outside it the page stays white
+    hill_src = QP / "basemap" / "hillshade_multidirectional.tif"
+    hill_clip = QP / "basemap" / "hillshade_corridor.tif"
+    gdal.UseExceptions()
+    gdal.Warp(str(hill_clip), str(hill_src), cutlineDSName=str(corridor_path), cropToCutline=True, dstAlpha=True,
+              creationOptions=["COMPRESS=DEFLATE", "TILED=YES"])
+    hill = QgsRasterLayer(str(hill_clip), "Hillshade (Copernicus DEM GLO-30), corridor")
+    hill.renderer().setOpacity(HILLSHADE_OPACITY)
+
+    districts = vector(INTER / "map_a" / "district_boundaries.geojson", "District boundaries")
     # dash-dot boundary on a faint white casing, so it reads on light and dark hillshade alike
-    boundary = QgsFillSymbol()
+    boundary = QgsLineSymbol()
     boundary.deleteSymbolLayer(0)
     boundary.appendSymbolLayer(QgsSimpleLineSymbolLayer.create(
         {"line_color": BOUNDARY_EDGING, "line_width": "0.9", "capstyle": "round", "joinstyle": "round"}))
@@ -153,6 +176,19 @@ def main():
         {"line_color": BOUNDARY_COLOR, "line_width": str(BOUNDARY_WIDTH), "use_custom_dash": "1", "customdash": BOUNDARY_DASH,
          "customdash_unit": "MM", "capstyle": "flat", "joinstyle": "round"}))
     districts.setRenderer(QgsSingleSymbolRenderer(boundary))
+
+    names = {}  # district and country names: label-only point layers, placed by build_intermediate.py
+    for kind, fmt in [("district", text_format(FONT_PT["district"], DISTRICT, bold=True, spacing=1.0, buffer=0.8)),
+                      ("country", text_format(FONT_PT["country"], "#5c5c5c", bold=True, spacing=1.4, buffer=0.7))]:
+        lyr = vector(INTER / "map_a" / "label_points.geojson", f"{kind.title()} names", subset=f"\"kind\" = '{kind}'")
+        lyr.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple({"name": "circle", "size": "0",
+                                                                              "color": "0,0,0,0", "outline_style": "no"})))
+        label_layer(lyr, '"text"', fmt, placement=Qgis.LabelPlacement.OverPoint, priority=10 if kind == "country" else 2)
+        if kind == "country":  # the border reach is crowded; never drop CHINA / NEPAL
+            settings = lyr.labeling().settings()
+            settings.displayAll = True
+            lyr.setLabeling(QgsVectorLayerSimpleLabeling(settings))
+        names[kind] = lyr
 
     flood = vector(ROOT / "data/Impact-Assessment-Shashi-Ashim/Inundation/Inundation.shp", "Flood inundation")
     flood.setRenderer(QgsSingleSymbolRenderer(QgsFillSymbol.createSimple(
@@ -163,31 +199,60 @@ def main():
     frames.setRenderer(QgsSingleSymbolRenderer(QgsFillSymbol.createSimple(
         {"color": f"{c.red()},{c.green()},{c.blue()},110", "outline_color": BAND_EDGE, "outline_width": "0.4"})))
 
+    # inset letters (c)-(e): a label at a chosen vertex of each frame (labels stay upright on the rotated map)
+    letters = QgsVectorLayer("Point?crs=EPSG:32645&field=text:string&field=quad:string", "Inset letters", "memory")
+    to_utm_frames = QgsCoordinateTransform(frames.crs(), utm, project)
+    feats = []
+    for f in frames.getFeatures():
+        g = QgsGeometry(f.geometry())
+        g.transform(to_utm_frames)
+        bb = g.boundingBox()
+        vertex, quad = LETTER_SPOT.get(f["panel"], ("top-left", "AboveLeft"))
+        x = bb.xMinimum() if "left" in vertex else bb.xMaximum()
+        y = bb.yMaximum() if "top" in vertex else bb.yMinimum()
+        nf = QgsFeature(letters.fields())
+        nf.setGeometry(QgsGeometry.fromPointXY(QgsPointXY(x, y)))
+        nf.setAttributes([LETTER_FMT.format(f["panel"]), quad])
+        feats.append(nf)
+    letters.dataProvider().addFeatures(feats)
+    letters.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple({"name": "circle", "size": "0",
+                                                                             "color": "0,0,0,0", "outline_style": "no"})))
+    label_layer(letters, '"text"', text_format(FONT_PT["frame_letter"], INK, bold=True, buffer=0.7),
+                placement=Qgis.LabelPlacement.OverPoint, dist=0.6, priority=10,
+                extra={QgsPalLayerSettings.Property.OffsetQuad:
+                       "CASE \"quad\" WHEN 'AboveLeft' THEN 0 WHEN 'AboveRight' THEN 2 WHEN 'BelowLeft' THEN 6 "
+                       "WHEN 'BelowRight' THEN 8 ELSE 0 END"})
+    letter_settings = letters.labeling().settings()
+    letter_settings.displayAll = True  # the inset letters must always show
+    letters.setLabeling(QgsVectorLayerSimpleLabeling(letter_settings))
+
     ticks = vector(INTER / "flow_path" / "flow_path_km_ticks.shp", "Distance from source (km)",
                    subset='"km" IN (0, 20, 40, 60, 80, 100, 120, 140, 160)')
     rules(ticks, [
         ("Flood source", '"km" = 0', QgsMarkerSymbol.createSimple(
-            {"name": "star", "color": "#ffd23f", "outline_color": INK, "outline_width": "0.25", "size": "3.2"})),
+            {"name": "star", "color": "#ffd23f", "outline_color": INK, "outline_width": "0.25", "size": "3.4"})),
         ("Distance from source, every 20 km", '"km" > 0', QgsMarkerSymbol.createSimple(
-            {"name": "circle", "color": "white", "outline_color": INK, "outline_width": "0.3", "size": "1.5"})),
+            {"name": "circle", "color": "white", "outline_color": INK, "outline_width": "0.3", "size": "1.6"})),
     ])
     label_layer(ticks, "CASE WHEN \"km\" = 0 THEN 'Flood source' ELSE \"km\" || ' km' END",
-                text_format(6, INK, bold=True, buffer=0.6), placement=Qgis.LabelPlacement.AroundPoint, dist=0.6, priority=9)
+                text_format(FONT_PT["km"], INK, bold=True, buffer=0.6), placement=Qgis.LabelPlacement.AroundPoint,
+                dist=0.6, priority=9)
 
     towns_filter = " OR ".join(f"\"name_en\" LIKE '{t}%'" for t in TOWNS)
     towns = vector(ROOT / "data" / "cities.geojson", "Towns", subset=towns_filter)
     towns.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
-        {"name": "circle", "color": INK, "outline_color": "white", "outline_width": "0.2", "size": "1.3"})))
-    label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')", text_format(6.5, INK, buffer=0.7),
-                placement=Qgis.LabelPlacement.AroundPoint, dist=0.7, priority=8)
+        {"name": "circle", "color": INK, "outline_color": "white", "outline_width": "0.2", "size": "1.4"})))
+    label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')",
+                text_format(FONT_PT["town"], INK, buffer=0.7), placement=Qgis.LabelPlacement.AroundPoint,
+                dist=0.7, priority=8)
 
     hydro = vector(INTER / "hydropower.geojson", "Hydropower structure damaged")
     hydro.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
-        {"name": "square", "color": DESTROYED, "outline_color": "white", "outline_width": "0.25", "size": "2.1"})))
+        {"name": "square", "color": DESTROYED, "outline_color": "white", "outline_width": "0.25", "size": "2.2"})))
 
     bridges = vector(INTER / "bridges.geojson", "Bridges", subset="\"status\" IN ('Destroyed', 'Damaged')")
     tri = lambda col: QgsMarkerSymbol.createSimple(
-        {"name": "triangle", "angle": "180", "color": col, "outline_color": "white", "outline_width": "0.15", "size": "1.7"})
+        {"name": "triangle", "angle": "180", "color": col, "outline_color": "white", "outline_width": "0.15", "size": "1.8"})
     rules(bridges, [("Bridge washed away", "\"status\" = 'Destroyed'", tri(DESTROYED)),
                     ("Bridge damaged", "\"status\" = 'Damaged'", tri(DAMAGED))])
 
@@ -208,9 +273,9 @@ def main():
                        "Countries (Natural Earth)")
     rules(countries, [
         ("Nepal", "\"NAME\" = 'Nepal'", QgsFillSymbol.createSimple(
-            {"color": "#d6d2c6", "outline_color": "#6f6c64", "outline_width": "0.2"})),
+            {"color": "#d4d4d4", "outline_color": "#6e6e6e", "outline_width": "0.2"})),
         ("Other", "\"NAME\" <> 'Nepal'", QgsFillSymbol.createSimple(
-            {"color": "#f6f5f1", "outline_color": "#a9a69d", "outline_width": "0.15"})),
+            {"color": "#f5f5f5", "outline_color": "#a6a6a6", "outline_width": "0.15"})),
     ])
 
     # ---------------- layer tree ----------------
@@ -226,7 +291,8 @@ def main():
         g.setItemVisibilityCheckedRecursive(visible)
         return g
 
-    overview_layers = [towns, ticks, frames, hydro, bridges, flood, districts, hill]  # top to bottom
+    overview_layers = [letters, names["country"], names["district"], towns, ticks, frames, hydro, bridges, flood,
+                       districts, hill]  # top to bottom
     group("Overview map (panel a)", overview_layers)
     group("Locator", [countries], visible=False)
     group("Inset layers (panels c-e)", keep_roads + [flow], visible=False)
@@ -234,108 +300,43 @@ def main():
     group("Imagery - Sentinel-2", s2 + keep_wms, visible=False)
 
     # ---------------- layout ----------------
+    MM = Qgis.LayoutUnit.Millimeters
     layout = QgsPrintLayout(project)
     layout.initializeDefaults()
     layout.setName(LAYOUT_NAME)
     project.layoutManager().addLayout(layout)
-    layout.pageCollection().page(0).setPageSize(QgsLayoutSize(*PAGE, Qgis.LayoutUnit.Millimeters))
-    utm = QgsCoordinateReferenceSystem("EPSG:32645")
+    layout.pageCollection().page(0).setPageSize(QgsLayoutSize(*PAGE, MM))
 
+    # map extent: rotate the corridor into page orientation, scale it to the page width, sit it on the
+    # bottom margin, then rotate the page centre back to find the (unrotated) extent QGIS expects
+    pivot = corridor.boundingBox().center()
+    turned = QgsGeometry(corridor)
+    turned.rotate(MAP_ROTATION, pivot)  # QGIS rotates clockwise for positive angles, as the map item does
+    tb = turned.boundingBox()
+    scale = tb.width() / (PAGE[0] - 2 * CORRIDOR_MARGIN[0])  # metres per page mm
+    centre = QgsGeometry.fromPointXY(QgsPointXY(tb.xMinimum() + (PAGE[0] / 2 - CORRIDOR_MARGIN[0]) * scale,
+                                                tb.yMinimum() + (PAGE[1] / 2 - CORRIDOR_MARGIN[1]) * scale))
+    centre.rotate(-MAP_ROTATION, pivot)
+    cx, cy = centre.asPoint().x(), centre.asPoint().y()
     m = QgsLayoutItemMap(layout)
-    m.attemptMove(QgsLayoutPoint(MAP[0], MAP[1], Qgis.LayoutUnit.Millimeters))
-    m.attemptResize(QgsLayoutSize(MAP[2], MAP[3], Qgis.LayoutUnit.Millimeters))
+    m.attemptMove(QgsLayoutPoint(0, 0, MM))
+    m.attemptResize(QgsLayoutSize(*PAGE, MM))
     m.setCrs(utm)
-    h = MAP_WIDTH_M * MAP[3] / MAP[2]
-    m.setExtent(QgsRectangle(MAP_CENTER[0] - MAP_WIDTH_M / 2, MAP_CENTER[1] - h / 2,
-                             MAP_CENTER[0] + MAP_WIDTH_M / 2, MAP_CENTER[1] + h / 2))
+    m.setExtent(QgsRectangle(cx - PAGE[0] * scale / 2, cy - PAGE[1] * scale / 2,
+                             cx + PAGE[0] * scale / 2, cy + PAGE[1] * scale / 2))
+    m.setMapRotation(MAP_ROTATION)
     m.setLayers(overview_layers)
     m.setKeepLayerSet(True)
-    m.setFrameEnabled(True)
-    m.setFrameStrokeWidth(mm(0.25))
-    m.setFrameStrokeColor(QColor(INK2))
+    m.setFrameEnabled(False)
+    m.setBackgroundEnabled(False)
     layout.addLayoutItem(m)
-
-    grid = QgsLayoutItemMapGrid("Graticule", m)
-    m.grids().addGrid(grid)
-    grid.setCrs(QgsCoordinateReferenceSystem("EPSG:4326"))
-    grid.setIntervalX(0.25)
-    grid.setIntervalY(0.25)
-    grid.setStyle(Qgis.MapGridStyle.Lines)
-    grid.setLineSymbol(QgsLineSymbol.createSimple({"line_color": "255,255,255,150", "line_width": "0.15"}))
-    grid.setAnnotationEnabled(True)
-    grid.setAnnotationFormat(Qgis.MapGridAnnotationFormat.DegreeMinutePadded)
-    grid.setAnnotationPrecision(0)
-    grid.setAnnotationTextFormat(text_format(5.5, INK2))
-    V = Qgis.MapGridComponentVisibility
-    for side, show, direction in [(Qgis.MapGridBorderSide.Left, V.LatitudeOnly, Qgis.MapGridAnnotationDirection.VerticalDescending),
-                                  (Qgis.MapGridBorderSide.Bottom, V.LongitudeOnly, Qgis.MapGridAnnotationDirection.Horizontal),
-                                  (Qgis.MapGridBorderSide.Right, V.HideAll, Qgis.MapGridAnnotationDirection.Horizontal),
-                                  (Qgis.MapGridBorderSide.Top, V.HideAll, Qgis.MapGridAnnotationDirection.Horizontal)]:
-        grid.setAnnotationDisplay(show, side)
-        grid.setAnnotationPosition(Qgis.MapGridAnnotationPosition.OutsideMapFrame, side)
-        grid.setAnnotationDirection(direction, side)
-    grid.setAnnotationFrameDistance(0.8)
-    grid.setFrameStyle(Qgis.MapGridFrameStyle.ExteriorTicks)
-    grid.setFrameWidth(1.0)
-    grid.setFramePenSize(0.2)
-    grid.setFramePenColor(QColor(INK2))
-    m.updateBoundingRect()
-
-    to_utm = QgsCoordinateTransform(QgsCoordinateReferenceSystem("EPSG:4326"), utm, project)
-    ext = m.extent()
-    scale = ext.width() / MAP[2]  # metres per mm on the page
-
-    def geo_label(text, x, y, fmt, anchor=QgsLayoutItem.ReferencePoint.Middle, lonlat=True):
-        """A layout label pinned to a map position (the map extent is fixed)."""
-        if lonlat:
-            pt = to_utm.transform(QgsPointXY(x, y))
-            x, y = pt.x(), pt.y()
-        lbl = QgsLayoutItemLabel(layout)
-        lbl.setText(text)
-        lbl.setTextFormat(fmt)
-        lbl.setMargin(0)
-        lbl.adjustSizeToText()
-        lbl.setReferencePoint(anchor)
-        lbl.attemptMove(QgsLayoutPoint(MAP[0] + (x - ext.xMinimum()) / scale, MAP[1] + (ext.yMaximum() - y) / scale,
-                                       Qgis.LayoutUnit.Millimeters))
-        layout.addLayoutItem(lbl)
-        return lbl
-
-    country_fmt = text_format(6.5, "#5c5952", bold=True, spacing=1.2, buffer=0.6)
-    for text, lon, lat in COUNTRY_LABELS:
-        geo_label(text, lon, lat, country_fmt)
-    district_fmt = text_format(6.3, DISTRICT, bold=True, spacing=1.0, buffer=0.8)
-    for text, lon, lat in DISTRICT_LABELS:
-        geo_label(text, lon, lat, district_fmt)
-    letter_fmt = text_format(8.5, INK, bold=True, buffer=0.7)
-    for f in frames.getFeatures():  # letter just outside each inset frame's top-left corner
-        g = QgsGeometry(f.geometry())
-        g.transform(to_utm)
-        bb = g.boundingBox()
-        if LETTER_CORNER.get(f["panel"]) == "bottom-left":
-            geo_label(LETTER_FMT.format(f["panel"]), bb.xMinimum() - 250, bb.yMinimum() - 250, letter_fmt,
-                      anchor=QgsLayoutItem.ReferencePoint.UpperRight, lonlat=False)
-        else:
-            geo_label(LETTER_FMT.format(f["panel"]), bb.xMinimum() - 250, bb.yMaximum() + 250, letter_fmt,
-                      anchor=QgsLayoutItem.ReferencePoint.LowerRight, lonlat=False)
 
     letter = QgsLayoutItemLabel(layout)
     letter.setText(LETTER_FMT.format("a"))
-    letter.setTextFormat(text_format(9, INK, bold=True, buffer=0.8))
-    letter.attemptMove(QgsLayoutPoint(MAP[0] + 1.2, MAP[1] + 0.8, Qgis.LayoutUnit.Millimeters))
-    letter.attemptResize(QgsLayoutSize(8, 5, Qgis.LayoutUnit.Millimeters))
+    letter.setTextFormat(text_format(FONT_PT["letter"], INK, bold=True))
+    letter.attemptMove(QgsLayoutPoint(*LETTER_POS, MM))
+    letter.attemptResize(QgsLayoutSize(10, 5, MM))
     layout.addLayoutItem(letter)
-
-    arrow = QgsLayoutItemPicture(layout)
-    arrow.setPicturePath(":/images/north_arrows/layout_default_north_arrow.svg")
-    arrow.setSvgFillColor(QColor(INK2))
-    arrow.setSvgStrokeColor(QColor(INK2))
-    arrow.attemptMove(QgsLayoutPoint(MAP[0] + MAP[2] - 37, MAP[1] + MAP[3] - 9.5, Qgis.LayoutUnit.Millimeters))
-    arrow.attemptResize(QgsLayoutSize(3.2, 5.5, Qgis.LayoutUnit.Millimeters))
-    arrow.setLinkedMap(m)
-    arrow.setBackgroundEnabled(True)
-    arrow.setBackgroundColor(QColor(255, 255, 255, 190))
-    layout.addLayoutItem(arrow)
 
     sb = QgsLayoutItemScaleBar(layout)
     sb.setStyle("Single Box")
@@ -343,22 +344,43 @@ def main():
     sb.applyDefaultSize(Qgis.DistanceUnit.Kilometers)  # resets units, so set everything after it
     sb.setUnits(Qgis.DistanceUnit.Kilometers)
     sb.setUnitLabel("km")
-    sb.setUnitsPerSegment(10)
+    sb.setUnitsPerSegment(SCALEBAR_KM)
     sb.setNumberOfSegments(2)
     sb.setNumberOfSegmentsLeft(0)
-    sb.setHeight(1.0)
-    sb.setTextFormat(text_format(5.5, INK2, buffer=0.5))
+    sb.setHeight(1.1)
+    sb.setTextFormat(text_format(FONT_PT["scalebar"], INK2))
     sb.resizeToMinimumWidth()
     layout.addLayoutItem(sb)
-    sb.attemptMove(QgsLayoutPoint(MAP[0] + MAP[2] - 31, MAP[1] + MAP[3] - 8.5, Qgis.LayoutUnit.Millimeters))
+    sb.attemptMove(QgsLayoutPoint(*SCALEBAR_POS, MM))
 
+    arrow = QgsLayoutItemPicture(layout)
+    arrow.setPicturePath(":/images/north_arrows/layout_default_north_arrow.svg")
+    arrow.setSvgFillColor(QColor(INK2))
+    arrow.setSvgStrokeColor(QColor(INK2))
+    arrow.attemptMove(QgsLayoutPoint(*NORTH_POS, MM))
+    arrow.attemptResize(QgsLayoutSize(4.0, 6.5, MM))
+    arrow.setSvgStrokeWidth(0.25)
+    arrow.setLinkedMap(m)  # turns with the map, so it points to north on the rotated map
+    layout.addLayoutItem(arrow)
+    north = QgsLayoutItemLabel(layout)  # "N" just beyond the tip, along the rotated arrow
+    north.setText("N")
+    north.setTextFormat(text_format(FONT_PT["scalebar"], INK2, bold=True))
+    north.setMargin(0)
+    north.adjustSizeToText()
+    north.setReferencePoint(QgsLayoutItem.ReferencePoint.Middle)
+    ax_, ay_ = NORTH_POS[0] + 2.0, NORTH_POS[1] + 3.25
+    north.attemptMove(QgsLayoutPoint(ax_ + 4.6 * math.sin(math.radians(MAP_ROTATION)),
+                                     ay_ - 4.6 * math.cos(math.radians(MAP_ROTATION)), MM))
+    layout.addLayoutItem(north)
+
+    lx, ly, lw, lh = LOCATOR_BOX
     loc = QgsLayoutItemMap(layout)
-    loc.attemptMove(QgsLayoutPoint(COL_X, MAP[1], Qgis.LayoutUnit.Millimeters))
-    loc.attemptResize(QgsLayoutSize(COL_W, LOCATOR_H, Qgis.LayoutUnit.Millimeters))
+    loc.attemptMove(QgsLayoutPoint(lx, ly, MM))
+    loc.attemptResize(QgsLayoutSize(lw, lh, MM))
     loc.setCrs(QgsCoordinateReferenceSystem("EPSG:4326"))
-    cx, cy, w = 84.2, 28.4, 11.0
-    hh = w * LOCATOR_H / COL_W
-    loc.setExtent(QgsRectangle(cx - w / 2, cy - hh / 2, cx + w / 2, cy + hh / 2))
+    lcx, lcy, lwd = 84.2, 28.4, 11.0
+    lhd = lwd * lh / lw
+    loc.setExtent(QgsRectangle(lcx - lwd / 2, lcy - lhd / 2, lcx + lwd / 2, lcy + lhd / 2))
     loc.setLayers([countries])
     loc.setKeepLayerSet(True)
     loc.setFrameEnabled(True)
@@ -368,61 +390,32 @@ def main():
     layout.addLayoutItem(loc)
     ov = QgsLayoutItemMapOverview("Overview extent", loc)
     loc.overviews().addOverview(ov)
-    ov.setLinkedMap(m)
+    ov.setLinkedMap(m)  # draws the rotated footprint of panel (a)
     ov.setFrameSymbol(QgsFillSymbol.createSimple({"color": "0,0,0,0", "outline_color": DESTROYED, "outline_width": "0.5"}))
-
-    loc_ext, loc_scale = loc.extent(), loc.extent().width() / COL_W
+    loc_ext, loc_scale = loc.extent(), loc.extent().width() / lw
     for text, lon, lat in LOCATOR_LABELS:
         lbl = QgsLayoutItemLabel(layout)
         lbl.setText(text)
-        lbl.setTextFormat(text_format(5.5, "#6f6c64", spacing=0.6))
+        lbl.setTextFormat(text_format(FONT_PT["locator"], "#6e6e6e", spacing=0.6))
         lbl.setMargin(0)
         lbl.adjustSizeToText()
         lbl.setReferencePoint(QgsLayoutItem.ReferencePoint.Middle)
-        lbl.attemptMove(QgsLayoutPoint(COL_X + (lon - loc_ext.xMinimum()) / loc_scale,
-                                       MAP[1] + (loc_ext.yMaximum() - lat) / loc_scale, Qgis.LayoutUnit.Millimeters))
+        lbl.attemptMove(QgsLayoutPoint(lx + (lon - loc_ext.xMinimum()) / loc_scale,
+                                       ly + (loc_ext.yMaximum() - lat) / loc_scale, MM))
         layout.addLayoutItem(lbl)
 
-    key_top = MAP[1] + LOCATOR_H + 2.5
-    if SHOW_LEGEND:
-        legend = QgsLayoutItemLegend(layout)
-        legend.setLinkedMap(m)
-        if hasattr(legend, "setSyncMode"):
-            legend.setSyncMode(Qgis.LegendSyncMode.Manual)
-        else:
-            legend.setAutoUpdateModel(False)
-        legend.setTitle("")
-        root = legend.model().rootGroup()
-        root.removeAllChildren()
-        for lyr in [flood, ticks, towns, hydro, bridges, frames, districts]:
-            node = root.addLayer(lyr)
-            if lyr in (ticks, bridges):
-                QgsLegendRenderer.setNodeLegendStyle(node, QgsLegendStyle.Style.Hidden)
-        for style in (QgsLegendStyle.Style.SymbolLabel, QgsLegendStyle.Style.Subgroup):
-            legend.rstyle(style).setTextFormat(text_format(6, INK2))
-        legend.setSymbolWidth(4.0)
-        legend.setSymbolHeight(2.4)
-        legend.rstyle(QgsLegendStyle.Style.Symbol).setMargin(QgsLegendStyle.Side.Top, 0.9)
-        legend.setBoxSpace(0)
-        legend.setBackgroundEnabled(False)
-        legend.setFrameEnabled(False)
-        legend.attemptMove(QgsLayoutPoint(COL_X, key_top, Qgis.LayoutUnit.Millimeters))
-        legend.setResizeToContents(True)
-        layout.addLayoutItem(legend)
-        legend.adjustBoxSize()
-
-    credit_y = PAGE[1] - 3.2
     credit = QgsLayoutItemLabel(layout)
     credit.setText("Hillshade: Copernicus DEM GLO-30.")
-    credit.setTextFormat(text_format(4.8, MUTED))
+    credit.setTextFormat(text_format(FONT_PT["credit"], MUTED))
     credit.setMode(QgsLayoutItemLabel.Mode.ModeFont)
-    credit.attemptMove(QgsLayoutPoint(COL_X, credit_y, Qgis.LayoutUnit.Millimeters))
-    credit.attemptResize(QgsLayoutSize(COL_W, 3, Qgis.LayoutUnit.Millimeters))
+    credit.adjustSizeToText()
+    credit.attemptMove(QgsLayoutPoint(*CREDIT_POS, MM))
     layout.addLayoutItem(credit)
-    # the free area under the locator, where compose_figure.py draws the figure's shared key
+
+    # the free area where compose_figure.py draws the figure's shared key
     (QP / "exports").mkdir(exist_ok=True)
     (QP / "exports" / "overview_map_layout.json").write_text(json.dumps({
-        "page_mm": list(PAGE), "key_box_mm": [COL_X, key_top, COL_W, round(credit_y - 1.0 - key_top, 2)]}, indent=2))
+        "page_mm": list(PAGE), "key_box_mm": list(KEY_BOX)}, indent=2))
 
     import inset_layout  # panels c-e live in the same project, so one run rebuilds both layouts
     insets = inset_layout.build(project)
