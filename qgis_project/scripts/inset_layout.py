@@ -14,7 +14,7 @@ from qgis.core import (Qgis, QgsBilinearRasterResampler, QgsContrastEnhancement,
                        QgsFillSymbol, QgsGeometry, QgsLayoutExporter, QgsLayoutItem, QgsLayoutItemLabel,
                        QgsLayoutItemLegend, QgsLayoutItemMap, QgsLayoutItemPicture, QgsLayoutItemScaleBar,
                        QgsLayoutPoint, QgsLayoutSize, QgsLegendRenderer, QgsLegendStyle, QgsLineSymbol,
-                       QgsMarkerSymbol, QgsPrintLayout, QgsRasterLayer, QgsSimpleLineSymbolLayer,
+                       QgsCentroidFillSymbolLayer, QgsMarkerSymbol, QgsPrintLayout, QgsRasterLayer, QgsSimpleLineSymbolLayer,
                        QgsSingleSymbolRenderer)
 from qgis.PyQt.QtCore import QSize
 from qgis.PyQt.QtGui import QColor, QPainter
@@ -56,9 +56,18 @@ FLOOD_LINE = "#4fc3f7"                       # flood inundation outline
 BUILDING = "#ffd23f"                         # buildings in the flood inundation
 ROAD = "#ff4fa3"                             # road in the flood inundation
 # line widths (mm): (line, white casing underneath). Thin, so dense roads and footprints stay readable.
-FLOOD_LINE_W = (0.3, 0.0)
+FLOOD_LINE_W = (0.18, 0.0)
 ROAD_W = (0.22, 0.15)
 HYDRO_W = (0.3, 0.2)
+# What panels c-e draw. Roads off and hydropower as a marker keep the panels clean; the compose_figure.py
+# key reads these too. HYDRO_STYLE: "marker" (red square at each structure, as in panels a and b),
+# "outline" (the structure's footprint) or "off".
+SHOW_ROADS = False
+HYDRO_STYLE = "marker"
+# marker sizes (mm), just above the 0.9 mm building dots; triangles look smaller than squares at one size
+BUILDING_MM = 0.9
+HYDRO_MARKER_MM = 1.4
+BRIDGE_MARKER_MM = 1.6
 DESTROYED, DAMAGED, INK, INK2, MUTED = ov.DESTROYED, ov.DAMAGED, ov.INK, ov.INK2, ov.MUTED
 
 
@@ -154,19 +163,30 @@ def build(project):
     buildings = ov.vector(ROOT / "data/Impact-Assessment-Shashi-Ashim/Builidngs/Buildings.shp",
                           "Building in flood inundation")
     buildings.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
-        {"name": "circle", "color": BUILDING, "outline_color": "#3a2f00", "outline_width": "0.12", "size": "0.9"})))
+        {"name": "circle", "color": BUILDING, "outline_color": "#3a2f00", "outline_width": "0.12", "size": str(BUILDING_MM)})))
 
     roads = ov.vector(INTER / "roads_in_inundation.geojson", "Road in flood inundation")
     roads.setRenderer(QgsSingleSymbolRenderer(cased(QgsLineSymbol(), ROAD, *ROAD_W)))
 
     bridges = ov.vector(INTER / "bridges.geojson", "Bridges", subset="\"status\" IN ('Destroyed', 'Damaged')")
     tri = lambda col: QgsMarkerSymbol.createSimple(
-        {"name": "triangle", "angle": "180", "color": col, "outline_color": "white", "outline_width": "0.25", "size": "2.6"})
+        {"name": "triangle", "angle": "180", "color": col, "outline_color": "white", "outline_width": "0.15",
+         "size": str(BRIDGE_MARKER_MM)})
     ov.rules(bridges, [("Bridge washed away", "\"status\" = 'Destroyed'", tri(DESTROYED)),
                        ("Bridge damaged", "\"status\" = 'Damaged'", tri(DAMAGED))])
 
     hydro = ov.vector(f"{INTER / 'hydropower.geojson'}|geometrytype=Polygon", "Hydropower structure damaged")
-    hydro.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), DESTROYED, *HYDRO_W)))
+    if HYDRO_STYLE == "marker":  # a square at the centre of each footprint
+        square = QgsMarkerSymbol.createSimple({"name": "square", "color": DESTROYED, "outline_color": "white",
+                                               "outline_width": "0.15", "size": str(HYDRO_MARKER_MM)})
+        centre = QgsCentroidFillSymbolLayer()
+        centre.setSubSymbol(square)
+        centre.setPointOnSurface(True)
+        sym = QgsFillSymbol()
+        sym.changeSymbolLayer(0, centre)
+        hydro.setRenderer(QgsSingleSymbolRenderer(sym))
+    else:
+        hydro.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), DESTROYED, *HYDRO_W)))
     if HP_LABELS:
         ov.label_layer(hydro, '"label"', white_text(FONT_PT["hp"], bold=True, color=HP_LABEL_COLOR, italic=True),
                        placement=Qgis.LabelPlacement.AroundPoint,
@@ -186,7 +206,8 @@ def build(project):
     ov.label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')", white_text(FONT_PT["town"]),
                    placement=Qgis.LabelPlacement.AroundPoint, dist=0.8, priority=8)
 
-    vectors = [ticks, towns, hydro, bridges, roads, buildings, flood]  # top to bottom
+    vectors = [ticks, towns] + ([hydro] if HYDRO_STYLE != "off" else []) + [bridges] \
+        + ([roads] if SHOW_ROADS else []) + [buildings, flood]  # top to bottom
     hill = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"), "Hillshade")
     # the same hillshade again, multiplied over the imagery for relief and a consistent grey tone
     overlay = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"), "Hillshade overlay (multiply)")
@@ -290,7 +311,7 @@ def build(project):
         legend.setTitle("")
         root = legend.model().rootGroup()
         root.removeAllChildren()
-        for lyr in [flood, buildings, roads, hydro, bridges, ticks]:
+        for lyr in [l for l in (flood, buildings, roads, hydro, bridges, ticks) if l in vectors]:
             node = root.addLayer(lyr)
             if lyr is bridges:
                 QgsLegendRenderer.setNodeLegendStyle(node, QgsLegendStyle.Style.Hidden)
