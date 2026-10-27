@@ -61,7 +61,7 @@ FONT_PT = {"letter": 10, "frame_letter": 9.5, "town": 7.5, "km": 7, "district": 
 INK, INK2, MUTED = "#0b0b0b", "#4d4d4d", "#808080"
 FLOOD = "#2b7bb9"
 DESTROYED, DAMAGED = "#d03b3b", "#ec835a"
-BAND, BAND_EDGE = "#e9e2cc", "#6e6450"  # zoom areas: warm, so they stand out on the grey hillshade
+BAND, BAND_EDGE = "#D8D9D8", "#6e6450"  # zoom areas: warm, so they stand out on the grey hillshade
 HILLSHADE_OPACITY = 0.55
 DISTRICT = "#4d4d4d"  # district names
 # District boundary line: colour, width (mm) and dash pattern (dash;gap;dot;gap, mm); the white edging under it
