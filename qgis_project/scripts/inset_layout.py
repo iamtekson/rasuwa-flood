@@ -11,7 +11,7 @@ import math
 from pathlib import Path
 
 from qgis.core import (Qgis, QgsBilinearRasterResampler, QgsContrastEnhancement, QgsHueSaturationFilter, QgsCoordinateReferenceSystem, QgsCoordinateTransform,
-                       QgsFillSymbol, QgsGeometry, QgsLayoutExporter, QgsLayoutItem, QgsLayoutItemLabel,
+                       QgsFillSymbol, QgsGeometry, QgsLayoutExporter, QgsLayoutItem, QgsMapRendererParallelJob, QgsMapSettings, QgsLayoutItemLabel,
                        QgsLayoutItemLegend, QgsLayoutItemMap, QgsLayoutItemPicture, QgsLayoutItemScaleBar,
                        QgsLayoutPoint, QgsLayoutSize, QgsLegendRenderer, QgsLegendStyle, QgsLineSymbol,
                        QgsCentroidFillSymbolLayer, QgsMarkerSymbol, QgsPrintLayout, QgsRasterLayer, QgsSimpleLineSymbolLayer,
@@ -34,8 +34,21 @@ TITLE_H = 5.4                                # mm above each map for its letter 
 FONT_PT = {"letter": 10, "title": 7.5, "town": 7.5, "km": 7, "hp": 6.8, "credit": 6, "scalebar": 6.5}
 # Monochrome base, to match panel (a): imagery in greyscale, the hillshade multiplied over it at this
 # opacity (0 = off). Set IMAGERY_GREYSCALE = False to keep the imagery in colour.
-IMAGERY_GREYSCALE = True
-HILLSHADE_OVERLAY_OPACITY = 0.35
+IMAGERY_GREYSCALE = False                    # True = greyscale imagery (monochrome figure)
+IMAGERY_SATURATION = 20                      # colour imagery only: -100..100; offsets the wash-out of the gamma lift
+# Sentinel-2 haze: its black point is set to S2_DEHAZE[1] x the S2_DEHAZE[0] % darkest value of each band,
+# which removes the blue haze of top-of-atmosphere colour without crushing shadows to black. None = off.
+S2_DEHAZE = (2.0, 0.7)
+# Brightness. Forested slopes are very dark, and a plain stretch is set by the bright cloud tops, so each
+# panel's imagery is stretched (STRETCH_CUT, %) and then lifted with the gamma that brings the rendered
+# panel to IMAGERY_TARGET_LUMINANCE (0-255 mean grey; None = gamma 1). Same brightness in all three panels.
+STRETCH_CUT = (0.0, 98.0)          # lower 0: cloud shadows stay dark grey instead of black
+IMAGERY_TARGET_LUMINANCE = 150
+IMAGERY_OPACITY = 1.0                        # below 1 fades the imagery towards white (e.g. 0.75)
+# Relief: the hillshade blended over the imagery. "softlight" adds relief without darkening;
+# "multiply" darkens. Opacity 0 = off.
+HILLSHADE_OVERLAY_MODE = "softlight"
+HILLSHADE_OVERLAY_OPACITY = 0.4
 SCALE_BAR_FRACTION = 1 / 8                   # scale-bar segment length as a share of the map width (rounded 1-2-5)
 SCALE_BAR_RAISE = {"d": 6.0}                 # mm to lift a panel's scale bar off labels near its lower-right corner
 HP_LABEL_COLOR = "#ffc9c9"                   # hydropower names: italic, light red, so they read apart from towns
@@ -43,7 +56,6 @@ HP_LABEL_COLOR = "#ffc9c9"                   # hydropower names: italic, light r
 # if there is one, over 10 m post-event Sentinel-2. To use Planet for d, for example:
 #   IMAGERY = {"d": [("qgis_project/imagery/planet/d_2026-09-10.tif", "PlanetScope, 10 Sep 2026")]}
 IMAGERY = {"d": [("qgis_project/imagery/sentinel2/insets/d_S2_2026-09-21_2026-09-21.tif", "Sentinel-2, 21 Sep 2026")]}
-S2_GAMMA, S2_BRIGHTNESS = 1.25, 8           # lift for the dark top-of-atmosphere Sentinel-2 colour
 TEXT_PAD = 1.5                               # mm between the page edge / map edge and titles and legend
 LETTER_FMT = "({})"                          # panel letters (c)-(e)
 SHOW_LEGEND = False                          # the combined figure has one shared key (compose_figure.py) instead
@@ -52,7 +64,7 @@ S2_CREDIT = "Sentinel-2 (Copernicus), post-event, Aug-Oct 2026"
 SENSORS = {"WV03": "WorldView-3", "WV02": "WorldView-2", "GE01": "GeoEye-1", "LG06": "Legion-6"}
 HP_LABELS = True                             # name hydropower structures (names from the layer)
 KM_TICK_EVERY = 5                            # distance-from-source markers inside the maps
-FLOOD_LINE = "#4fc3f7"                       # flood inundation outline
+FLOOD_LINE = "#1f78d1"                       # flood inundation outline (darker than the lighter imagery)
 BUILDING = "#ffd23f"                         # buildings in the flood inundation
 ROAD = "#ff4fa3"                             # road in the flood inundation
 # line widths (mm): (line, white casing underneath). Thin, so dense roads and footprints stay readable.
@@ -92,20 +104,59 @@ def cased(symbol, color, width, casing):
     return symbol
 
 
-def raster(path, name, stretch=False):
+def raster(path, name):
     lyr = QgsRasterLayer(str(path), name)
     if not lyr.isValid():
         raise SystemExit(f"could not load {path}")
     for band in range(1, lyr.bandCount() + 1):  # black collar outside a scene's footprint -> transparent
         lyr.dataProvider().setNoDataValue(band, 0)
+    dehaze = S2_DEHAZE if (S2_DEHAZE and "_S2_" in Path(path).name) else None
+    origin = lyr.renderer().minMaxOrigin()
+    origin.setCumulativeCutLower((dehaze[0] if dehaze else STRETCH_CUT[0]) / 100)
+    origin.setCumulativeCutUpper(STRETCH_CUT[1] / 100)
+    lyr.setContrastEnhancement(QgsContrastEnhancement.StretchToMinimumMaximum, Qgis.RasterRangeLimit.CumulativeCut)
+    r = lyr.renderer()
+    for get in ("redContrastEnhancement", "greenContrastEnhancement", "blueContrastEnhancement"):
+        ce = getattr(r, get, lambda: None)()
+        if ce:  # black point at 0 (or just below the haze), so the darkest shadows keep a little value
+            ce.setMinimumValue(ce.minimumValue() * dehaze[1] if dehaze else 0)
+    r.setOpacity(IMAGERY_OPACITY)
     if IMAGERY_GREYSCALE:
         modes = getattr(QgsHueSaturationFilter, "GrayscaleMode", QgsHueSaturationFilter)
         lyr.hueSaturationFilter().setGrayscaleMode(modes.GrayscaleLuminosity)
-    if stretch:  # Sentinel-2 top-of-atmosphere colour is dark; stretch 2-98 %
-        lyr.setContrastEnhancement(QgsContrastEnhancement.StretchToMinimumMaximum, Qgis.RasterRangeLimit.CumulativeCut)
-        lyr.brightnessFilter().setGamma(S2_GAMMA)
-        lyr.brightnessFilter().setBrightness(S2_BRIGHTNESS)
+    elif IMAGERY_SATURATION:
+        lyr.hueSaturationFilter().setSaturation(IMAGERY_SATURATION)
     return lyr
+
+
+def mean_luminance(layers, extent, crs, px=220):
+    """Mean grey value (0-255) of the layers rendered over a white page."""
+    ms = QgsMapSettings()
+    ms.setDestinationCrs(crs)
+    ms.setLayers(layers)
+    ms.setExtent(extent)
+    ms.setOutputSize(QSize(px, px))
+    ms.setBackgroundColor(QColor("white"))
+    job = QgsMapRendererParallelJob(ms)
+    job.start()
+    job.waitForFinished()
+    img = job.renderedImage()
+    vals = [QColor(img.pixel(x, y)) for y in range(0, px, 4) for x in range(0, px, 4)]
+    return sum(0.2126 * c.red() + 0.7152 * c.green() + 0.0722 * c.blue() for c in vals) / len(vals)
+
+
+def calibrate_gamma(images, base, extent, crs, target):
+    """Gamma (QGIS: above 1 brightens) for `images` so the rendered panel's mean grey is near `target`."""
+    def render(g):
+        for lyr in images:
+            lyr.brightnessFilter().setGamma(g)
+        return mean_luminance(base[:-1] + images[::-1] + base[-1:], extent, crs)
+    lo, hi = 0.8, 6.0
+    for _ in range(9):
+        mid = (lo + hi) / 2
+        lo, hi = (mid, hi) if render(mid) < target else (lo, mid)
+    g = (lo + hi) / 2
+    return g, render(g)
 
 
 def imagery_for(panel):
@@ -210,9 +261,12 @@ def build(project):
         + ([roads] if SHOW_ROADS else []) + [buildings, flood]  # top to bottom
     hill = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"), "Hillshade")
     # the same hillshade again, multiplied over the imagery for relief and a consistent grey tone
-    overlay = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"), "Hillshade overlay (multiply)")
+    overlay = QgsRasterLayer(str(QP / "basemap" / "hillshade_multidirectional.tif"),
+                             f"Hillshade overlay ({HILLSHADE_OVERLAY_MODE})")
     overlay.renderer().setOpacity(HILLSHADE_OVERLAY_OPACITY)
-    overlay.setBlendMode(QPainter.CompositionMode.CompositionMode_Multiply)
+    overlay.setBlendMode({"softlight": QPainter.CompositionMode.CompositionMode_SoftLight,
+                          "multiply": QPainter.CompositionMode.CompositionMode_Multiply,
+                          "overlay": QPainter.CompositionMode.CompositionMode_Overlay}[HILLSHADE_OVERLAY_MODE])
     overlay.resampleFilter().setZoomedInResampler(QgsBilinearRasterResampler())  # 30 m cells, smooth at inset scale
     overlay.resampleFilter().setZoomedOutResampler(QgsBilinearRasterResampler())
 
@@ -224,9 +278,16 @@ def build(project):
     for f in sorted(frames.getFeatures(), key=lambda f: f["panel"]):
         g = QgsGeometry(f.geometry())
         g.transform(to_utm)  # the frame itself, not its lat/long bounding box
-        imgs = [(raster(p, f"{f['panel']}: {credit}", stretch="_S2_" in p.name), credit)
+        imgs = [(raster(p, f"{f['panel']}: {credit}"), credit)
                 for p, credit in imagery_for(f["panel"])]
         panels.append({"panel": f["panel"], "place": f["place"], "bbox": g.boundingBox(), "imagery": imgs})
+
+    if IMAGERY_TARGET_LUMINANCE:
+        for p in panels:
+            imgs = [l for l, _ in p["imagery"]]
+            base = ([overlay] if HILLSHADE_OVERLAY_OPACITY > 0 else []) + [hill]
+            g, lum = calibrate_gamma(imgs, base, p["bbox"], utm, IMAGERY_TARGET_LUMINANCE)
+            print(f"panel {p['panel']}: imagery gamma {g:.2f} -> mean grey {lum:.0f}")
 
     group = tree.addGroup(GROUP_NAME)
     for lyr in vectors + [hill] + [l for p in panels for l, _ in p["imagery"]]:
