@@ -3,9 +3,9 @@
 "name": "label_points",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "text": "DHADING", "kind": "district" }, "geometry": { "type": "Point", "coordinates": [ 84.953373589894213, 27.773921956972245 ] } },
+{ "type": "Feature", "properties": { "text": "DHADING", "kind": "district" }, "geometry": { "type": "Point", "coordinates": [ 84.889922906579329, 27.774225148448785 ] } },
 { "type": "Feature", "properties": { "text": "GORKHA", "kind": "district" }, "geometry": { "type": "Point", "coordinates": [ 84.701714380047363, 27.842254376704105 ] } },
-{ "type": "Feature", "properties": { "text": "NUWAKOT", "kind": "district" }, "geometry": { "type": "Point", "coordinates": [ 85.059348683628926, 27.820675753057454 ] } },
+{ "type": "Feature", "properties": { "text": "NUWAKOT", "kind": "district" }, "geometry": { "type": "Point", "coordinates": [ 85.142035502303401, 27.845601758528804 ] } },
 { "type": "Feature", "properties": { "text": "RASUWA", "kind": "district" }, "geometry": { "type": "Point", "coordinates": [ 85.333530459764816, 28.115168879582349 ] } },
 { "type": "Feature", "properties": { "text": "CHINA", "kind": "country" }, "geometry": { "type": "Point", "coordinates": [ 85.479442188619757, 28.365764635891658 ] } },
 { "type": "Feature", "properties": { "text": "NEPAL", "kind": "country" }, "geometry": { "type": "Point", "coordinates": [ 85.397533080362933, 28.234080627003582 ] } }

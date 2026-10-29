@@ -31,7 +31,7 @@ import common as c
 
 # Towns marked on the elevation track (names as in intermediate/towns.csv; times from inputs/arrival_times.csv).
 # Devghat (km 194.7, 14:40) is past the end of the axis, so it is left out.
-TOWNS = ["Rasuwagadhi", "Syabrubesi", "Betrawati", "Galchi", "Chumlingtar"]
+TOWNS = ["Rasuwagadhi", "Syafrubesi", "Betrawati", "Galchi", "Chumlingtar"]
 NPT_OFFSET = timedelta(hours=5, minutes=45)  # Nepal Time = UTC+05:45
 HP_LABEL_GAP_KM = 4.8  # minimum spacing between hydropower labels (with --hp-labels)
 FIG_W_IN = 180 / 25.4  # exactly 180 mm wide, like panels a and c-e, so the combined figure lines up

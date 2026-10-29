@@ -53,7 +53,8 @@ SHOW_LEGEND = False                  # the combined figure has one shared key (c
 LOCATOR_LABELS = [("CHINA", 85.0, 30.3), ("NEPAL", 82.3, 28.75), ("INDIA", 82.6, 26.75)]
 # Which vertex of each (north-up) inset frame its letter sits by, and on which side of that vertex.
 LETTER_SPOT = {"c": ("top-left", "AboveLeft"), "d": ("top-left", "AboveLeft"), "e": ("top-left", "AboveLeft")}
-TOWNS = ["Rasuwagadhi", "Syabrubesi", "Betrawati", "Bidur", "Devighat", "Malekhu", "Mugling"]
+# Towns named on the map (names as in analysis/intermediate/towns.csv).
+TOWNS = ["Rasuwagadhi", "Syafrubesi", "Betrawati", "Bidur", "Galchi", "Malekhu", "Chumlingtar"]
 FONT_PT = {"letter": 10, "frame_letter": 9.5, "town": 7.5, "km": 7, "district": 7, "country": 7.5,
            "scalebar": 7, "locator": 6.5, "credit": 6}
 
@@ -238,11 +239,11 @@ def main():
                 text_format(FONT_PT["km"], INK, bold=True, buffer=0.6), placement=Qgis.LabelPlacement.AroundPoint,
                 dist=0.6, priority=9)
 
-    towns_filter = " OR ".join(f"\"name_en\" LIKE '{t}%'" for t in TOWNS)
-    towns = vector(ROOT / "data" / "cities.geojson", "Towns", subset=towns_filter)
+    # same places and spelling as panel (b): towns.geojson also holds places added from inputs/arrival_times.csv
+    towns = vector(INTER / "towns.geojson", "Towns", subset="\"name\" IN (" + ", ".join(f"'{t}'" for t in TOWNS) + ")")
     towns.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
         {"name": "circle", "color": INK, "outline_color": "white", "outline_width": "0.2", "size": "1.4"})))
-    label_layer(towns, "regexp_replace(\"name_en\", '\\\\s*\\\\(.*\\\\)$', '')",
+    label_layer(towns, '"name"',
                 text_format(FONT_PT["town"], INK, buffer=0.7), placement=Qgis.LabelPlacement.AroundPoint,
                 dist=0.7, priority=8)
 

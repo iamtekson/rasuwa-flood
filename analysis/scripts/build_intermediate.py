@@ -13,6 +13,7 @@ Writes to analysis/intermediate/ (GeoJSON in EPSG:4326, shapefile in EPSG:32645)
   flow_path/flow_path_km_ticks.*         a point every 1 km, attribute `km`
   elevation_profile.csv                  km, elevation sampled from the DEM every 50 m
   towns.csv                              towns near the flow path with km and flood arrival time (Nepal Time)
+  towns.geojson                          the same as points (panel a)
   buildings.csv                          IIT building points with km
   roads_in_inundation.geojson            road inside the flood inundation
   roads_near_inundation.geojson          road outside it but within --near-m
@@ -32,7 +33,8 @@ import numpy as np
 import pandas as pd
 import rasterio
 import shapely
-from shapely.geometry import box
+from shapely import affinity
+from shapely.geometry import Point, box
 from shapely.ops import substring
 
 import common as c
@@ -45,9 +47,13 @@ INSET_DEFAULTS = [("c", "Rasuwagadhi-Timure", 19.0, 26.0),
 FRAME_ASPECT = 1.0   # width / height of the default frames, so panels c-e sit in one row of equal height
 CORRIDOR_KM, CORRIDOR_BUFFER_KM = 165, 5  # panel (a) shows the flow path to km 165 (as panel b), +-5 km
 LABEL_CLEAR_KM = 2.2         # district and country names at least this far from the river
+# District names keep out of an ellipse around each place with an arrival time (named on the map), this many
+# km along / across the corridor: map text runs along the corridor, so only names beside a town collide with it.
+LABEL_CLEAR_TOWN_KM = (9, 2.5)
 DISTRICT_LABEL_MIN_KM2 = 100 # districts with less corridor area than this get no name
 DISTRICT_LABEL_FROM_KM = 30  # district names only downstream of here, clear of the CHINA / NEPAL names
 TOWN_MAX_OFFSET_M = 1500  # towns farther than this from the flow path are left out
+TOWN_NAMES = {"Syabrubesi": "Syafrubesi"}  # figure spelling, where it differs from data/cities.geojson
 
 
 def frame_box(segment, pad_m=300, aspect=FRAME_ASPECT):
@@ -88,7 +94,7 @@ def elevation_profile(path, step_m=50.0):
 
 def towns(path):
     t = c.read("cities")
-    t["name"] = t.name_en.fillna(t["name"]).str.replace(r"\s*\(.*\)$", "", regex=True)
+    t["name"] = t.name_en.fillna(t["name"]).str.replace(r"\s*\(.*\)$", "", regex=True).replace(TOWN_NAMES)
     t["km"] = path.km_of(t.geometry)
     t["offset_m"] = path.offset_m(t.geometry)
     t["arrival_npt"] = [v.strftime("%H:%M") if hasattr(v, "strftime") else (str(v)[:5] if isinstance(v, str) else None)
@@ -108,7 +114,7 @@ def towns(path):
     return t[["name", "km", "offset_m", "arrival_npt", "lon", "lat"]].round({"km": 2, "offset_m": 0}).sort_values("km")
 
 
-def map_a_layers(path, out):
+def map_a_layers(path, out, towns):
     """Panel (a) is clipped to a corridor around the flow path. Writes the corridor, district boundaries
     clipped to it, and label points for district and country names, placed inside the corridor but at
     least LABEL_CLEAR_KM from the river so they sit on the hillshade, not on the damage symbols."""
@@ -121,22 +127,31 @@ def map_a_layers(path, out):
     lines = shapely.union_all(districts.boundary.values).intersection(corridor)
     gpd.GeoDataFrame(geometry=[lines], crs=c.UTM).to_crs(4326).to_file(out / "district_boundaries.geojson")
 
-    def label_point(region):
+    def label_point(region, min_r=0.0):
         region = region.difference(seg.buffer(LABEL_CLEAR_KM * 1000))
         parts = getattr(region, "geoms", [region])
         biggest = max(parts, key=lambda g: g.area) if parts else None
         if biggest is None or biggest.is_empty:
             return None
-        return shapely.get_point(shapely.maximum_inscribed_circle(biggest), 0)  # the most open spot
+        circle = shapely.maximum_inscribed_circle(biggest)  # the most open spot
+        return shapely.get_point(circle, 0) if circle.length >= min_r else None
 
     nepal = shapely.union_all(districts.geometry.values)
     rows = []
     downstream = substring(path.line, DISTRICT_LABEL_FROM_KM * 1000, CORRIDOR_KM * 1000).buffer(CORRIDOR_BUFFER_KM * 1000)
     frames = shapely.union_all(c.read("inset_frames").geometry.values).buffer(1500)  # names stay off the frames
+    (x0, y0), (x1, y1) = seg.coords[0], seg.coords[-1]
+    along = np.degrees(np.arctan2(y1 - y0, x1 - x0))  # the corridor's general direction
+    ellipse = affinity.rotate(affinity.scale(Point(0, 0).buffer(1000), *LABEL_CLEAR_TOWN_KM), along, origin=(0, 0))
+    timed = towns[towns.arrival_npt.notna()]
+    places = shapely.union_all([affinity.translate(ellipse, p.x, p.y) for p in
+                                gpd.points_from_xy(timed.lon, timed.lat, crs=4326).to_crs(c.UTM)])
     for d in districts.itertuples():
         part = d.geometry.intersection(downstream).difference(frames)  # clear of the border reach and frames
         if part.area / 1e6 >= DISTRICT_LABEL_MIN_KM2:
             pt = label_point(part)
+            if pt is not None and pt.within(places):  # beside a town name: move it, where there is room
+                pt = label_point(part.difference(places), min_r=1000) or pt
             if pt is not None:
                 rows.append({"text": d.DISTRICT.upper(), "kind": "district", "geometry": pt})
     for text, (k0, k1), inside in [("CHINA", (3, 12), False), ("NEPAL", (21, 32), True)]:
@@ -177,9 +192,11 @@ def main():
 
     write_flow_path(path, out / "flow_path")
     elevation_profile(path).to_csv(out / "elevation_profile.csv", index=False)
-    towns(path).to_csv(out / "towns.csv", index=False)
+    tw = towns(path)
+    tw.to_csv(out / "towns.csv", index=False)
+    gpd.GeoDataFrame(tw, geometry=gpd.points_from_xy(tw.lon, tw.lat), crs=4326).to_file(out / "towns.geojson")
     bands = inset_bands(path)  # first: it writes the default inset frames if there are none yet
-    map_a_layers(path, out / "map_a")
+    map_a_layers(path, out / "map_a", tw)
     bands.to_csv(out / "inset_bands.csv", index=False)
 
     bld = c.iit_buildings(args.dedupe_m)
