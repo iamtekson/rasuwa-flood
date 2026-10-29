@@ -6,7 +6,7 @@ Builds panel (b) of the manuscript's damage figure (damage against distance from
 
 | Folder | Contents |
 | --- | --- |
-| `inputs/` | Analysis-specific inputs: the flow path line (`flow_path/flow_path_line.shp`, from colleagues; the previous line is in `flow_path/archived/`), the frozen HOT bridge snapshot, the map-inset frames (`inset_frames.geojson`), and flood arrival times missing from `data/cities.geojson` (`arrival_times.csv`) |
+| `inputs/` | Analysis-specific inputs: the flow path line (`flow_path/flow_path_line.shp`, from colleagues; the previous line is in `flow_path/archived/`), the frozen HOT bridge snapshot, the map-inset frames (`inset_frames.geojson`), and the manuscript's flood arrival times (`arrival_times.csv`; places not in `data/cities.geojson` have lon/lat) |
 | `scripts/` | The Python scripts (below) |
 | `intermediate/` | Layers and tables derived by `build_intermediate.py`; safe to delete and rebuild |
 | `outputs/` | Panel b (`damage_profile.*`), the combined figure a–e (`damage_figure.png`, 600 dpi, and `damage_figure.pdf`, vector), and the dataset comparison (`comparison/`) |
@@ -42,7 +42,7 @@ Without uv: `pip install -r analysis/requirements.txt`, then `python analysis/sc
 
 - **Distance from source.** Length along `inputs/flow_path/flow_path_line.shp` (EPSG:32645, 194.7 km) from its upstream end. Rasuwagadhi is at km 20.7, Betrawati 65.6, Bidur 77.1 and Mugling 161.8. `intermediate/flow_path/` has the line as GeoJSON and a point every 1 km.
 - **Elevation.** Sampled every 50 m along the flow path from `data/tiff/dem_2km_buffer.tif`, smoothed with a 5-point rolling median.
-- **Towns and arrival times.** From `data/cities.geojson`, plus `inputs/arrival_times.csv` (Malekhu 11:50, Mugling 13:00), which takes precedence. Times are Nepal Time (UTC+05:45); only towns with a recorded time show one. The towns drawn on the elevation track are `TOWNS` in `damage_profile.py`.
+- **Towns and arrival times.** From `data/cities.geojson`, plus `inputs/arrival_times.csv` (the manuscript's times: Rasuwagadhi 08:44, Syabrubesi 08:54, Betrawati 09:27, Galchi 10:28, Chumlingtar 12:30, Devghat 14:40), which takes precedence; places in it that are not in `data/cities.geojson` are added from its lon/lat. Devghat (km 194.7) lies beyond panel (b)'s 165 km axis and is not drawn. Times are Nepal Time (UTC+05:45); only towns with a recorded time show one. The towns drawn on the elevation track are `TOWNS` in `damage_profile.py`.
 - **Flood inundation.** The Shashi & Ashim polygon (`data/Impact-Assessment-Shashi-Ashim/Inundation`, 42.1 km² after repairing its invalid geometry).
 - **Buildings.** IIT footprint points: footprints that intersect the flood inundation.
 - **Roads.** The OSM network comes in three non-overlapping files (`Road_damaged`, `Road_endangered`, `Complete Road`). Combined, then clipped to the flood inundation, and to a band of `--near-m` just outside it. "Highways & main roads" = OSM `highway` trunk, primary, secondary, tertiary; everything else is "local roads & tracks".

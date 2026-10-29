@@ -1,3 +1,7 @@
-name,arrival_npt,note
-Malekhu,11:50,added 18 Oct 2026
-Mugling,13:00,added 18 Oct 2026
+name,arrival_npt,lon,lat,note
+Rasuwagadhi,08:44,,,manuscript table (Border); CCTV video timestamp
+Syabrubesi,08:54,,,manuscript table (Syaphrubesi); hydropower data disconnection
+Betrawati,09:27,,,manuscript table; geophone data
+Galchi,10:28,85.00046,27.79740,manuscript table; DHM gauge; location: Galchi town (OpenStreetMap)
+Chumlingtar,12:30,84.64096,27.86008,manuscript table; DHM gauge; location: Chumlingtar bridge (data/bridge_damage.geojson)
+Devghat,14:40,84.42308,27.74294,manuscript table; DHM gauge; location: Devghat Dham (OpenStreetMap)

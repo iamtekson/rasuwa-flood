@@ -93,10 +93,15 @@ def towns(path):
     t["offset_m"] = path.offset_m(t.geometry)
     t["arrival_npt"] = [v.strftime("%H:%M") if hasattr(v, "strftime") else (str(v)[:5] if isinstance(v, str) else None)
                         for v in t.flood_time]
-    extra = c.INPUTS / "arrival_times.csv"  # arrival times not in cities.geojson (Nepal Time); these win
+    extra = c.INPUTS / "arrival_times.csv"  # the manuscript's arrival times (Nepal Time); these win
     if extra.exists():
-        times = pd.read_csv(extra, dtype=str).set_index("name").arrival_npt
-        t["arrival_npt"] = t.name.map(times).fillna(t.arrival_npt)
+        ex = pd.read_csv(extra, dtype={"name": str, "arrival_npt": str})
+        t["arrival_npt"] = t.name.map(ex.set_index("name").arrival_npt).fillna(t.arrival_npt)
+        new = ex[~ex.name.isin(t.name) & ex.lon.notna()]  # places not in cities.geojson, located by lon/lat
+        pts = gpd.GeoDataFrame(new[["name", "arrival_npt"]], geometry=gpd.points_from_xy(new.lon, new.lat),
+                               crs=4326).to_crs(c.UTM)
+        pts["km"], pts["offset_m"] = path.km_of(pts.geometry), path.offset_m(pts.geometry)
+        t = pd.concat([t, pts], ignore_index=True)
     ll = t.to_crs(4326)
     t["lon"], t["lat"] = ll.geometry.x.round(5), ll.geometry.y.round(5)
     t = t[t.offset_m <= TOWN_MAX_OFFSET_M]
