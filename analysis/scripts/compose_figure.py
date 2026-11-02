@@ -107,6 +107,13 @@ def draw_key(ax, x0, y0, w, h, S, counts):
             rect(cx, cy, 3.6, 2.2, fill=False, edgecolor="white", linewidth=(lw_mm + casing_mm) * MM_PT)
         rect(cx, cy, 3.6, 2.2, fill=False, edgecolor=color, linewidth=lw_mm * MM_PT)
 
+    def footprint(cx, cy, line_color):
+        """One building outline, with the lines of panels c-e at twice their width so they read in the key."""
+        lw_mm, halo_mm = CE["BUILDING_LINE_W"]
+        halo = tuple(v / 255 for v in CE["BUILDING_HALO"])
+        for color, lw in ((halo, 2 * (lw_mm + halo_mm)), (line_color, 2 * lw_mm)):
+            rect(cx, cy, 2.4, 1.7, fill=False, edgecolor=color, linewidth=lw * MM_PT, joinstyle="miter")
+
     band_rgb = tuple(int(A["BAND"][i:i + 2], 16) / 255 for i in (1, 3, 5))
     rows = [  # (label, symbol in (a), in (b), in (c-e)); None = not drawn in that panel
         ("Flood inundation",
@@ -126,7 +133,8 @@ def draw_key(ax, x0, y0, w, h, S, counts):
         ("Building in flood inundation",
          None,
          lambda x, y: rect(x, y, 3.0, 2.3, facecolor=B["MAIN"], edgecolor="none"),
-         lambda x, y: mark(x, y, "o", CE["BUILDING_MM"] * MM_PT * 1.1, CE["BUILDING"], "#3a2f00", 0.35)),
+         lambda x, y: footprint(x, y, CE["BUILDING"])),
+        ("Building outside flood inundation", None, None, lambda x, y: footprint(x, y, CE["BUILDING_OUTSIDE"])),
         ("Road in flood inundation",
          None,
          lambda x, y: (rect(x, y + 0.6, 3.0, 1.1, facecolor=B["MAIN"], edgecolor="white", linewidth=0.4),

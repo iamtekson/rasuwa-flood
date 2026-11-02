@@ -11,7 +11,7 @@ import math
 from pathlib import Path
 
 from qgis.core import (Qgis, QgsBilinearRasterResampler, QgsContrastEnhancement, QgsHueSaturationFilter, QgsCoordinateReferenceSystem, QgsCoordinateTransform,
-                       QgsFillSymbol, QgsGeometry, QgsLayoutExporter, QgsLayoutItem, QgsMapRendererParallelJob, QgsMapSettings, QgsLayoutItemLabel,
+                       QgsFeatureRequest, QgsFillSymbol, QgsGeometry, QgsLayoutExporter, QgsLayoutItem, QgsMapRendererParallelJob, QgsMapSettings, QgsLayoutItemLabel,
                        QgsLayoutItemLegend, QgsLayoutItemMap, QgsLayoutItemPicture, QgsLayoutItemScaleBar,
                        QgsLayoutPoint, QgsLayoutSize, QgsLegendRenderer, QgsLegendStyle, QgsLineSymbol,
                        QgsCentroidFillSymbolLayer, QgsMarkerSymbol, QgsPrintLayout, QgsRasterLayer, QgsSimpleLineSymbolLayer,
@@ -65,19 +65,24 @@ SENSORS = {"WV03": "WorldView-3", "WV02": "WorldView-2", "GE01": "GeoEye-1", "LG
 HP_LABELS = True                             # name hydropower structures (names from the layer)
 KM_TICK_EVERY = 5                            # distance-from-source markers inside the maps
 FLOOD_LINE = "#1f78d1"                       # flood inundation outline (darker than the lighter imagery)
-BUILDING = "#ffd23f"                         # buildings in the flood inundation
+# building footprints, outline only (data/buildings_essential.geojson via analysis/intermediate/building_footprints)
+BUILDING = "#ff3030"                         # touching the flood inundation; brighter than the markers' red, as thin lines need
+BUILDING_OUTSIDE = "#ffffff"                 # the rest: neutral, so it reads as "other buildings"
 ROAD = "#ff4fa3"                             # road in the flood inundation
 # line widths (mm): (line, white casing underneath). Thin, so dense roads and footprints stay readable.
 FLOOD_LINE_W = (0.18, 0.0)
 ROAD_W = (0.22, 0.15)
 HYDRO_W = (0.3, 0.2)
+# building footprints: (outline, dark halo under it) in mm. Most houses are about 0.1 mm across at inset scale,
+# so a thin line keeps their shapes; the faint halo gives crisp edges on bright gravel and dark forest alike.
+BUILDING_LINE_W = (0.07, 0.05)
+BUILDING_HALO = (0, 0, 0, 110)               # RGBA
 # What panels c-e draw. Roads off and hydropower as a marker keep the panels clean; the compose_figure.py
 # key reads these too. HYDRO_STYLE: "marker" (red square at each structure, as in panels a and b),
 # "outline" (the structure's footprint) or "off".
 SHOW_ROADS = False
 HYDRO_STYLE = "marker"
-# marker sizes (mm), just above the 0.9 mm building dots; triangles look smaller than squares at one size
-BUILDING_MM = 0.9
+# marker sizes (mm); triangles look smaller than squares at one size
 HYDRO_MARKER_MM = 1.4
 BRIDGE_MARKER_MM = 1.6
 DESTROYED, DAMAGED, INK, INK2, MUTED = ov.DESTROYED, ov.DAMAGED, ov.INK, ov.INK2, ov.MUTED
@@ -211,10 +216,21 @@ def build(project):
     flood = ov.vector(ROOT / "data/Impact-Assessment-Shashi-Ashim/Inundation/Inundation.shp", "Flood inundation")
     flood.setRenderer(QgsSingleSymbolRenderer(cased(QgsFillSymbol(), FLOOD_LINE, *FLOOD_LINE_W)))
 
-    buildings = ov.vector(ROOT / "data/Impact-Assessment-Shashi-Ashim/Builidngs/Buildings.shp",
-                          "Building in flood inundation")
-    buildings.setRenderer(QgsSingleSymbolRenderer(QgsMarkerSymbol.createSimple(
-        {"name": "circle", "color": BUILDING, "outline_color": "#3a2f00", "outline_width": "0.12", "size": str(BUILDING_MM)})))
+    # footprints for display only; the building counts (panel b) come from the IIT points
+    buildings = ov.vector(INTER / "building_footprints.geojson", "Buildings")
+
+    def footprint(color):
+        sym = QgsFillSymbol()
+        sym.deleteSymbolLayer(0)
+        line_w, halo_w = BUILDING_LINE_W
+        for c, width in ((",".join(map(str, BUILDING_HALO)), line_w + halo_w), (color, line_w)):
+            sym.appendSymbolLayer(QgsSimpleLineSymbolLayer.create(
+                {"line_color": c, "line_width": str(width), "joinstyle": "miter", "capstyle": "square"}))
+        return sym
+    ov.rules(buildings, [("Building outside flood inundation", 'NOT "in_flood"', footprint(BUILDING_OUTSIDE)),
+                         ("Building in flood inundation", '"in_flood"', footprint(BUILDING))])
+    buildings.renderer().setOrderBy(QgsFeatureRequest.OrderBy([QgsFeatureRequest.OrderByClause('"in_flood"', True)]))
+    buildings.renderer().setOrderByEnabled(True)  # red drawn last, on top
 
     roads = ov.vector(INTER / "roads_in_inundation.geojson", "Road in flood inundation")
     roads.setRenderer(QgsSingleSymbolRenderer(cased(QgsLineSymbol(), ROAD, *ROAD_W)))

@@ -20,6 +20,8 @@ Writes to analysis/intermediate/ (GeoJSON in EPSG:4326, shapefile in EPSG:32645)
   road_pieces.csv                        both, split into ~20 m pieces with km (for binning)
   bridges.geojson                        harmonised bridges (IIT + HOT-only) with status and km
   hydropower.geojson                     hydropower structures with km and short label
+  building_footprints.geojson            footprints from data/buildings_essential.geojson, `in_flood` if they touch
+                                         the inundation (display only, panels c-e; counts use the IIT points)
   inset_bands.csv                        km range of each map inset (from inputs/inset_frames.geojson)
   impact_by_km.csv                       per-bin totals
   build_info.json                        settings and totals of this build
@@ -223,6 +225,9 @@ def main():
     to_wgs(bridges.round({"km": 3})).to_file(out / "bridges.geojson")
     hp = c.hydropower(path)
     to_wgs(hp.round({"km": 3})).to_file(out / "hydropower.geojson")
+    fp = c.read("portal_buildings")[["id", "geometry"]]
+    fp["in_flood"] = fp.intersects(flood)
+    to_wgs(fp).to_file(out / "building_footprints.geojson")
 
     edges = np.arange(0, np.ceil(path.length_km / args.bin) * args.bin + args.bin, args.bin)
     def hist(km, weights=None):
